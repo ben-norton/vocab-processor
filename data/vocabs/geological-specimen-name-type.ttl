@@ -1,0 +1,240 @@
+# Geological Specimen Name Type — SKOS ConceptScheme
+# Generated from NameTypes.xlsx
+# Source sheets used: Concept Scheme, Concepts, Namespaces, Agents
+# Generated: 2026-05-04
+
+# Standard prefixes
+@prefix dcat:        <http://www.w3.org/ns/dcat#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix isoroles:    <http://def.isotc211.org/iso19115-1/2014/CitationAndResponsiblePartyInformation/code/CI_RoleCode/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix prov:        <http://www.w3.org/ns/prov#> .
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg:         <http://purl.org/linked-data/registry#> .
+@prefix schema:      <https://schema.org/> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix status:      <https://linked.data.gov.au/def/reg-statuses/> .
+@prefix vann:        <http://purl.org/vocab/vann/> .
+@prefix vocdermods:  <https://linked.data.gov.au/def/vocdermods/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+# Workbook-specific prefixes (from the Namespaces sheet)
+@prefix gsnt:  <https://vocab.geospecimens.org/def/geological-specimen-name-type> .
+
+# ============================================================================
+# ConceptScheme
+# ============================================================================
+
+<https://vocab.geospecimens.org/def/geological-specimen-name-type>
+    a                        skos:ConceptScheme ;
+    skos:prefLabel           "Geological Specimen Name Type"@en ;
+    dcterms:title            "Geological Specimen Name Type"@en ;
+    skos:definition          """A vocabulary of terms describing the types of names that may be applied to geological materials, including minerals and rocks, and their constituent parts. The vocabulary distinguishes between names that carry formal standing — those assigned or approved by an authoritative nomenclatural body such as the International Mineralogical Association (IMA) — and names used outside formal systems, including alternate, historical, and deprecated designations. Formally sanctioned name types include IMA Approved Name, Classification, Group Name, Structural Group, and Series. Names reflecting historical usage, discontinued classifications, or pending approval are represented by the Historical, Synonym, Obsolete, and Unapproved types. The Alternate Name type captures commonly used names that are not sanctioned by any authoritative body, while Material Name provides a general designation for use with non-geological materials."""@en ;
+    dcterms:description      """A vocabulary of terms describing the types of names that may be applied to geological materials, including minerals and rocks, and their constituent parts. The vocabulary distinguishes between names that carry formal standing — those assigned or approved by an authoritative nomenclatural body such as the International Mineralogical Association (IMA) — and names used outside formal systems, including alternate, historical, and deprecated designations. Formally sanctioned name types include IMA Approved Name, Classification, Group Name, Structural Group, and Series. Names reflecting historical usage, discontinued classifications, or pending approval are represented by the Historical, Synonym, Obsolete, and Unapproved types. The Alternate Name type captures commonly used names that are not sanctioned by any authoritative body, while Material Name provides a general designation for use with non-geological materials."""@en ;
+    dcterms:publisher        _:agent_mineralogy_extension_task_group ;
+    dcterms:creator          _:agent_mineralogy_extension_task_group ;
+    dcterms:contributor      <https://orcid.org/0000-0002-5819-9134> ;
+    dcterms:provenance       "Compiled by the TDWG Mineralogy Extension Task Group for community use and to support the extension release by providing standardized categories for Constituent Part Names, especially those associated with Minerals"@en ;
+    dcterms:created          "2026-04-17"^^xsd:date ;
+    dcterms:modified         "2026-04-17"^^xsd:date ;
+    dcat:version             "2026-04-17" ;
+    skos:scopeNote           "Values are valid within the scope of a geological material and intended to categorize names of Simple Specimens or Constituent Parts"@en ;
+    vann:usageNote           "Intended to be used to categorize names assigned to Constituent Parts of Compound Specimens in order to atomize multiple individual names assigned to a single Constituent Part"@en ;
+    dcat:keyword             "Compound Specimen"@en ,
+                             "Constituent Part"@en ,
+                             "Names"@en ,
+                             "Mineral Name Types"@en ,
+                             "Geological Specimens"@en ;
+    schema:citation          "Norton B, Walcott R, Burri T, Puschnig A, Dombrowski A, Greber N, Hints O, Mansur A, Ralph J, Richard S, Tacker C. Geological Material Name Type Vocabulary (pending)."@en ;
+    schema:license           <https://creativecommons.org/licenses/by/4.0/> ;
+    reg:derivationMode       <https://linked.data.gov.au/def/vocdermods/subsetting-and-extension> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    skos:hasTopConcept       <https://vocab.geospecimens.org/def/geological-specimen-name-type/geological-material-name> ;
+    prov:qualifiedAttribution [
+        a                prov:Attribution ;
+        prov:agent       <https://orcid.org/0000-0002-5819-9134> ;
+        dcat:hadRole     isoroles:editor ;
+    ] ;
+    prov:qualifiedAttribution [
+        a                prov:Attribution ;
+        prov:agent       _:agent_mineralogy_extension_task_group ;
+        dcat:hadRole     isoroles:publisher , isoroles:creator ;
+    ] ;
+.
+
+# ============================================================================
+# Concepts
+# ============================================================================
+
+<https://vocab.geospecimens.org/def/geological-specimen-name-type/geological-material-name>
+    a                        skos:Concept ;
+    skos:prefLabel           "Geological Material Name"@en ;
+    skos:definition          """The lexical expression used by humans for identification purposes of geologic material"""@en ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-name-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:topConceptOf        <https://vocab.geospecimens.org/def/geological-specimen-name-type> ;
+    skos:notation            "geologicalMaterialName" ;
+.
+
+<https://vocab.geospecimens.org/def/geological-specimen-name-type/formal-name>
+    a                        skos:Concept ;
+    skos:prefLabel           "Formal Name"@en ;
+    skos:altLabel            "Official Name"@en ;
+    skos:definition          """A name assigned by an authoritative body based on a defined set of unambiguous criteria and belonging to a formal nomenclature"""@en ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-name-type/geological-material-name> ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-name-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "formalName" ;
+.
+
+<https://vocab.geospecimens.org/def/geological-specimen-name-type/classification>
+    a                        skos:Concept ;
+    skos:prefLabel           "Classification"@en ;
+    skos:altLabel            "Species"@en ;
+    skos:definition          """A name derived from an authoritative classification system at any rank"""@en ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-name-type/formal-name> ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-name-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "classification" ;
+.
+
+<https://vocab.geospecimens.org/def/geological-specimen-name-type/structural-group>
+    a                        skos:Concept ;
+    skos:prefLabel           "Structural Group"@en ;
+    skos:definition          """A group name based on a shared crystal structure and composition of chemically similar elements"""@en ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-name-type/group> ;
+    vann:usageNote           "Recommended is the use of Fleischer's Glossary."@en ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-name-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "structuralGroup" ;
+.
+
+<https://vocab.geospecimens.org/def/geological-specimen-name-type/series>
+    a                        skos:Concept ;
+    skos:prefLabel           "Series"@en ;
+    skos:altLabel            "Solid Solution Series"@en ;
+    skos:definition          """Name of the solid solution series to which a specimen belongs."""@en ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-name-type/formal-name> ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-name-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "series" ;
+.
+
+<https://vocab.geospecimens.org/def/geological-specimen-name-type/ima-approved-name>
+    a                        skos:Concept ;
+    skos:prefLabel           "IMA Approved Name"@en ;
+    skos:definition          """A mineral name that has received formal approval by the International Mineralogical Association (IMA)"""@en ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-name-type/formal-name> ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-name-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "imaApprovedName" ;
+.
+
+<https://vocab.geospecimens.org/def/geological-specimen-name-type/group>
+    a                        skos:Concept ;
+    skos:prefLabel           "Group"@en ;
+    skos:definition          """The name of a mineralogical group a specimen belongs to. Groups are defined as a set of mineral species with essentially the same crystal structure and composed of chemically similar elements."""@en ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-name-type/formal-name> ;
+    dcterms:provenance       "Mills, S. J., Hatert, F., Nickel, E. H., & Ferraris, G. (2009). The standardisation of mineral group hierarchies: application to recent nomenclature proposals. European Journal of Mineralogy, 21(5), 1073-1080."@en ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-name-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "group" ;
+.
+
+<https://vocab.geospecimens.org/def/geological-specimen-name-type/historical>
+    a                        skos:Concept ;
+    skos:prefLabel           "Historical"@en ;
+    skos:definition          """An alias of a mineral name used within a historical context or derived from a historical source"""@en ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-name-type/alternate-name> ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-name-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "historical" ;
+.
+
+<https://vocab.geospecimens.org/def/geological-specimen-name-type/synonym>
+    a                        skos:Concept ;
+    skos:prefLabel           "Synonym"@en ;
+    skos:definition          """An alias of a mineral species no longer recognized as the official classification"""@en ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-name-type/alternate-name> ;
+    vann:usageNote           "It is recommended to use synonyms only as additional information to the officially accepted IMA name."@en ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-name-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "synonym" ;
+.
+
+<https://vocab.geospecimens.org/def/geological-specimen-name-type/obsolete>
+    a                        skos:Concept ;
+    skos:prefLabel           "Obsolete"@en ;
+    skos:definition          """A name defined in prior standards or classification systems but has since been removed from those authoritative sources. Includes names designated by the International Mineralogical Association as discredited or obsolete."""@en ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-name-type/alternate-name> ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-name-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "obsolete" ;
+.
+
+<https://vocab.geospecimens.org/def/geological-specimen-name-type/variety>
+    a                        skos:Concept ;
+    skos:prefLabel           "Variety"@en ;
+    skos:definition          """A mineral that is a type of the mineral species, distinguished by color or other optical phenomenon or characteristic"""@en ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-name-type/alternate-name> ;
+    dcterms:provenance       "Neuendorf, K. K. (2005). Glossary of geology. Springer Science & Business Media."@en ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-name-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "variety" ;
+.
+
+<https://vocab.geospecimens.org/def/geological-specimen-name-type/alternate-name>
+    a                        skos:Concept ;
+    skos:prefLabel           "Alternate Name"@en ;
+    skos:definition          """A name by which a geologic material is frequently referred, without reference to any formal usage or structure nor sanctioned by an authoritative body"""@en ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-name-type/geological-material-name> ;
+    dcterms:provenance       "Adopted from https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/hasCommonName"@en ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-name-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "alternateName" ;
+.
+
+<https://vocab.geospecimens.org/def/geological-specimen-name-type/unapproved>
+    a                        skos:Concept ;
+    skos:prefLabel           "Unapproved"@en ;
+    skos:definition          """The name of a mineralogical specimen that is pending approval as an offical name by the International Mineralogical Association (IMA)"""@en ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-name-type/alternate-name> ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-name-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "unapprovedName" ;
+.
+
+<https://vocab.geospecimens.org/def/geological-specimen-name-type/cataloged-name>
+    a                        skos:Concept ;
+    skos:prefLabel           "Cataloged Name"@en ;
+    skos:definition          """The name of a geological material for cataloging or presentation purposes."""@en ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-name-type/geological-material-name> ;
+    vann:usageNote           "Cataloged name is generally applied to a compound specimen where physical cataloging is based on the object rather than its constituent parts."@en ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-name-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "catalogedName" ;
+.
+
+# ============================================================================
+# Agents
+# ============================================================================
+
+<https://orcid.org/0000-0002-5819-9134>
+    a                        schema:Person ;
+    schema:name              "Ben Norton" ;
+    schema:email             "ben.norton@yale.edu" ;
+    schema:affiliation       <https://scientific-collections.gbif.org/institution/75f50140-830d-4630-a290-3d6e951a7c29> ;
+.
+
+<https://scientific-collections.gbif.org/institution/75f50140-830d-4630-a290-3d6e951a7c29>
+    a                        schema:Organization ;
+    schema:name              "Yale University" ;
+.
+
+_:agent_mineralogy_extension_task_group
+    a                        schema:Organization ;
+    schema:name              "Mineralogy Extension Task Group" ;
+    schema:email             "ben.norton@yale.edu" ;
+    schema:affiliation       <https://www.tdwg.org/community/esp/mineralogy/> ;
+.

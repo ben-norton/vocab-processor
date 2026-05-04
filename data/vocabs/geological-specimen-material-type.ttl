@@ -1,0 +1,243 @@
+# Geological Specimen Material Type — SKOS ConceptScheme
+# Generated from GeologicalSpecimenMaterialTypes.xlsx
+# Source sheets used: Concept Scheme, Concepts, Namespaces, Agents
+# Generated: 2026-05-04
+
+# Standard prefixes
+@prefix dcat:        <http://www.w3.org/ns/dcat#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix isoroles:    <http://def.isotc211.org/iso19115-1/2014/CitationAndResponsiblePartyInformation/code/CI_RoleCode/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
+@prefix prov:        <http://www.w3.org/ns/prov#> .
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg:         <http://purl.org/linked-data/registry#> .
+@prefix schema:      <https://schema.org/> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix status:      <https://linked.data.gov.au/def/reg-statuses/> .
+@prefix vann:        <http://purl.org/vocab/vann/> .
+@prefix vocdermods:  <https://linked.data.gov.au/def/vocdermods/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+# Workbook-specific prefixes (from the Namespaces sheet)
+@prefix gsmt:  <https://vocab.geospecimens.org/def/geological-specimen-material-type> .
+
+# ============================================================================
+# ConceptScheme
+# ============================================================================
+
+<https://vocab.geospecimens.org/def/geological-specimen-material-type>
+    a                        skos:ConceptScheme ;
+    skos:prefLabel           "Geological Specimen Material Type"@en ;
+    dcterms:title            "Geological Specimen Material Type"@en ;
+    skos:definition          """The Geological Sample Material Type vocabulary is a SKOS-based hierarchical classification system for geological specimens. The scheme provides comprehensive coverage of the earth sciences domain by accommodating both natural and processed materials, terrestrial and extraterrestrial sources, and the practical needs of collection management across diverse geological institutions."""@en ;
+    dcterms:description      """The Geological Sample Material Type vocabulary is a SKOS-based hierarchical classification system for geological specimens. The scheme provides comprehensive coverage of the earth sciences domain by accommodating both natural and processed materials, terrestrial and extraterrestrial sources, and the practical needs of collection management across diverse geological institutions."""@en ;
+    dcterms:publisher        _:agent_mineralogy_extension_task_group ;
+    dcterms:creator          _:agent_mineralogy_extension_task_group ;
+    dcterms:contributor      <https://orcid.org/0000-0002-5819-9134> ;
+    dcterms:provenance       "Compiled by the TDWG Mineralogy Extension Task Group for community use and to support the extension release by providing standardized values for Material Entity Type, which is central to the Extension and Compound Specimen Model."@en ;
+    dcterms:created          "2026-04-09"^^xsd:date ;
+    dcterms:modified         "2026-04-09"^^xsd:date ;
+    dcat:version             "2026-04-09" ;
+    skos:scopeNote           "The Geologic Specimen Material Type vocabulary is intended to provide a top-level catagorization scheme for specimens that belong to earth sciences collections. Usage beyond the scope of earth sciences collections may require adjustments or broadening of specific definitions."@en ;
+    vann:usageNote           "Intended to be used with the material category terms (e.g. dwc:materialEntityType) for specimens belonging to earth sciences and asteromaterials collections."@en ;
+    skos:historyNote         "Compiled by the TDWG Mineralogy Extension Task Group for community use and to support the extension release by providing standardized values for Material Entity Type, which is central to the Extension and Compound Specimen Model."@en ;
+    skos:note                "Concepts in the Geologic Specimen Material Type vocabulary are distinguished by compositional and physical characteristics. Top-level terms are based primarily on composition, while child terms represent physically distinct variants."@en ;
+    dcat:keyword             "Collections"@en ,
+                             "Geologic Collections"@en ,
+                             "Specimens"@en ,
+                             "Material Entity Types"@en ;
+    schema:citation          "Norton B, Walcott R, Burri T, Puschnig A, Dombrowski A, Greber N, Hints O, Mansur A, Ralph J, Richard S, Tacker C. Geological Material Sample Type Vocabulary (pending)."@en ;
+    prov:wasDerivedFrom      "Geoscience Ontology, Rock TypesGeoscience Ontology, Rock Types"@en ,
+                             "Rubin AE, Grossman JN (2014) Meteorite and meteoroid: a new comprehensive definition. Meteorit Planet Sci 45:114–122"@en ,
+                             "Geologic Sample Material Types (https://linked.data.gov.au/def/geological-sample-type)"@en ,
+                             "Dictionary of Geology & Mineralogy 2nd ed. (2003) McGraw Hill"@en ,
+                             "Neuendorf et al. (2005)"@en ;
+    schema:license           <https://creativecommons.org/licenses/by/4.0/> ;
+    reg:derivationMode       <https://linked.data.gov.au/def/vocdermods/subsetting-and-extension> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    skos:hasTopConcept       <https://vocab.geospecimens.org/def/geological-specimen-material-type/geological-material> ;
+    prov:qualifiedAttribution [
+        a                prov:Attribution ;
+        prov:agent       <https://orcid.org/0000-0002-5819-9134> ;
+        dcat:hadRole     isoroles:editor ;
+    ] ;
+    prov:qualifiedAttribution [
+        a                prov:Attribution ;
+        prov:agent       _:agent_mineralogy_extension_task_group ;
+        dcat:hadRole     isoroles:publisher , isoroles:creator ;
+    ] ;
+.
+
+# ============================================================================
+# Concepts
+# ============================================================================
+
+<https://vocab.geospecimens.org/def/geological-specimen-material-type/astromaterial>
+    a                        skos:Concept ;
+    skos:prefLabel           "Astromaterial"@en ;
+    skos:definition          """A geologic material that is extraterrestrial in origin or derived from a geological process involving an extraterrestrial material (impactite)"""@en ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-material-type/geological-material> ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-material-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "astromaterial" ;
+.
+
+<https://vocab.geospecimens.org/def/geological-specimen-material-type/fossil>
+    a                        skos:Concept ;
+    skos:prefLabel           "Fossil"@en ;
+    skos:definition          """Any remains, trace, or imprint of a plant or animal preserved in the Earth's crust since some past geologic or prehistoric time; loosely, any evidence of past life."""@en ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-material-type/geological-material> ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-material-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "fossil" ;
+.
+
+<https://vocab.geospecimens.org/def/geological-specimen-material-type/gemstone>
+    a                        skos:Concept ;
+    skos:prefLabel           "Gemstone"@en ;
+    skos:altLabel            "Gem"@en ;
+    skos:definition          """Any mineral or naturally occurring substance that, when cut and polished, has sufficient beauty, rarity, and durability for use as a personal adornment or other ornament."""@en ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-material-type/mineral> ;
+    dcterms:provenance       "Term defined by the Geologic sample type vocabulary (https://linked.data.gov.au/def/geological-sample-type)"@en ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-material-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "gemstone" ;
+.
+
+<https://vocab.geospecimens.org/def/geological-specimen-material-type/geological-material>
+    a                        skos:Concept ;
+    skos:prefLabel           "Geological Material"@en ;
+    skos:altLabel            "Geologic Material"@en ,
+                             "Earth Material"@en ,
+                             "Geological Specimen Type"@en ,
+                             "Material Entity Type"@en ;
+    skos:definition          """A material entity comprised of a natural amount of matter generated by some geologic process, includes synthetic material intended to represent a geological material"""@en ;
+    skos:editorialNote       "Can include minor parts that are not of geologic origin, such as organic material, and can be solid, fluid, or a mix."@en ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-material-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:topConceptOf        <https://vocab.geospecimens.org/def/geological-specimen-material-type> ;
+    skos:notation            "geologicalMaterial" ;
+.
+
+<https://vocab.geospecimens.org/def/geological-specimen-material-type/meteorite>
+    a                        skos:Concept ;
+    skos:prefLabel           "Meteorite"@en ;
+    skos:definition          """A natural, solid object, derived from a celestial body, that was transported by natural means from the body on which it formed to a region outside the dominant gravitational influence of that body and that later collided with a natural or artificial body larger than itself."""@en ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-material-type/astromaterial> ;
+    dcterms:provenance       "Definition derived from Rubin AE, Grossman JN (2014) Meteorite and meteoroid: a new comprehensive definition. Meteorit Planet Sci 45:114–122"@en ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-material-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "meteorite" ;
+.
+
+<https://vocab.geospecimens.org/def/geological-specimen-material-type/mineral>
+    a                        skos:Concept ;
+    skos:prefLabel           "Mineral"@en ;
+    skos:definition          """A naturally occurring element or chemical compound of homogeneous composition, normally with a crystalline structure, and resulting from some geological process on Earth or in extraterrestrial bodies"""@en ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-material-type/geological-material> ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-material-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "mineral" ;
+.
+
+<https://vocab.geospecimens.org/def/geological-specimen-material-type/ore>
+    a                        skos:Concept ;
+    skos:prefLabel           "Ore"@en ;
+    skos:altLabel            "Economic Mineral"@en ,
+                             "Metallic Ore"@en ,
+                             "Industrial Mineral"@en ,
+                             "Mineral Deposit"@en ;
+    skos:definition          """A naturally occurring geological material from which economically valuable minerals can be extracted."""@en ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-material-type/rock> ;
+    dcterms:provenance       "Definition is adopted from McGraw-Hill. (2003). McGraw-Hill Dictionary of Geology & Mineralogy (2nd ed.). McGraw Hill."@en ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-material-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "ore" ;
+.
+
+<https://vocab.geospecimens.org/def/geological-specimen-material-type/rock>
+    a                        skos:Concept ;
+    skos:prefLabel           "Rock"@en ;
+    skos:definition          """Consolidated aggregate of one or more EarthMaterials, or a body of undifferentiated mineral matter, or of solid organic material. Includes mineral aggregates such as granite, shale, marble; glassy matter such as obsidian; and organic material such a coal. Excludes unconsolidated materials."""@en ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-material-type/geological-material> ;
+    dcterms:provenance       "Geoscience Ontology, Rock TypesGeoscience Ontology, Rock Types (https://w3id.org/gso/1.0/rockmaterial/ontology)"@en ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-material-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "rock" ;
+.
+
+<https://vocab.geospecimens.org/def/geological-specimen-material-type/rock-core>
+    a                        skos:Concept ;
+    skos:prefLabel           "Rock Core"@en ;
+    skos:definition          """A geological material, commonly cylindrical in shape, recovered from a borehole through drilling"""@en ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-material-type/rock> ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-material-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "rockCore" ;
+.
+
+<https://vocab.geospecimens.org/def/geological-specimen-material-type/sample-return>
+    a                        skos:Concept ;
+    skos:prefLabel           "Sample Return"@en ;
+    skos:definition          """Astromaterial returned from sample collection missions to celestial objects (e.g. comets, asteroids, the Moon, Mars)"""@en ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-material-type/astromaterial> ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-material-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "sampleReturn" ;
+.
+
+<https://vocab.geospecimens.org/def/geological-specimen-material-type/synthetic-mineral>
+    a                        skos:Concept ;
+    skos:prefLabel           "Synthetic Mineral"@en ;
+    skos:definition          """Man-made materials created in a laboratory that are intended to representative of natural occurring geological material"""@en ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-material-type/mineral> ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-material-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "syntheticMineral" ;
+.
+
+<https://vocab.geospecimens.org/def/geological-specimen-material-type/trace-fossil>
+    a                        skos:Concept ;
+    skos:prefLabel           "Trace Fossil"@en ;
+    skos:altLabel            "Ichnofossil"@en ;
+    skos:definition          """A sedimentary structure produced by the life activities (other than growth) of some organism"""@en ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-material-type/fossil> ;
+    dcterms:provenance       "Definition derived from Neuendorf KKE, Mehl JP, Jackson JA (eds) 2005. Glossary of geology. 5th Edition. Alexandria: American Geological Institute. Online Access."@en ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-material-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "traceFossil" ;
+.
+
+<https://vocab.geospecimens.org/def/geological-specimen-material-type/unconsolidated-material>
+    a                        skos:Concept ;
+    skos:prefLabel           "Unconsolidated Material"@en ;
+    skos:definition          """A geologic material composed of an aggregation of particles that do not adhere to each other strongly enough that the aggregate can be considered a solid in its own right."""@en ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-material-type/geological-material> ;
+    dcterms:provenance       "Term based on Rock Types defined by the Geoscience Ontology (https://w3id.org/gso/1.0/rockmaterial/ontology)"@en ;
+    skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-material-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "unconsolidatedMaterial" ;
+.
+
+# ============================================================================
+# Agents
+# ============================================================================
+
+<https://orcid.org/0000-0002-5819-9134>
+    a                        schema:Person ;
+    schema:name              "Ben Norton" ;
+    schema:email             "ben.norton@yale.edu" ;
+    schema:affiliation       <https://scientific-collections.gbif.org/institution/75f50140-830d-4630-a290-3d6e951a7c29> ;
+.
+
+<https://scientific-collections.gbif.org/institution/75f50140-830d-4630-a290-3d6e951a7c29>
+    a                        schema:Organization ;
+    schema:name              "Yale University" ;
+.
+
+_:agent_mineralogy_extension_task_group
+    a                        schema:Organization ;
+    schema:name              "Mineralogy Extension Task Group" ;
+    schema:affiliation       <https://www.tdwg.org/community/esp/mineralogy/> ;
+.

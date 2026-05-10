@@ -1,7 +1,7 @@
 # Geological Specimen Material Type — SKOS ConceptScheme
 # Generated from GeologicalSpecimenMaterialTypes.xlsx
 # Source sheets used: Concept Scheme, Concepts, Namespaces, Agents
-# Generated: 2026-05-04
+# Generated: 2026-05-08
 
 # Standard prefixes
 @prefix dcat:        <http://www.w3.org/ns/dcat#> .
@@ -32,9 +32,9 @@
     dcterms:title            "Geological Specimen Material Type"@en ;
     skos:definition          """The Geological Sample Material Type vocabulary is a SKOS-based hierarchical classification system for geological specimens. The scheme provides comprehensive coverage of the earth sciences domain by accommodating both natural and processed materials, terrestrial and extraterrestrial sources, and the practical needs of collection management across diverse geological institutions."""@en ;
     dcterms:description      """The Geological Sample Material Type vocabulary is a SKOS-based hierarchical classification system for geological specimens. The scheme provides comprehensive coverage of the earth sciences domain by accommodating both natural and processed materials, terrestrial and extraterrestrial sources, and the practical needs of collection management across diverse geological institutions."""@en ;
-    dcterms:publisher        _:agent_mineralogy_extension_task_group ;
-    dcterms:creator          _:agent_mineralogy_extension_task_group ;
-    dcterms:contributor      <https://orcid.org/0000-0002-5819-9134> ;
+    dcterms:publisher        "TDWG Mineralogy Extension Task Group"@en ;
+    dcterms:creator          "TDWG Mineralogy Extension Task Group"@en ;
+    dcterms:contributor      "TDWG Mineralogy Extension Task Group"@en ;
     dcterms:provenance       "Compiled by the TDWG Mineralogy Extension Task Group for community use and to support the extension release by providing standardized values for Material Entity Type, which is central to the Extension and Compound Specimen Model."@en ;
     dcterms:created          "2026-04-09"^^xsd:date ;
     dcterms:modified         "2026-04-09"^^xsd:date ;
@@ -57,16 +57,6 @@
     reg:derivationMode       <https://linked.data.gov.au/def/vocdermods/subsetting-and-extension> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     skos:hasTopConcept       <https://vocab.geospecimens.org/def/geological-specimen-material-type/geological-material> ;
-    prov:qualifiedAttribution [
-        a                prov:Attribution ;
-        prov:agent       <https://orcid.org/0000-0002-5819-9134> ;
-        dcat:hadRole     isoroles:editor ;
-    ] ;
-    prov:qualifiedAttribution [
-        a                prov:Attribution ;
-        prov:agent       _:agent_mineralogy_extension_task_group ;
-        dcat:hadRole     isoroles:publisher , isoroles:creator ;
-    ] ;
 .
 
 # ============================================================================
@@ -149,7 +139,7 @@
                              "Industrial Mineral"@en ,
                              "Mineral Deposit"@en ;
     skos:definition          """A naturally occurring geological material from which economically valuable minerals can be extracted."""@en ;
-    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-material-type/rock> ;
+    skos:broader             <https://vocab.geospecimens.org/def/geological-specimen-material-type/geological-material> ;
     dcterms:provenance       "Definition is adopted from McGraw-Hill. (2003). McGraw-Hill Dictionary of Geology & Mineralogy (2nd ed.). McGraw Hill."@en ;
     skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-material-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
@@ -218,26 +208,4 @@
     skos:inScheme            <https://vocab.geospecimens.org/def/geological-specimen-material-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "unconsolidatedMaterial" ;
-.
-
-# ============================================================================
-# Agents
-# ============================================================================
-
-<https://orcid.org/0000-0002-5819-9134>
-    a                        schema:Person ;
-    schema:name              "Ben Norton" ;
-    schema:email             "ben.norton@yale.edu" ;
-    schema:affiliation       <https://scientific-collections.gbif.org/institution/75f50140-830d-4630-a290-3d6e951a7c29> ;
-.
-
-<https://scientific-collections.gbif.org/institution/75f50140-830d-4630-a290-3d6e951a7c29>
-    a                        schema:Organization ;
-    schema:name              "Yale University" ;
-.
-
-_:agent_mineralogy_extension_task_group
-    a                        schema:Organization ;
-    schema:name              "Mineralogy Extension Task Group" ;
-    schema:affiliation       <https://www.tdwg.org/community/esp/mineralogy/> ;
 .

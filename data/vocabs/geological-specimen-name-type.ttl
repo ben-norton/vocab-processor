@@ -1,7 +1,7 @@
 # Geological Specimen Name Type — SKOS ConceptScheme
 # Generated from NameTypes.xlsx
 # Source sheets used: Concept Scheme, Concepts, Namespaces, Agents
-# Generated: 2026-05-04
+# Generated: 2026-05-08
 
 # Standard prefixes
 @prefix dcat:        <http://www.w3.org/ns/dcat#> .

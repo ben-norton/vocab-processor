@@ -150,7 +150,7 @@ prez:OGCItemProfile a prof:Profile, sh:NodeShape, prez:ObjectProfile ;
     prez:generateDescription true ;
     prez:generateProvenance true ;
     prez:generateFocusNode true ;
-
+gloss
     # Property shapes defining expected properties on a Concept export
     # prez:simpleView true = visible in both simple and expert modes
     # no prez:simpleView = expert mode only

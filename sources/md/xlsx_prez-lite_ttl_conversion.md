@@ -36,7 +36,7 @@ Dependencies: `openpyxl` (parsing), `rdflib` (optional, for post-hoc validation)
 3. **Parse `Concepts`** as header-driven records (row 1 is headers, each subsequent non-empty row is a concept).
 4. **Parse `Agents`** as header-driven records; `agentURI` rows become `schema:Person` / `schema:Organization` blocks.
 5. **Normalize IRIs**:
-   - Upgrade `http://vocab.geospecimens.org/*` → `https://`.
+   - Upgrade `http://kos.geospecimens.org/*` → `https://`.
    - Re-base every concept IRI under the scheme IRI (source rows occasionally mixed singular/plural paths or pointed `inScheme` at a sibling).
 6. **Normalize dates**: numeric `YYYYMMDD.0` values (e.g. `20260417.0`) convert to ISO `2026-04-17`.
 7. **Detect top concepts** from each concept's `isTopConceptOf` column; emit a deduplicated `skos:hasTopConcept` list on the scheme.

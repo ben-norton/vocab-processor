@@ -1,0 +1,77 @@
+# Geological Specimen Name Type — SKOS Mappings
+# Source: NameTypes.xlsx
+# Generated: 2026-05-12
+#
+# This file contains only SKOS match triples.
+# The main vocabulary file carries full concept metadata.
+
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# ============================================================================
+# Mappings
+# ============================================================================
+
+<https://kos.resources.org/def/geological-specimen-name-type/alternate-name>
+    a                   skos:Concept ;
+    skos:prefLabel      "Alternate Name"@en ;
+    skos:broadMatch     <https://kos.resources.org/def/geological-specimen-name-type/geological-material-name> .
+
+<https://kos.resources.org/def/geological-specimen-name-type/cataloged-name>
+    a                   skos:Concept ;
+    skos:prefLabel      "Cataloged Name"@en ;
+    skos:broadMatch     <https://kos.resources.org/def/geological-specimen-name-type/geological-material-name> .
+
+<https://kos.resources.org/def/geological-specimen-name-type/classification>
+    a                   skos:Concept ;
+    skos:prefLabel      "Classification"@en ;
+    skos:broadMatch     <https://kos.resources.org/def/geological-specimen-name-type/formal-name> .
+
+<https://kos.resources.org/def/geological-specimen-name-type/formal-name>
+    a                   skos:Concept ;
+    skos:prefLabel      "Formal Name"@en ;
+    skos:broadMatch     <https://kos.resources.org/def/geological-specimen-name-type/geological-material-name> .
+
+<https://kos.resources.org/def/geological-specimen-name-type/group>
+    a                   skos:Concept ;
+    skos:prefLabel      "Group"@en ;
+    skos:broadMatch     <https://kos.resources.org/def/geological-specimen-name-type/formal-name> .
+
+<https://kos.resources.org/def/geological-specimen-name-type/historical>
+    a                   skos:Concept ;
+    skos:prefLabel      "Historical"@en ;
+    skos:broadMatch     <https://kos.resources.org/def/geological-specimen-name-type/alternate-name> .
+
+<https://kos.resources.org/def/geological-specimen-name-type/ima-approved-name>
+    a                   skos:Concept ;
+    skos:prefLabel      "IMA Approved Name"@en ;
+    skos:broadMatch     <https://kos.resources.org/def/geological-specimen-name-type/formal-name> .
+
+<https://kos.resources.org/def/geological-specimen-name-type/obsolete>
+    a                   skos:Concept ;
+    skos:prefLabel      "Obsolete"@en ;
+    skos:broadMatch     <https://kos.resources.org/def/geological-specimen-name-type/alternate-name> .
+
+<https://kos.resources.org/def/geological-specimen-name-type/series>
+    a                   skos:Concept ;
+    skos:prefLabel      "Series"@en ;
+    skos:broadMatch     <https://kos.resources.org/def/geological-specimen-name-type/formal-name> .
+
+<https://kos.resources.org/def/geological-specimen-name-type/structural-group>
+    a                   skos:Concept ;
+    skos:prefLabel      "Structural Group"@en ;
+    skos:broadMatch     <https://kos.resources.org/def/geological-specimen-name-type/group-name> .
+
+<https://kos.resources.org/def/geological-specimen-name-type/synonym>
+    a                   skos:Concept ;
+    skos:prefLabel      "Synonym"@en ;
+    skos:broadMatch     <https://kos.resources.org/def/geological-specimen-name-type/alternate-name> .
+
+<https://kos.resources.org/def/geological-specimen-name-type/unapproved>
+    a                   skos:Concept ;
+    skos:prefLabel      "Unapproved"@en ;
+    skos:broadMatch     <https://kos.resources.org/def/geological-specimen-name-type/alternate-name> .
+
+<https://kos.resources.org/def/geological-specimen-name-type/variety>
+    a                   skos:Concept ;
+    skos:prefLabel      "Variety"@en ;
+    skos:broadMatch     <https://kos.resources.org/def/geological-specimen-name-type/alternate-name> .

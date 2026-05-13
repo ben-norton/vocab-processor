@@ -1,0 +1,36 @@
+# Hazard Types — SKOS Mappings
+# Source: HazardTypes.xlsx
+# Generated: 2026-05-12
+#
+# This file contains only SKOS match triples.
+# The main vocabulary file carries full concept metadata.
+
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# ============================================================================
+# Mappings
+# ============================================================================
+
+<https://kos.resources.org/def/hazard-type/asbestos-bearing>
+    a                   skos:Concept ;
+    skos:exactMatch     <https://linked.data.gov.au/def/sample-condition/asbestos-bearing> .
+
+<https://kos.resources.org/def/hazard-type/carcinogen>
+    a                   skos:Concept ;
+    skos:prefLabel      "Carcinogen"@en ;
+    skos:exactMatch     <http://purl.obolibrary.org/obo/CHEBI_50903> .
+
+<https://kos.resources.org/def/hazard-type/flammable>
+    a                   skos:Concept ;
+    skos:prefLabel      "Flammable"@en ;
+    skos:exactMatch     <https://linked.data.gov.au/def/sample-condition/flammable> .
+
+<https://kos.resources.org/def/hazard-type/radioactive>
+    a                   skos:Concept ;
+    skos:prefLabel      "Radioactive"@en ;
+    skos:exactMatch     <http://purl.obolibrary.org/obo/NCIT_C347> .
+
+<https://kos.resources.org/def/hazard-type/toxic>
+    a                   skos:Concept ;
+    skos:prefLabel      "Toxic"@en ;
+    skos:exactMatch     <http://purl.obolibrary.org/obo/XCO_0000239> .

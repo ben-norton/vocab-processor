@@ -18,12 +18,15 @@
 # GeoSpecimens Vocabularies Catalog Configuration
 # =============================================================================
 
-<https://vocabs.geospecimens.org/catalogue/geosps-vocabs> a prez:Catalog ;
+<https://kos.geospecimens.org/catalogue/geosps-vocabs> a prez:Catalog ;
     dcterms:identifier "catalogue:geosps-vocabs"^^xsd:token ;
     dcterms:title "GeoSpecimens Vocabularies" ;
-    dcterms:description """Controlled vocabularies supporting the TDWG Mineralogy Extension and the broader GeoSpecimens data model.
-sr
-These vocabularies provide standardised terms for describing geological specimens, their constituent parts, material types, name types, and associated hazards, to promote consistency across collections, research, and data exchange.""" .
+    dcterms:description """Controlled vocabularies supporting the TDWG Mineralogy Extension and the broader GeoSpecimens data model. These vocabularies provide standardised terms for describing geological specimens, their constituent parts, material types, name types, and associated hazards, to promote consistency across collections, research, and data exchange.""" ;
+    dcat:dataset <https://kos.resources.org/def/aggregate-form> ,
+                 <https://kos.resources.org/def/constituent-part-proportion> ,
+                 <https://kos.resources.org/def/geological-specimen-material-type> ,
+                 <https://kos.resources.org/def/geological-specimen-name-type> ,
+                 <https://kos.resources.org/def/hazard-type> .
 
 # =============================================================================
 # OGC Concept Scheme Object Profile
@@ -150,7 +153,7 @@ prez:OGCItemProfile a prof:Profile, sh:NodeShape, prez:ObjectProfile ;
     prez:generateDescription true ;
     prez:generateProvenance true ;
     prez:generateFocusNode true ;
-gloss
+
     # Property shapes defining expected properties on a Concept export
     # prez:simpleView true = visible in both simple and expert modes
     # no prez:simpleView = expert mode only
@@ -227,7 +230,7 @@ prez:GeoSpecimensVocabsProfile a prof:Profile ;
     dcterms:description "Profile configuration for GeoSpecimens vocabularies" ;
 
     # Associated catalog
-    prez:catalog <https://vocabs.geospecimens.org/catalogue/geosps-vocabs> ;
+    prez:catalog <https://kos.geospecimens.org/catalogue/geosps-vocabs> ;
 
     altr-ext:hasDefaultResourceFormat "text/anot-turtle" ;
 

@@ -6,10 +6,10 @@ Summary of the pipeline used to convert vocabulary-authoring spreadsheets into S
 
 | Source workbook | Output file | Scheme IRI | Concepts |
 |---|---|---|---|
-| `NameTypes.xlsx` | `geological-material-name-type.ttl` | `https://vocab.geospecimens.org/def/geological-material-name-type` | 13 |
-| `ConstituentPartProportions.xlsx` | `sources/ttl/constituent-part-proportion.ttl` | `https://vocab.geospecimens.org/def/constituent-part-proportion` | 8 |
-| `GeologicalSpecimenMaterialTypes.xlsx` | `sources/ttl/geological-specimen-material-type.ttl` | `http://vocab.geospecimens.org/def/geological-specimen-type` | 13 |
-| `HazardTypes.xlsx` | `sources/ttl/hazard-type.ttl` | `http://vocab.geospecimens.org/def/hazard-type` | 7 |
+| `NameTypes.xlsx` | `geological-material-name-type.ttl` | `https://kos.geospecimens.org/def/geological-material-name-type` | 13 |
+| `ConstituentPartProportions.xlsx` | `sources/ttl/constituent-part-proportion.ttl` | `https://kos.geospecimens.org/def/constituent-part-proportion` | 8 |
+| `GeologicalSpecimenMaterialTypes.xlsx` | `sources/ttl/geological-specimen-material-type.ttl` | `http://kos.geospecimens.org/def/geological-specimen-type` | 13 |
+| `HazardTypes.xlsx` | `sources/ttl/hazard-type.ttl` | `http://kos.geospecimens.org/def/hazard-type` | 7 |
 
 ## Input structure
 

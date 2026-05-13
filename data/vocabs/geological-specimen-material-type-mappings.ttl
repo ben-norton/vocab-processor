@@ -1,0 +1,61 @@
+# Geological Specimen Material Type — SKOS Mappings
+# Source: GeologicalSpecimenMaterialTypes.xlsx
+# Generated: 2026-05-12
+#
+# This file contains only SKOS match triples.
+# The main vocabulary file carries full concept metadata.
+
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# ============================================================================
+# Mappings
+# ============================================================================
+
+<https://kos.resources.org/def/geological-specimen-material-type/astromaterial>
+    a                   skos:Concept ;
+    skos:prefLabel      "Astromaterial"@en ;
+    skos:narrowMatch    <https://kos.resources.org/def/geological-specimen-material-type/meteorite> ,
+                        <https://kos.resources.org/def/geological-specimen-material-type/sample-return> .
+
+<https://kos.resources.org/def/geological-specimen-material-type/fossil>
+    a                   skos:Concept ;
+    skos:prefLabel      "Fossil"@en ;
+    skos:closeMatch     <https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/fossil> ;
+    skos:narrowMatch    <https://kos.resources.org/def/geological-specimen-material-type/trace-fossil> .
+
+<https://kos.resources.org/def/geological-specimen-material-type/geological-material>
+    a                   skos:Concept ;
+    skos:prefLabel      "Geological Material"@en ;
+    skos:narrowMatch    <https://kos.resources.org/def/geological-specimen-material-type/mineral> ,
+                        <https://kos.resources.org/def/geological-specimen-material-type/rock> ,
+                        <https://kos.resources.org/def/geological-specimen-material-type/ore> ,
+                        <https://kos.resources.org/def/geological-specimen-material-type/astromaterial> ,
+                        <https://kos.resources.org/def/geological-specimen-material-type/unconsolidate-material> .
+
+<https://kos.resources.org/def/geological-specimen-material-type/meteorite>
+    a                   skos:Concept ;
+    skos:prefLabel      "Meteorite"@en ;
+    skos:closeMatch     <https://pid.geoscience.gov.au/def/voc/ga/materialtype/meteorite> .
+
+<https://kos.resources.org/def/geological-specimen-material-type/mineral>
+    a                   skos:Concept ;
+    skos:prefLabel      "Mineral"@en ;
+    skos:closeMatch     <https://pid.geoscience.gov.au/def/voc/ga/materialtype/mineral> ;
+    skos:narrowMatch    <https://kos.resources.org/def/geological-specimen-material-type/synthetic-mineral> ,
+                        <https://kos.resources.org/def/geological-specimen-material-type/gemstone> .
+
+<https://kos.resources.org/def/geological-specimen-material-type/rock>
+    a                   skos:Concept ;
+    skos:prefLabel      "Rock"@en ;
+    skos:exactMatch     <https://w3id.org/gso/1.0/rockmaterial/Rock> ;
+    skos:narrowMatch    <https://kos.resources.org/def/geological-specimen-material-type/rock-core> .
+
+<https://kos.resources.org/def/geological-specimen-material-type/synthetic-mineral>
+    a                   skos:Concept ;
+    skos:prefLabel      "Synthetic Mineral"@en ;
+    skos:broadMatch     <https://w3id.org/gso/1.0/rockmaterial/Anthropogenic_Material> .
+
+<https://kos.resources.org/def/geological-specimen-material-type/unconsolidated-material>
+    a                   skos:Concept ;
+    skos:prefLabel      "Unconsolidated Material"@en ;
+    skos:exactMatch     <https://w3id.org/gso/1.0/rockmaterial/Unconsolidated_Material> .

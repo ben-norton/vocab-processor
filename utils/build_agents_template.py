@@ -7,8 +7,8 @@ Patterns and serialisation rules are derived from:
 
 Column design follows the VocPub / schema.org patterns for agents in
 SKOS ConceptScheme TTL files:
-  - Persons: subject IRI = vocab.geospecimens.org/org/; ORCID → schema:identifier
-  - Orgs:    subject IRI = vocab.geospecimens.org/org/; schema:url + schema:homepage
+  - Persons: subject IRI = kos.geospecimens.org/org/; ORCID → schema:identifier
+  - Orgs:    subject IRI = kos.geospecimens.org/org/; schema:url + schema:homepage
   - Roles:   prov:qualifiedAssociation on the ConceptScheme
 """
 
@@ -126,8 +126,8 @@ README_ROWS = [
      'here. See the Mapping sheet for the full predicate-by-predicate breakdown '
      'and the TTL Patterns sheet for copy-ready block templates.'),
     ('kv', 'Person subject IRI',
-     'Use a stable vocab.geospecimens.org/org/ IRI as the subject (e.g. '
-     'https://vocab.geospecimens.org/org/ben-norton). Store the ORCID in '
+     'Use a stable kos.geospecimens.org/org/ IRI as the subject (e.g. '
+     'https://kos.geospecimens.org/org/ben-norton). Store the ORCID in '
      'orcidURI — it becomes schema:identifier, not the subject IRI.'),
     ('kv', 'Person predicates',
      'schema:name  |  schema:identifier (ORCID)  |  schema:email  |  '
@@ -154,8 +154,8 @@ README_ROWS = [
     ('blank',),
     ('section', 'COLUMN DESCRIPTIONS — Agents sheet'),
     ('kv', 'agentURI',
-     'Persistent vocab.geospecimens.org/org/ IRI for this agent '
-     '(e.g. https://vocab.geospecimens.org/org/ben-norton). '
+     'Persistent kos.geospecimens.org/org/ IRI for this agent '
+     '(e.g. https://kos.geospecimens.org/org/ben-norton). '
      'This is the Turtle subject IRI. Leave blank to use a blank node '
      '(supply blankNodeLabel). '
      'For persons, do NOT use the ORCID here — put it in orcidURI instead.'),
@@ -260,7 +260,7 @@ ws_ag.freeze_panes = 'A3'
 AGENT_COLS = [
     ('agentURI',      40, True,
      '* REQUIRED (or blankNodeLabel) *\n\n'
-     'Use a vocab.geospecimens.org/org/ IRI as the subject.\n'
+     'Use a kos.geospecimens.org/org/ IRI as the subject.\n'
      'Do NOT use an ORCID here — put ORCID in orcidURI.\n'
      'Leave blank to use a blank node.'),
     ('blankNodeLabel', 28, False,
@@ -356,7 +356,7 @@ for ci, (hdr, width, req, cmt) in enumerate(AGENT_COLS, start=1):
 AGENT_DATA = [
     # Ben Norton — Yale affiliation
     (
-        'https://vocab.geospecimens.org/org/ben-norton',
+        'https://kos.geospecimens.org/org/ben-norton',
         '',
         'Ben Norton',
         'schema:Person',
@@ -376,7 +376,7 @@ AGENT_DATA = [
     ),
     # Ben Norton — Mineralogy Extension Task Group affiliation
     (
-        'https://vocab.geospecimens.org/org/ben-norton',
+        'https://kos.geospecimens.org/org/ben-norton',
         '',
         'Ben Norton',
         'schema:Person',
@@ -386,7 +386,7 @@ AGENT_DATA = [
         '',
         '',
         '',
-        'https://vocab.geospecimens.org/org/minext',
+        'https://kos.geospecimens.org/org/minext',
         'Mineralogy Extension Task Group',
         'co-convener',
         '',
@@ -395,7 +395,7 @@ AGENT_DATA = [
     ),
     # Mineralogy Extension Task Group
     (
-        'https://vocab.geospecimens.org/org/minext',
+        'https://kos.geospecimens.org/org/minext',
         'agent_mineralogy_extension_task_group',
         'Mineralogy Extension Task Group',
         'schema:Organization',
@@ -405,16 +405,16 @@ AGENT_DATA = [
         'https://www.tdwg.org/community/esp/mineralogy/',
         'https://www.tdwg.org/community/esp/mineralogy/',
         'MinExt',
-        'https://vocab.geospecimens.org/org/tdwg',
+        'https://kos.geospecimens.org/org/tdwg',
         'Biodiversity Information Standards',
         '',
-        'https://vocab.geospecimens.org/org/tdwg',
+        'https://kos.geospecimens.org/org/tdwg',
         'Biodiversity Information Standards',
         '',
     ),
     # Biodiversity Information Standards (TDWG)
     (
-        'https://vocab.geospecimens.org/org/tdwg',
+        'https://kos.geospecimens.org/org/tdwg',
         'agent_biodiversity_information_standards',
         'Biodiversity Information Standards',
         'schema:Organization',
@@ -433,7 +433,7 @@ AGENT_DATA = [
     ),
     # Yale University
     (
-        'https://vocab.geospecimens.org/org/yale-university',
+        'https://kos.geospecimens.org/org/yale-university',
         'agent_yale_university',
         'Yale University',
         'schema:Organization',
@@ -619,7 +619,7 @@ MAPPING_DATA = [
      'Subject IRI',
      '(N/A — subject of the triple)',
      '<agentURI>\n    a agentType ;\n    ...',
-     'Use a vocab.geospecimens.org/org/ IRI. '
+     'Use a kos.geospecimens.org/org/ IRI. '
      'If blank, a blank node _:blankNodeLabel is used. '
      '* Required unless blankNodeLabel is provided.'),
     ('blankNodeLabel',
@@ -685,7 +685,7 @@ MAPPING_DATA = [
      'No',
      'schema:memberOf',
      'https://schema.org/',
-     'schema:memberOf <https://vocab.geospecimens.org/org/tdwg> ;',
+     'schema:memberOf <https://kos.geospecimens.org/org/tdwg> ;',
      'One row per membership. Rows sharing an agentURI are merged into one '
      'agent block with multiple schema:memberOf triples.'),
     ('memberOfName',
@@ -704,7 +704,7 @@ MAPPING_DATA = [
      'No',
      'schema:parentOrganization',
      'https://schema.org/',
-     'schema:parentOrganization <https://vocab.geospecimens.org/org/tdwg> ;',
+     'schema:parentOrganization <https://kos.geospecimens.org/org/tdwg> ;',
      'Organisations only.'),
     ('parentOrgName',
      'No',
@@ -835,30 +835,30 @@ r = ttl_blank(ws_ttl, r)
 # ── Person ────────────────────────────────────────────────────────────────
 r = ttl_section(ws_ttl, r, 'Person (schema:Person)')
 r = ttl_kv(ws_ttl, r, 'Notes',
-    '- Subject IRI is a vocab.geospecimens.org/org/ URI, not the ORCID.\n'
+    '- Subject IRI is a kos.geospecimens.org/org/ URI, not the ORCID.\n'
     '- ORCID is attached as schema:identifier.\n'
     '- Affiliation uses schema:memberOf (not schema:affiliation).\n'
     '- Repeat the block with a different schema:memberOf for each additional affiliation.')
 r = ttl_kv(ws_ttl, r, 'Person block',
-    '<https://vocab.geospecimens.org/org/ben-norton>\n'
+    '<https://kos.geospecimens.org/org/ben-norton>\n'
     '    a                    schema:Person ;\n'
     '    schema:name          "Ben Norton" ;\n'
     '    schema:identifier    <https://orcid.org/0000-0002-5819-9134> ;\n'
     '    schema:email         "ben.norton@yale.edu" ;\n'
-    '    schema:memberOf      <https://vocab.geospecimens.org/org/yale-university> ,\n'
-    '                         <https://vocab.geospecimens.org/org/minext> ;\n'
+    '    schema:memberOf      <https://kos.geospecimens.org/org/yale-university> ,\n'
+    '                         <https://kos.geospecimens.org/org/minext> ;\n'
     '.')
 r = ttl_blank(ws_ttl, r)
 
 # ── Organisation ─────────────────────────────────────────────────────────
 r = ttl_section(ws_ttl, r, 'Organisation (schema:Organization)')
 r = ttl_kv(ws_ttl, r, 'Notes',
-    '- Subject IRI is a vocab.geospecimens.org/org/ URI.\n'
+    '- Subject IRI is a kos.geospecimens.org/org/ URI.\n'
     '- Use both schema:url and schema:homepage.\n'
     '- cmns-av:acronym for abbreviated names.\n'
     '- schema:parentOrganization for parent bodies.')
 r = ttl_kv(ws_ttl, r, 'Organisation block (named)',
-    '<https://vocab.geospecimens.org/org/tdwg>\n'
+    '<https://kos.geospecimens.org/org/tdwg>\n'
     '    a                       schema:Organization ;\n'
     '    schema:name             "Biodiversity Information Standards" ;\n'
     '    schema:url              "https://www.tdwg.org"^^xsd:anyURI ;\n'
@@ -866,13 +866,13 @@ r = ttl_kv(ws_ttl, r, 'Organisation block (named)',
     '    cmns-av:acronym         "TDWG" ;\n'
     '.')
 r = ttl_kv(ws_ttl, r, 'Organisation block (with parent)',
-    '<https://vocab.geospecimens.org/org/minext>\n'
+    '<https://kos.geospecimens.org/org/minext>\n'
     '    a                       schema:Organization ;\n'
     '    schema:name             "Mineralogy Extension Task Group" ;\n'
     '    schema:url              "https://www.tdwg.org/community/esp/mineralogy/"^^xsd:anyURI ;\n'
     '    schema:homepage         "https://www.tdwg.org/community/esp/mineralogy/"^^xsd:anyURI ;\n'
     '    cmns-av:acronym         "MinExt" ;\n'
-    '    schema:parentOrganization  <https://vocab.geospecimens.org/org/tdwg> ;\n'
+    '    schema:parentOrganization  <https://kos.geospecimens.org/org/tdwg> ;\n'
     '.')
 r = ttl_kv(ws_ttl, r, 'Organisation block (blank node)',
     '_:agent_mineralogy_extension_task_group\n'
@@ -892,18 +892,18 @@ r = ttl_kv(ws_ttl, r, 'Notes',
     '- schema:creator / schema:publisher are added as direct predicates.\n'
     '- Both patterns may coexist on the same ConceptScheme.')
 r = ttl_kv(ws_ttl, r, 'prov:qualifiedAssociation pattern',
-    '<https://vocab.geospecimens.org/def/my-vocab>\n'
+    '<https://kos.geospecimens.org/def/my-vocab>\n'
     '    a skos:ConceptScheme ;\n'
-    '    schema:creator     <https://vocab.geospecimens.org/org/ben-norton> ;\n'
-    '    schema:publisher   <https://vocab.geospecimens.org/org/tdwg> ;\n'
+    '    schema:creator     <https://kos.geospecimens.org/org/ben-norton> ;\n'
+    '    schema:publisher   <https://kos.geospecimens.org/org/tdwg> ;\n'
     '    prov:qualifiedAssociation [\n'
     '        a            prov:Association ;\n'
-    '        prov:agent   <https://vocab.geospecimens.org/org/ben-norton> ;\n'
+    '        prov:agent   <https://kos.geospecimens.org/org/ben-norton> ;\n'
     '        prov:hadRole isoroles:editor ;\n'
     '    ] ;\n'
     '    prov:qualifiedAssociation [\n'
     '        a            prov:Association ;\n'
-    '        prov:agent   <https://vocab.geospecimens.org/org/minext> ;\n'
+    '        prov:agent   <https://kos.geospecimens.org/org/minext> ;\n'
     '        prov:hadRole isoroles:custodian , isoroles:contributor ;\n'
     '    ] ;\n'
     '.')
@@ -911,7 +911,7 @@ r = ttl_kv(ws_ttl, r, 'prov:qualifiedAttribution\n(alternative for entity)',
     '# qualifiedAttribution is the PROV-O predicate for prov:Entity targets.\n'
     '# ConceptScheme is an entity, so both forms are valid; prefer\n'
     '# qualifiedAssociation when following the VocPub pattern above.\n'
-    '<https://vocab.geospecimens.org/def/my-vocab>\n'
+    '<https://kos.geospecimens.org/def/my-vocab>\n'
     '    a skos:ConceptScheme ;\n'
     '    prov:qualifiedAttribution [\n'
     '        a            prov:Attribution ;\n'

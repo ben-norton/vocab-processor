@@ -1,0 +1,118 @@
+@prefix cmns-av:  <https://www.omg.org/spec/Commons/AnnotationVocabulary/> .
+@prefix isoroles: <http://def.isotc211.org/iso19115-1/2014/CitationAndResponsiblePartyInformation/code/CI_RoleCode/> .
+@prefix prov:     <http://www.w3.org/ns/prov#> .
+@prefix schema:   <https://schema.org/> .
+@prefix skos:     <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:      <http://www.w3.org/2001/XMLSchema#> .
+
+# ============================================================================
+# Agents
+# ============================================================================
+
+<https://kos.geospecimens.org/org/ben-norton>
+    a schema:Person ;
+    schema:name "Ben Norton" ;
+    schema:identifier <https://orcid.org/0000-0002-5819-9134> ;
+    schema:email "ben.norton@yale.edu" ;
+    schema:url "https://mbnorton.com"^^xsd:anyURI ;
+    schema:parentOrganization <https://kos.geospecimens.org/org/yale-university> ;
+    schema:memberOf <https://kos.geospecimens.org/org/minext> ;
+.
+
+<https://kos.geospecimens.org/org/minext>
+    a schema:Organization ;
+    schema:name "Mineralogy Extension Task Group" ;
+    schema:url "https://www.tdwg.org/community/esp/mineralogy/"^^xsd:anyURI ;
+    schema:homepage "https://www.tdwg.org/community/esp/mineralogy/"^^xsd:anyURI ;
+    cmns-av:acronym "MinExt" ;
+    schema:memberOf <https://kos.geospecimens.org/org/tdwg> ;
+.
+
+<https://kos.geospecimens.org/org/tdwg>
+    a schema:Organization ;
+    schema:name "Biodiversity Information Standards" ;
+    schema:url "https://www.tdwg.org"^^xsd:anyURI ;
+    schema:homepage "https://www.tdwg.org"^^xsd:anyURI ;
+    cmns-av:acronym "TDWG" ;
+.
+
+<https://kos.geospecimens.org/org/yale-university>
+    a schema:Organization ;
+    schema:name "Yale University" ;
+    schema:url "https://www.yale.edu"^^xsd:anyURI ;
+    schema:homepage "https://www.yale.edu"^^xsd:anyURI ;
+.
+
+# ============================================================================
+# Vocabulary Agent Mappings
+# ============================================================================
+
+<https://kos.resources.org/def/aggregate-form>
+    a skos:ConceptScheme ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent <https://kos.geospecimens.org/org/ben-norton> ;
+        prov:hadRole isoroles:publisher , isoroles:author ;
+    ] ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent <https://kos.geospecimens.org/org/minext> ;
+        prov:hadRole isoroles:editor , isoroles:custodian ;
+    ] ;
+.
+
+<https://kos.resources.org/def/constituent-part-proportion>
+    a skos:ConceptScheme ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent <https://kos.geospecimens.org/org/ben-norton> ;
+        prov:hadRole isoroles:publisher , isoroles:author ;
+    ] ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent <https://kos.geospecimens.org/org/minext> ;
+        prov:hadRole isoroles:editor , isoroles:custodian ;
+    ] ;
+.
+
+<https://kos.resources.org/def/geological-specimen-material-type>
+    a skos:ConceptScheme ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent <https://kos.geospecimens.org/org/ben-norton> ;
+        prov:hadRole isoroles:publisher , isoroles:author ;
+    ] ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent <https://kos.geospecimens.org/org/minext> ;
+        prov:hadRole isoroles:editor , isoroles:custodian ;
+    ] ;
+.
+
+<https://kos.resources.org/def/geological-specimen-name-type>
+    a skos:ConceptScheme ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent <https://kos.geospecimens.org/org/ben-norton> ;
+        prov:hadRole isoroles:publisher , isoroles:author ;
+    ] ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent <https://kos.geospecimens.org/org/minext> ;
+        prov:hadRole isoroles:editor , isoroles:custodian ;
+    ] ;
+.
+
+<https://kos.resources.org/def/hazard-type>
+    a skos:ConceptScheme ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent <https://kos.geospecimens.org/org/ben-norton> ;
+        prov:hadRole isoroles:publisher , isoroles:author ;
+    ] ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent <https://kos.geospecimens.org/org/minext> ;
+        prov:hadRole isoroles:editor , isoroles:custodian ;
+    ] ;
+.

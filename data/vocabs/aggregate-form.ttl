@@ -1,32 +1,26 @@
 # Aggregate Form — SKOS ConceptScheme
 # Generated from AggregateForm.xlsx
-# Source sheets used: Concept Scheme, Concepts, Namespaces, Agents
-# Generated: 2026-05-08
+# Source sheets used: Concept Scheme, Concepts, Namespaces, Agents, Mappings
+# Generated: 2026-05-12
 
 # Standard prefixes
 @prefix dcat:        <http://www.w3.org/ns/dcat#> .
 @prefix dcterms:     <http://purl.org/dc/terms/> .
 @prefix isoroles:    <http://def.isotc211.org/iso19115-1/2014/CitationAndResponsiblePartyInformation/code/CI_RoleCode/> .
-@prefix owl:         <http://www.w3.org/2002/07/owl#> .
 @prefix prov:        <http://www.w3.org/ns/prov#> .
-@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix reg:         <http://purl.org/linked-data/registry#> .
 @prefix schema:      <https://schema.org/> .
 @prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
-@prefix status:      <https://linked.data.gov.au/def/reg-statuses/> .
 @prefix vann:        <http://purl.org/vocab/vann/> .
-@prefix vocdermods:  <https://linked.data.gov.au/def/vocdermods/> .
 @prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
 
 # Workbook-specific prefixes (from the Namespaces sheet)
-@prefix gsmt:  <https://vocab.geospecimens.org/def/geological-specimen-material-type> .
 
 # ============================================================================
 # ConceptScheme
 # ============================================================================
 
-<https://vocab.geospecimens.org/def/aggregate-form>
+<https://kos.resources.org/def/aggregate-form>
     a                        skos:ConceptScheme ;
     skos:prefLabel           "Aggregate Form"@en ;
     dcterms:title            "Aggregate Form"@en ;
@@ -48,26 +42,26 @@
     schema:license           <https://creativecommons.org/licenses/by/4.0/> ;
     reg:derivationMode       <https://linked.data.gov.au/def/vocdermods/subsetting-and-extension> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
-    skos:hasTopConcept       <https://vocab.geospecimens.org/def/aggregate-form/acicular> ,
-                             <https://vocab.geospecimens.org/def/aggregate-form/banded> ,
-                             <https://vocab.geospecimens.org/def/aggregate-form/botryoidal> ,
-                             <https://vocab.geospecimens.org/def/aggregate-form/columnar> ,
-                             <https://vocab.geospecimens.org/def/aggregate-form/concentric> ,
-                             <https://vocab.geospecimens.org/def/aggregate-form/coxcomb> ,
-                             <https://vocab.geospecimens.org/def/aggregate-form/dendritic> ,
-                             <https://vocab.geospecimens.org/def/aggregate-form/druse> ,
-                             <https://vocab.geospecimens.org/def/aggregate-form/fibrous> ,
-                             <https://vocab.geospecimens.org/def/aggregate-form/geode> ,
-                             <https://vocab.geospecimens.org/def/aggregate-form/granular> ,
-                             <https://vocab.geospecimens.org/def/aggregate-form/mammillary> ,
-                             <https://vocab.geospecimens.org/def/aggregate-form/massive> ,
-                             <https://vocab.geospecimens.org/def/aggregate-form/micaceous> ,
-                             <https://vocab.geospecimens.org/def/aggregate-form/oolitic> ,
-                             <https://vocab.geospecimens.org/def/aggregate-form/pisolitic> ,
-                             <https://vocab.geospecimens.org/def/aggregate-form/radiating> ,
-                             <https://vocab.geospecimens.org/def/aggregate-form/reniform> ,
-                             <https://vocab.geospecimens.org/def/aggregate-form/stalactitic> ,
-                             <https://vocab.geospecimens.org/def/aggregate-form/wheat-sheaf> ;
+    skos:hasTopConcept       <https://kos.resources.org/def/aggregate-form/acicular> ,
+                             <https://kos.resources.org/def/aggregate-form/banded> ,
+                             <https://kos.resources.org/def/aggregate-form/botryoidal> ,
+                             <https://kos.resources.org/def/aggregate-form/columnar> ,
+                             <https://kos.resources.org/def/aggregate-form/concentric> ,
+                             <https://kos.resources.org/def/aggregate-form/coxcomb> ,
+                             <https://kos.resources.org/def/aggregate-form/dendritic> ,
+                             <https://kos.resources.org/def/aggregate-form/druse> ,
+                             <https://kos.resources.org/def/aggregate-form/fibrous> ,
+                             <https://kos.resources.org/def/aggregate-form/geode> ,
+                             <https://kos.resources.org/def/aggregate-form/granular> ,
+                             <https://kos.resources.org/def/aggregate-form/mammillary> ,
+                             <https://kos.resources.org/def/aggregate-form/massive> ,
+                             <https://kos.resources.org/def/aggregate-form/micaceous> ,
+                             <https://kos.resources.org/def/aggregate-form/oolitic> ,
+                             <https://kos.resources.org/def/aggregate-form/pisolitic> ,
+                             <https://kos.resources.org/def/aggregate-form/radiating> ,
+                             <https://kos.resources.org/def/aggregate-form/reniform> ,
+                             <https://kos.resources.org/def/aggregate-form/stalactitic> ,
+                             <https://kos.resources.org/def/aggregate-form/wheat-sheaf> ;
     prov:qualifiedAttribution [
         a                prov:Attribution ;
         prov:agent       <https://orcid.org/0000-0002-5819-9134> ;
@@ -94,275 +88,295 @@
 # Concepts
 # ============================================================================
 
-<https://vocab.geospecimens.org/def/aggregate-form/acicular>
+<https://kos.resources.org/def/aggregate-form/acicular>
     a                        skos:Concept ;
     skos:prefLabel           "Acicular"@en ;
+    skos:prefLabel           "stenglig"@de ;
     skos:definition          """Long prismatic needle-like form"""@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:topConceptOf        <https://kos.resources.org/def/aggregate-form> ;
     skos:notation            "acicular" ;
 .
 
-<https://vocab.geospecimens.org/def/aggregate-form/acicular-parallel>
+<https://kos.resources.org/def/aggregate-form/acicular-parallel>
     a                        skos:Concept ;
     skos:prefLabel           "Acicular Parallel"@en ;
+    skos:prefLabel           "parallelstenglig"@de ;
     skos:definition          """Parallel orientation of acicular grains"""@en ;
-    skos:broader             <https://vocab.geospecimens.org/def/aggregate-form/acicular> ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:broader             <https://kos.resources.org/def/aggregate-form/acicular> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "acicularParallel" ;
+    skos:broadMatch          <https://kos.resources.org/def/aggregate-form/acicular> ;
 .
 
-<https://vocab.geospecimens.org/def/aggregate-form/acicular-radial>
+<https://kos.resources.org/def/aggregate-form/acicular-radial>
     a                        skos:Concept ;
     skos:prefLabel           "Acicular Radial"@en ;
+    skos:prefLabel           "radialstenglig"@de ;
     skos:definition          """Radial orientation of acicular grains (e.g. aragonite aggregates)"""@en ;
-    skos:broader             <https://vocab.geospecimens.org/def/aggregate-form/acicular> ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:broader             <https://kos.resources.org/def/aggregate-form/acicular> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "acicularRadial" ;
+    skos:broadMatch          <https://kos.resources.org/def/aggregate-form/acicular> ;
 .
 
-<https://vocab.geospecimens.org/def/aggregate-form/acicular-random>
+<https://kos.resources.org/def/aggregate-form/acicular-random>
     a                        skos:Concept ;
     skos:prefLabel           "Acicular Random"@en ;
+    skos:prefLabel           "wirrstenglig"@de ;
     skos:definition          """Randomly oriented acicular grains"""@en ;
-    skos:broader             <https://vocab.geospecimens.org/def/aggregate-form/acicular> ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:broader             <https://kos.resources.org/def/aggregate-form/acicular> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "acicularRandom" ;
+    skos:broadMatch          <https://kos.resources.org/def/aggregate-form/acicular> ;
 .
 
-<https://vocab.geospecimens.org/def/aggregate-form/banded>
+<https://kos.resources.org/def/aggregate-form/banded>
     a                        skos:Concept ;
     skos:prefLabel           "Banded"@en ;
+    skos:prefLabel           "gebändert"@de ;
     skos:definition          """Parallel oriented fibres resulting from distinct periods of crystallization"""@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:topConceptOf        <https://kos.resources.org/def/aggregate-form> ;
     skos:notation            "banded" ;
 .
 
-<https://vocab.geospecimens.org/def/aggregate-form/botryoidal>
+<https://kos.resources.org/def/aggregate-form/botryoidal>
     a                        skos:Concept ;
     skos:prefLabel           "Botryoidal"@en ;
     skos:definition          """Resembling a bunch of grapes; also called globular (e.g. malachite)."""@en ;
     dcterms:provenance       "Chesterman, C. W. (1978). National Audubon Society field guide to rocks and minerals: North America. Knopf."@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:topConceptOf        <https://kos.resources.org/def/aggregate-form> ;
     skos:notation            "botryoidal" ;
 .
 
-<https://vocab.geospecimens.org/def/aggregate-form/columnar>
+<https://kos.resources.org/def/aggregate-form/columnar>
     a                        skos:Concept ;
     skos:prefLabel           "Columnar"@en ;
     skos:definition          """Slender, parallel columns (e.g. beryl)."""@en ;
     dcterms:provenance       "Chesterman, C. W. (1978). National Audubon Society field guide to rocks and minerals: North America. Knopf."@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:topConceptOf        <https://kos.resources.org/def/aggregate-form> ;
     skos:notation            "columnar" ;
 .
 
-<https://vocab.geospecimens.org/def/aggregate-form/concentric>
+<https://kos.resources.org/def/aggregate-form/concentric>
     a                        skos:Concept ;
     skos:prefLabel           "Concentric"@en ;
+    skos:prefLabel           "konzentrisch"@de ;
     skos:definition          """Minerals grew in distinct bands around a center as in malachite or agate. Often the bands consist of parallel oriented fibres like in cut botryoidal hematite aggregate."""@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:topConceptOf        <https://kos.resources.org/def/aggregate-form> ;
     skos:notation            "concentric" ;
 .
 
-<https://vocab.geospecimens.org/def/aggregate-form/coxcomb>
+<https://kos.resources.org/def/aggregate-form/coxcomb>
     a                        skos:Concept ;
     skos:prefLabel           "Coxcomb"@en ;
     skos:definition          """A serrated crust like arrangement of twinned crystals (marcasite)."""@en ;
     dcterms:provenance       "Chesterman, C. W. (1978). National Audubon Society field guide to rocks and minerals: North America. Knopf."@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:topConceptOf        <https://kos.resources.org/def/aggregate-form> ;
     skos:notation            "coxcomb" ;
 .
 
-<https://vocab.geospecimens.org/def/aggregate-form/dendritic>
+<https://kos.resources.org/def/aggregate-form/dendritic>
     a                        skos:Concept ;
     skos:prefLabel           "Dendritic"@en ;
+    skos:prefLabel           "dendritisch"@de ;
     skos:definition          """Mineral exhibiting a branching, tree- or root- like structure."""@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:topConceptOf        <https://kos.resources.org/def/aggregate-form> ;
     skos:notation            "dendritic" ;
 .
 
-<https://vocab.geospecimens.org/def/aggregate-form/druse>
+<https://kos.resources.org/def/aggregate-form/druse>
     a                        skos:Concept ;
     skos:prefLabel           "Druse"@en ;
     skos:definition          """A coating or crust of small projecting crystals on the wall or vein of a cavity (e.g. quartz)."""@en ;
     dcterms:provenance       "Chesterman, C. W. (1978). National Audubon Society field guide to rocks and minerals: North America. Knopf."@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:topConceptOf        <https://kos.resources.org/def/aggregate-form> ;
     skos:notation            "druse" ;
 .
 
-<https://vocab.geospecimens.org/def/aggregate-form/fibrous>
+<https://kos.resources.org/def/aggregate-form/fibrous>
     a                        skos:Concept ;
     skos:prefLabel           "Fibrous"@en ;
+    skos:prefLabel           "faserig"@de ;
     skos:definition          """Minerals crystallise in needlelike grains or fibers as in asbestos."""@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:topConceptOf        <https://kos.resources.org/def/aggregate-form> ;
     skos:notation            "fibrous" ;
 .
 
-<https://vocab.geospecimens.org/def/aggregate-form/fibrous-parallel>
+<https://kos.resources.org/def/aggregate-form/fibrous-parallel>
     a                        skos:Concept ;
     skos:prefLabel           "Fibrous, Parallel"@en ;
+    skos:prefLabel           "parallelfaserig"@de ;
     skos:definition          """Parallel crystallization in needlelike grains or fibers as often exhibited by asbestos clefts."""@en ;
-    skos:broader             <https://vocab.geospecimens.org/def/aggregate-form/fibrous> ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:broader             <https://kos.resources.org/def/aggregate-form/fibrous> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "fibrousParallel" ;
+    skos:broadMatch          <https://kos.resources.org/def/aggregate-form/fibrous> ;
 .
 
-<https://vocab.geospecimens.org/def/aggregate-form/fibrous-random>
+<https://kos.resources.org/def/aggregate-form/fibrous-random>
     a                        skos:Concept ;
     skos:prefLabel           "Fibrous, Random"@en ;
+    skos:prefLabel           "Wirfaserig"@de ;
     skos:definition          """Randomly oriented crystallization in needlelike grains or fibers as often exhibited by nepherite"""@en ;
-    skos:broader             <https://vocab.geospecimens.org/def/aggregate-form/fibrous> ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:broader             <https://kos.resources.org/def/aggregate-form/fibrous> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "fibrousRandom" ;
+    skos:broadMatch          <https://kos.resources.org/def/aggregate-form/fibrous> ;
 .
 
-<https://vocab.geospecimens.org/def/aggregate-form/foliated-lamellar>
+<https://kos.resources.org/def/aggregate-form/foliated-lamellar>
     a                        skos:Concept ;
     skos:prefLabel           "Foliated, Lamellar"@en ;
+    skos:prefLabel           "blättrig"@de ;
     skos:definition          """Thin layers or leaves that can be separated from each other (e.g. mica)"""@en ;
-    skos:broader             <https://vocab.geospecimens.org/def/aggregate-form/fibrous> ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:broader             <https://kos.resources.org/def/aggregate-form/fibrous> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "foliatedLamellar" ;
+    skos:broadMatch          <https://kos.resources.org/def/aggregate-form/fibrous> ;
 .
 
-<https://vocab.geospecimens.org/def/aggregate-form/geode>
+<https://kos.resources.org/def/aggregate-form/geode>
     a                        skos:Concept ;
     skos:prefLabel           "Geode"@en ;
     skos:definition          """A rounded, hollow nodule, lined with crystals, usually quartz or calcite (e.g. amethyst)."""@en ;
     dcterms:provenance       "Chesterman, C. W. (1978). National Audubon Society field guide to rocks and minerals: North America. Knopf."@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:topConceptOf        <https://kos.resources.org/def/aggregate-form> ;
     skos:notation            "geode" ;
 .
 
-<https://vocab.geospecimens.org/def/aggregate-form/granular>
+<https://kos.resources.org/def/aggregate-form/granular>
     a                        skos:Concept ;
     skos:prefLabel           "Granular"@en ;
+    skos:prefLabel           "körnig"@de ;
     skos:definition          """Made up of mineral grains that are of approximately equal size."""@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:topConceptOf        <https://kos.resources.org/def/aggregate-form> ;
     skos:notation            "granular" ;
 .
 
-<https://vocab.geospecimens.org/def/aggregate-form/mammillary>
+<https://kos.resources.org/def/aggregate-form/mammillary>
     a                        skos:Concept ;
     skos:prefLabel           "Mammillary"@en ;
     skos:definition          """Forming smooth, rounded masses; "breastlike" (e.g. hematite)."""@en ;
     dcterms:provenance       "Chesterman, C. W. (1978). National Audubon Society field guide to rocks and minerals: North America. Knopf."@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:topConceptOf        <https://kos.resources.org/def/aggregate-form> ;
     skos:notation            "mammillary" ;
 .
 
-<https://vocab.geospecimens.org/def/aggregate-form/massive>
+<https://kos.resources.org/def/aggregate-form/massive>
     a                        skos:Concept ;
     skos:prefLabel           "Massive"@en ;
     skos:definition          """Interlocking mineral grains, lacking apparent structure (e.g. limonite)."""@en ;
     dcterms:provenance       "Chesterman, C. W. (1978). National Audubon Society field guide to rocks and minerals: North America. Knopf."@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:topConceptOf        <https://kos.resources.org/def/aggregate-form> ;
     skos:notation            "massive" ;
 .
 
-<https://vocab.geospecimens.org/def/aggregate-form/micaceous>
+<https://kos.resources.org/def/aggregate-form/micaceous>
     a                        skos:Concept ;
     skos:prefLabel           "Micaceous"@en ;
     skos:definition          """Forming thin, flat, easily separated sheets (e.g. muscovite)."""@en ;
     dcterms:provenance       "Chesterman, C. W. (1978). National Audubon Society field guide to rocks and minerals: North America. Knopf."@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:topConceptOf        <https://kos.resources.org/def/aggregate-form> ;
     skos:notation            "micaceous" ;
 .
 
-<https://vocab.geospecimens.org/def/aggregate-form/oolitic>
+<https://kos.resources.org/def/aggregate-form/oolitic>
     a                        skos:Concept ;
     skos:prefLabel           "Oolitic"@en ;
+    skos:prefLabel           "oolithisch"@de ;
     skos:definition          """Egg-formed, generally concentrically formed accretionary bodies of mm size like in oolithic limestone."""@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:topConceptOf        <https://kos.resources.org/def/aggregate-form> ;
     skos:notation            "oolitic" ;
 .
 
-<https://vocab.geospecimens.org/def/aggregate-form/pisolitic>
+<https://kos.resources.org/def/aggregate-form/pisolitic>
     a                        skos:Concept ;
     skos:prefLabel           "Pisolitic"@en ;
+    skos:prefLabel           "pisolitisch"@de ;
     skos:definition          """Egg-formed, generally concentrically formed accretionary bodies of mm-cm size like in bauxite."""@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:topConceptOf        <https://kos.resources.org/def/aggregate-form> ;
     skos:notation            "pisolitic" ;
 .
 
-<https://vocab.geospecimens.org/def/aggregate-form/radiating>
+<https://kos.resources.org/def/aggregate-form/radiating>
     a                        skos:Concept ;
     skos:prefLabel           "Radiating"@en ;
     skos:definition          """Radial outward growth around a central point (e.g. wavellite)."""@en ;
     dcterms:provenance       "Chesterman, C. W. (1978). National Audubon Society field guide to rocks and minerals: North America. Knopf."@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:topConceptOf        <https://kos.resources.org/def/aggregate-form> ;
     skos:notation            "radiating" ;
 .
 
-<https://vocab.geospecimens.org/def/aggregate-form/reniform>
+<https://kos.resources.org/def/aggregate-form/reniform>
     a                        skos:Concept ;
     skos:prefLabel           "Reniform"@en ;
     skos:definition          """Kidney-shaped (e.g. pyrolusite)."""@en ;
     dcterms:provenance       "Chesterman, C. W. (1978). National Audubon Society field guide to rocks and minerals: North America. Knopf."@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:topConceptOf        <https://kos.resources.org/def/aggregate-form> ;
     skos:notation            "reniform" ;
 .
 
-<https://vocab.geospecimens.org/def/aggregate-form/stalactitic>
+<https://kos.resources.org/def/aggregate-form/stalactitic>
     a                        skos:Concept ;
     skos:prefLabel           "Stalactitic"@en ;
     skos:definition          """Slender, icicle-shaped formations (e.g. goethite)."""@en ;
     dcterms:provenance       "Chesterman, C. W. (1978). National Audubon Society field guide to rocks and minerals: North America. Knopf."@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:topConceptOf        <https://kos.resources.org/def/aggregate-form> ;
     skos:notation            "stalactitic" ;
 .
 
-<https://vocab.geospecimens.org/def/aggregate-form/wheat-sheaf>
+<https://kos.resources.org/def/aggregate-form/wheat-sheaf>
     a                        skos:Concept ;
     skos:prefLabel           "Wheat Sheaf"@en ;
     skos:definition          """A bundle-like aggregate of fine crystals (e.g. stilbite)."""@en ;
     dcterms:provenance       "Chesterman, C. W. (1978). National Audubon Society field guide to rocks and minerals: North America. Knopf."@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:inScheme            <https://kos.resources.org/def/aggregate-form> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/aggregate-form> ;
+    skos:topConceptOf        <https://kos.resources.org/def/aggregate-form> ;
     skos:notation            "wheatSheaf" ;
 .
 
@@ -386,10 +400,10 @@
     a                        schema:Person ;
     schema:name              "Ben Norton" ;
     schema:email             "ben.norton@yale.edu" ;
-    schema:affiliation       <https://vocab.geospecimens.org/org/minext> ;
+    schema:affiliation       <https://kos.resources.org/org/minext> ;
 .
 
-<https://vocab.geospecimens.org/org/minext>
+<https://kos.resources.org/org/minext>
     a                        schema:Organization ;
     schema:name              "Mineralogy Extension Task Group" ;
 .
@@ -402,7 +416,7 @@ _:agent_biodiversity_information_standards
 _:agent_mineralogy_extension_task_group
     a                        schema:Organization ;
     schema:name              "Mineralogy Extension Task Group" ;
-    schema:affiliation       <https://vocab.geospecimens.org/org/tdwg> ;
+    schema:affiliation       <https://kos.resources.org/org/tdwg> ;
     schema:parentOrganization [
         a            schema:Organization ;
         schema:name  "Biodiveristy Information Standards" ;

@@ -1,0 +1,43 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ex1: <http://example.org> .
+@prefix ex2: <http://example.org> .
+@prefix dc: <http://purl.org> .
+
+# --- SKOS Mapping Relations Example ---
+
+# 1. Exact Match: Concepts have the same meaning
+ex1:automobile a skos:Concept ;
+    skos:prefLabel "automobile"@en ;
+    skos:exactMatch ex2:car .
+
+ex2:car a skos:Concept ;
+    skos:prefLabel "car"@en .
+
+# 2. Close Match: Concepts are similar but not perfectly equivalent
+ex1:film a skos:Concept ;
+    skos:prefLabel "film"@en ;
+    skos:closeMatch ex2:movie .
+
+ex2:movie a skos:Concept ;
+    skos:prefLabel "movie"@en .
+
+# 3. Broad Match: Concept 1 is broader (more general) than Concept 2
+ex1:vehicles a skos:Concept ;
+    skos:prefLabel "vehicles"@en ;
+    skos:broadMatch ex2:transportation .
+
+ex2:transportation a skos:Concept ;
+    skos:prefLabel "transportation"@en .
+
+# 4. Narrow Match: Concept 1 is narrower (more specific) than Concept 2
+ex1:sedan a skos:Concept ;
+    skos:prefLabel "sedan"@en ;
+    skos:narrowMatch ex2:automobile .
+
+# 5. Related Match: Associative relationship between concepts
+ex1:soccer a skos:Concept ;
+    skos:prefLabel "soccer"@en ;
+    skos:relatedMatch ex2:football_stadium .
+
+ex2:football_stadium a skos:Concept ;
+    skos:prefLabel "football stadium"@en .

@@ -1,0 +1,22 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ex1: <http://example.org> .
+@prefix ex2: <http://example.org> .
+
+# Concept from Scheme A
+ex1:Caffeine a skos:Concept ;
+    skos:prefLabel "Caffeine"@en ;
+
+    # Exact equivalent in Scheme B
+    skos:exactMatch ex2:1,3,7-trimethylxanthine ;
+
+    # Broader concept in Scheme B
+    skos:broadMatch ex2:Alkaloids ;
+
+    # Related concept in Scheme B
+    skos:relatedMatch ex2:Coffee_Beans .
+
+# Concept from Scheme B
+ex2:Alkaloids a skos:Concept ;
+    skos:prefLabel "Alkaloids"@en ;
+    # Reciprocal mapping (optional but helpful)
+    skos:narrowMatch ex1:Caffeine .

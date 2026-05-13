@@ -1,36 +1,26 @@
 # Constituent Part Proportion — SKOS ConceptScheme
 # Generated from ConstituentPartProportions.xlsx
-# Source sheets used: Concept Scheme, Concepts, Namespaces, Agents
-# Generated: 2026-05-08
+# Source sheets used: Concept Scheme, Concepts, Namespaces, Agents, Mappings
+# Generated: 2026-05-12
 
 # Standard prefixes
 @prefix dcat:        <http://www.w3.org/ns/dcat#> .
 @prefix dcterms:     <http://purl.org/dc/terms/> .
 @prefix isoroles:    <http://def.isotc211.org/iso19115-1/2014/CitationAndResponsiblePartyInformation/code/CI_RoleCode/> .
-@prefix owl:         <http://www.w3.org/2002/07/owl#> .
 @prefix prov:        <http://www.w3.org/ns/prov#> .
-@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix reg:         <http://purl.org/linked-data/registry#> .
 @prefix schema:      <https://schema.org/> .
 @prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
-@prefix status:      <https://linked.data.gov.au/def/reg-statuses/> .
 @prefix vann:        <http://purl.org/vocab/vann/> .
-@prefix vocdermods:  <https://linked.data.gov.au/def/vocdermods/> .
 @prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
 
 # Workbook-specific prefixes (from the Namespaces sheet)
-@prefix cpp:      <http://vocab.geospecimens.org/def/constituent-part-proportion> .
-@prefix skosxl:   <http://www.w3.org/2008/05/skos-xl#> .
-@prefix isothes:  <http://purl.org/iso25964/skos-thes#> .
-@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
-@prefix void:     <http://rdfs.org/ns/void#> .
 
 # ============================================================================
 # ConceptScheme
 # ============================================================================
 
-<https://vocab.geospecimens.org/def/constituent-part-proportion>
+<https://kos.resources.org/def/constituent-part-proportion>
     a                        skos:ConceptScheme ;
     skos:prefLabel           "Constituent Part Proportion"@en ;
     dcterms:title            "Constituent Part Proportion"@en ;
@@ -55,14 +45,14 @@
     schema:license           <https://creativecommons.org/licenses/by/4.0/> ;
     reg:derivationMode       <https://linked.data.gov.au/def/vocdermods/subsetting-and-extension> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
-    skos:hasTopConcept       <https://vocab.geospecimens.org/def/constituent-part-proportion/all> ,
-                             <https://vocab.geospecimens.org/def/constituent-part-proportion/major> ,
-                             <https://vocab.geospecimens.org/def/constituent-part-proportion/minor> ,
-                             <https://vocab.geospecimens.org/def/constituent-part-proportion/rare> ,
-                             <https://vocab.geospecimens.org/def/constituent-part-proportion/trace> ,
-                             <https://vocab.geospecimens.org/def/constituent-part-proportion/present> ,
-                             <https://vocab.geospecimens.org/def/constituent-part-proportion/variable> ,
-                             <https://vocab.geospecimens.org/def/constituent-part-proportion/absent> ;
+    skos:hasTopConcept       <https://kos.resources.org/def/constituent-part-proportion/all> ,
+                             <https://kos.resources.org/def/constituent-part-proportion/major> ,
+                             <https://kos.resources.org/def/constituent-part-proportion/minor> ,
+                             <https://kos.resources.org/def/constituent-part-proportion/rare> ,
+                             <https://kos.resources.org/def/constituent-part-proportion/trace> ,
+                             <https://kos.resources.org/def/constituent-part-proportion/present> ,
+                             <https://kos.resources.org/def/constituent-part-proportion/variable> ,
+                             <https://kos.resources.org/def/constituent-part-proportion/absent> ;
     prov:qualifiedAttribution [
         a                prov:Attribution ;
         prov:agent       <https://orcid.org/0000-0002-5819-9134> ;
@@ -79,86 +69,95 @@
 # Concepts
 # ============================================================================
 
-<https://vocab.geospecimens.org/def/constituent-part-proportion/all>
+<https://kos.resources.org/def/constituent-part-proportion/all>
     a                        skos:Concept ;
     skos:prefLabel           "All"@en ;
     skos:definition          """A material component comprises the entire material entity by volume, excluding negligible impurities"""@en ;
     skos:changeNote          "Used for monomineralic specimens or materials composed of a single constituent"@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/constituent-part-proportion> ;
+    skos:inScheme            <https://kos.resources.org/def/constituent-part-proportion> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/constituent-part-proportion> ;
+    skos:topConceptOf        <https://kos.resources.org/def/constituent-part-proportion> ;
+    skos:closeMatch          <http://resource.geosciml.org/classifier/cgi/proportionterm/all> ;
 .
 
-<https://vocab.geospecimens.org/def/constituent-part-proportion/major>
+<https://kos.resources.org/def/constituent-part-proportion/major>
     a                        skos:Concept ;
     skos:prefLabel           "Major"@en ;
     skos:altLabel            "Dominant"@en ;
     skos:definition          """A material component comprises more than 50% of the material entity by volume"""@en ;
     skos:changeNote          "Used when a single constituent clearly forms the majority of the specimen"@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/constituent-part-proportion> ;
+    skos:inScheme            <https://kos.resources.org/def/constituent-part-proportion> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/constituent-part-proportion> ;
+    skos:topConceptOf        <https://kos.resources.org/def/constituent-part-proportion> ;
+    skos:closeMatch          <http://resource.geosciml.org/classifier/cgi/proportionterm/major> ;
+    skos:narrowMatch         <http://resource.geosciml.org/classifier/cgi/proportionterm/dominant> ;
 .
 
-<https://vocab.geospecimens.org/def/constituent-part-proportion/minor>
+<https://kos.resources.org/def/constituent-part-proportion/minor>
     a                        skos:Concept ;
     skos:prefLabel           "Minor"@en ;
     skos:altLabel            "Subordinate"@en ;
     skos:definition          """A material component comprises between 5% and 50% of the material entity by volume"""@en ;
     skos:changeNote          "Component material is readily observable but not abundant"@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/constituent-part-proportion> ;
+    skos:inScheme            <https://kos.resources.org/def/constituent-part-proportion> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/constituent-part-proportion> ;
+    skos:topConceptOf        <https://kos.resources.org/def/constituent-part-proportion> ;
+    skos:closeMatch          <http://resource.geosciml.org/classifier/cgi/proportionterm/subordinate> ;
+    skos:narrowMatch         <http://resource.geosciml.org/classifier/cgi/proportionterm/minor> ;
 .
 
-<https://vocab.geospecimens.org/def/constituent-part-proportion/rare>
+<https://kos.resources.org/def/constituent-part-proportion/rare>
     a                        skos:Concept ;
     skos:prefLabel           "Rare"@en ;
     skos:definition          """A material component comprises between 0.1% and 5% of the material entity by volume"""@en ;
     skos:changeNote          "Component material is present in very small quantities, may require careful examination to identify"@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/constituent-part-proportion> ;
+    skos:inScheme            <https://kos.resources.org/def/constituent-part-proportion> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/constituent-part-proportion> ;
+    skos:topConceptOf        <https://kos.resources.org/def/constituent-part-proportion> ;
+    skos:closeMatch          <http://resource.geosciml.org/classifier/cgi/proportionterm/rare> ;
 .
 
-<https://vocab.geospecimens.org/def/constituent-part-proportion/trace>
+<https://kos.resources.org/def/constituent-part-proportion/trace>
     a                        skos:Concept ;
     skos:prefLabel           "Trace"@en ;
     skos:definition          """A material component comprises less than 0.1% of the material entity by volume"""@en ;
     skos:changeNote          "Component material occurs in minute quantities, typically requires magnification or analytical methods to detect"@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/constituent-part-proportion> ;
+    skos:inScheme            <https://kos.resources.org/def/constituent-part-proportion> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/constituent-part-proportion> ;
+    skos:topConceptOf        <https://kos.resources.org/def/constituent-part-proportion> ;
+    skos:closeMatch          <http://resource.geosciml.org/classifier/cgi/proportionterm/trace> ;
 .
 
-<https://vocab.geospecimens.org/def/constituent-part-proportion/present>
+<https://kos.resources.org/def/constituent-part-proportion/present>
     a                        skos:Concept ;
     skos:prefLabel           "Present"@en ;
     skos:definition          """A material component is confirmed to exist in the material entity but proportion has not been quantified"""@en ;
     skos:changeNote          "Applicable the presence of component material is documented but volumetric proportion cannot be determined"@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/constituent-part-proportion> ;
+    skos:inScheme            <https://kos.resources.org/def/constituent-part-proportion> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/constituent-part-proportion> ;
+    skos:topConceptOf        <https://kos.resources.org/def/constituent-part-proportion> ;
+    skos:closeMatch          <http://resource.geosciml.org/classifier/cgi/proportionterm/present> ;
 .
 
-<https://vocab.geospecimens.org/def/constituent-part-proportion/variable>
+<https://kos.resources.org/def/constituent-part-proportion/variable>
     a                        skos:Concept ;
     skos:prefLabel           "Variable"@en ;
     skos:definition          """The proportion of a material component varies significantly within the material entity or across specimens"""@en ;
     skos:changeNote          "Applicable when the occurrence of a component material is heterogeneous or inconsistent, preventing assignment of a single proportion value"@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/constituent-part-proportion> ;
+    skos:inScheme            <https://kos.resources.org/def/constituent-part-proportion> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/constituent-part-proportion> ;
+    skos:topConceptOf        <https://kos.resources.org/def/constituent-part-proportion> ;
+    skos:closeMatch          <http://resource.geosciml.org/classifier/cgi/proportionterm/variable> ;
 .
 
-<https://vocab.geospecimens.org/def/constituent-part-proportion/absent>
+<https://kos.resources.org/def/constituent-part-proportion/absent>
     a                        skos:Concept ;
     skos:prefLabel           "Absent"@en ;
     skos:definition          """A material component is not present in the material entity"""@en ;
     skos:changeNote          "Value should only be used to document the absence of a component material that might be expected or was previously reported"@en ;
-    skos:inScheme            <https://vocab.geospecimens.org/def/constituent-part-proportion> ;
+    skos:inScheme            <https://kos.resources.org/def/constituent-part-proportion> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://vocab.geospecimens.org/def/constituent-part-proportion> ;
+    skos:topConceptOf        <https://kos.resources.org/def/constituent-part-proportion> ;
 .
 
 # ============================================================================

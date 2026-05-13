@@ -1,0 +1,11 @@
+@prefix rdf: <http://w3.org> .
+@prefix skos: <http://w3.org> .
+@prefix exA: <http://example.org> .
+@prefix exB: <http://example.org> .
+@prefix mapping: <http://example.org> .
+
+mapping:conceptMapping1
+    a skos:Concept ;
+    skos:exactMatch exA:concept1 , exB:conceptA ;
+    skos:broadMatch exA:concept2 , exB:conceptB ;
+    <http://purl.org> "Mapping Team" .

@@ -42,6 +42,8 @@ from pathlib import Path
 
 import openpyxl
 
+from cleanup_ttl_prefixes import analyse as _analyse_prefixes, clean_text as _clean_prefixes
+
 ROOT     = Path(__file__).resolve().parents[1]
 XLSX_DIR = ROOT / "sources" / "xlsx"
 OUT_DIR  = ROOT / "data" / "vocabs"
@@ -1058,6 +1060,12 @@ def main() -> None:
         out_path = OUT_DIR / f"{slug}.ttl"
         out_path.write_text(ttl, encoding="utf-8")
         print(f"wrote {out_path.relative_to(ROOT)}  ({len(ttl):,} bytes)")
+
+        _, unused = _analyse_prefixes(ttl)
+        if unused:
+            cleaned = _clean_prefixes(ttl, set(unused))
+            out_path.write_text(cleaned, encoding="utf-8")
+            print(f"  removed unused prefixes: {', '.join(sorted(unused))}")
 
     try:
         import rdflib

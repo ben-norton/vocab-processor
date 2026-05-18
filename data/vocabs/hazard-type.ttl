@@ -1,18 +1,29 @@
 # Hazard Types — SKOS ConceptScheme
 # Generated from HazardTypes.xlsx
 # Source sheets used: Concept Scheme, Concepts, Namespaces, Agents, Mappings
-# Generated: 2026-05-12
+# Generated: 2026-05-18
 
 # Standard prefixes
 @prefix dcat:        <http://www.w3.org/ns/dcat#> .
 @prefix dcterms:     <http://purl.org/dc/terms/> .
 @prefix isoroles:    <http://def.isotc211.org/iso19115-1/2014/CitationAndResponsiblePartyInformation/code/CI_RoleCode/> .
+@prefix owl:         <http://www.w3.org/2002/07/owl#> .
 @prefix prov:        <http://www.w3.org/ns/prov#> .
+@prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix reg:         <http://purl.org/linked-data/registry#> .
 @prefix schema:      <https://schema.org/> .
 @prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix status:      <https://linked.data.gov.au/def/reg-statuses/> .
 @prefix vann:        <http://purl.org/vocab/vann/> .
+@prefix vocdermods:  <https://linked.data.gov.au/def/vocdermods/> .
 @prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+# Workbook-specific prefixes (from the Namespaces sheet)
+@prefix hztyp:       <https://kos.resources.org/def/hazard-type> .
+@prefix CHEBI:       <http://purl.obolibrary.org/obo/CHEBI_> .
+@prefix XCO:         <http://purl.obolibrary.org/obo/XCO_> .
+@prefix smpl-cndtn:  <https://linked.data.gov.au/def/sample-condition> .
 
 # ============================================================================
 # ConceptScheme

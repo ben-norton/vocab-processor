@@ -1,0 +1,38 @@
+Section,Property_CURIE,Prefix,Property_Local,Full_URI,Obligation,Range_Note
+3.1 Identity and Typing,rdf:type,rdf,type,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,MUST,"skos:ConceptScheme; optionally owl:Ontology, dcat:Dataset, void:Dataset"
+3.1 Identity and Typing,dcterms:identifier,dcterms,identifier,http://purl.org/dc/terms/identifier,MUST,URI or CURIE; base IRI of the scheme
+3.1 Identity and Typing,owl:versionIRI,owl,versionIRI,http://www.w3.org/2002/07/owl#versionIRI,SHOULD,Versioned IRI for this release
+3.1 Identity and Typing,owl:versionInfo,owl,versionInfo,http://www.w3.org/2002/07/owl#versionInfo,SHOULD,"Literal version string, e.g. ""1.0.0"""
+3.1 Identity and Typing,owl:priorVersion,owl,priorVersion,http://www.w3.org/2002/07/owl#priorVersion,MAY,IRI of the previous version
+3.2 Core Descriptive,dcterms:title,dcterms,title,http://purl.org/dc/terms/title,MUST,"Literal, lang-tagged"
+3.2 Core Descriptive,dcterms:description,dcterms,description,http://purl.org/dc/terms/description,MUST,"Literal, lang-tagged; scope and purpose of the glossary"
+3.2 Core Descriptive,skos:prefLabel,skos,prefLabel,http://www.w3.org/2004/02/skos/core#prefLabel,SHOULD,Display label for the scheme itself; lang-tagged
+3.2 Core Descriptive,rdfs:label,rdfs,label,http://www.w3.org/2000/01/rdf-schema#label,SHOULD,Human-readable label; may duplicate skos:prefLabel
+3.2 Core Descriptive,skos:definition,skos,definition,http://www.w3.org/2004/02/skos/core#definition,MAY,Formal definition of the scheme's coverage
+3.2 Core Descriptive,dcterms:abstract,dcterms,abstract,http://purl.org/dc/terms/abstract,MAY,Summary suitable for catalogues
+3.2 Core Descriptive,dcterms:subject,dcterms,subject,http://purl.org/dc/terms/subject,SHOULD,"IRI from a controlled vocabulary (e.g. LOC, Getty)"
+3.2 Core Descriptive,dcterms:coverage,dcterms,coverage,http://purl.org/dc/terms/coverage,MAY,Temporal or spatial scope
+3.2 Core Descriptive,dcterms:language,dcterms,language,http://purl.org/dc/terms/language,SHOULD,BCP 47 language tag(s) used in concept labels
+3.2 Core Descriptive,skos:hasTopConcept,skos,hasTopConcept,http://www.w3.org/2004/02/skos/core#hasTopConcept,SHOULD,IRI(s) of top-level concepts; inverse of skos:topConceptOf
+3.3 Provenance and Governance,dcterms:creator,dcterms,creator,http://purl.org/dc/terms/creator,MUST,IRI of foaf:Person or foaf:Organization
+3.3 Provenance and Governance,dcterms:contributor,dcterms,contributor,http://purl.org/dc/terms/contributor,SHOULD,IRI of agent; repeat for additional contributors
+3.3 Provenance and Governance,dcterms:publisher,dcterms,publisher,http://purl.org/dc/terms/publisher,SHOULD,IRI of the publishing organisation
+3.3 Provenance and Governance,dcterms:created,dcterms,created,http://purl.org/dc/terms/created,MUST,xsd:date or xsd:dateTime
+3.3 Provenance and Governance,dcterms:modified,dcterms,modified,http://purl.org/dc/terms/modified,SHOULD,xsd:date or xsd:dateTime; date of last change
+3.3 Provenance and Governance,dcterms:issued,dcterms,issued,http://purl.org/dc/terms/issued,SHOULD,xsd:date; formal publication date
+3.3 Provenance and Governance,dcterms:source,dcterms,source,http://purl.org/dc/terms/source,MAY,IRI or literal; source document(s) the glossary derives from
+3.3 Provenance and Governance,prov:wasDerivedFrom,prov,wasDerivedFrom,http://www.w3.org/ns/prov#wasDerivedFrom,MAY,IRI; prior dataset or scheme this was derived from
+3.3 Provenance and Governance,prov:wasGeneratedBy,prov,wasGeneratedBy,http://www.w3.org/ns/prov#wasGeneratedBy,MAY,IRI of a prov:Activity (e.g. curation workflow)
+3.3 Provenance and Governance,prov:qualifiedAttribution,prov,qualifiedAttribution,http://www.w3.org/ns/prov#qualifiedAttribution,MAY,Structured attribution linking agent and role
+3.3 Provenance and Governance,vann:preferredNamespaceUri,vann,preferredNamespaceUri,http://purl.org/vocab/vann/preferredNamespaceUri,SHOULD,Base namespace URI for all terms in this scheme
+3.3 Provenance and Governance,vann:preferredNamespacePrefix,vann,preferredNamespacePrefix,http://purl.org/vocab/vann/preferredNamespacePrefix,SHOULD,"Preferred prefix string, e.g. ""mygloss"""
+3.3 Provenance and Governance,void:uriSpace,void,uriSpace,http://rdfs.org/ns/void#uriSpace,MAY,Common URI prefix for all concepts in the scheme
+3.4 Rights and Licensing,dcterms:rights,dcterms,rights,http://purl.org/dc/terms/rights,MUST,Literal or IRI statement of rights
+3.4 Rights and Licensing,dcterms:license,dcterms,license,http://purl.org/dc/terms/license,SHOULD,"IRI of a licence (e.g. Creative Commons, CC0)"
+3.4 Rights and Licensing,dcterms:accessRights,dcterms,accessRights,http://purl.org/dc/terms/accessRights,MAY,Conditions governing access
+3.5 Distribution and Linking,dcat:distribution,dcat,distribution,http://www.w3.org/ns/dcat#distribution,SHOULD,IRI of dcat:Distribution; links to downloadable serialisations
+3.5 Distribution and Linking,dcat:landingPage,dcat,landingPage,http://www.w3.org/ns/dcat#landingPage,MAY,IRI of a human-readable HTML documentation page
+3.5 Distribution and Linking,void:sparqlEndpoint,void,sparqlEndpoint,http://rdfs.org/ns/void#sparqlEndpoint,MAY,IRI of a SPARQL endpoint serving this dataset
+3.5 Distribution and Linking,rdfs:seeAlso,rdfs,seeAlso,http://www.w3.org/2000/01/rdf-schema#seeAlso,MAY,"Related resources, documentation, or related schemes"
+3.5 Distribution and Linking,owl:imports,owl,imports,http://www.w3.org/2002/07/owl#imports,MAY,IRI of external ontology/vocabulary imported
+3.5 Distribution and Linking,skos:related,skos,related,http://www.w3.org/2004/02/skos/core#related,MAY,IRI of another skos:ConceptScheme (use cautiously)

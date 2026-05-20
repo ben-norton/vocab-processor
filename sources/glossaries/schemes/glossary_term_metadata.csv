@@ -1,0 +1,39 @@
+Section,Property_CURIE,Prefix,Property_Local,Full_URI,Obligation,Range_Note
+4.1 Identity and Typing,rdf:type,rdf,type,http://www.w3.org/1999/02/22-rdf-syntax-ns#type,MUST,skos:Concept
+4.1 Identity and Typing,skos:inScheme,skos,inScheme,http://www.w3.org/2004/02/skos/core#inScheme,MUST,IRI of the parent skos:ConceptScheme
+4.1 Identity and Typing,skos:topConceptOf,skos,topConceptOf,http://www.w3.org/2004/02/skos/core#topConceptOf,SHOULD,"IRI of scheme, if this is a top-level concept"
+4.1 Identity and Typing,dcterms:identifier,dcterms,identifier,http://purl.org/dc/terms/identifier,SHOULD,"Local identifier string, e.g. ""0001"" or a CURIE"
+4.1 Identity and Typing,rdfs:isDefinedBy,rdfs,isDefinedBy,http://www.w3.org/2000/01/rdf-schema#isDefinedBy,SHOULD,IRI of the scheme or ontology where this term is defined
+4.2 Labels,skos:prefLabel,skos,prefLabel,http://www.w3.org/2004/02/skos/core#prefLabel,MUST,Lang-tagged literal; exactly one per language
+4.2 Labels,skos:altLabel,skos,altLabel,http://www.w3.org/2004/02/skos/core#altLabel,SHOULD,"Synonyms, abbreviations, alternate forms; lang-tagged"
+4.2 Labels,skos:hiddenLabel,skos,hiddenLabel,http://www.w3.org/2004/02/skos/core#hiddenLabel,MAY,Search keywords not shown in display; lang-tagged
+4.2 Labels,rdfs:label,rdfs,label,http://www.w3.org/2000/01/rdf-schema#label,MAY,Redundant with skos:prefLabel; include for broader RDFS compatibility
+4.3 Notation and Codes,skos:notation,skos,notation,http://www.w3.org/2004/02/skos/core#notation,MAY,Typed literal; formal code or identifier in a coding system
+4.4 Documentation,skos:definition,skos,definition,http://www.w3.org/2004/02/skos/core#definition,MUST,Lang-tagged literal; the authoritative definition
+4.4 Documentation,skos:scopeNote,skos,scopeNote,http://www.w3.org/2004/02/skos/core#scopeNote,SHOULD,"Clarifies scope, intended use, or boundary conditions"
+4.4 Documentation,skos:example,skos,example,http://www.w3.org/2004/02/skos/core#example,SHOULD,Usage example(s) in natural language
+4.4 Documentation,skos:note,skos,note,http://www.w3.org/2004/02/skos/core#note,MAY,General annotation not covered by other note properties
+4.4 Documentation,skos:editorialNote,skos,editorialNote,http://www.w3.org/2004/02/skos/core#editorialNote,MAY,Internal notes for editors/maintainers; not for public display
+4.4 Documentation,skos:historyNote,skos,historyNote,http://www.w3.org/2004/02/skos/core#historyNote,MAY,Documents changes in meaning or usage over time
+4.4 Documentation,skos:changeNote,skos,changeNote,http://www.w3.org/2004/02/skos/core#changeNote,MAY,Records specific changes made to this concept record
+4.4 Documentation,rdfs:comment,rdfs,comment,http://www.w3.org/2000/01/rdf-schema#comment,MAY,General comment; may duplicate skos:note
+4.5 Provenance,dcterms:created,dcterms,created,http://purl.org/dc/terms/created,SHOULD,xsd:date or xsd:dateTime
+4.5 Provenance,dcterms:modified,dcterms,modified,http://purl.org/dc/terms/modified,SHOULD,xsd:date or xsd:dateTime
+4.5 Provenance,dcterms:creator,dcterms,creator,http://purl.org/dc/terms/creator,MAY,IRI of agent who created this concept record
+4.5 Provenance,dcterms:contributor,dcterms,contributor,http://purl.org/dc/terms/contributor,MAY,IRI of agent(s) who contributed to this record
+4.5 Provenance,dcterms:source,dcterms,source,http://purl.org/dc/terms/source,SHOULD,IRI or literal; original source for the definition
+4.5 Provenance,dcterms:isPartOf,dcterms,isPartOf,http://purl.org/dc/terms/isPartOf,MAY,IRI of parent dataset; reinforces skos:inScheme
+4.5 Provenance,prov:wasDerivedFrom,prov,wasDerivedFrom,http://www.w3.org/ns/prov#wasDerivedFrom,MAY,IRI of prior concept record this was derived from
+4.6 Semantic Relations,skos:broader,skos,broader,http://www.w3.org/2004/02/skos/core#broader,SHOULD,IRI of a broader (parent) concept; within same scheme
+4.6 Semantic Relations,skos:narrower,skos,narrower,http://www.w3.org/2004/02/skos/core#narrower,SHOULD,IRI of a narrower (child) concept; within same scheme
+4.6 Semantic Relations,skos:broaderTransitive,skos,broaderTransitive,http://www.w3.org/2004/02/skos/core#broaderTransitive,MAY,Transitive closure of skos:broader
+4.6 Semantic Relations,skos:narrowerTransitive,skos,narrowerTransitive,http://www.w3.org/2004/02/skos/core#narrowerTransitive,MAY,Transitive closure of skos:narrower
+4.6 Semantic Relations,skos:related,skos,related,http://www.w3.org/2004/02/skos/core#related,MAY,Associative (non-hierarchical) relation; symmetric
+4.6 Semantic Relations,skos:member,skos,member,http://www.w3.org/2004/02/skos/core#member,MAY,Only applicable if using skos:Collection groupings
+4.7 Mapping Relations,skos:exactMatch,skos,exactMatch,http://www.w3.org/2004/02/skos/core#exactMatch,SHOULD,IRI of a concept in an external scheme that is an exact equivalent
+4.7 Mapping Relations,skos:closeMatch,skos,closeMatch,http://www.w3.org/2004/02/skos/core#closeMatch,SHOULD,IRI of a closely but not exactly equivalent concept
+4.7 Mapping Relations,skos:broadMatch,skos,broadMatch,http://www.w3.org/2004/02/skos/core#broadMatch,MAY,IRI of a broader concept in another scheme
+4.7 Mapping Relations,skos:narrowMatch,skos,narrowMatch,http://www.w3.org/2004/02/skos/core#narrowMatch,MAY,IRI of a narrower concept in another scheme
+4.7 Mapping Relations,skos:relatedMatch,skos,relatedMatch,http://www.w3.org/2004/02/skos/core#relatedMatch,MAY,IRI of an associatively related concept in another scheme
+4.7 Mapping Relations,owl:sameAs,owl,sameAs,http://www.w3.org/2002/07/owl#sameAs,MAY,Strong identity claim; use only when IRIs are confirmed co-referential
+4.7 Mapping Relations,rdfs:seeAlso,rdfs,seeAlso,http://www.w3.org/2000/01/rdf-schema#seeAlso,MAY,Looser pointer to a related resource

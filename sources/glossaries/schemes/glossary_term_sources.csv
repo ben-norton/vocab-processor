@@ -1,0 +1,16 @@
+Standard,Publisher,Reference_URI,Prefix,Namespace_URI,Used_For
+SKOS Simple Knowledge Organization System Reference,W3C,https://www.w3.org/TR/skos-reference/,skos,http://www.w3.org/2004/02/skos/core#,"Concept scheme, concept labels, documentation properties, semantic and mapping relations"
+SKOS Primer,W3C,https://www.w3.org/TR/skos-primer/,skos,http://www.w3.org/2004/02/skos/core#,Introductory guidance on applying SKOS
+DCMI Metadata Terms,DCMI,https://www.dublincore.org/specifications/dublin-core/dcmi-terms/,dcterms,http://purl.org/dc/terms/,"Title, description, creator, contributor, publisher, dates, source, rights, license, language, subject"
+PROV-O: The PROV Ontology,W3C,https://www.w3.org/TR/prov-o/,prov,http://www.w3.org/ns/prov#,"Derivation, activity, qualified attribution"
+Data Catalog Vocabulary (DCAT) 3,W3C,https://www.w3.org/TR/vocab-dcat-3/,dcat,http://www.w3.org/ns/dcat#,"Dataset, distribution, landing page, media type, download URL"
+Vocabulary of Interlinked Datasets (VoID),W3C,https://www.w3.org/TR/void/,void,http://rdfs.org/ns/void#,"SPARQL endpoint, URI space, dataset description"
+OWL 2 Web Ontology Language,W3C,https://www.w3.org/TR/owl2-overview/,owl,http://www.w3.org/2002/07/owl#,"Version IRI, version info, prior version, imports, sameAs"
+RDF Schema 1.1,W3C,https://www.w3.org/TR/rdf-schema/,rdfs,http://www.w3.org/2000/01/rdf-schema#,"Label, comment, isDefinedBy, seeAlso"
+JSON-LD 1.1,W3C,https://www.w3.org/TR/json-ld11/,,,JSON-LD serialisation and @context definition
+VANN Vocabulary Annotation Namespace,Ian Davis,http://purl.org/vocab/vann/,vann,http://purl.org/vocab/vann/,Preferred namespace URI and prefix for the vocabulary
+FOAF Vocabulary Specification,Brickley & Miller,http://xmlns.com/foaf/spec/,foaf,http://xmlns.com/foaf/0.1/,"Person, Organization, name, mbox, homepage"
+BCP 47 Language Tags,IETF,https://www.rfc-editor.org/info/bcp47,,,Language tagging of literals
+XML Schema Datatypes,W3C,https://www.w3.org/TR/xmlschema-2/,xsd,http://www.w3.org/2001/XMLSchema#,"xsd:date, xsd:dateTime, xsd:decimal, xsd:anyURI"
+Schema.org,Schema.org,https://schema.org/,schema,https://schema.org/,"affiliation, identifier (ORCID, ROR)"
+Bibliographic Ontology (BIBO),BIBO Authors,http://purl.org/ontology/bibo/,bibo,http://purl.org/ontology/bibo/,Citations and source references

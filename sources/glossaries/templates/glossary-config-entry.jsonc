@@ -1,0 +1,49 @@
+// Template for a single entry in data/config/glossaries.json.
+// Copy the object below (without these comments) into the `glossaries: [ ... ]`
+// array of data/config/glossaries.json, then run:
+//   npm run csv && npm run glossaries
+//
+// Fields marked (passthrough) are read by scripts/csv-to-glossary.js and
+// written into the generated data/glossaries/<theme>/glossary.json.
+// Fields marked (derived) are computed from the CSVs.
+// Fields marked (not yet wired) are accepted by build-glossaries.js when
+// present in the output JSON but are NOT yet copied through by the CSV
+// converter — running `npm run csv` will drop them. Add them directly to
+// the generated glossary.json if you need them today.
+
+{
+  // ── Identity ──────────────────────────────────────────────────────────
+  "id":          "myteam",                                          // required, kebab-case, unique across all glossaries; drives /glossary/<id> URL
+  "title":       "My Team Glossary",                                // required, shown in headings (passthrough)
+  "description": "One-paragraph summary of what this glossary covers.", // optional (passthrough)
+  "uri":         "https://glossary.geospecimens.org/myteam",        // optional canonical URI; terms derive to <uri>/term/<term-id> (passthrough)
+
+  // ── CSV → JSON paths (read by scripts/csv-to-glossary.js) ─────────────
+  "terms":   "glossaries/myteam/glossary-terms.csv",                // required input
+  "sources": "glossaries/myteam/glossary-sources.csv",              // optional input
+  "output":  "data/glossaries/myteam/glossary.json",                // required output; this is what build-glossaries.js then reads
+
+  // ── Editorial notes (all optional, all passthrough) ───────────────────
+  "scopeNote":   "What this glossary covers and what it deliberately excludes.",
+  "changeNote":  "Summary of the most recent revision — what changed and why.",
+  "historyNote": "Provenance of the glossary: who authored it, what it was derived from.",
+
+  // ── Versioning (passthrough where supported) ──────────────────────────
+  "version":     "2026-05-12",                                      // optional; if omitted, falls back to max term last_modified, else today's date (passthrough)
+  "created":     "2026-05-12",                                      // optional, YYYY-MM-DD (not yet wired through csv-to-glossary.js)
+  "modified":    "2026-05-12",                                      // optional, YYYY-MM-DD (not yet wired through csv-to-glossary.js)
+
+  // ── Licensing (not yet wired through csv-to-glossary.js) ──────────────
+  "license":     "https://creativecommons.org/licenses/by/4.0/",    // optional license URI
+
+  // ── External links → rdfs:seeAlso (passthrough) ───────────────────────
+  "externalLinks": [
+    { "label": "Project homepage",        "url": "https://example.org/myteam" },
+    { "label": "Reference glossary site", "url": "https://glossary.geospecimens.org" }
+  ]
+
+  // ── Derived at build time (do not set here) ───────────────────────────
+  // "categories": [...]   — derived from unique `category` values in glossary-terms.csv
+  // "terms":      [...]   — parsed from glossary-terms.csv (note: distinct from the "terms" path field above)
+  // "sources":    [...]   — parsed from glossary-sources.csv if provided
+}

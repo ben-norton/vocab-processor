@@ -1,0 +1,2 @@
+uri,namespace_prefix,title,description,source,license,rights,version,version_info,creator,publisher,modified,created
+https://kos.geospecimens.org/glossary/kos-terms,kos-terms,KOS Terminology Glossary,Terminological resource containing terms with definitions for concepts related to Knowledge Organization System resource types.,sources/imported/KOS Terms.md,https://creativecommons.org/licenses/by/4.0/,CC BY 4.0,2026-06-10,Initial conversion from KOS Terms.md,Michael B. Norton,GeoSpecimens Platform,2026-06-10,2024-02-26

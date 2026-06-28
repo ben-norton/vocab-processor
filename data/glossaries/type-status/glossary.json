@@ -1,0 +1,50 @@
+{
+  "id": "myteam",
+  "title": "My Team Glossary",
+  "description": "One-paragraph summary of what this glossary covers.",
+  "uri": "https://glossary.geospecimens.org/myteam",
+  "version": "2026-05-12",
+  "created": "2026-05-12",
+  "modified": "2026-05-12",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "categories": [
+    {
+      "id": "kos-type",
+      "label": "KOS Type"
+    }
+  ],
+  "scopeNote": "What this glossary covers and what it deliberately excludes.",
+  "changeNote": "Summary of the most recent revision — what changed and why.",
+  "historyNote": "Provenance of the glossary: who authored it, what it was derived from.",
+  "externalLinks": [
+    {
+      "label": "Project homepage",
+      "url": "https://example.org/myteam"
+    },
+    {
+      "label": "Reference glossary site",
+      "url": "https://glossary.geospecimens.org"
+    }
+  ],
+  "terms": [],
+  "sources": [
+    {
+      "title": "Darwin Core",
+      "notation": "DWC",
+      "description": "A standard maintained by Biodiversity Information Standards (TDWG) intended to facilitate the sharing of information about biological diversity.",
+      "url": "https://dwc.tdwg.org/"
+    },
+    {
+      "title": "ISO 21246:2019(en)",
+      "notation": "ISO 21246",
+      "description": "Key indicators for museum collections — terminology and methods for evaluating collection significance and condition.",
+      "url": "https://www.iso.org/standard/70227.html"
+    },
+    {
+      "title": "This Document",
+      "notation": null,
+      "description": "Term defined in-house by the editorial group; no external source.",
+      "url": null
+    }
+  ]
+}

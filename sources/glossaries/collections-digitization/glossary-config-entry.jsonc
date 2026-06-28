@@ -1,0 +1,33 @@
+// Entry for data/config/glossaries.json.
+// Copy the object below (without these comments) into the `glossaries: [ ... ]`
+// array of data/config/glossaries.json, then run:
+//   npm run csv && npm run glossaries
+
+{
+  // ── Identity ──────────────────────────────────────────────────────────
+  "id":          "collections-digitization",
+  "title":       "Collections Digitization Glossary",
+  "description": "Controlled glossary for the people, data, and workflows involved in digitising museum and natural-history collections.",
+  "uri":         "https://kos.geospecimens.org/kos/glossary/collection-digitization",
+
+  // ── CSV → JSON paths (read by scripts/csv-to-glossary.js) ─────────────
+  "terms":   "glossaries/collections-digitization/glossary-terms.csv",
+  "sources": "glossaries/collections-digitization/glossary-sources.csv",
+  "output":  "data/glossaries/collections-digitization/glossary.json",
+
+  // ── Editorial notes (all optional, all passthrough) ───────────────────
+  "historyNote": "See https://kos.geospecimens.org/glossary/cdt/sources",
+
+  // ── Versioning ────────────────────────────────────────────────────────
+  "version":  "2026-05-16",
+  "created":  "2026-03-05",
+  "modified": "2026-03-05",
+
+  // ── Licensing ─────────────────────────────────────────────────────────
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+
+  // ── External links → rdfs:seeAlso (passthrough) ───────────────────────
+  "externalLinks": [
+    { "label": "KOS Platform", "url": "https://kos.geospecimens.org" }
+  ]
+}

@@ -1,0 +1,611 @@
+{
+  "id": "kos-terms",
+  "title": "KOS Terminology Glossary",
+  "description": "Terminological resource containing terms with definitions for concepts related to Knowledge Organization System Resources",
+  "uri": "https://kos.geospecimens.org/glossary/kos-terms",
+  "version": "2026-05-12",
+  "created": "2026-05-12",
+  "modified": "2026-05-12",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "categories": [
+    {
+      "id": "data",
+      "label": "data"
+    },
+    {
+      "id": "kos-component",
+      "label": "kos-component"
+    },
+    {
+      "id": "kos-type",
+      "label": "kos-type"
+    },
+    {
+      "id": "metadata",
+      "label": "metadata"
+    },
+    {
+      "id": "relationship",
+      "label": "relationship"
+    },
+    {
+      "id": "standard",
+      "label": "standard"
+    }
+  ],
+  "scopeNote": "The KOS Terminology Glossary is a terminological resource containing terms with definitions for concepts related to Knowledge Organization System Resources. The terms are not specific to any particular KOS Type.",
+  "changeNote": "First published 2026-05-12.",
+  "historyNote": "The glossary was created by Ben Norton with many terms and definitions adopted from a variety of sources",
+  "terms": [
+    {
+      "id": "authority-file",
+      "label": "Authority File",
+      "definition": "A controlled vocabulary or official list that establishes, for consistency, the authoritative forms of headings, and the preferred terms or proper names to be used, when creating a catalogue or when indexing and searching a set of entities within a defined domain.",
+      "category": "kos-type",
+      "provClass": "prov:Entity",
+      "source": "FaBiO",
+      "seeAlso": "http://www.sparontologies.net/ontologies/fabio",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "authority-list",
+      "label": "Authority List",
+      "definition": "Controlled vocabulary for use in naming particular entities consistently",
+      "category": "kos-type",
+      "provClass": "prov:Entity",
+      "source": "ISO 25964",
+      "seeAlso": "https://www.niso.org/schemas/iso25964",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "http-purl-obolibrary-org-obo-omrse-00000262",
+      "label": "Categorization Scheme",
+      "definition": "Information content entity that characterizes some aggregate of entities as partitioned into distinct subgroups, thereby demarcating them as categories.",
+      "category": "kos-type",
+      "provClass": "prov:Entity",
+      "source": "OMRSE",
+      "seeAlso": "https://bioportal.bioontology.org/ontologies/OMRSE",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "category",
+      "label": "Category",
+      "definition": "A grouping of terms that are semantically or statistically associated, but which do not constitute a strict hierarchy based on genus/species, parent/child, or part/whole relationships.",
+      "category": "kos-component",
+      "provClass": "prov:Entity",
+      "source": "ANSI/NISO Z39.19-2005",
+      "seeAlso": "https://www.niso.org/publications/ansiniso-z3919-2005-r2010",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "classification-scheme",
+      "label": "Classification Scheme",
+      "definition": "A method of organization according to a set of pre-established principles, usually characterized by a notation system and a hierarchical structure of relationships among the entities.",
+      "category": "kos-type",
+      "provClass": "prov:Entity",
+      "source": "ANSI/NISO Z39.19-2005",
+      "seeAlso": "https://www.niso.org/publications/ansiniso-z3919-2005-r2010",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "http-purl-obolibrary-org-obo-ncit-c41080",
+      "label": "Classification Scheme Item",
+      "definition": "A component of content in a Classification Scheme. This may be a node in a taxonomy or ontology or a term in a thesaurus, etc.",
+      "category": "kos-component",
+      "provClass": "prov:Entity",
+      "source": "NCIT",
+      "seeAlso": "https://bioportal.bioontology.org/ontologies/NCIT",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "classification-system",
+      "label": "Classification System",
+      "definition": "Terminological resource which has characteristics of mutual exclusiveness and exhaustiveness to aggregate data to a pre-prescribed level of specialization for a specific purpose",
+      "category": "kos-type",
+      "provClass": "prov:Entity",
+      "source": "ISO 17117",
+      "scopeNote": "It usually includes hierarchical relations as well as definitions and rules for use but might not, as in the example simple classification of gender: Male, Female.",
+      "seeAlso": "https://www.iso.org/standard/67635.html",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "codelist",
+      "label": "Codelist",
+      "definition": "A type of controlled vocabulary that is comprised of a finite list of standard terms and meanings that represent the allowable values for a data item",
+      "category": "kos-type",
+      "provClass": "prov:Entity",
+      "source": "NCIT",
+      "seeAlso": "https://bioportal.bioontology.org/ontologies/NCIT",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "http-purl-org-spar-fabio-controlledvocabulary",
+      "label": "Controlled Vocabulary",
+      "definition": "A collection of selected words and phrases related to a particular domain of knowledge used to permit consistency of metadata annotation and improved retrieval following a search, in which homonyms, synonyms and similar ambiguities of meaning present in natural language are disambiguated.",
+      "category": "kos-type",
+      "provClass": "prov:Entity",
+      "source": "FaBiO",
+      "seeAlso": "http://www.sparontologies.net/ontologies/fabio",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "https-w3id-org-iddo-dictionary",
+      "label": "Data Dictionary",
+      "definition": "Centralized repository of information about data such as meaning, relationships to other data, origin, usage and format",
+      "category": "kos-type",
+      "provClass": "prov:Entity",
+      "source": "IDDO",
+      "seeAlso": "https://rub-informatik-im-bauwesen.github.io/iddo/",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "http-purl-obolibrary-org-obo-ncit-c41087",
+      "label": "Data Element Concept",
+      "definition": "A concept that can be represented in the form of a data element, described independently of any particular representation",
+      "category": "data",
+      "provClass": "prov:Entity",
+      "source": "NCIT",
+      "seeAlso": "https://bioportal.bioontology.org/ontologies/NCIT",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "data-interchange-standard",
+      "label": "Data Interchange Standard",
+      "definition": "A standard which defines a set of data according to a set of data structuring rules so that the set of data can be interchanged between one computer system and another",
+      "category": "standard",
+      "provClass": "prov:Plan",
+      "source": "ISO/IEC TR 10032:2003",
+      "seeAlso": "https://www.iso.org/standard/29982.html",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "http-ncicb-nci-nih-gov-xml-owl-evs-thesaurus-owl-c103180",
+      "label": "Data Standard",
+      "definition": "A statement that defines conventions, guidelines, characteristics or methods for consistent data handling to facilitate exchange or processing of the data.",
+      "category": "standard",
+      "provClass": "prov:Plan",
+      "source": "NCIT",
+      "scopeNote": "The defining criteria for a data standard are reviewed by and agreed upon by the user community or a governing body before they are released and adopted for use.",
+      "seeAlso": "https://bioportal.bioontology.org/ontologies/NCIT",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "dataset",
+      "label": "Dataset",
+      "definition": "A collection of related facts, often expressed in numerical form and encoded in a defined structure.",
+      "category": "data",
+      "provClass": "prov:Entity",
+      "source": "FaBiO",
+      "seeAlso": "http://www.sparontologies.net/ontologies/fabio",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "datatype",
+      "label": "Datatype",
+      "definition": "Set of distinct values, characterized by properties of those values, and by operations on those values",
+      "category": "data",
+      "provClass": "prov:Entity",
+      "source": "ISO/IEC 20944-1:2013",
+      "seeAlso": "https://www.iso.org/standard/55723.html",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "https-schema-org-definedtermset",
+      "label": "Defined Term Set",
+      "definition": "A set of defined terms, for example a set of categories or a classification scheme, a glossary, dictionary or enumeration.",
+      "category": "kos-type",
+      "provClass": "prov:Entity",
+      "source": "schema.org",
+      "seeAlso": "https://schema.org/",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "deliverable",
+      "label": "Deliverable",
+      "definition": "A document containing a project report, intended to be delivered to a customer or funding agency describing the results achieved within a specific project.",
+      "category": "standard",
+      "provClass": "prov:Entity",
+      "source": "FaBiO",
+      "seeAlso": "http://www.sparontologies.net/ontologies/fabio",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "described-value-domain",
+      "label": "Described Value Domain",
+      "definition": "Value domain that is specified by a description or specification, such as a rule, a procedure or a range (i.e. interval)",
+      "category": "kos-component",
+      "provClass": "prov:Entity",
+      "source": "ISO/IEC 11179-31:2023",
+      "seeAlso": "https://www.iso.org/standard/78901.html",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "http-purl-org-spar-fabio-disciplinedictionary",
+      "label": "Discipline Dictionary",
+      "definition": "A discipline dictionary is a collection of subject disciplines.",
+      "category": "kos-type",
+      "provClass": "prov:Entity",
+      "source": "FaBiO",
+      "seeAlso": "http://www.sparontologies.net/ontologies/fabio",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "enumerated-value-domain",
+      "label": "Enumerated Value Domain",
+      "definition": "Value domain that is specified by a list of all its permissible values",
+      "category": "kos-component",
+      "provClass": "prov:Entity",
+      "source": "ISO/IEC 20944-1:2013",
+      "seeAlso": "https://www.iso.org/standard/55723.html",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "http-purl-obolibrary-org-obo-ncit-c18232",
+      "label": "Glossary",
+      "definition": "An alphabetical list of technical terms in some specialized field of knowledge; usually published as an appendix to a text on that field.",
+      "category": "kos-type",
+      "provClass": "prov:Entity",
+      "source": "NCIT",
+      "seeAlso": "https://bioportal.bioontology.org/ontologies/NCIT",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "https-aristotle-cloud-help-concepts-aristotle-glossary-glossaryitem",
+      "label": "Glossary Item",
+      "definition": "A Glossary Item records a business term that is commonly used within the metadata registry.",
+      "category": "kos-component",
+      "provClass": "prov:Entity",
+      "source": "Aristotle",
+      "seeAlso": "https://aristotle.cloud/help/concepts/aristotle_mdr/valuedomain",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "hierarchical-relationship",
+      "label": "Hierarchical Relationship",
+      "definition": "A relationship between or among terms in a controlled vocabulary that depicts broader (generic) to narrower (specific) or whole-part relationships; begins with the words broader term (BT), or narrower term (NT).",
+      "category": "relationship",
+      "provClass": "prov:Entity",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "http-purl-org-coar-resource-type-gsza-y7v7",
+      "label": "Knowledge Organization System",
+      "definition": "All types of schemes for organizing information and promoting knowledge management. Knowledge organization systems include classification schemes that organize materials at a general level (such as books on a shelf), subject headings that provide more detailed access, and authority files that control variant versions of key information (such as geographic names and personal names). They also include less-traditional schemes, such as semantic artifacts, semantic networks and ontologies.",
+      "category": "kos-type",
+      "provClass": "prov:Entity",
+      "source": "COAR",
+      "seeAlso": "http://purl.org/coar/resource_type",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "list",
+      "label": "List",
+      "definition": "A limited set of terms arranged as a simple alphabetical list or in some other logically evident way; containing no relationships of any kind",
+      "category": "kos-type",
+      "provClass": "prov:Entity",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "http-purl-org-spar-fabio-metadata",
+      "label": "Metadata",
+      "definition": "A separate work that provides information describing one or more characteristics of a resource or entity.",
+      "category": "metadata",
+      "provClass": "prov:Entity",
+      "source": "FaBiO",
+      "seeAlso": "http://www.sparontologies.net/ontologies/fabio",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "metadata-standard",
+      "label": "Metadata Standard",
+      "definition": "A set of formally agreed guidelines defining the structure, content, and semantics necessary to make data understandable, discoverable, and interoperable",
+      "category": "standard",
+      "provClass": "prov:Plan",
+      "source": "ISO 19115",
+      "seeAlso": "https://www.iso.org/standard/53798.html",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "http-purl-org-spar-fabio-minimalinformationstandard",
+      "label": "Minimum Information Standard",
+      "definition": "A metadata standard specifying items to be included when creating metadata describing a dataset of a particular type, or when creating a structured summary of the main findings of an article or report in a particular domain of interest, thereby ensuring adequate descriptive information is recorded for subsequent resource discovery and/or interpretation of the information described.",
+      "category": "standard",
+      "provClass": "prov:Plan",
+      "source": "FaBiO",
+      "seeAlso": "http://www.sparontologies.net/ontologies/fabio",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "narrower-term",
+      "label": "Narrower Term",
+      "definition": "A term that is subordinate to another term or to multiple terms in a hierarchy. In thesauri, the relationship indicator for this type of term is NT.",
+      "category": "kos-component",
+      "provClass": "prov:Entity",
+      "source": "ANSI/NISO Z39.19-2005",
+      "seeAlso": "https://www.niso.org/publications/ansiniso-z3919-2005-r2010",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "ontology",
+      "label": "Ontology",
+      "definition": "A formal model that allows knowledge to be represented for a specific domain. An ontology describes the types of things that exist (classes), the relationships between them (properties) and the logical ways those classes and properties can be used together (axioms).",
+      "category": "kos-type",
+      "provClass": "prov:Entity",
+      "source": "W3C LD Glossary",
+      "seeAlso": "https://www.w3.org/TR/ld-glossary/",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "permissible-value",
+      "label": "Permissible Value",
+      "definition": "Designation of a value meaning",
+      "category": "kos-component",
+      "provClass": "prov:Entity",
+      "source": "ISO/IEC 11179-31:2023",
+      "seeAlso": "https://www.iso.org/standard/78901.html",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "pick-list",
+      "label": "Pick List",
+      "definition": "A graphical user interface device that allows the user to select from a pre-set list of terms. Typically the list of terms is shown when the user clicks on a down arrow next to the entry box for the term.",
+      "category": "kos-type",
+      "provClass": "prov:Entity",
+      "source": "ANSI/NISO Z39.19-2005",
+      "seeAlso": "https://www.niso.org/publications/ansiniso-z3919-2005-r2010",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "http-purl-org-ontology-bibo-standard",
+      "label": "Standard",
+      "definition": "A specification giving a precise statement of a process or a service requirement, often sanctioned by a nation or industry. A document describing a standard.",
+      "category": "standard",
+      "provClass": "prov:Plan",
+      "source": "BIBO",
+      "seeAlso": "http://purl.org/ontology/bibo/",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "http-purl-org-spar-fabio-taxonomy",
+      "label": "Taxonomy",
+      "definition": "A classification arranged in a hierarchical structure of classes and subclasses, showing parent-child isA relationships, or broader_than - narrower_than relationships.",
+      "category": "kos-type",
+      "provClass": "prov:Entity",
+      "source": "FaBiO",
+      "seeAlso": "http://www.sparontologies.net/ontologies/fabio",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "terminological-dictionary",
+      "label": "Terminological Dictionary",
+      "definition": "Terminology resource that is designed to be used as a reference work",
+      "category": "kos-type",
+      "provClass": "prov:Entity",
+      "source": "ISO 1087:2019",
+      "seeAlso": "https://www.iso.org/standard/62330.html",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "thesaurus",
+      "label": "Thesaurus",
+      "definition": "Controlled and structured vocabulary in which concepts are represented by terms, organized so that relationships between concepts are made explicit, and preferred terms are accompanied by lead-in entries for synonyms or quasi-synonyms",
+      "category": "kos-type",
+      "provClass": "prov:Entity",
+      "source": "ISO25964-2:2013",
+      "seeAlso": "https://www.niso.org/schemas/iso25964",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "tree-structure",
+      "label": "Tree Structure",
+      "definition": "A controlled vocabulary display format in which the complete hierarchy of terms is shown. Each term is assigned a tree number or line number which leads from the alphabetical display to the hierarchical one. The hierarchical display is also known as systematic display.",
+      "category": "kos-type",
+      "provClass": "prov:Entity",
+      "source": "ANSI/NISO Z39.19-2005",
+      "seeAlso": "https://www.niso.org/publications/ansiniso-z3919-2005-r2010",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "type-vocabulary",
+      "label": "Type Vocabulary",
+      "definition": "An atomized set of terms that characterize the nature of a resource",
+      "category": "kos-type",
+      "provClass": "prov:Entity",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "uncontrolled-vocabulary",
+      "label": "Uncontrolled Vocabulary",
+      "definition": "A non-defined collection of words and phrases relating to a particular domain of knowledge, usually added freely by a community, in which homonyms, synonyms and similar ambiguities of meaning present in natural language are not formally disambiguated.",
+      "category": "kos-type",
+      "provClass": "prov:Entity",
+      "source": "FaBiO",
+      "seeAlso": "http://www.sparontologies.net/ontologies/fabio",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "value-domain",
+      "label": "Value Domain",
+      "definition": "A resource type used to denote a collection of permissible values associated with a conceptual domain or term in a controlled vocabulary.",
+      "category": "kos-component",
+      "provClass": "prov:Entity",
+      "source": "Aristotle",
+      "scopeNote": "Synonyms include codelist, value list, pick list, enumerated domain, and enumerated value set. Also defined in ISO/IEC 11179-3 as a class each instance of which models a value domain — a set of permissible values — providing representation without implication as to the associated Data Element Concept.",
+      "seeAlso": "https://aristotle.cloud/help/concepts/aristotle_mdr/valuedomain",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "http-purl-org-spar-fabio-vocabulary",
+      "label": "Vocabulary",
+      "definition": "Terminological dictionary which contains designations and definitions for one or more specific subject fields.",
+      "category": "kos-type",
+      "provClass": "prov:Entity",
+      "source": "ISO 1087:2019",
+      "scopeNote": "Also defined as: a set of words constituting a language or used to describe a particular domain of knowledge (FaBiO); a collection of terms for a particular purpose (W3C LD Glossary).",
+      "seeAlso": "https://www.iso.org/standard/62330.html",
+      "modified": "2026-06-10"
+    },
+    {
+      "id": "vocabulary-mapping",
+      "label": "Vocabulary Mapping",
+      "definition": "A mapping of correspondences between two vocabularies. For controlled vocabularies, such mappings may be expressed using SKOS (http://www.w3.org/2004/02/skos/).",
+      "category": "relationship",
+      "provClass": "prov:Entity",
+      "source": "FaBiO",
+      "seeAlso": "http://www.sparontologies.net/ontologies/fabio",
+      "modified": "2026-06-10"
+    }
+  ],
+  "sources": [
+    {
+      "title": "ANSI/NISO Z39.19-2005 (R2010). Guidelines for the construction format and management of monolingual controlled vocabularies.",
+      "notation": "ANSI/NISO Z39.19-2005",
+      "description": null,
+      "url": "https://www.niso.org/publications/ansiniso-z3919-2005-r2010"
+    },
+    {
+      "title": "Aristotle Documentation",
+      "notation": "Aristotle",
+      "description": "Value Domain and Glossary Item documentation in the Aristotle Application Documentation.",
+      "url": "https://aristotle.cloud/help/concepts/aristotle_mdr/valuedomain"
+    },
+    {
+      "title": "Bibliographic Ontology (BIBO)",
+      "notation": "BIBO",
+      "description": "BIBO is an ontology for the bibliographic description of documents, books, and articles used to represent citations and bibliographic references on the Semantic Web.",
+      "url": "http://purl.org/ontology/bibo/"
+    },
+    {
+      "title": "COAR Resource Types Vocabulary",
+      "notation": "COAR",
+      "description": "The Confederation of Open Access Repositories (COAR) Controlled Vocabularies are used to describe the type and access rights of open access resources.",
+      "url": "http://purl.org/coar/resource_type"
+    },
+    {
+      "title": "FRBR-aligned Bibliographic Ontology (FaBiO)",
+      "notation": "FaBiO",
+      "description": "FaBiO is an ontology for recording and publishing on the Semantic Web descriptions of entities that are published or potentially publishable, and that contain or are referred to by bibliographic references.",
+      "url": "http://www.sparontologies.net/ontologies/fabio"
+    },
+    {
+      "title": "The Interconnected Data Dictionary Ontology (IDDO)",
+      "notation": "IDDO",
+      "description": "The IDDO maps the data model of ISO 23386 for the describing, creating, and maintenance of properties in interconnected data dictionaries.",
+      "url": "https://rub-informatik-im-bauwesen.github.io/iddo/"
+    },
+    {
+      "title": "ISO 1087:2019(en) Terminology work and terminology science — Vocabulary",
+      "notation": "ISO 1087:2019",
+      "description": null,
+      "url": "https://www.iso.org/standard/62330.html"
+    },
+    {
+      "title": "ISO 17117-1:2018(en) Health informatics — Terminological resources — Part 1: Characteristics",
+      "notation": "ISO 17117",
+      "description": null,
+      "url": "https://www.iso.org/standard/67635.html"
+    },
+    {
+      "title": "ISO 19115-1:2014 Geographic information — Metadata — Part 1: Fundamentals",
+      "notation": "ISO 19115",
+      "description": null,
+      "url": "https://www.iso.org/standard/53798.html"
+    },
+    {
+      "title": "ISO 25964-2:2013. Information and documentation — Thesauri and interoperability with other vocabularies.",
+      "notation": "ISO 25964",
+      "description": null,
+      "url": "https://www.niso.org/schemas/iso25964"
+    },
+    {
+      "title": "ISO 25964-2:2013. Information and documentation — Thesauri and interoperability with other vocabularies. Part 2: Interoperability with other vocabularies.",
+      "notation": "ISO25964-2:2013",
+      "description": null,
+      "url": "https://www.niso.org/schemas/iso25964"
+    },
+    {
+      "title": "ISO/IEC 11179-3:2023 Information technology — Metadata registries (MDR) — Part 3: Registry metamodel and basic attributes",
+      "notation": "ISO/IEC 11179-3",
+      "description": null,
+      "url": "https://www.iso.org/standard/78900.html"
+    },
+    {
+      "title": "ISO/IEC 11179-31:2023(en) Information technology — Metadata registries (MDR) — Part 31: Concepts",
+      "notation": "ISO/IEC 11179-31:2023",
+      "description": null,
+      "url": "https://www.iso.org/standard/78901.html"
+    },
+    {
+      "title": "ISO/IEC 20944-1:2013(en) Information technology — Metadata Registries Interoperability and Bindings (MDR-IB) — Part 1: Framework",
+      "notation": "ISO/IEC 20944-1:2013",
+      "description": null,
+      "url": "https://www.iso.org/standard/55723.html"
+    },
+    {
+      "title": "ISO/IEC TR 10032:2003(en) Information technology — Reference Model of Data Management",
+      "notation": "ISO/IEC TR 10032:2003",
+      "description": null,
+      "url": "https://www.iso.org/standard/29982.html"
+    },
+    {
+      "title": "ISO/TS 14812:2025 Intelligent transport systems — Vocabulary",
+      "notation": "ISO/TS 14812:2025",
+      "description": null,
+      "url": "https://www.iso.org/standard/79849.html"
+    },
+    {
+      "title": "Merriam Webster online",
+      "notation": "Merriam Webster",
+      "description": null,
+      "url": "https://www.merriam-webster.com/"
+    },
+    {
+      "title": "National Cancer Institute Thesaurus",
+      "notation": "NCIT",
+      "description": null,
+      "url": "https://bioportal.bioontology.org/ontologies/NCIT"
+    },
+    {
+      "title": "KOS Types Vocabulary",
+      "notation": "NKOS",
+      "description": null,
+      "url": "https://nkos.dublincore.org/nkos-type.html"
+    },
+    {
+      "title": "Ontology for Modeling and Representation of Social Entities",
+      "notation": "OMRSE",
+      "description": "The OMRSE is an OBO Foundry ontology that represents the various entities that arise from human social interactions, such as social acts, social roles, social groups, and organizations.",
+      "url": "https://bioportal.bioontology.org/ontologies/OMRSE"
+    },
+    {
+      "title": "Schema.org",
+      "notation": "schema.org",
+      "description": "Schema.org is a collaborative community activity with a mission to create, maintain, and promote schemas for structured data on the Internet.",
+      "url": "https://schema.org/"
+    },
+    {
+      "title": "This Document",
+      "notation": null,
+      "description": "Term defined in-house by the editorial group; no external source.",
+      "url": null
+    },
+    {
+      "title": "VIVO Ontology for Researcher Discovery",
+      "notation": "VIVO",
+      "description": "The VIVO ontology represents researchers in the context of their experience, outputs, interests, accomplishments, and associated institutions.",
+      "url": "https://bioportal.bioontology.org/ontologies/VIVO"
+    },
+    {
+      "title": "Vocabulary of a Friend (VOAF)",
+      "notation": "VOAF",
+      "description": "VOAF is a vocabulary specification providing elements allowing the description of vocabularies used in the Linked Data Cloud. It provides properties expressing the different ways vocabularies can rely on, extend, specify, annotate or otherwise link to each other.",
+      "url": "https://lov.linkeddata.es/vocommons/voaf/v2.3/"
+    },
+    {
+      "title": "Linked Data Glossary",
+      "notation": "W3C LD Glossary",
+      "description": "W3C Glossary of Linked Data terminology maintained by the W3C.",
+      "url": "https://www.w3.org/TR/ld-glossary/"
+    }
+  ]
+}

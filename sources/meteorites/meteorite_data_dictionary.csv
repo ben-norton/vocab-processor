@@ -1,0 +1,19 @@
+table,column,data_type,required,description,example
+meteorite_classification.csv,id,integer,yes,"Surrogate primary key. Sequential, generated at table creation.",55
+meteorite_classification.csv,parent_id,integer,no,Self-referencing foreign key to meteorite_classification.id; empty only for the root (Meteorites).,54
+meteorite_classification.csv,rank,string,yes,"Hierarchy level from Fig. 1 rows. One of: root, division, class, clan, group, subgroup.",group
+meteorite_classification.csv,code,string,yes,Short label/abbreviation as printed in the Fig. 1 box (e.g. an iron group or clan code).,IC
+meteorite_classification.csv,name,string,yes,Expanded or descriptive name for the node.,IC iron group
+meteorite_classification.csv,depth,integer,yes,Number of edges from the root; root = 0. Derived from parent_id chain.,3
+meteorite_classification.csv,materialized_path,string,yes,"Slash-delimited chain of ids from root to node, with leading and trailing '/'. Supports prefix descendant queries, e.g. WHERE materialized_path LIKE '/1/4/%'.",/1/4/54/55/
+meteorite_classification.csv,path_labels,string,yes,Human-readable slash-delimited chain of codes from root to node.,Meteorites/Achondrites/IRON/IC
+meteorite_classification.csv,description,string,yes,"Short prose description of the node, paraphrased from the cited source(s). For classes/clans, describes the grouping concept; for groups/subgroups, the defining petrologic/chemical traits.","Karoonda-type; matrix-rich, highly oxidized C chondrites..."
+meteorite_classification.csv,source,string,yes,Primary literature source(s) for the description.,Weisberg et al. (2006)
+meteorite_classification.csv,notes,string,no,"Transcription/provenance notes (e.g. nodes connected directly to a division, or grouping connectors unlabeled in the figure).",Connects directly to Achondrites
+meteorite_closure.csv,ancestor_id,integer,yes,Foreign key to meteorite_classification.id; an ancestor (or the node itself).,4
+meteorite_closure.csv,descendant_id,integer,yes,Foreign key to meteorite_classification.id; a descendant (or the node itself).,55
+meteorite_closure.csv,depth,integer,yes,Number of edges from ancestor to descendant. 0 = self-reference (every node has one).,2
+(convention),root_encoding,,,"The single root node (Meteorites, id 1) has an empty parent_id and a self-pair at depth 0 in the closure table.",
+(convention),inferred_nodes,,,PAL (Pallasites) and IRON (Irons) are clan-level nodes added to capture shared connectors that are unlabeled in Fig. 1; flagged in notes.,
+(convention),direct_attachment,,,"Some group nodes (R, K, URE, BRA, ANG, AUB, MES) attach straight to a division box in Fig. 1 with no intervening class/clan; their parent_id points to the division.",
+(convention),source,,,"Weisberg M. K., McCoy T. J., Krot A. N. (2006) Systematics and Evaluation of Meteorite Classification, Fig. 1, p. 21.",

@@ -1,7 +1,7 @@
 # Geological Specimen Name Type — SKOS ConceptScheme
 # Generated from NameTypes.xlsx
 # Source sheets used: Concept Scheme, Concepts, Namespaces, Agents, Mappings
-# Generated: 2026-05-18
+# Generated: 2026-06-18
 
 # Standard prefixes
 @prefix dcat:        <http://www.w3.org/ns/dcat#> .
@@ -28,11 +28,11 @@
     dcterms:description      """A vocabulary of terms describing the types of names that may be applied to geological materials, including minerals and rocks, and their constituent parts. The vocabulary distinguishes between names that carry formal standing — those assigned or approved by an authoritative nomenclatural body such as the International Mineralogical Association (IMA) — and names used outside formal systems, including alternate, historical, and deprecated designations. Formally sanctioned name types include IMA Approved Name, Classification, Group Name, Structural Group, and Series. Names reflecting historical usage, discontinued classifications, or pending approval are represented by the Historical, Synonym, Obsolete, and Unapproved types. The Alternate Name type captures commonly used names that are not sanctioned by any authoritative body, while Material Name provides a general designation for use with non-geological materials."""@en ;
     dcterms:publisher        _:agent_mineralogy_extension_task_group ;
     dcterms:creator          _:agent_mineralogy_extension_task_group ;
-    dcterms:contributor      <https://orcid.org/0000-0002-5819-9134> ;
+    dcterms:contributor      <https://kos.resources.org/org/1aa8581b-5ccd-48b1-b72e-5622a35b87af> ;
     dcterms:provenance       "Compiled by the TDWG Mineralogy Extension Task Group for community use and to support the extension release by providing standardized categories for Constituent Part Names, especially those associated with Minerals"@en ;
     dcterms:created          "2026-04-17"^^xsd:date ;
-    dcterms:modified         "2026-04-17"^^xsd:date ;
-    dcat:version             "2026-04-17" ;
+    dcterms:modified         "2026-06-18"^^xsd:date ;
+    dcat:version             "2026-06-18" ;
     skos:scopeNote           "Values are valid within the scope of a geological material and intended to categorize names of Simple Specimens or Constituent Parts"@en ;
     vann:usageNote           "Intended to be used to categorize names assigned to Constituent Parts of Compound Specimens in order to atomize multiple individual names assigned to a single Constituent Part"@en ;
     dcat:keyword             "Compound Specimen"@en ,
@@ -47,13 +47,18 @@
     skos:hasTopConcept       <https://kos.resources.org/def/geological-specimen-name-type/geological-material-name> ;
     prov:qualifiedAttribution [
         a                prov:Attribution ;
-        prov:agent       <https://orcid.org/0000-0002-5819-9134> ;
-        dcat:hadRole     isoroles:editor ;
+        prov:agent       <https://kos.resources.org/org/1aa8581b-5ccd-48b1-b72e-5622a35b87af> ;
+        dcat:hadRole     isorole:editor ;
     ] ;
     prov:qualifiedAttribution [
         a                prov:Attribution ;
         prov:agent       _:agent_mineralogy_extension_task_group ;
-        dcat:hadRole     isoroles:publisher , isoroles:creator ;
+        dcat:hadRole     isorole:publisher , isorole:creator ;
+    ] ;
+    prov:qualifiedAttribution [
+        a                prov:Attribution ;
+        prov:agent       _:agent_biodiversity_information_standards ;
+        dcat:hadRole     isoroles:unknown ;
     ] ;
 .
 
@@ -71,15 +76,18 @@
     skos:notation            "geologicalMaterialName" ;
 .
 
-<https://kos.resources.org/def/geological-specimen-name-type/formal-name>
+<https://kos.resources.org/def/geological-specimen-name-type/authoritative-name>
     a                        skos:Concept ;
-    skos:prefLabel           "Formal Name"@en ;
-    skos:altLabel            "Official Name"@en ;
+    skos:prefLabel           "Authoritative Name"@en ;
+    skos:altLabel            "Official Name"@en ,
+                             "Formal Name"@en ;
     skos:definition          """A name assigned by an authoritative body based on a defined set of unambiguous criteria and belonging to a formal nomenclature"""@en ;
     skos:broader             <https://kos.resources.org/def/geological-specimen-name-type/geological-material-name> ;
+    skos:historyNote         "Replaced previous term, formal name, on 2026-06-18"@en ;
+    skos:changeNote          "Changed from formal name to authoritative name to covers approval by an organization (IMA) and membership in a classification system (Nickel-Strunz)"@en ;
     skos:inScheme            <https://kos.resources.org/def/geological-specimen-name-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:notation            "formalName" ;
+    skos:notation            "authoritativeName" ;
     skos:broadMatch          <https://kos.resources.org/def/geological-specimen-name-type/geological-material-name> ;
 .
 
@@ -88,7 +96,7 @@
     skos:prefLabel           "Classification"@en ;
     skos:altLabel            "Species"@en ;
     skos:definition          """A name derived from an authoritative classification system at any rank"""@en ;
-    skos:broader             <https://kos.resources.org/def/geological-specimen-name-type/formal-name> ;
+    skos:broader             <https://kos.resources.org/def/geological-specimen-name-type/authoritative-name> ;
     skos:inScheme            <https://kos.resources.org/def/geological-specimen-name-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "classification" ;
@@ -112,7 +120,7 @@
     skos:prefLabel           "Series"@en ;
     skos:altLabel            "Solid Solution Series"@en ;
     skos:definition          """Name of the solid solution series to which a specimen belongs."""@en ;
-    skos:broader             <https://kos.resources.org/def/geological-specimen-name-type/formal-name> ;
+    skos:broader             <https://kos.resources.org/def/geological-specimen-name-type/authoritative-name> ;
     skos:inScheme            <https://kos.resources.org/def/geological-specimen-name-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "series" ;
@@ -123,7 +131,7 @@
     a                        skos:Concept ;
     skos:prefLabel           "IMA Approved Name"@en ;
     skos:definition          """A mineral name that has received formal approval by the International Mineralogical Association (IMA)"""@en ;
-    skos:broader             <https://kos.resources.org/def/geological-specimen-name-type/formal-name> ;
+    skos:broader             <https://kos.resources.org/def/geological-specimen-name-type/authoritative-name> ;
     skos:inScheme            <https://kos.resources.org/def/geological-specimen-name-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "imaApprovedName" ;
@@ -134,7 +142,7 @@
     a                        skos:Concept ;
     skos:prefLabel           "Group"@en ;
     skos:definition          """The name of a mineralogical group a specimen belongs to. Groups are defined as a set of mineral species with essentially the same crystal structure and composed of chemically similar elements."""@en ;
-    skos:broader             <https://kos.resources.org/def/geological-specimen-name-type/formal-name> ;
+    skos:broader             <https://kos.resources.org/def/geological-specimen-name-type/authoritative-name> ;
     dcterms:provenance       "Mills, S. J., Hatert, F., Nickel, E. H., & Ferraris, G. (2009). The standardisation of mineral group hierarchies: application to recent nomenclature proposals. European Journal of Mineralogy, 21(5), 1073-1080."@en ;
     skos:inScheme            <https://kos.resources.org/def/geological-specimen-name-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
@@ -211,15 +219,44 @@
     skos:broadMatch          <https://kos.resources.org/def/geological-specimen-name-type/alternate-name> ;
 .
 
-<https://kos.resources.org/def/geological-specimen-name-type/cataloged-name>
+<https://kos.resources.org/def/geological-specimen-name-type/object-name>
     a                        skos:Concept ;
-    skos:prefLabel           "Cataloged Name"@en ;
-    skos:definition          """The name of a geological material for cataloging or presentation purposes."""@en ;
+    skos:prefLabel           "Object Name"@en ;
+    skos:altLabel            "Cataloged Name"@en ,
+                             "Cataloged As"@en ,
+                             "Specimen Name"@en ;
+    skos:definition          """The name of a collection object (compound specimen) for curatorial, cataloging, and/or presentation purposes."""@en ;
     skos:broader             <https://kos.resources.org/def/geological-specimen-name-type/geological-material-name> ;
+    skos:historyNote         "Replaced previous term, cataloged name on 2026-06-18"@en ;
+    skos:changeNote          "Replaced the previous term, cataloged name, as better suited to represent the use case."@en ;
     vann:usageNote           "Cataloged name is generally applied to a compound specimen where physical cataloging is based on the object rather than its constituent parts."@en ;
     skos:inScheme            <https://kos.resources.org/def/geological-specimen-name-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:notation            "catalogedName" ;
+    skos:notation            "objectName" ;
+.
+
+<https://kos.resources.org/def/geological-specimen-name-type/formal-name>
+    a                        skos:Concept ;
+    skos:prefLabel           "Formal Name"@en ;
+    skos:definition          """A name assigned by an authoritative body based on a defined set of unambiguous criteria and belonging to a formal nomenclature"""@en ;
+    skos:broader             <https://kos.resources.org/def/geological-specimen-name-type/geological-material-name> ;
+    skos:historyNote         "Superseded on 2026-06-18"@en ;
+    skos:changeNote          "Replaced by authoritative name"@en ;
+    skos:inScheme            <https://kos.resources.org/def/geological-specimen-name-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/superseded> ;
+    skos:notation            "formalName" ;
+.
+
+<https://kos.resources.org/def/geological-specimen-name-type/cataloged-name>
+    a                        skos:Concept ;
+    skos:prefLabel           "Cataloged Name"@en ;
+    skos:definition          """Cataloged name is generally applied to a compound specimen where physical cataloging is based on the object rather than its constituent parts."""@en ;
+    skos:broader             <https://kos.resources.org/def/geological-specimen-name-type/geological-material-name> ;
+    skos:historyNote         "Superseded on 2026-06-18"@en ;
+    skos:changeNote          "Replaced by object name"@en ;
+    skos:inScheme            <https://kos.resources.org/def/geological-specimen-name-type> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/superseded> ;
+    skos:notation            "objectName" ;
     skos:broadMatch          <https://kos.resources.org/def/geological-specimen-name-type/geological-material-name> ;
 .
 
@@ -227,7 +264,7 @@
 # Agents
 # ============================================================================
 
-<https://orcid.org/0000-0002-5819-9134>
+<https://kos.resources.org/org/1aa8581b-5ccd-48b1-b72e-5622a35b87af>
     a                        schema:Person ;
     schema:name              "Ben Norton" ;
     schema:email             "ben.norton@yale.edu" ;
@@ -236,12 +273,20 @@
 
 <https://scientific-collections.gbif.org/institution/75f50140-830d-4630-a290-3d6e951a7c29>
     a                        schema:Organization ;
-    schema:name              "Yale University" ;
 .
 
 _:agent_mineralogy_extension_task_group
     a                        schema:Organization ;
     schema:name              "Mineralogy Extension Task Group" ;
-    schema:email             "ben.norton@yale.edu" ;
     schema:affiliation       <https://www.tdwg.org/community/esp/mineralogy/> ;
+    schema:parentOrganization [
+        a            schema:Organization ;
+        schema:name  "Biodiversity Information Standards (TDWG)" ;
+    ] ;
+.
+
+_:agent_biodiversity_information_standards
+    a                        schema:Organization ;
+    schema:name              "Biodiversity Information Standards" ;
+    schema:affiliation       <https://www.tdwg.org> ;
 .

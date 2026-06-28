@@ -1,0 +1,26 @@
+title,notation,description,url
+ANSI/NISO Z39.19-2005 (R2010). Guidelines for the construction format and management of monolingual controlled vocabularies.,ANSI/NISO Z39.19-2005,,https://www.niso.org/publications/ansiniso-z3919-2005-r2010
+Aristotle Documentation,Aristotle,"Value Domain and Glossary Item documentation in the Aristotle Application Documentation.",https://aristotle.cloud/help/concepts/aristotle_mdr/valuedomain
+Bibliographic Ontology (BIBO),BIBO,"BIBO is an ontology for the bibliographic description of documents, books, and articles used to represent citations and bibliographic references on the Semantic Web.",http://purl.org/ontology/bibo/
+COAR Resource Types Vocabulary,COAR,"The Confederation of Open Access Repositories (COAR) Controlled Vocabularies are used to describe the type and access rights of open access resources.",http://purl.org/coar/resource_type
+FRBR-aligned Bibliographic Ontology (FaBiO),FaBiO,"FaBiO is an ontology for recording and publishing on the Semantic Web descriptions of entities that are published or potentially publishable, and that contain or are referred to by bibliographic references.",http://www.sparontologies.net/ontologies/fabio
+The Interconnected Data Dictionary Ontology (IDDO),IDDO,"The IDDO maps the data model of ISO 23386 for the describing, creating, and maintenance of properties in interconnected data dictionaries.",https://rub-informatik-im-bauwesen.github.io/iddo/
+ISO 1087:2019(en) Terminology work and terminology science — Vocabulary,ISO 1087:2019,,https://www.iso.org/standard/62330.html
+ISO 17117-1:2018(en) Health informatics — Terminological resources — Part 1: Characteristics,ISO 17117,,https://www.iso.org/standard/67635.html
+ISO 19115-1:2014 Geographic information — Metadata — Part 1: Fundamentals,ISO 19115,,https://www.iso.org/standard/53798.html
+ISO 25964-2:2013. Information and documentation — Thesauri and interoperability with other vocabularies.,ISO 25964,,https://www.niso.org/schemas/iso25964
+ISO 25964-2:2013. Information and documentation — Thesauri and interoperability with other vocabularies. Part 2: Interoperability with other vocabularies.,ISO25964-2:2013,,https://www.niso.org/schemas/iso25964
+ISO/IEC 11179-3:2023 Information technology — Metadata registries (MDR) — Part 3: Registry metamodel and basic attributes,ISO/IEC 11179-3,,https://www.iso.org/standard/78900.html
+ISO/IEC 11179-31:2023(en) Information technology — Metadata registries (MDR) — Part 31: Concepts,ISO/IEC 11179-31:2023,,https://www.iso.org/standard/78901.html
+ISO/IEC 20944-1:2013(en) Information technology — Metadata Registries Interoperability and Bindings (MDR-IB) — Part 1: Framework,ISO/IEC 20944-1:2013,,https://www.iso.org/standard/55723.html
+ISO/IEC TR 10032:2003(en) Information technology — Reference Model of Data Management,ISO/IEC TR 10032:2003,,https://www.iso.org/standard/29982.html
+ISO/TS 14812:2025 Intelligent transport systems — Vocabulary,ISO/TS 14812:2025,,https://www.iso.org/standard/79849.html
+Merriam Webster online,Merriam Webster,,https://www.merriam-webster.com/
+National Cancer Institute Thesaurus,NCIT,,https://bioportal.bioontology.org/ontologies/NCIT
+KOS Types Vocabulary,NKOS,,https://nkos.dublincore.org/nkos-type.html
+Ontology for Modeling and Representation of Social Entities,OMRSE,"The OMRSE is an OBO Foundry ontology that represents the various entities that arise from human social interactions, such as social acts, social roles, social groups, and organizations.",https://bioportal.bioontology.org/ontologies/OMRSE
+Schema.org,schema.org,"Schema.org is a collaborative community activity with a mission to create, maintain, and promote schemas for structured data on the Internet.",https://schema.org/
+This Document,,Term defined in-house by the editorial group; no external source.,
+VIVO Ontology for Researcher Discovery,VIVO,"The VIVO ontology represents researchers in the context of their experience, outputs, interests, accomplishments, and associated institutions.",https://bioportal.bioontology.org/ontologies/VIVO
+Vocabulary of a Friend (VOAF),VOAF,"VOAF is a vocabulary specification providing elements allowing the description of vocabularies used in the Linked Data Cloud. It provides properties expressing the different ways vocabularies can rely on, extend, specify, annotate or otherwise link to each other.",https://lov.linkeddata.es/vocommons/voaf/v2.3/
+Linked Data Glossary,W3C LD Glossary,W3C Glossary of Linked Data terminology maintained by the W3C.,https://www.w3.org/TR/ld-glossary/

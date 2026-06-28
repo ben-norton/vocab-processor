@@ -1,0 +1,250 @@
+# Luster — SKOS ConceptScheme
+# Generated from Luster.xlsx
+# Source sheets used: Concept Scheme, Concepts, Namespaces, Agents, Mappings
+# Generated: 2026-06-18
+#
+# Data issues / transformation notes:
+#  1. vocabularyIRI uses http:// scheme. Concept IRIs in this workbook typically use https://. Consider normalizing to https:// for the scheme IRI.
+#  2. vocabularyIRI is <http://kos.geospecimens.org/def/luster>, but concept IRIs live under 1 distinct parent IRI(s):
+#         - <https://kos.geospecimens.org/def/luster> (does NOT match scheme)
+#       Transcribed as-written; reconcile in source if this is unintended.
+
+# Standard prefixes
+@prefix dcat:        <http://www.w3.org/ns/dcat#> .
+@prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix isoroles:    <http://def.isotc211.org/iso19115-1/2014/CitationAndResponsiblePartyInformation/code/CI_RoleCode/> .
+@prefix prov:        <http://www.w3.org/ns/prov#> .
+@prefix reg:         <http://purl.org/linked-data/registry#> .
+@prefix schema:      <https://schema.org/> .
+@prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann:        <http://purl.org/vocab/vann/> .
+@prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
+
+# Workbook-specific prefixes (from the Namespaces sheet)
+
+# ============================================================================
+# ConceptScheme
+# ============================================================================
+
+<http://kos.geospecimens.org/def/luster>
+    a                        skos:ConceptScheme ;
+    skos:prefLabel           "Luster"@en ;
+    dcterms:title            "Luster"@en ;
+    skos:definition          """Luster (also spelled lustre) is the appearance of a mineral surface in terms of its light-reflecting qualities — the manner, intensity, and quality with which light is reflected from the surface of a mineral. It is a key diagnostic property used in mineral identification and is described qualitatively (e.g. metallic, vitreous, adamantine, pearly, resinous, silky, greasy, waxy, dull) rather than measured numerically."""@en ;
+    dcterms:description      """A controlled vocabulary enumerating the types of luster exhibited by minerals — the qualitative descriptors of how light is reflected from a mineral's surface. The scheme provides standardized terms (such as metallic, submetallic, vitreous, adamantine, pearly, resinous, silky, greasy, waxy, and dull) to support the consistent description, cataloguing, and identification of mineral specimens in earth science and geological collections."""@en ;
+    dcterms:publisher        _:agent_mineralogy_extension_task_group ;
+    dcterms:creator          _:agent_mineralogy_extension_task_group ;
+    dcterms:contributor      <https://kos.resources.org/org/1aa8581b-5ccd-48b1-b72e-5622a35b87af> ;
+    dcterms:provenance       "Compiled by members of the TDWG Mineralogy Extension Task Group to support earth sciences collection community. The vocabulary was released as part of a broader set of terms extending Darwin Core coverage to mineralogical and geological collections."@en ;
+    dcterms:created          "2026-04-28"^^xsd:date ;
+    dcterms:modified         "2026-04-28"^^xsd:date ;
+    dcat:version             "2026-04-28" ;
+    skos:scopeNote           "This vocabulary covers qualitative descriptors of mineral luster used to characterize the light-reflecting quality of a mineral specimen's surface. It is intended to be used in conjunction with the proposed Darwin Core term 'luster'. Terms describe luster type only and are not intended to capture related but distinct optical properties such as color, streak, transparency, or diaphaneity, except where those properties are conventionally expressed as a named luster."@en ;
+    vann:usageNote           "Intended to be used in conjuncture with the proposed darwin core term, luster"@en ;
+    skos:historyNote         "Compiled by the TDWG Mineralogy Extension Task Group for community use and to support the extension release"@en ;
+    dcat:keyword             "Collections"@en ,
+                             "Mineral"@en ,
+                             "Geological Collection"@en ,
+                             "Mineral Properties"@en ;
+    schema:citation          "Norton B, Walcott R, Burri T, Puschnig A, Dombrowski A, Greber N, Hints O, Mansur A, Ralph J, Richard S, Tacker C. Luster Vocabulary (pending)."@en ;
+    schema:license           <https://creativecommons.org/licenses/by/4.0/> ;
+    reg:derivationMode       <https://linked.data.gov.au/def/vocdermods/subsetting-and-extension> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    skos:hasTopConcept       <https://kos.geospecimens.org/def/luster/waxy> ,
+                             <https://kos.geospecimens.org/def/luster/adamantine> ,
+                             <https://kos.geospecimens.org/def/luster/dull> ,
+                             <https://kos.geospecimens.org/def/luster/greasy> ,
+                             <https://kos.geospecimens.org/def/luster/metallic> ,
+                             <https://kos.geospecimens.org/def/luster/pearly> ,
+                             <https://kos.geospecimens.org/def/luster/vitreous> ,
+                             <https://kos.geospecimens.org/def/luster/submetallic> ,
+                             <https://kos.geospecimens.org/def/luster/silky> ,
+                             <https://kos.geospecimens.org/def/luster/resinous> ,
+                             <https://kos.geospecimens.org/def/luster/smoky> ,
+                             <https://kos.geospecimens.org/def/luster/translucent> ;
+    prov:qualifiedAttribution [
+        a                prov:Attribution ;
+        prov:agent       <https://kos.resources.org/org/1aa8581b-5ccd-48b1-b72e-5622a35b87af> ;
+        dcat:hadRole     isoroles:editor ;
+    ] ;
+    prov:qualifiedAttribution [
+        a                prov:Attribution ;
+        prov:agent       _:agent_mineralogy_extension_task_group ;
+        dcat:hadRole     isoroles:publisher , isoroles:creator ;
+    ] ;
+    prov:qualifiedAttribution [
+        a                prov:Attribution ;
+        prov:agent       _:agent_biodiversity_information_standards ;
+        dcat:hadRole     isoroles:unknown ;
+    ] ;
+.
+
+# ============================================================================
+# Concepts
+# ============================================================================
+
+<https://kos.geospecimens.org/def/luster/waxy>
+    a                        skos:Concept ;
+    skos:prefLabel           "Waxy"@en ;
+    skos:definition          """A luster resembling that of wax, giving the mineral a soft, slightly matte sheen, as seen in chalcedony."""@en ;
+    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:notation            "waxy" ;
+.
+
+<https://kos.geospecimens.org/def/luster/adamantine>
+    a                        skos:Concept ;
+    skos:prefLabel           "Adamantine"@en ;
+    skos:definition          """A brilliant, highly reflective luster characteristic of transparent to translucent minerals with a high refractive index, such as diamond and cerussite."""@en ;
+    dcterms:provenance       "Wenk, H.-R., & Bulakh, A. (2016). Minerals: Their constitution and origin (2nd ed.). Cambridge University Press."@en ;
+    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:notation            "adamantine" ;
+.
+
+<https://kos.geospecimens.org/def/luster/dull>
+    a                        skos:Concept ;
+    skos:prefLabel           "Dull"@en ;
+    skos:definition          """A luster in which the surface diffuses rather than reflects light, appearing lackluster even when smooth; characteristic of earthy minerals."""@en ;
+    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:notation            "dull" ;
+.
+
+<https://kos.geospecimens.org/def/luster/greasy>
+    a                        skos:Concept ;
+    skos:prefLabel           "Greasy"@en ;
+    skos:definition          """A luster resembling that of an oily surface, giving the mineral a greasy appearance to the eye or touch."""@en ;
+    dcterms:provenance       "Wenk, H.-R., & Bulakh, A. (2016). Minerals: Their constitution and origin (2nd ed.). Cambridge University Press."@en ;
+    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:notation            "greasy" ;
+.
+
+<https://kos.geospecimens.org/def/luster/metallic>
+    a                        skos:Concept ;
+    skos:prefLabel           "Metallic"@en ;
+    skos:definition          """A luster resembling that of polished metal, characteristic of opaque minerals that strongly reflect light, such as galena and pyrite."""@en ;
+    dcterms:provenance       "Wenk, H.-R., & Bulakh, A. (2016). Minerals: Their constitution and origin (2nd ed.). Cambridge University Press."@en ;
+    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:notation            "metallic" ;
+.
+
+<https://kos.geospecimens.org/def/luster/pearly>
+    a                        skos:Concept ;
+    skos:prefLabel           "Pearly"@en ;
+    skos:definition          """A luster resembling that of mother-of-pearl, produced by the reflection of light from closely spaced parallel surfaces, as in muscovite and talc."""@en ;
+    dcterms:provenance       "Wenk, H.-R., & Bulakh, A. (2016). Minerals: Their constitution and origin (2nd ed.). Cambridge University Press."@en ;
+    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:notation            "pearly" ;
+.
+
+<https://kos.geospecimens.org/def/luster/waxy>
+    a                        skos:Concept ;
+    skos:prefLabel           "Waxy"@en ;
+    skos:definition          """A luster resembling that of wax, giving the mineral a soft, slightly matte sheen, as seen in chalcedony."""@en ;
+    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:notation            "waxy" ;
+.
+
+<https://kos.geospecimens.org/def/luster/vitreous>
+    a                        skos:Concept ;
+    skos:prefLabel           "Vitreous"@en ;
+    skos:definition          """A luster resembling that of glass; the most common mineral luster, exhibited for example by quartz."""@en ;
+    dcterms:provenance       "Wenk, H.-R., & Bulakh, A. (2016). Minerals: Their constitution and origin (2nd ed.). Cambridge University Press."@en ;
+    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:notation            "vitreous" ;
+.
+
+<https://kos.geospecimens.org/def/luster/submetallic>
+    a                        skos:Concept ;
+    skos:prefLabel           "Submetallic"@en ;
+    skos:definition          """A luster intermediate between metallic and non-metallic, exhibited by minerals that are imperfectly or weakly metallic in appearance, such as chromite."""@en ;
+    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:notation            "submetallic" ;
+.
+
+<https://kos.geospecimens.org/def/luster/silky>
+    a                        skos:Concept ;
+    skos:prefLabel           "Silky"@en ;
+    skos:definition          """A luster resembling that of silk, produced by the reflection of light from fine parallel fibers, characteristic of fibrous minerals such as chrysotile."""@en ;
+    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:notation            "silky" ;
+.
+
+<https://kos.geospecimens.org/def/luster/resinous>
+    a                        skos:Concept ;
+    skos:prefLabel           "Resinous"@en ;
+    skos:definition          """A luster resembling that of resin, seen on the fractured surfaces of certain minerals such as opal, sulfur, amber, and sphalerite."""@en ;
+    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:notation            "resinous" ;
+.
+
+<https://kos.geospecimens.org/def/luster/smoky>
+    a                        skos:Concept ;
+    skos:prefLabel           "Smoky"@en ;
+    skos:definition          """A smoky, brownish to grayish-black appearance arising from the diffusion and partial absorption of light within an otherwise translucent mineral, as in smoky quartz."""@en ;
+    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:notation            "smoky" ;
+.
+
+<https://kos.geospecimens.org/def/luster/translucent>
+    a                        skos:Concept ;
+    skos:prefLabel           "Translucent"@en ;
+    skos:definition          """A translucent appearance in which light passes through the mineral but is diffused, so that objects viewed through it appear obscured."""@en ;
+    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:notation            "translucent" ;
+.
+
+# ============================================================================
+# Agents
+# ============================================================================
+
+<https://kos.resources.org/org/1aa8581b-5ccd-48b1-b72e-5622a35b87af>
+    a                        schema:Person ;
+    schema:name              "Ben Norton" ;
+    schema:email             "ben.norton@yale.edu" ;
+    schema:affiliation       <https://scientific-collections.gbif.org/institution/75f50140-830d-4630-a290-3d6e951a7c29> ;
+.
+
+<https://scientific-collections.gbif.org/institution/75f50140-830d-4630-a290-3d6e951a7c29>
+    a                        schema:Organization ;
+.
+
+_:agent_mineralogy_extension_task_group
+    a                        schema:Organization ;
+    schema:name              "Mineralogy Extension Task Group" ;
+    schema:affiliation       <https://www.tdwg.org/community/esp/mineralogy/> ;
+    schema:parentOrganization [
+        a            schema:Organization ;
+        schema:name  "Biodiversity Information Standards (TDWG)" ;
+    ] ;
+.
+
+_:agent_biodiversity_information_standards
+    a                        schema:Organization ;
+    schema:name              "Biodiversity Information Standards" ;
+    schema:affiliation       <https://www.tdwg.org> ;
+.

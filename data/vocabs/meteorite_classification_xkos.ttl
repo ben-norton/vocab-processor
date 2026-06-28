@@ -1,0 +1,1307 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix mc: <https://kos.geospecimens.org/meteorite/> .
+@prefix mccls: <https://kos.geospecimens.org/meteorite/class/> .
+@prefix mcit: <https://kos.geospecimens.org/meteorite/itemtype/> .
+@prefix mclvl: <https://kos.geospecimens.org/meteorite/level/> .
+@prefix mcnote: <https://kos.geospecimens.org/meteorite/note/> .
+@prefix mcref: <https://kos.geospecimens.org/meteorite/reference/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema1: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xkos: <http://rdf-vocabulary.ddialliance.org/xkos#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+mccls:ClanItem a owl:Class ;
+    rdfs:seeAlso mclvl:clan ;
+    rdfs:subClassOf mccls:MeteoriteItem ;
+    skos:prefLabel "Clan"@en .
+
+mccls:ClassItem a owl:Class ;
+    rdfs:seeAlso mclvl:class ;
+    rdfs:subClassOf mccls:MeteoriteItem ;
+    skos:prefLabel "Class"@en .
+
+mccls:DivisionItem a owl:Class ;
+    rdfs:seeAlso mclvl:division ;
+    rdfs:subClassOf mccls:MeteoriteItem ;
+    skos:prefLabel "Division"@en .
+
+mccls:GroupItem a owl:Class ;
+    rdfs:seeAlso mclvl:group ;
+    rdfs:subClassOf mccls:MeteoriteItem ;
+    skos:prefLabel "Group"@en .
+
+mccls:SubgroupItem a owl:Class ;
+    rdfs:seeAlso mclvl:subgroup ;
+    rdfs:subClassOf mccls:MeteoriteItem ;
+    skos:prefLabel "Subgroup"@en .
+
+mc:classification a skos:Concept ;
+    rdfs:comment "Version-independent concept identifying the meteorite classification, used as the entry point under which dated major versions are grouped via xkos:belongsTo."@en ;
+    skos:prefLabel "Meteorite classification"@en .
+
+mcnote:MC_0001 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Solid extraterrestrial fragments that survive atmospheric passage; classified by mineralogy, petrography, bulk chemistry and O-isotopes into chondrites, primitive achondrites and achondrites."@en .
+
+mcnote:MC_0002 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Undifferentiated meteorites with broadly solar (CI-like) bulk compositions minus the most volatile elements, from bodies that never underwent planetary melting; most contain chondrules. 15 groups across the C, O and E classes plus R and K."@en .
+
+mcnote:MC_0003 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Nonchondritic meteorites with igneous or recrystallized textures that retain a chemical/isotopic affinity to chondritic precursors; interpreted as residues or low-degree partial melts that did not fully differentiate."@en .
+
+mcnote:MC_0004 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Differentiated meteorites - igneous rocks, melt residues, or breccias of igneous fragments - from asteroids, Mars and the Moon that experienced a high degree of melting; includes stones, stony-irons and irons."@en .
+
+mcnote:MC_0005 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Chondrite class with Mg-normalized refractory-lithophile abundances at or above CI and O-isotopes plotting near or below the terrestrial fractionation line; eight groups."@en .
+
+mcnote:MC_0006 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "The most abundant chondrites (>85% of falls); abundant large chondrules, low matrix, refractory-lithophile abundances below CI, O-isotopes above the TF line. The three groups form one clan."@en .
+
+mcnote:MC_0007 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Chondrites formed under highly reducing conditions, with Fe-poor silicates, Si-bearing metal and unusual sulfides/nitrides; O-isotopes on the TF line near Earth and the Moon. Two groups."@en .
+
+mcnote:MC_0008 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Single-group clan; CI chondrites show nothing linking them to the other carbonaceous clans."@en .
+
+mcnote:MC_0009 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Clan linking the CM and CO groups by similar chondrule sizes, refractory-lithophile abundances, and high-temperature-mineral O-isotopes."@en .
+
+mcnote:MC_0010 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Clan grouping CV and CK chondrites, which share overlapping CCAM-line O-isotopes and magnetite chemistry; low-type CK resembles oxidized CV."@en .
+
+mcnote:MC_0011 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Clan of the metal-rich CR, CH and CB groups (plus ungrouped LEW 85332), united by solar-Ni/Co metal, strong volatile-lithophile depletions, CR-line O-isotopes, and large d15N anomalies."@en .
+
+mcnote:MC_0012 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Ivuna-type; among the most primitive solar-system materials, bulk composition close to the solar photosphere. All petrologic type 1: heavily hydrated, brecciated, chondrule- and CAI-free phyllosilicate-rich rocks."@en .
+
+mcnote:MC_0013 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Mighei-type; the most abundant C chondrites. Small (~300 um) chondrules, abundant matrix, CAIs/AOAs partly replaced by phyllosilicates; mostly aqueously altered type 2 (some type 1)."@en .
+
+mcnote:MC_0014 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Ornans-type; small (~150 um) chondrules with 30-45 vol% matrix; petrologic types 3.0-3.7, O-isotopes on the CCAM line overlapping CV."@en .
+
+mcnote:MC_0015 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Vigarano-type; abundant matrix, large (~1 mm) chondrules and abundant large CAIs/AOAs; all type 3, divided into oxidized and reduced subgroups."@en .
+
+mcnote:MC_0016 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Karoonda-type; matrix-rich with large (700-1000 um) porphyritic chondrules; highly oxidized (fayalitic olivine, abundant magnetite), mostly high petrologic type 4-6."@en .
+
+mcnote:MC_0017 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Renazzo-type; mostly type 2, with large metal-rich porphyritic Mg-rich chondrules with multilayered rims, hydrated matrix, solar-Ni/Co metal, and large d15N."@en .
+
+mcnote:MC_0018 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "ALH 85085-type; high metal (~20 vol%), tiny (<100 um) mostly cryptocrystalline chondrules, virtually no matrix, very large d15N anomalies."@en .
+
+mcnote:MC_0019 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Bencubbin-type; extreme metal (60-80 vol%), cryptocrystalline/barred chondrules, strong volatile-lithophile depletion and heavy-N enrichment; subgroups CBa and CBb."@en .
+
+mcnote:MC_0020 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Oxidized Allende-like CV (CVoxA); secondary ferrous olivine, Ca,Fe-pyroxene, andradite and nepheline/sodalite, coarser matrix than CVoxB with only minor phyllosilicates."@en .
+
+mcnote:MC_0021 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Oxidized Bali-like CV (CVoxB); aqueously altered with abundant phyllosilicates, magnetite, fayalite and Ca,Fe-pyroxenes; highest matrix/chondrule ratio."@en .
+
+mcnote:MC_0022 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Reduced CV (CVred); lowest matrix/chondrule and highest metal/magnetite ratios, with only minor nepheline/sodalite and Ca,Fe-pyroxenes."@en .
+
+mcnote:MC_0023 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "CBa; ~60 vol% metal, centimeter-sized chondrules, metal with 5-8 wt% Ni, d15N up to ~1000 per mil."@en .
+
+mcnote:MC_0024 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "CBb; >70 vol% metal, millimeter-sized chondrules, metal with 4-15 wt% Ni, d15N ~200 per mil; argued to be the more primitive nebular endmember."@en .
+
+mcnote:MC_0025 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Single ordinary-chondrite clan; H, L and LL overlap in O-isotopes and petrology, indicating close kinship."@en .
+
+mcnote:MC_0026 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Highest total Fe and metallic-Fe/FeO ratio among O chondrites; equilibrated olivine Fa16-20."@en .
+
+mcnote:MC_0027 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Intermediate Fe content among O chondrites; equilibrated olivine Fa23-26."@en .
+
+mcnote:MC_0028 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Lowest Fe and metal among O chondrites; equilibrated olivine Fa27-32."@en .
+
+mcnote:MC_0029 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Single enstatite-chondrite clan; EH and EL are distinguished mainly by sulfide chemistry and metal Si content."@en .
+
+mcnote:MC_0030 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "High-Fe enstatite chondrites; more reduced, niningerite-bearing, with Si-rich (2-3 wt%) metal."@en .
+
+mcnote:MC_0031 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Low-Fe enstatite chondrites; alabandite-bearing, <1 wt% Si in metal, ranging to higher petrologic types (EL6)."@en .
+
+mcnote:MC_0032 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Rumuruti-type; highly oxidized, FeO-rich olivine (Fa37-40), nearly metal-free, ~50% matrix; highest delta-17O of any chondrite group; affiliated with but distinct from the O class (possibly a separate class or O clan)."@en .
+
+mcnote:MC_0033 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Kakangari-type grouplet; chemically, mineralogically and isotopically distinct from the C, O and E classes; high matrix, Fe-poor olivine/enstatite, O-isotopes below the TF line; a candidate first member of a fourth chondrite class."@en .
+
+mcnote:MC_0034 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Ureilites; olivine-pyroxene rocks with interstitial graphite/diamond, metal and sulfides and reduced olivine rims; O-isotopes scatter along the CCAM line. Interpreted as partial-melt residues / mantle rock of the ureilite parent body."@en .
+
+mcnote:MC_0035 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Brachinites; medium- to coarse-grained, olivine-rich (74-98%) equigranular achondrites with near-chondritic lithophile abundances; debated origin as residues, cumulates, or recrystallized chondritic material."@en .
+
+mcnote:MC_0036 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Acapulcoite-Lodranite clan; primitive achondrites with similar, spread O-isotopes; residues/products of low-degree partial melting of a chondritic precursor."@en .
+
+mcnote:MC_0037 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Acapulcoites; fine-grained (150-230 um) equigranular rocks with near-chondritic mineral abundances and rare relict chondrules; formed by very low-degree partial melting (~950 C)."@en .
+
+mcnote:MC_0038 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Lodranites; coarse-grained (540-700 um) olivine-pyroxene rocks depleted in plagioclase and troilite; residues of higher-degree partial melting (~1250 C) with basaltic-melt removal."@en .
+
+mcnote:MC_0039 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Winonaite-IAB-IIICD clan; silicate mineralogy and O-isotopes link winonaites to silicate inclusions in IAB (and possibly IIICD) irons, implying a shared or similar parent body."@en .
+
+mcnote:MC_0040 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Winonaites; chondritic mineralogy/composition but recrystallized achondritic textures; mineral compositions between E and H chondrites, with Fe,Ni-FeS veins recording first partial melts."@en .
+
+mcnote:MC_0041 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Silicate-bearing iron group whose inclusions resemble winonaites in mineralogy and O-isotopes; historically called 'nonmagmatic,' with textures suggesting impact mixing of metal and silicate. Wasson & Kallemeyn (2002) merge IAB+IIICD as the 'IAB complex.'"@en .
+
+mcnote:MC_0042 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Silicate-bearing iron group historically paired with IAB; Wasson & Kallemeyn (2002) treat IAB+IIICD as a single IAB complex. Geochemical trends differ from the magmatic groups."@en .
+
+mcnote:MC_0043 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Angrites; vesicular basaltic igneous rocks with unusual Ca-Al-Ti-rich pyroxene, Ca-rich olivine and anorthitic plagioclase - the most alkali-depleted basalts known; O-isotopes near HED but mineralogically distinct."@en .
+
+mcnote:MC_0044 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Aubrites (enstatite achondrites); highly reduced, brecciated rocks of nearly FeO-free enstatite with E-chondrite-like sulfides; likely linked to, but from a different parent body than, the EL chondrites."@en .
+
+mcnote:MC_0045 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Mesosiderites; stony-iron breccias of roughly equal silicate (basalt/gabbro/pyroxenite clasts) and Fe,Ni-metal+troilite, with metal intimately mixed with similarly sized silicate grains."@en .
+
+mcnote:MC_0046 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "HED clan (howardites-eucrites-diogenites); basalts and orthopyroxene cumulates from a common asteroidal parent, sharing O-isotopes and pyroxene Fe/Mn; spectrally linked to asteroid 4 Vesta."@en .
+
+mcnote:MC_0047 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Eucrites; basalts of plagioclase and clinopyroxene (pyroxene Fe/Mn ~30) from near-surface flows or intrusives; commonly brecciated."@en .
+
+mcnote:MC_0048 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Diogenites; coarse orthopyroxene cumulates from deeper plutonic levels of the HED parent body."@en .
+
+mcnote:MC_0049 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Howardites; polymict regolith breccias mixing eucritic and diogenitic clasts."@en .
+
+mcnote:MC_0050 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Pallasites; olivine-metal (+troilite) stony-irons. 'Pallasite' is essentially a textural term: the main-group, Eagle Station and pyroxene pallasites (plus ungrouped Milton) formed on separate parent bodies and do not form a true clan/group."@en .
+
+mcnote:MC_0051 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Main-group pallasites; olivine-metal rocks whose metal resembles Ni-rich IIIAB irons and whose O-isotopes match the HEDs (no proven genetic link)."@en .
+
+mcnote:MC_0052 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Eagle Station grouplet; more ferroan, Ca-rich olivine and distinct O-isotopes; metal resembles IIF irons (higher Ni and Ir)."@en .
+
+mcnote:MC_0053 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Pyroxene-pallasite grouplet (e.g., Vermillion, Y-8451); contain mm-sized pyroxene, with metal and O-isotopes distinguishing them from the other pallasites."@en .
+
+mcnote:MC_0054 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Iron meteorites; mostly cores of differentiated asteroids. The chemical classification (Scott & Wasson) uses Ga, Ge, Ir and Ni - a Roman numeral plus a letter - resolving 13 groups; ~10 are consistent with fractional crystallization in separate cores, and ~15% of irons (40% in Antarctica) are ungrouped."@en .
+
+mcnote:MC_0055 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Magmatic iron group resolved on Ga/Ge-Ni plots; interpreted as a fractionally crystallized asteroid core."@en .
+
+mcnote:MC_0056 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Largest magmatic iron group (hexahedrites/coarse octahedrites); a fractional-crystallization trend from a single core."@en .
+
+mcnote:MC_0057 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Magmatic iron group with a traditional core-crystallization history."@en .
+
+mcnote:MC_0058 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Magmatic iron group formed by fractional crystallization in an asteroid core."@en .
+
+mcnote:MC_0059 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Silicate-bearing iron group; some silicates resemble H chondrites. Historically 'nonmagmatic,' with poorly defined elemental trends suggesting impact mixing of metal and silicate."@en .
+
+mcnote:MC_0060 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "One of the largest magmatic iron groups (octahedrites); a single fractional-crystallization sequence (former IIIA+IIIB), with metal close to main-group-pallasite composition."@en .
+
+mcnote:MC_0061 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Magmatic iron group resembling IIIA/IIIAB but resolved by lower Ga/Ni and Ge/Ni, larger kamacite bandwidths, and haxonite (carbide) in its members."@en .
+
+mcnote:MC_0062 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Small, volatile-depleted (low Ga/Ge) magmatic iron group, distinct from IIIAB."@en .
+
+mcnote:MC_0063 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Volatile-depleted magmatic iron group (fine octahedrites) with a range of cooling rates, suggesting metal pods at varying depths in a partially molten body."@en .
+
+mcnote:MC_0064 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Most volatile-depleted iron group; metal matches a high-temperature (~1270 K) nebular condensate, implying high-temperature accretion."@en .
+
+mcnote:MC_0065 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Lunar meteorites; rocks launched from the Moon, sharing mineralogy/Fe-Mn and O-isotopes with Apollo/Luna samples but sampling random sites (including the farside). Mainly feldspathic-highland breccias, mare basalts/breccias, and mingled breccias."@en .
+
+mcnote:MC_0066 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Martian (SNC) meteorites; crustal igneous rocks from Mars defining a unique slope-0.52 O-isotope line, with trapped gases matching the martian atmosphere. Includes shergottites, nakhlites, chassignites and orthopyroxenite ALH 84001."@en .
+
+mcnote:MC_0067 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Shergottites; basaltic and lherzolitic/olivine-phyric volcanic-plutonic rocks, mostly young (<1.3 Ga); the most abundant martian meteorites."@en .
+
+mcnote:MC_0068 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Nakhlites; clinopyroxene (augite)-rich cumulate rocks from Mars."@en .
+
+mcnote:MC_0069 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Chassignites; olivine-rich (dunitic) cumulate martian rocks (e.g., Chassigny)."@en .
+
+mcnote:MC_0070 a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Orthopyroxenite represented by ALH 84001, a ~4.5 Ga coarse orthopyroxene cumulate from Mars, originally misclassified as a diogenite."@en .
+
+mcnote:scheme a xkos:ExplanatoryNote ;
+    dcterms:language "en"^^xsd:language ;
+    xkos:plainText "Classification framework of Weisberg, McCoy & Krot (2006). Meteorites are divided into three divisions (chondrites = undifferentiated; primitive achondrites; achondrites = differentiated) and further organised into classes, clans, groups and subgroups. Because clans and groups may attach at different depths of the tree, the rank system is modelled as XKOS classification levels that are decoupled from the broader/narrower hierarchy."@en .
+
+mcref:lunarlit a dcterms:BibliographicResource ;
+    rdfs:label "lunar meteorite literature (Korotev; Lunar Meteorite Compendium)"@en ;
+    dc:identifier "https://curator.jsc.nasa.gov/antmet/lmc/" ;
+    dcterms:bibliographicCitation "Korotev R. L. (2005) Lunar geochemistry as told by lunar meteorites. Chemie der Erde - Geochemistry, 65(4), 297-346; and Lunar Meteorite Compendium (Righter K., compiler), NASA Johnson Space Center."@en .
+
+mcit:subgroup a skos:Concept ;
+    skos:broader mcit:group ;
+    skos:inScheme mc:itemTypes ;
+    skos:prefLabel "Subgroup"@en .
+
+mclvl:clan a xkos:ClassificationLevel ;
+    xkos:depth 3 ;
+    xkos:organizedBy mcit:clan ;
+    rdfs:seeAlso mccls:ClanItem ;
+    skos:member mc:MC_0008,
+        mc:MC_0009,
+        mc:MC_0010,
+        mc:MC_0011,
+        mc:MC_0025,
+        mc:MC_0029,
+        mc:MC_0036,
+        mc:MC_0039,
+        mc:MC_0046,
+        mc:MC_0050,
+        mc:MC_0054,
+        mc:MC_0065,
+        mc:MC_0066 ;
+    skos:prefLabel "Clan level"@en .
+
+mclvl:class a xkos:ClassificationLevel ;
+    xkos:depth 2 ;
+    xkos:organizedBy mcit:class ;
+    rdfs:seeAlso mccls:ClassItem ;
+    skos:member mc:MC_0005,
+        mc:MC_0006,
+        mc:MC_0007 ;
+    skos:prefLabel "Class level"@en .
+
+mclvl:division a xkos:ClassificationLevel ;
+    xkos:depth 1 ;
+    xkos:organizedBy mcit:division ;
+    rdfs:seeAlso mccls:DivisionItem ;
+    skos:member mc:MC_0002,
+        mc:MC_0003,
+        mc:MC_0004 ;
+    skos:prefLabel "Division level"@en .
+
+mclvl:group a xkos:ClassificationLevel ;
+    xkos:depth 4 ;
+    xkos:organizedBy mcit:group ;
+    rdfs:seeAlso mccls:GroupItem ;
+    skos:member mc:MC_0012,
+        mc:MC_0013,
+        mc:MC_0014,
+        mc:MC_0015,
+        mc:MC_0016,
+        mc:MC_0017,
+        mc:MC_0018,
+        mc:MC_0019,
+        mc:MC_0026,
+        mc:MC_0027,
+        mc:MC_0028,
+        mc:MC_0030,
+        mc:MC_0031,
+        mc:MC_0032,
+        mc:MC_0033,
+        mc:MC_0034,
+        mc:MC_0035,
+        mc:MC_0037,
+        mc:MC_0038,
+        mc:MC_0040,
+        mc:MC_0041,
+        mc:MC_0042,
+        mc:MC_0043,
+        mc:MC_0044,
+        mc:MC_0045,
+        mc:MC_0047,
+        mc:MC_0048,
+        mc:MC_0049,
+        mc:MC_0051,
+        mc:MC_0052,
+        mc:MC_0053,
+        mc:MC_0055,
+        mc:MC_0056,
+        mc:MC_0057,
+        mc:MC_0058,
+        mc:MC_0059,
+        mc:MC_0060,
+        mc:MC_0061,
+        mc:MC_0062,
+        mc:MC_0063,
+        mc:MC_0064,
+        mc:MC_0067,
+        mc:MC_0068,
+        mc:MC_0069,
+        mc:MC_0070 ;
+    skos:prefLabel "Group level"@en .
+
+mclvl:subgroup a xkos:ClassificationLevel ;
+    xkos:depth 5 ;
+    xkos:organizedBy mcit:subgroup ;
+    rdfs:seeAlso mccls:SubgroupItem ;
+    skos:member mc:MC_0020,
+        mc:MC_0021,
+        mc:MC_0022,
+        mc:MC_0023,
+        mc:MC_0024 ;
+    skos:prefLabel "Subgroup level"@en .
+
+mcref:wassonkallemeyn2002 a dcterms:BibliographicResource ;
+    rdfs:label "Wasson & Kallemeyn (2002)"@en ;
+    dcterms:bibliographicCitation "Wasson J. T. and Kallemeyn G. W. (2002) The IAB iron-meteorite complex: A group, five subgroups, numerous grouplets, closely related, mainly formed by crystal segregation in rapidly cooling melts. Geochimica et Cosmochimica Acta, 66(13), 2445-2473."@en .
+
+mc:MC_0012 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0008 ;
+    skos:broader mc:MC_0008 ;
+    skos:definition mcnote:MC_0012 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "CI" ;
+    skos:prefLabel "CI (Ivuna-type)"@en .
+
+mc:MC_0013 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0009 ;
+    skos:broader mc:MC_0009 ;
+    skos:definition mcnote:MC_0013 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "CM" ;
+    skos:prefLabel "CM (Mighei-type)"@en .
+
+mc:MC_0014 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0009 ;
+    skos:broader mc:MC_0009 ;
+    skos:definition mcnote:MC_0014 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "CO" ;
+    skos:prefLabel "CO (Ornans-type)"@en .
+
+mc:MC_0016 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0010 ;
+    skos:broader mc:MC_0010 ;
+    skos:definition mcnote:MC_0016 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "CK" ;
+    skos:prefLabel "CK (Karoonda-type)"@en .
+
+mc:MC_0017 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0011 ;
+    skos:broader mc:MC_0011 ;
+    skos:definition mcnote:MC_0017 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "CR" ;
+    skos:prefLabel "CR (Renazzo-type)"@en .
+
+mc:MC_0018 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0011 ;
+    skos:broader mc:MC_0011 ;
+    skos:definition mcnote:MC_0018 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "CH" ;
+    skos:prefLabel "CH (high-metal)"@en .
+
+mc:MC_0020 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0015 ;
+    skos:broader mc:MC_0015 ;
+    skos:definition mcnote:MC_0020 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "CV_A" ;
+    skos:prefLabel "CV subgroup A (oxidized, Allende-like)"@en .
+
+mc:MC_0021 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0015 ;
+    skos:broader mc:MC_0015 ;
+    skos:definition mcnote:MC_0021 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "CV_B" ;
+    skos:prefLabel "CV subgroup B (oxidized, Bali-like)"@en .
+
+mc:MC_0022 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0015 ;
+    skos:broader mc:MC_0015 ;
+    skos:definition mcnote:MC_0022 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "CV_red" ;
+    skos:prefLabel "CV subgroup (reduced)"@en .
+
+mc:MC_0023 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0019 ;
+    skos:broader mc:MC_0019 ;
+    skos:definition mcnote:MC_0023 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "CB_a" ;
+    skos:prefLabel "CB subgroup a"@en .
+
+mc:MC_0024 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0019 ;
+    skos:broader mc:MC_0019 ;
+    skos:definition mcnote:MC_0024 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "CB_b" ;
+    skos:prefLabel "CB subgroup b"@en .
+
+mc:MC_0026 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0025 ;
+    skos:broader mc:MC_0025 ;
+    skos:definition mcnote:MC_0026 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "H" ;
+    skos:prefLabel "H (high iron)"@en .
+
+mc:MC_0027 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0025 ;
+    skos:broader mc:MC_0025 ;
+    skos:definition mcnote:MC_0027 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "L" ;
+    skos:prefLabel "L (low iron)"@en .
+
+mc:MC_0028 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0025 ;
+    skos:broader mc:MC_0025 ;
+    skos:definition mcnote:MC_0028 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "LL" ;
+    skos:prefLabel "LL (low iron, low metal)"@en .
+
+mc:MC_0030 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0029 ;
+    skos:broader mc:MC_0029 ;
+    skos:definition mcnote:MC_0030 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "EH" ;
+    skos:prefLabel "EH (high iron)"@en .
+
+mc:MC_0031 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0029 ;
+    skos:broader mc:MC_0029 ;
+    skos:definition mcnote:MC_0031 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "EL" ;
+    skos:prefLabel "EL (low iron)"@en .
+
+mc:MC_0032 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0002 ;
+    skos:broader mc:MC_0002 ;
+    skos:definition mcnote:MC_0032 ;
+    skos:editorialNote "Connects directly to Chondrites in figure (no class/clan box)"@en ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "R" ;
+    skos:prefLabel "R (Rumuruti-type)"@en .
+
+mc:MC_0033 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0002 ;
+    skos:broader mc:MC_0002 ;
+    skos:definition mcnote:MC_0033 ;
+    skos:editorialNote "Connects directly to Chondrites in figure (no class/clan box)"@en ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "K" ;
+    skos:prefLabel "K (Kakangari-type)"@en .
+
+mc:MC_0034 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0003 ;
+    skos:broader mc:MC_0003 ;
+    skos:definition mcnote:MC_0034 ;
+    skos:editorialNote "Connects directly to Primitive Achondrites (no clan box)"@en ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "URE" ;
+    skos:prefLabel "Ureilite"@en .
+
+mc:MC_0035 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0003 ;
+    skos:broader mc:MC_0003 ;
+    skos:definition mcnote:MC_0035 ;
+    skos:editorialNote "Connects directly to Primitive Achondrites (no clan box)"@en ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "BRA" ;
+    skos:prefLabel "Brachinite"@en .
+
+mc:MC_0037 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0036 ;
+    skos:broader mc:MC_0036 ;
+    skos:definition mcnote:MC_0037 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "ACA" ;
+    skos:prefLabel "Acapulcoite"@en .
+
+mc:MC_0038 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0036 ;
+    skos:broader mc:MC_0036 ;
+    skos:definition mcnote:MC_0038 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "LOD" ;
+    skos:prefLabel "Lodranite"@en .
+
+mc:MC_0040 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0039 ;
+    skos:broader mc:MC_0039 ;
+    skos:definition mcnote:MC_0040 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "WIN" ;
+    skos:prefLabel "Winonaite"@en .
+
+mc:MC_0041 a skos:Concept ;
+    dcterms:source mcref:wassonkallemeyn2002,
+        mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0039 ;
+    skos:broader mc:MC_0039 ;
+    skos:definition mcnote:MC_0041 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "IAB" ;
+    skos:prefLabel "IAB iron (silicate-bearing)"@en .
+
+mc:MC_0042 a skos:Concept ;
+    dcterms:source mcref:wassonkallemeyn2002,
+        mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0039 ;
+    skos:broader mc:MC_0039 ;
+    skos:definition mcnote:MC_0042 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "IIICD" ;
+    skos:prefLabel "IIICD iron (silicate-bearing)"@en .
+
+mc:MC_0043 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0004 ;
+    skos:broader mc:MC_0004 ;
+    skos:definition mcnote:MC_0043 ;
+    skos:editorialNote "Connects directly to Achondrites"@en ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "ANG" ;
+    skos:prefLabel "Angrite"@en .
+
+mc:MC_0044 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0004 ;
+    skos:broader mc:MC_0004 ;
+    skos:definition mcnote:MC_0044 ;
+    skos:editorialNote "Connects directly to Achondrites"@en ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "AUB" ;
+    skos:prefLabel "Aubrite"@en .
+
+mc:MC_0045 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0004 ;
+    skos:broader mc:MC_0004 ;
+    skos:definition mcnote:MC_0045 ;
+    skos:editorialNote "Connects directly to Achondrites"@en ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "MES" ;
+    skos:prefLabel "Mesosiderite (stony-iron)"@en .
+
+mc:MC_0047 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0046 ;
+    skos:broader mc:MC_0046 ;
+    skos:definition mcnote:MC_0047 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "EUC" ;
+    skos:prefLabel "Eucrite"@en .
+
+mc:MC_0048 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0046 ;
+    skos:broader mc:MC_0046 ;
+    skos:definition mcnote:MC_0048 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "DIO" ;
+    skos:prefLabel "Diogenite"@en .
+
+mc:MC_0049 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0046 ;
+    skos:broader mc:MC_0046 ;
+    skos:definition mcnote:MC_0049 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "HOW" ;
+    skos:prefLabel "Howardite"@en .
+
+mc:MC_0051 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0050 ;
+    skos:broader mc:MC_0050 ;
+    skos:definition mcnote:MC_0051 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "MG PAL" ;
+    skos:prefLabel "Main-group pallasite"@en .
+
+mc:MC_0052 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0050 ;
+    skos:broader mc:MC_0050 ;
+    skos:definition mcnote:MC_0052 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "ES PAL" ;
+    skos:prefLabel "Eagle Station pallasite"@en .
+
+mc:MC_0053 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0050 ;
+    skos:broader mc:MC_0050 ;
+    skos:definition mcnote:MC_0053 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "PP PAL" ;
+    skos:prefLabel "Pyroxene pallasite"@en .
+
+mc:MC_0055 a skos:Concept ;
+    dcterms:source mcref:scottwasson1975,
+        mcref:wassonironseries ;
+    xkos:specializes mc:MC_0054 ;
+    skos:broader mc:MC_0054 ;
+    skos:definition mcnote:MC_0055 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "IC" ;
+    skos:prefLabel "IC iron group"@en .
+
+mc:MC_0056 a skos:Concept ;
+    dcterms:source mcref:scottwasson1975,
+        mcref:wassonironseries ;
+    xkos:specializes mc:MC_0054 ;
+    skos:broader mc:MC_0054 ;
+    skos:definition mcnote:MC_0056 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "IIAB" ;
+    skos:prefLabel "IIAB iron group"@en .
+
+mc:MC_0057 a skos:Concept ;
+    dcterms:source mcref:scottwasson1975,
+        mcref:wassonironseries ;
+    xkos:specializes mc:MC_0054 ;
+    skos:broader mc:MC_0054 ;
+    skos:definition mcnote:MC_0057 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "IIC" ;
+    skos:prefLabel "IIC iron group"@en .
+
+mc:MC_0058 a skos:Concept ;
+    dcterms:source mcref:scottwasson1975,
+        mcref:wassonironseries ;
+    xkos:specializes mc:MC_0054 ;
+    skos:broader mc:MC_0054 ;
+    skos:definition mcnote:MC_0058 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "IID" ;
+    skos:prefLabel "IID iron group"@en .
+
+mc:MC_0059 a skos:Concept ;
+    dcterms:source mcref:scottwasson1975,
+        mcref:wassonironseries,
+        mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0054 ;
+    skos:broader mc:MC_0054 ;
+    skos:definition mcnote:MC_0059 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "IIE" ;
+    skos:prefLabel "IIE iron group"@en .
+
+mc:MC_0060 a skos:Concept ;
+    dcterms:source mcref:scottwasson1975,
+        mcref:wassonironseries ;
+    xkos:specializes mc:MC_0054 ;
+    skos:broader mc:MC_0054 ;
+    skos:definition mcnote:MC_0060 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "IIIAB" ;
+    skos:prefLabel "IIIAB iron group"@en .
+
+mc:MC_0061 a skos:Concept ;
+    dcterms:source mcref:scottwasson1975,
+        mcref:wassonironseries ;
+    xkos:specializes mc:MC_0054 ;
+    skos:broader mc:MC_0054 ;
+    skos:definition mcnote:MC_0061 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "IIIE" ;
+    skos:prefLabel "IIIE iron group"@en .
+
+mc:MC_0062 a skos:Concept ;
+    dcterms:source mcref:scottwasson1975,
+        mcref:wassonironseries ;
+    xkos:specializes mc:MC_0054 ;
+    skos:broader mc:MC_0054 ;
+    skos:definition mcnote:MC_0062 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "IIIF" ;
+    skos:prefLabel "IIIF iron group"@en .
+
+mc:MC_0063 a skos:Concept ;
+    dcterms:source mcref:scottwasson1975,
+        mcref:wassonironseries ;
+    xkos:specializes mc:MC_0054 ;
+    skos:broader mc:MC_0054 ;
+    skos:definition mcnote:MC_0063 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "IVA" ;
+    skos:prefLabel "IVA iron group"@en .
+
+mc:MC_0064 a skos:Concept ;
+    dcterms:source mcref:scottwasson1975,
+        mcref:wassonironseries ;
+    xkos:specializes mc:MC_0054 ;
+    skos:broader mc:MC_0054 ;
+    skos:definition mcnote:MC_0064 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "IVB" ;
+    skos:prefLabel "IVB iron group"@en .
+
+mc:MC_0065 a skos:Concept ;
+    dcterms:source mcref:lunarlit,
+        mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0004 ;
+    skos:broader mc:MC_0004 ;
+    skos:definition mcnote:MC_0065 ;
+    skos:editorialNote "No group boxes shown in figure"@en ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "Moon" ;
+    skos:prefLabel "Lunar (Moon)"@en .
+
+mc:MC_0067 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0066 ;
+    skos:broader mc:MC_0066 ;
+    skos:definition mcnote:MC_0067 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "SHE" ;
+    skos:prefLabel "Shergottite"@en .
+
+mc:MC_0068 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0066 ;
+    skos:broader mc:MC_0066 ;
+    skos:definition mcnote:MC_0068 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "NAK" ;
+    skos:prefLabel "Nakhlite"@en .
+
+mc:MC_0069 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0066 ;
+    skos:broader mc:MC_0066 ;
+    skos:definition mcnote:MC_0069 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "CHA" ;
+    skos:prefLabel "Chassignite"@en .
+
+mc:MC_0070 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:specializes mc:MC_0066 ;
+    skos:broader mc:MC_0066 ;
+    skos:definition mcnote:MC_0070 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:notation "OPX" ;
+    skos:prefLabel "Orthopyroxenite (ALH 84001)"@en .
+
+mcit:clan a skos:Concept ;
+    skos:broader mcit:class ;
+    skos:inScheme mc:itemTypes ;
+    skos:narrower mcit:group ;
+    skos:prefLabel "Clan"@en .
+
+mcit:class a skos:Concept ;
+    skos:broader mcit:division ;
+    skos:inScheme mc:itemTypes ;
+    skos:narrower mcit:clan ;
+    skos:prefLabel "Class"@en .
+
+mcit:division a skos:Concept ;
+    skos:inScheme mc:itemTypes ;
+    skos:narrower mcit:class ;
+    skos:prefLabel "Division"@en ;
+    skos:topConceptOf mc:itemTypes .
+
+mcit:group a skos:Concept ;
+    skos:broader mcit:clan ;
+    skos:inScheme mc:itemTypes ;
+    skos:narrower mcit:subgroup ;
+    skos:prefLabel "Group"@en .
+
+mc:MC_0006 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:generalizes mc:MC_0025 ;
+    xkos:specializes mc:MC_0002 ;
+    skos:broader mc:MC_0002 ;
+    skos:definition mcnote:MC_0006 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:narrower mc:MC_0025 ;
+    skos:notation "O" ;
+    skos:prefLabel "Ordinary chondrites"@en .
+
+mc:MC_0007 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:generalizes mc:MC_0029 ;
+    xkos:specializes mc:MC_0002 ;
+    skos:broader mc:MC_0002 ;
+    skos:definition mcnote:MC_0007 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:narrower mc:MC_0029 ;
+    skos:notation "E" ;
+    skos:prefLabel "Enstatite chondrites"@en .
+
+mc:MC_0008 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:generalizes mc:MC_0012 ;
+    xkos:specializes mc:MC_0005 ;
+    skos:broader mc:MC_0005 ;
+    skos:definition mcnote:MC_0008 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:narrower mc:MC_0012 ;
+    skos:notation "CI" ;
+    skos:prefLabel "CI clan"@en .
+
+mccls:MeteoriteItem a owl:Class ;
+    rdfs:seeAlso mc:wmk2006 ;
+    rdfs:subClassOf skos:Concept ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasValue mc:wmk2006 ;
+            owl:onProperty skos:inScheme ] ;
+    skos:prefLabel "Meteorite classification item"@en .
+
+mc:itemTypes a skos:ConceptScheme ;
+    skos:hasTopConcept mcit:division ;
+    skos:prefLabel "Meteorite classification item types"@en .
+
+mc:MC_0001 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:generalizes mc:MC_0002,
+        mc:MC_0003,
+        mc:MC_0004 ;
+    skos:definition mcnote:MC_0001 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:narrower mc:MC_0002,
+        mc:MC_0003,
+        mc:MC_0004 ;
+    skos:notation "Meteorites" ;
+    skos:prefLabel "Meteorites"@en ;
+    skos:topConceptOf mc:wmk2006 .
+
+mc:MC_0009 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:generalizes mc:MC_0013,
+        mc:MC_0014 ;
+    xkos:specializes mc:MC_0005 ;
+    skos:broader mc:MC_0005 ;
+    skos:definition mcnote:MC_0009 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:narrower mc:MC_0013,
+        mc:MC_0014 ;
+    skos:notation "CM-CO" ;
+    skos:prefLabel "CM-CO clan"@en .
+
+mc:MC_0010 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:generalizes mc:MC_0015,
+        mc:MC_0016 ;
+    xkos:specializes mc:MC_0005 ;
+    skos:broader mc:MC_0005 ;
+    skos:definition mcnote:MC_0010 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:narrower mc:MC_0015,
+        mc:MC_0016 ;
+    skos:notation "CV-CK" ;
+    skos:prefLabel "CV-CK clan"@en .
+
+mc:MC_0019 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:generalizes mc:MC_0023,
+        mc:MC_0024 ;
+    xkos:specializes mc:MC_0011 ;
+    skos:broader mc:MC_0011 ;
+    skos:definition mcnote:MC_0019 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:narrower mc:MC_0023,
+        mc:MC_0024 ;
+    skos:notation "CB" ;
+    skos:prefLabel "CB (Bencubbin-type)"@en .
+
+mc:MC_0029 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:generalizes mc:MC_0030,
+        mc:MC_0031 ;
+    xkos:specializes mc:MC_0007 ;
+    skos:broader mc:MC_0007 ;
+    skos:definition mcnote:MC_0029 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:narrower mc:MC_0030,
+        mc:MC_0031 ;
+    skos:notation "EH-EL" ;
+    skos:prefLabel "EH-EL clan"@en .
+
+mc:MC_0036 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:generalizes mc:MC_0037,
+        mc:MC_0038 ;
+    xkos:specializes mc:MC_0003 ;
+    skos:broader mc:MC_0003 ;
+    skos:definition mcnote:MC_0036 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:narrower mc:MC_0037,
+        mc:MC_0038 ;
+    skos:notation "ACA-LOD" ;
+    skos:prefLabel "Acapulcoite-Lodranite clan"@en .
+
+mc:MC_0011 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:generalizes mc:MC_0017,
+        mc:MC_0018,
+        mc:MC_0019 ;
+    xkos:specializes mc:MC_0005 ;
+    skos:broader mc:MC_0005 ;
+    skos:definition mcnote:MC_0011 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:narrower mc:MC_0017,
+        mc:MC_0018,
+        mc:MC_0019 ;
+    skos:notation "CR" ;
+    skos:prefLabel "CR clan"@en .
+
+mc:MC_0015 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:generalizes mc:MC_0020,
+        mc:MC_0021,
+        mc:MC_0022 ;
+    xkos:specializes mc:MC_0010 ;
+    skos:broader mc:MC_0010 ;
+    skos:definition mcnote:MC_0015 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:narrower mc:MC_0020,
+        mc:MC_0021,
+        mc:MC_0022 ;
+    skos:notation "CV" ;
+    skos:prefLabel "CV (Vigarano-type)"@en .
+
+mc:MC_0025 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:generalizes mc:MC_0026,
+        mc:MC_0027,
+        mc:MC_0028 ;
+    xkos:specializes mc:MC_0006 ;
+    skos:broader mc:MC_0006 ;
+    skos:definition mcnote:MC_0025 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:narrower mc:MC_0026,
+        mc:MC_0027,
+        mc:MC_0028 ;
+    skos:notation "H-L-LL" ;
+    skos:prefLabel "H-L-LL clan"@en .
+
+mc:MC_0039 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:generalizes mc:MC_0040,
+        mc:MC_0041,
+        mc:MC_0042 ;
+    xkos:specializes mc:MC_0003 ;
+    skos:broader mc:MC_0003 ;
+    skos:definition mcnote:MC_0039 ;
+    skos:editorialNote "Clan box reads 'WIN-IAB-IICD' in figure"@en ;
+    skos:inScheme mc:wmk2006 ;
+    skos:narrower mc:MC_0040,
+        mc:MC_0041,
+        mc:MC_0042 ;
+    skos:notation "WIN-IAB-IIICD" ;
+    skos:prefLabel "Winonaite-IAB-IIICD clan"@en .
+
+mc:MC_0046 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:generalizes mc:MC_0047,
+        mc:MC_0048,
+        mc:MC_0049 ;
+    xkos:specializes mc:MC_0004 ;
+    skos:broader mc:MC_0004 ;
+    skos:definition mcnote:MC_0046 ;
+    skos:editorialNote "howardite-eucrite-diogenite; parent body inferred as Vesta"@en ;
+    skos:inScheme mc:wmk2006 ;
+    skos:narrower mc:MC_0047,
+        mc:MC_0048,
+        mc:MC_0049 ;
+    skos:notation "Vesta?" ;
+    skos:prefLabel "HED clan (Vesta?)"@en .
+
+mc:MC_0050 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:generalizes mc:MC_0051,
+        mc:MC_0052,
+        mc:MC_0053 ;
+    xkos:specializes mc:MC_0004 ;
+    skos:broader mc:MC_0004 ;
+    skos:definition mcnote:MC_0050 ;
+    skos:editorialNote "Unlabeled shared connector in figure (clan-row grouping)"@en ;
+    skos:inScheme mc:wmk2006 ;
+    skos:narrower mc:MC_0051,
+        mc:MC_0052,
+        mc:MC_0053 ;
+    skos:notation "PAL" ;
+    skos:prefLabel "Pallasites (stony-iron)"@en .
+
+mc:MC_0003 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:generalizes mc:MC_0034,
+        mc:MC_0035,
+        mc:MC_0036,
+        mc:MC_0039 ;
+    xkos:specializes mc:MC_0001 ;
+    skos:broader mc:MC_0001 ;
+    skos:definition mcnote:MC_0003 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:narrower mc:MC_0034,
+        mc:MC_0035,
+        mc:MC_0036,
+        mc:MC_0039 ;
+    skos:notation "Primitive Achondrites" ;
+    skos:prefLabel "Primitive achondrites"@en .
+
+mc:MC_0005 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:generalizes mc:MC_0008,
+        mc:MC_0009,
+        mc:MC_0010,
+        mc:MC_0011 ;
+    xkos:specializes mc:MC_0002 ;
+    skos:broader mc:MC_0002 ;
+    skos:definition mcnote:MC_0005 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:narrower mc:MC_0008,
+        mc:MC_0009,
+        mc:MC_0010,
+        mc:MC_0011 ;
+    skos:notation "C" ;
+    skos:prefLabel "Carbonaceous chondrites"@en .
+
+mc:MC_0066 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:generalizes mc:MC_0067,
+        mc:MC_0068,
+        mc:MC_0069,
+        mc:MC_0070 ;
+    xkos:specializes mc:MC_0004 ;
+    skos:broader mc:MC_0004 ;
+    skos:definition mcnote:MC_0066 ;
+    skos:inScheme mc:wmk2006 ;
+    skos:narrower mc:MC_0067,
+        mc:MC_0068,
+        mc:MC_0069,
+        mc:MC_0070 ;
+    skos:notation "Mars" ;
+    skos:prefLabel "Martian (SNC)"@en .
+
+mcref:scottwasson1975 a dcterms:BibliographicResource ;
+    rdfs:label "Scott & Wasson (1975)"@en ;
+    dc:identifier "doi:10.1029/RG013i004p00527" ;
+    dcterms:bibliographicCitation "Scott E. R. D. and Wasson J. T. (1975) Classification and properties of iron meteorites. Reviews of Geophysics and Space Physics, 13(4), 527-546."@en .
+
+mcref:wassonironseries a dcterms:BibliographicResource ;
+    rdfs:label "Wasson iron-classification series"@en ;
+    dcterms:bibliographicCitation "Wasson J. T. and coworkers (1967-1976) 'The chemical classification of iron meteorites' (multi-part series), Geochimica et Cosmochimica Acta; e.g. Wasson J. T. and Kimberlin J. (1967) Part II, GCA 31, 149-178."@en .
+
+mc:MC_0002 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:generalizes mc:MC_0005,
+        mc:MC_0006,
+        mc:MC_0007,
+        mc:MC_0032,
+        mc:MC_0033 ;
+    xkos:specializes mc:MC_0001 ;
+    skos:broader mc:MC_0001 ;
+    skos:definition mcnote:MC_0002 ;
+    skos:editorialNote "Division label in figure: Undifferentiated"@en ;
+    skos:inScheme mc:wmk2006 ;
+    skos:narrower mc:MC_0005,
+        mc:MC_0006,
+        mc:MC_0007,
+        mc:MC_0032,
+        mc:MC_0033 ;
+    skos:notation "Chondrites" ;
+    skos:prefLabel "Chondrites"@en .
+
+mc:MC_0004 a skos:Concept ;
+    dcterms:source mcref:weisberg2006 ;
+    xkos:generalizes mc:MC_0043,
+        mc:MC_0044,
+        mc:MC_0045,
+        mc:MC_0046,
+        mc:MC_0050,
+        mc:MC_0054,
+        mc:MC_0065,
+        mc:MC_0066 ;
+    xkos:specializes mc:MC_0001 ;
+    skos:broader mc:MC_0001 ;
+    skos:definition mcnote:MC_0004 ;
+    skos:editorialNote "Division label in figure: Differentiated"@en ;
+    skos:inScheme mc:wmk2006 ;
+    skos:narrower mc:MC_0043,
+        mc:MC_0044,
+        mc:MC_0045,
+        mc:MC_0046,
+        mc:MC_0050,
+        mc:MC_0054,
+        mc:MC_0065,
+        mc:MC_0066 ;
+    skos:notation "Achondrites" ;
+    skos:prefLabel "Achondrites"@en .
+
+mc:MC_0054 a skos:Concept ;
+    dcterms:source mcref:scottwasson1975,
+        mcref:wassonironseries,
+        mcref:weisberg2006 ;
+    xkos:generalizes mc:MC_0055,
+        mc:MC_0056,
+        mc:MC_0057,
+        mc:MC_0058,
+        mc:MC_0059,
+        mc:MC_0060,
+        mc:MC_0061,
+        mc:MC_0062,
+        mc:MC_0063,
+        mc:MC_0064 ;
+    xkos:specializes mc:MC_0004 ;
+    skos:broader mc:MC_0004 ;
+    skos:definition mcnote:MC_0054 ;
+    skos:editorialNote "Unlabeled shared connector in figure (clan-row grouping)"@en ;
+    skos:inScheme mc:wmk2006 ;
+    skos:narrower mc:MC_0055,
+        mc:MC_0056,
+        mc:MC_0057,
+        mc:MC_0058,
+        mc:MC_0059,
+        mc:MC_0060,
+        mc:MC_0061,
+        mc:MC_0062,
+        mc:MC_0063,
+        mc:MC_0064 ;
+    skos:notation "IRON" ;
+    skos:prefLabel "Irons"@en .
+
+mcref:weisberg2006 a dcterms:BibliographicResource ;
+    rdfs:label "Weisberg et al. (2006)"@en ;
+    dc:identifier "ISBN:9780816525621" ;
+    dcterms:bibliographicCitation "Weisberg M. K., McCoy T. J., and Krot A. N. (2006) Systematics and Evaluation of Meteorite Classification. In Meteorites and the Early Solar System II (D. S. Lauretta and H. Y. McSween Jr., eds.), pp. 19-52. University of Arizona Press, Tucson."@en .
+
+mc:wmk2006 a skos:ConceptScheme ;
+    dc:description "A hierarchical classification of meteorites into chondrites, primitive achondrites and achondrites, subdivided by class, clan, group and subgroup on the basis of mineralogy, petrography, bulk chemistry and oxygen-isotope systematics."@en ;
+    dcterms:bibliographicCitation "Weisberg M. K., McCoy T. J., and Krot A. N. (2006) Systematics and Evaluation of Meteorite Classification. In Meteorites and the Early Solar System II (D. S. Lauretta and H. Y. McSween Jr., eds.), pp. 19-52. University of Arizona Press, Tucson."@en ;
+    dcterms:conformsTo <http://rdf-vocabulary.ddialliance.org/xkos> ;
+    dcterms:creator "Krot, Alexander N.",
+        "McCoy, Timothy J.",
+        "Weisberg, Michael K." ;
+    dcterms:issued "2006-01-01"^^xsd:date ;
+    xkos:belongsTo mc:classification ;
+    xkos:levels ( mclvl:division mclvl:class mclvl:clan mclvl:group mclvl:subgroup ) ;
+    xkos:numberOfLevels 5 ;
+    schema1:startDate "2006-01-01"^^xsd:date ;
+    rdfs:seeAlso mccls:MeteoriteItem ;
+    skos:hasTopConcept mc:MC_0001 ;
+    skos:notation "WMK2006" ;
+    skos:prefLabel "Systematics and Evaluation of Meteorite Classification (Weisberg, McCoy & Krot 2006)"@en ;
+    skos:scopeNote mcnote:scheme .
+

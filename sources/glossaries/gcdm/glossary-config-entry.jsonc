@@ -1,0 +1,34 @@
+// Entry for data/config/glossaries.json.
+// Copy the object below (without these comments) into the `glossaries: [ ... ]`
+// array of data/config/glossaries.json, then run:
+//   npm run csv && npm run glossaries
+
+{
+  // ── Identity ──────────────────────────────────────────────────────────
+  "id":    "gcdm",
+  "title": "Geology Collection Conceptual Data Model (GCDM) Glossary",
+  "description": "",
+  "uri":   "https://kos.geospecimens.org/kos/glossary/gcdm",
+
+  // ── CSV → JSON paths (read by scripts/csv-to-glossary.js) ─────────────
+  "terms":   "glossaries/gcdm/gcdm-glossary-terms.csv",
+  "sources": "glossaries/gcdm/gcdm-glossary-sources.csv",
+  "output":  "data/glossaries/gcdm/glossary.json",
+
+  // ── Editorial notes (all optional, all passthrough) ───────────────────
+  "scopeNote":   "The Geology Collections Conceptual Data Model Glossary is a terminological resource containing terms with definitions for concepts related to Geological Collections.",
+  "changeNote":  "First published 2026-06-18.",
+  "historyNote": "Transformed into KOS platform format from the Geological Collections Conceptual Data Model (GCDM) tabular glossary.",
+
+  // ── Versioning ────────────────────────────────────────────────────────
+  "version":  "2026-05-15",
+  "modified": "2026-05-15",
+
+  // ── Licensing ─────────────────────────────────────────────────────────
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+
+  // ── External links → rdfs:seeAlso (passthrough) ───────────────────────
+  "externalLinks": [
+    { "label": "KOS Platform", "url": "https://kos.geospecimens.org" }
+  ]
+}

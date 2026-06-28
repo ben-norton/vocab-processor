@@ -28,13 +28,16 @@ Sheets consumed per workbook:
   Mappings / Mapping              — SKOS match properties per concept
 
 Run from the project root:
-  python utils/xlsx-to-ttl-merged.py
+  python utils/xlsx-to-ttl.py                # process all workbooks
+  python utils/xlsx-to-ttl.py HazardTypes    # process one workbook by name
+  python utils/xlsx-to-ttl.py HazardTypes.xlsx
 
 Dependencies: openpyxl (required), rdflib (optional, for post-hoc validation).
 """
 
 from __future__ import annotations
 
+import argparse
 import datetime as _dt
 import re
 from datetime import date, datetime
@@ -776,8 +779,13 @@ def render_concept_scheme(
     if top_concepts:
         lines.append(_multi("skos:hasTopConcept", [f"<{iri}>" for iri in top_concepts]))
 
+    def _norm_role(r: str) -> str:
+        if r.startswith("isorole:") and not r.startswith("isoroles:"):
+            return "isoroles:" + r[len("isorole:"):]
+        return r
+
     for agent_ref, roles in prov_attrs:
-        role_vals = " , ".join(roles) if roles else "isoroles:unknown"
+        role_vals = " , ".join(_norm_role(r) for r in roles) if roles else "isoroles:unknown"
         lines.extend([
             f"{INDENT}prov:qualifiedAttribution [",
             f"{BN_INDENT}{'a':<{BN_PROP_W}}prov:Attribution ;",
@@ -1042,15 +1050,49 @@ def render_ttl(xlsx_path: Path) -> tuple[str, str]:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Convert SKOS vocabulary workbook(s) to Turtle.",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog=(
+            "Examples:\n"
+            "  python utils/xlsx-to-ttl.py                # process all workbooks\n"
+            "  python utils/xlsx-to-ttl.py HazardTypes    # process one by name\n"
+            "  python utils/xlsx-to-ttl.py HazardTypes.xlsx"
+        ),
+    )
+    parser.add_argument(
+        "vocab",
+        nargs="?",
+        metavar="VOCAB",
+        help="Workbook name to process, with or without the .xlsx extension "
+             "(e.g. 'HazardTypes' or 'HazardTypes.xlsx'). "
+             "Omit to process every workbook in sources/xlsx/.",
+    )
+    args = parser.parse_args()
+
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     xlsx_files = sorted(
         p for p in XLSX_DIR.glob("*.xlsx")
         if not p.name.startswith("~$") and p.name != "Agents.xlsx"
     )
+
+    if args.vocab:
+        target = args.vocab
+        if not target.lower().endswith(".xlsx"):
+            target += ".xlsx"
+        matched = [p for p in xlsx_files if p.name.lower() == target.lower()]
+        if not matched:
+            available = ", ".join(p.stem for p in xlsx_files)
+            print(f"ERROR: '{args.vocab}' not found in {XLSX_DIR}")
+            print(f"Available vocabularies: {available}")
+            raise SystemExit(1)
+        xlsx_files = matched
+
     if not xlsx_files:
         print(f"No .xlsx files found in {XLSX_DIR}")
         return
 
+    processed: list[Path] = []
     for xlsx in xlsx_files:
         try:
             ttl, slug = render_ttl(xlsx)
@@ -1060,6 +1102,7 @@ def main() -> None:
         out_path = OUT_DIR / f"{slug}.ttl"
         out_path.write_text(ttl, encoding="utf-8")
         print(f"wrote {out_path.relative_to(ROOT)}  ({len(ttl):,} bytes)")
+        processed.append(out_path)
 
         _, unused = _analyse_prefixes(ttl)
         if unused:
@@ -1071,7 +1114,7 @@ def main() -> None:
         import rdflib
         SKOS = rdflib.Namespace("http://www.w3.org/2004/02/skos/core#")
         print("\nValidating generated files…")
-        for ttl_path in sorted(OUT_DIR.glob("*.ttl")):
+        for ttl_path in sorted(processed):
             g = rdflib.Graph().parse(ttl_path, format="turtle")
             schemes  = list(g.subjects(rdflib.RDF.type, SKOS.ConceptScheme))
             concepts = list(g.subjects(rdflib.RDF.type, SKOS.Concept))

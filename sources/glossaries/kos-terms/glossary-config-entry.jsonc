@@ -1,0 +1,49 @@
+// Template for a single entry in data/config/glossaries.json.
+// Copy the object below (without these comments) into the `glossaries: [ ... ]`
+// array of data/config/glossaries.json, then run:
+//   npm run csv && npm run glossaries
+//
+// Fields marked (passthrough) are read by scripts/csv-to-glossary.js and
+// written into the generated data/glossaries/<theme>/glossary.json.
+// Fields marked (derived) are computed from the CSVs.
+// Fields marked (not yet wired) are accepted by build-glossaries.js when
+// present in the output JSON but are NOT yet copied through by the CSV
+// converter — running `npm run csv` will drop them. Add them directly to
+// the generated glossary.json if you need them today.
+
+{
+  // ── Identity ──────────────────────────────────────────────────────────
+  "id":          "kos-terms",                                          // required, kebab-case, unique across all glossaries; drives /glossary/<id> URL
+  "title":       "KOS Terminology Glossary",                                // required, shown in headings (passthrough)
+  "description": "Terminological resource containing terms with definitions for concepts related to Knowledge Organization System Resources", // optional (passthrough)
+  "uri":         "https://kos.geospecimens.org/glossary/kos-terms",        // optional canonical URI; terms derive to <uri>/term/<term-id> (passthrough)
+
+  // ── CSV → JSON paths (read by scripts/csv-to-glossary.js) ─────────────
+  "terms":   "glossaries/kos-terms/glossary-terms.csv",                // required input
+  "sources": "glossaries/kos-terms/glossary-sources.csv",              // optional input
+  "output":  "data/glossaries/kos-terms/glossary.json",                // required output; this is what build-glossaries.js then reads
+
+  // ── Editorial notes (all optional, all passthrough) ───────────────────
+  "scopeNote":   "The KOS Terminology Glossary is a terminological resource containing terms with definitions for concepts related to Knowledge Organization System Resources. The terms are not specific to any particular KOS Type.",
+  "changeNote":  "First published 2026-05-12.",
+  "historyNote": "The glossary was created by Ben Norton with many terms and definitions adopted from a variety of sources",
+
+  // ── Versioning (passthrough where supported) ──────────────────────────
+  "version":     "2026-05-12",                                      // optional; if omitted, falls back to max term last_modified, else today's date (passthrough)
+  "created":     "2026-05-12",                                      // optional, YYYY-MM-DD (not yet wired through csv-to-glossary.js)
+  "modified":    "2026-05-12",                                      // optional, YYYY-MM-DD (not yet wired through csv-to-glossary.js)
+
+  // ── Licensing (not yet wired through csv-to-glossary.js) ──────────────
+  "license":     "https://creativecommons.org/licenses/by/4.0/",    // optional license URI
+
+  // ── External links → rdfs:seeAlso (passthrough) ───────────────────────
+  "externalLinks": [
+   // { "label": "Project homepage",        "url": "https://example.org/kos-terms" },
+   // { "label": "Reference glossary site", "url": "https://glossary.geospecimens.org" }
+  ]
+
+  // ── Derived at build time (do not set here) ───────────────────────────
+  // "categories": [...]   — derived from unique `category` values in glossary-terms.csv
+  // "terms":      [...]   — parsed from glossary-terms.csv (note: distinct from the "terms" path field above)
+  // "sources":    [...]   — parsed from glossary-sources.csv if provided
+}

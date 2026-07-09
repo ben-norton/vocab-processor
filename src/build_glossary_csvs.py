@@ -2,12 +2,14 @@
 
 Reads the verbatim CSV(s) under ``sources/glossaries/<slug>/verbatim/`` and
 emits the canonical CSVs in ``sources/glossaries/<slug>/`` consumed by
-``utils/build_glossary_json.py``.
+``build_glossary_json.py``.
 
-Input filenames may be unprefixed (``glossary-terms.csv``,
-``glossary-sources.csv``) or slug-prefixed (``<slug>-glossary-terms.csv``,
-``<slug>-glossary-sources.csv``). The output preserves whichever pattern
-the input used.
+Filenames are folder-based and unprefixed (``glossary-terms.csv``,
+``glossary-sources.csv``); the glossary is identified by its folder name
+(``<slug>``), not by an acronym baked into the filename. For backward
+compatibility a slug-prefixed input (``<slug>-glossary-terms.csv``) is still
+accepted, but the canonical output is always written with the plain,
+folder-based name.
 
 Verbatim TERMS columns -> canonical TERMS columns:
 
@@ -40,9 +42,9 @@ files instead.
 
 Usage::
 
-    python utils/build_glossary_csvs.py gcdm
-    python utils/build_glossary_csvs.py gcdm --date 20260520
-    python utils/build_glossary_csvs.py gcdm --dry-run
+    python src/build_glossary_csvs.py <slug>
+    python src/build_glossary_csvs.py <slug> --date 20260520
+    python src/build_glossary_csvs.py <slug> --dry-run
 """
 
 from __future__ import annotations
@@ -172,14 +174,16 @@ def _partition_columns(
 
 
 def _resolve_input(verbatim_dir: Path, slug: str, basename: str) -> Path | None:
-    """Return the verbatim file path for ``basename`` (preferring the
-    slug-prefixed form), or None if neither file exists."""
-    prefixed = verbatim_dir / f"{slug}-{basename}"
-    if prefixed.is_file():
-        return prefixed
+    """Return the verbatim file path for ``basename``, preferring the plain,
+    folder-based name (``glossary-terms.csv``) and falling back to the legacy
+    slug-prefixed form (``<slug>-glossary-terms.csv``). Returns None if neither
+    file exists."""
     direct = verbatim_dir / basename
     if direct.is_file():
         return direct
+    prefixed = verbatim_dir / f"{slug}-{basename}"
+    if prefixed.is_file():
+        return prefixed
     return None
 
 
@@ -302,10 +306,21 @@ def build_glossary_csvs(slug: str, *, last_modified: str,
                         dry_run: bool = False) -> None:
     src_dir      = GLOSS_SRC_DIR / slug
     verbatim_dir = src_dir / VERBATIM_NAME
+    if not src_dir.is_dir():
+        raise SystemExit(f"ERROR: glossary folder not found: {src_dir}")
     if not verbatim_dir.is_dir():
+        # Glossaries authored directly in canonical form (e.g. kos-terms,
+        # collections-digitization) have no verbatim/ step to run. Say so
+        # plainly rather than failing as if a file were missing.
+        if (src_dir / "glossary-terms.csv").is_file():
+            raise SystemExit(
+                f"NOTE: {slug} has no verbatim/ folder; its canonical "
+                f"glossary-terms.csv is authored directly. Nothing to build here - "
+                f"run build_glossary_json.py {slug} to regenerate its JSON."
+            )
         raise SystemExit(
             f"ERROR: verbatim folder not found: {verbatim_dir}\n"
-            f"       expected files like 'gcdm-glossary-terms.csv' under it."
+            f"       expected 'glossary-terms.csv' (folder-based, unprefixed) under it."
         )
 
     terms_in   = _resolve_input(verbatim_dir, slug, "glossary-terms.csv")
@@ -313,7 +328,7 @@ def build_glossary_csvs(slug: str, *, last_modified: str,
     if not terms_in:
         raise SystemExit(
             f"ERROR: missing verbatim terms CSV under {verbatim_dir} "
-            f"(looked for '{slug}-glossary-terms.csv' and 'glossary-terms.csv')"
+            f"(looked for 'glossary-terms.csv' and legacy '{slug}-glossary-terms.csv')"
         )
 
     print(f"[{slug}] verbatim terms:   {terms_in.relative_to(ROOT)}")
@@ -322,8 +337,10 @@ def build_glossary_csvs(slug: str, *, last_modified: str,
     else:
         print(f"[{slug}] no verbatim sources CSV found - skipping sources output")
 
-    terms_out_name   = terms_in.name
-    sources_out_name = sources_in.name if sources_in else f"{slug}-glossary-sources.csv"
+    # Canonical output is always written with the plain, folder-based name,
+    # regardless of whether the verbatim input used a legacy slug prefix.
+    terms_out_name   = "glossary-terms.csv"
+    sources_out_name = "glossary-sources.csv"
 
     print(f"[{slug}] last_modified: {last_modified}")
     print(f"[{slug}] building terms ...")

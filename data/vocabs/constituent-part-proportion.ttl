@@ -1,7 +1,7 @@
 # Constituent Part Proportion — SKOS ConceptScheme
 # Generated from ConstituentPartProportions.xlsx
 # Source sheets used: Concept Scheme, Concepts, Namespaces, Agents, Mappings
-# Generated: 2026-06-18
+# Generated: 2026-07-02
 
 # Standard prefixes
 @prefix dcat:        <http://www.w3.org/ns/dcat#> .

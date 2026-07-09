@@ -177,6 +177,7 @@ prez:OGCItemProfile a prof:Profile, sh:NodeShape, prez:ObjectProfile ;
     sh:property [ sh:path prov:wasDerivedFrom ; sh:name "Was Derived From" ; sh:order 17 ; prez:simpleView true ] ;
     sh:property [ sh:path reg:status ; sh:name "Status" ; sh:order 18 ; prez:simpleView true ] ;
     sh:property [ sh:path dcterms:identifier ; sh:name "Identifier" ; sh:order 19 ] ;
+    sh:property [ sh:path dcterms:isReplacedBy ; sh:name "Is Replaced By" ; sh:order 20 ] ;
 
     # Link template
     prez:linkTemplate "/catalogs/{catalogId}/collections/{schemeId}/items/{conceptId}" .

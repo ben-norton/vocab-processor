@@ -22,7 +22,7 @@ from pathlib import Path
 
 ROOT       = Path(__file__).resolve().parents[1]
 SRC_DIR    = ROOT / "data"
-DEFAULT_TARGET = Path(r"G:\webserver\Apache\htdocs-apps\geoapis-htdocs\vocab-publisher\data")
+DEFAULT_TARGET = Path(r"G:\repos\vocabularies\vocab-publisher\data")
 
 
 def sync(src: Path, dst: Path, dry_run: bool) -> dict[str, list[Path]]:

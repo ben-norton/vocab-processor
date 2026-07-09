@@ -1,7 +1,7 @@
 # Aggregate Form — SKOS ConceptScheme
 # Generated from AggregateForm.xlsx
 # Source sheets used: Concept Scheme, Concepts, Namespaces, Agents, Mappings
-# Generated: 2026-06-18
+# Generated: 2026-07-02
 
 # Standard prefixes
 @prefix dcat:        <http://www.w3.org/ns/dcat#> .
@@ -26,8 +26,8 @@
     dcterms:title            "Aggregate Form"@en ;
     skos:definition          """Aggregate Form is a SKOS concept scheme that enumerates the characteristic macroscopic forms adopted by mineral specimens when individual crystals or grains grow together as a collective mass. The vocabulary describes the overall three-dimensional architecture of a mineral aggregate — the arrangement, orientation, and shape of its constituent grains or crystals — as distinct from the crystallographic form of a single crystal or the bulk rock texture of a hand specimen."""@en ;
     dcterms:description      """Aggregate Form is a SKOS concept scheme that enumerates the characteristic macroscopic forms adopted by mineral specimens when individual crystals or grains grow together as a collective mass. The vocabulary describes the overall three-dimensional architecture of a mineral aggregate — the arrangement, orientation, and shape of its constituent grains or crystals — as distinct from the crystallographic form of a single crystal or the bulk rock texture of a hand specimen."""@en ;
-    dcterms:publisher        <https://orcid.org/0000-0002-5819-9134> ;
-    dcterms:creator          <https://orcid.org/0000-0002-5819-9134> ;
+    dcterms:publisher        _:agent_mineralogy_extension_task_group ;
+    dcterms:creator          _:agent_mineralogy_extension_task_group ;
     dcterms:contributor      _:agent_mineralogy_extension_task_group ;
     dcterms:provenance       "Most values represent aggregations of multiple resources except for values with the specific source 'Chesterman, C. W. (1978). National Audubon Society field guide to rocks and minerals: North America. Knopf.'"@en ;
     dcterms:created          "2026-05-06"^^xsd:date ;

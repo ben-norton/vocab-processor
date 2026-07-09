@@ -1,7 +1,7 @@
 # Geological Specimen Material Category — SKOS ConceptScheme
 # Generated from GeologicalSpecimenMaterialCategories.xlsx
 # Source sheets used: Concept Scheme, Concepts, Namespaces, Agents, Mappings
-# Generated: 2026-06-18
+# Generated: 2026-07-02
 
 # Standard prefixes
 @prefix dcat:        <http://www.w3.org/ns/dcat#> .
@@ -23,7 +23,6 @@
     a                        skos:ConceptScheme ;
     skos:prefLabel           "Geological Specimen Material Category"@en ;
     dcterms:title            "Geological Specimen Material Category"@en ;
-    skos:definition          """The Geological Sample Material Category vocabulary is a SKOS-based hierarchical classification system for geological specimens. The scheme provides comprehensive coverage of the earth sciences domain by accommodating both natural and processed materials, terrestrial and extraterrestrial sources, and the practical needs of collection management across diverse geological institutions."""@en ;
     dcterms:description      """The Geological Sample Material Category vocabulary is a SKOS-based hierarchical classification system for geological specimens. The scheme provides comprehensive coverage of the earth sciences domain by accommodating both natural and processed materials, terrestrial and extraterrestrial sources, and the practical needs of collection management across diverse geological institutions."""@en ;
     dcterms:publisher        "TDWG Mineralogy Extension Task Group"@en ;
     dcterms:creator          "TDWG Mineralogy Extension Task Group"@en ;
@@ -33,7 +32,7 @@
     dcterms:modified         "2026-04-09"^^xsd:date ;
     dcat:version             "2026-04-09" ;
     skos:scopeNote           "The Geologic Specimen Material Category vocabulary is intended to provide a top-level catagorization scheme for specimens that belong to earth sciences collections. Usage beyond the scope of earth sciences collections may require adjustments or broadening of specific definitions."@en ;
-    vann:usageNote           "Intended to be used with the material category terms (e.g. dwc:materialEntityType) for specimens belonging to earth sciences and asteromaterials collections."@en ;
+    vann:usageNote           "Intended to be used with the material category terms (e.g. dwc:materialEntityType) for specimens belonging to earth sciences and astromaterials collections."@en ;
     skos:historyNote         "Compiled by the TDWG Mineralogy Extension Task Group for community use and to support the extension release by providing standardized values for Material Entity Type, which is central to the Extension and Compound Specimen Model."@en ;
     skos:note                "Concepts in the Geologic Specimen Material Category vocabulary are distinguished by compositional and physical characteristics. Top-level terms are based primarily on composition, while child terms represent physically distinct variants."@en ;
     dcat:keyword             "Collections"@en ,
@@ -65,7 +64,7 @@
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "astromaterial" ;
     skos:narrowMatch         <https://kos.resources.org/def/geological-specimen-material-category/meteorite> ,
-                             <https://kos.resources.org/def/geological-specimen-material-category/sample-return> ;
+                             <https://kos.resources.org/def/geological-specimen-material-category/interstellar-material> ;
 .
 
 <https://kos.resources.org/def/geological-specimen-material-category/fossil>
@@ -133,6 +132,8 @@
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "mineral" ;
     skos:closeMatch          <https://pid.geoscience.gov.au/def/voc/ga/materialtype/mineral> ;
+    skos:exactMatch          <https://pid.geoscience.gov.au/def/voc/ga/materialtype/mineral> ,
+                             <https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/mineralSpecimen> ;
     skos:narrowMatch         <https://kos.resources.org/def/geological-specimen-material-category/synthetic-mineral> ,
                              <https://kos.resources.org/def/geological-specimen-material-category/gemstone> ;
 .
@@ -161,8 +162,8 @@
     skos:inScheme            <https://kos.resources.org/def/geological-specimen-material-category> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "rock" ;
-    skos:exactMatch          <https://w3id.org/gso/1.0/rockmaterial/Rock> ;
-    skos:narrowMatch         <https://kos.resources.org/def/geological-specimen-material-category/rock-core> ;
+    skos:exactMatch          <https://w3id.org/gso/1.0/rockmaterial/Rock> ,
+                             <https://pid.geoscience.gov.au/def/voc/ga/materialtype/rock> ;
 .
 
 <https://kos.resources.org/def/geological-specimen-material-category/rock-core>
@@ -170,8 +171,9 @@
     skos:prefLabel           "Rock Core"@en ;
     skos:definition          """A geological material, commonly cylindrical in shape, recovered from a borehole through drilling"""@en ;
     skos:broader             <https://kos.resources.org/def/geological-specimen-material-category/rock> ;
+    skos:historyNote         "A rock core is the result of a specimen sampling technique, not a mutually exclusive geologic material category. Therefore, the term resides outside the scope  of the material category vocabulary"@en ;
     skos:inScheme            <https://kos.resources.org/def/geological-specimen-material-category> ;
-    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/deprecated> ;
     skos:notation            "rockCore" ;
 .
 
@@ -181,7 +183,7 @@
     skos:definition          """Astromaterial returned from sample collection missions to celestial objects (e.g. comets, asteroids, the Moon, Mars)"""@en ;
     skos:broader             <https://kos.resources.org/def/geological-specimen-material-category/astromaterial> ;
     skos:inScheme            <https://kos.resources.org/def/geological-specimen-material-category> ;
-    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/superseded> ;
     skos:notation            "sampleReturn" ;
 .
 
@@ -190,10 +192,10 @@
     skos:prefLabel           "Synthetic Mineral"@en ;
     skos:definition          """Man-made materials created in a laboratory that are intended to representative of natural occurring geological material"""@en ;
     skos:broader             <https://kos.resources.org/def/geological-specimen-material-category/mineral> ;
+    skos:historyNote         "Synthetic minerals are intended to represent natural-occurring minerals both physically and compositionally. The process that produced the material is not applicable to the geological specimen material category vocabulary and therefore was deprecated."@en ;
     skos:inScheme            <https://kos.resources.org/def/geological-specimen-material-category> ;
-    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/deprecated> ;
     skos:notation            "syntheticMineral" ;
-    skos:broadMatch          <https://w3id.org/gso/1.0/rockmaterial/Anthropogenic_Material> ;
 .
 
 <https://kos.resources.org/def/geological-specimen-material-category/trace-fossil>
@@ -218,4 +220,18 @@
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "unconsolidatedMaterial" ;
     skos:exactMatch          <https://w3id.org/gso/1.0/rockmaterial/Unconsolidated_Material> ;
+    skos:narrowMatch         <https://w3id.org/gso/1.0/rockmaterial/Natural_Unconsolidated_Material> ;
+.
+
+<https://kos.resources.org/def/geological-specimen-material-category/interstellar-material>
+    a                        skos:Concept ;
+    skos:prefLabel           "Interstellar Material"@en ;
+    skos:altLabel            "Cosmic dust"@en ,
+                             "interplanetary dust particles"@en ;
+    skos:definition          """Geological material captured from space and not genetically related to a large rocky body such as a planet or moon. Interstellar material occurs as particles ejected from stars, stellar remnants, or protoplanets. It is collected directly from space or the upper atmosphere rather than recovered as a discrete meteorite at Earth's surface."""@en ;
+    skos:broader             <https://kos.resources.org/def/geological-specimen-material-category/astromaterial> ;
+    skos:historyNote         "Term superseded sample return"@en ;
+    skos:inScheme            <https://kos.resources.org/def/geological-specimen-material-category> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "interstellarMaterial" ;
 .

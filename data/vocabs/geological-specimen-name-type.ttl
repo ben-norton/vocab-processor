@@ -1,7 +1,7 @@
 # Geological Specimen Name Type — SKOS ConceptScheme
 # Generated from NameTypes.xlsx
 # Source sheets used: Concept Scheme, Concepts, Namespaces, Agents, Mappings
-# Generated: 2026-06-18
+# Generated: 2026-07-02
 
 # Standard prefixes
 @prefix dcat:        <http://www.w3.org/ns/dcat#> .
@@ -48,12 +48,12 @@
     prov:qualifiedAttribution [
         a                prov:Attribution ;
         prov:agent       <https://kos.resources.org/org/1aa8581b-5ccd-48b1-b72e-5622a35b87af> ;
-        dcat:hadRole     isorole:editor ;
+        dcat:hadRole     isoroles:editor ;
     ] ;
     prov:qualifiedAttribution [
         a                prov:Attribution ;
         prov:agent       _:agent_mineralogy_extension_task_group ;
-        dcat:hadRole     isorole:publisher , isorole:creator ;
+        dcat:hadRole     isoroles:publisher , isoroles:creator ;
     ] ;
     prov:qualifiedAttribution [
         a                prov:Attribution ;

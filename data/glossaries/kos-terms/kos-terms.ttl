@@ -1,0 +1,754 @@
+# KOS Terminology Glossary — SKOS ConceptScheme
+# Generated from the glossary 4-file source set at sources/glossaries/kos-terms/
+# Generator: src/build_glossary_ttl.py
+
+
+# Standard prefixes
+@prefix dcat:    <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg:     <http://purl.org/linked-data/registry#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+# ==========================================================================
+# ConceptScheme
+# ==========================================================================
+
+<https://kos.geospecimens.org/glossary/kos-terms>
+    a                        skos:ConceptScheme ;
+    dcterms:identifier       "kos-terms" ;
+    skos:prefLabel           "KOS Terminology Glossary"@en ;
+    dcterms:title            "KOS Terminology Glossary"@en ;
+    skos:definition          """Terminological resource containing terms with definitions for concepts related to Knowledge Organization System Resources"""@en ;
+    dcterms:description      """Terminological resource containing terms with definitions for concepts related to Knowledge Organization System Resources"""@en ;
+    dcterms:creator          "Michael B. Norton" ;
+    dcterms:publisher        "GeoSpecimens Platform" ;
+    dcterms:created          "2026-05-12"^^xsd:date ;
+    dcterms:modified         "2026-05-12"^^xsd:date ;
+    dcat:version             "2026-05-12" ;
+    vann:preferredNamespaceUri <https://kos.geospecimens.org/glossary/kos-terms/> ;
+    vann:preferredNamespacePrefix "kos-terms" ;
+    skos:scopeNote           "The KOS Terminology Glossary is a terminological resource containing terms with definitions for concepts related to Knowledge Organization System Resources. The terms are not specific to any particular KOS Type."@en ;
+    skos:historyNote         "The glossary was created by Ben Norton with many terms and definitions adopted from a variety of sources"@en ;
+    skos:changeNote          "First published 2026-05-12."@en ;
+    dcterms:license          <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:rights           "CC BY 4.0" ;
+    skos:hasTopConcept       <https://kos.geospecimens.org/glossary/kos-terms/term/authority-file> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/authority-list> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-obolibrary-org-obo-omrse-00000262> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/category> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/classification-scheme> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-obolibrary-org-obo-ncit-c41080> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/classification-system> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/codelist> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-org-spar-fabio-controlledvocabulary> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/https-w3id-org-iddo-dictionary> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-obolibrary-org-obo-ncit-c41087> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/data-interchange-standard> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/http-ncicb-nci-nih-gov-xml-owl-evs-thesaurus-owl-c103180> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/dataset> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/datatype> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/https-schema-org-definedtermset> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/deliverable> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/described-value-domain> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-org-spar-fabio-disciplinedictionary> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/enumerated-value-domain> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-obolibrary-org-obo-ncit-c18232> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/https-aristotle-cloud-help-concepts-aristotle-glossary-glossaryitem> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/hierarchical-relationship> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-org-coar-resource-type-gsza-y7v7> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/list> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-org-spar-fabio-metadata> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/metadata-standard> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-org-spar-fabio-minimalinformationstandard> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/narrower-term> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/ontology> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/permissible-value> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/pick-list> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-org-ontology-bibo-standard> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-org-spar-fabio-taxonomy> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/terminological-dictionary> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/thesaurus> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/tree-structure> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/type-vocabulary> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/uncontrolled-vocabulary> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/value-domain> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-org-spar-fabio-vocabulary> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/vocabulary-mapping> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+# ==========================================================================
+# Concepts
+# ==========================================================================
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/authority-file>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Authority File"@en ;
+    skos:definition          """A controlled vocabulary or official list that establishes, for consistency, the authoritative forms of headings, and the preferred terms or proper names to be used, when creating a catalogue or when indexing and searching a set of entities within a defined domain."""@en ;
+    skos:notation            "authority-file" ;
+    dcterms:identifier       "authority-file" ;
+    dcterms:source           "FaBiO" ;
+    rdfs:seeAlso             <http://www.sparontologies.net/ontologies/fabio> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/authority-list>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Authority List"@en ;
+    skos:definition          """Controlled vocabulary for use in naming particular entities consistently"""@en ;
+    skos:notation            "authority-list" ;
+    dcterms:identifier       "authority-list" ;
+    dcterms:source           "ISO 25964" ;
+    rdfs:seeAlso             <https://www.niso.org/schemas/iso25964> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-obolibrary-org-obo-omrse-00000262>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Categorization Scheme"@en ;
+    skos:definition          """Information content entity that characterizes some aggregate of entities as partitioned into distinct subgroups, thereby demarcating them as categories."""@en ;
+    skos:notation            "http-purl-obolibrary-org-obo-omrse-00000262" ;
+    dcterms:identifier       "http-purl-obolibrary-org-obo-omrse-00000262" ;
+    dcterms:source           "OMRSE" ;
+    rdfs:seeAlso             <https://bioportal.bioontology.org/ontologies/OMRSE> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/category>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Category"@en ;
+    skos:definition          """A grouping of terms that are semantically or statistically associated, but which do not constitute a strict hierarchy based on genus/species, parent/child, or part/whole relationships."""@en ;
+    skos:notation            "category" ;
+    dcterms:identifier       "category" ;
+    dcterms:source           "ANSI/NISO Z39.19-2005" ;
+    rdfs:seeAlso             <https://www.niso.org/publications/ansiniso-z3919-2005-r2010> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/classification-scheme>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Classification Scheme"@en ;
+    skos:definition          """A method of organization according to a set of pre-established principles, usually characterized by a notation system and a hierarchical structure of relationships among the entities."""@en ;
+    skos:notation            "classification-scheme" ;
+    dcterms:identifier       "classification-scheme" ;
+    dcterms:source           "ANSI/NISO Z39.19-2005" ;
+    rdfs:seeAlso             <https://www.niso.org/publications/ansiniso-z3919-2005-r2010> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-obolibrary-org-obo-ncit-c41080>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Classification Scheme Item"@en ;
+    skos:definition          """A component of content in a Classification Scheme. This may be a node in a taxonomy or ontology or a term in a thesaurus, etc."""@en ;
+    skos:notation            "http-purl-obolibrary-org-obo-ncit-c41080" ;
+    dcterms:identifier       "http-purl-obolibrary-org-obo-ncit-c41080" ;
+    dcterms:source           "NCIT" ;
+    rdfs:seeAlso             <https://bioportal.bioontology.org/ontologies/NCIT> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/classification-system>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Classification System"@en ;
+    skos:definition          """Terminological resource which has characteristics of mutual exclusiveness and exhaustiveness to aggregate data to a pre-prescribed level of specialization for a specific purpose"""@en ;
+    skos:scopeNote           "It usually includes hierarchical relations as well as definitions and rules for use but might not, as in the example simple classification of gender: Male, Female."@en ;
+    skos:notation            "classification-system" ;
+    dcterms:identifier       "classification-system" ;
+    dcterms:source           "ISO 17117" ;
+    rdfs:seeAlso             <https://www.iso.org/standard/67635.html> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/codelist>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Codelist"@en ;
+    skos:definition          """A type of controlled vocabulary that is comprised of a finite list of standard terms and meanings that represent the allowable values for a data item"""@en ;
+    skos:notation            "codelist" ;
+    dcterms:identifier       "codelist" ;
+    dcterms:source           "NCIT" ;
+    rdfs:seeAlso             <https://bioportal.bioontology.org/ontologies/NCIT> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-org-spar-fabio-controlledvocabulary>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Controlled Vocabulary"@en ;
+    skos:definition          """A collection of selected words and phrases related to a particular domain of knowledge used to permit consistency of metadata annotation and improved retrieval following a search, in which homonyms, synonyms and similar ambiguities of meaning present in natural language are disambiguated."""@en ;
+    skos:notation            "http-purl-org-spar-fabio-controlledvocabulary" ;
+    dcterms:identifier       "http-purl-org-spar-fabio-controlledvocabulary" ;
+    dcterms:source           "FaBiO" ;
+    rdfs:seeAlso             <http://www.sparontologies.net/ontologies/fabio> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/https-w3id-org-iddo-dictionary>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Data Dictionary"@en ;
+    skos:definition          """Centralized repository of information about data such as meaning, relationships to other data, origin, usage and format"""@en ;
+    skos:notation            "https-w3id-org-iddo-dictionary" ;
+    dcterms:identifier       "https-w3id-org-iddo-dictionary" ;
+    dcterms:source           "IDDO" ;
+    rdfs:seeAlso             <https://rub-informatik-im-bauwesen.github.io/iddo/> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-obolibrary-org-obo-ncit-c41087>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Data Element Concept"@en ;
+    skos:definition          """A concept that can be represented in the form of a data element, described independently of any particular representation"""@en ;
+    skos:notation            "http-purl-obolibrary-org-obo-ncit-c41087" ;
+    dcterms:identifier       "http-purl-obolibrary-org-obo-ncit-c41087" ;
+    dcterms:source           "NCIT" ;
+    rdfs:seeAlso             <https://bioportal.bioontology.org/ontologies/NCIT> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/data-interchange-standard>
+    a                        skos:Concept , prov:Plan ;
+    skos:prefLabel           "Data Interchange Standard"@en ;
+    skos:definition          """A standard which defines a set of data according to a set of data structuring rules so that the set of data can be interchanged between one computer system and another"""@en ;
+    skos:notation            "data-interchange-standard" ;
+    dcterms:identifier       "data-interchange-standard" ;
+    dcterms:source           "ISO/IEC TR 10032:2003" ;
+    rdfs:seeAlso             <https://www.iso.org/standard/29982.html> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/http-ncicb-nci-nih-gov-xml-owl-evs-thesaurus-owl-c103180>
+    a                        skos:Concept , prov:Plan ;
+    skos:prefLabel           "Data Standard"@en ;
+    skos:definition          """A statement that defines conventions, guidelines, characteristics or methods for consistent data handling to facilitate exchange or processing of the data."""@en ;
+    skos:scopeNote           "The defining criteria for a data standard are reviewed by and agreed upon by the user community or a governing body before they are released and adopted for use."@en ;
+    skos:notation            "http-ncicb-nci-nih-gov-xml-owl-evs-thesaurus-owl-c103180" ;
+    dcterms:identifier       "http-ncicb-nci-nih-gov-xml-owl-evs-thesaurus-owl-c103180" ;
+    dcterms:source           "NCIT" ;
+    rdfs:seeAlso             <https://bioportal.bioontology.org/ontologies/NCIT> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/dataset>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Dataset"@en ;
+    skos:definition          """A collection of related facts, often expressed in numerical form and encoded in a defined structure."""@en ;
+    skos:notation            "dataset" ;
+    dcterms:identifier       "dataset" ;
+    dcterms:source           "FaBiO" ;
+    rdfs:seeAlso             <http://www.sparontologies.net/ontologies/fabio> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/datatype>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Datatype"@en ;
+    skos:definition          """Set of distinct values, characterized by properties of those values, and by operations on those values"""@en ;
+    skos:notation            "datatype" ;
+    dcterms:identifier       "datatype" ;
+    dcterms:source           "ISO/IEC 20944-1:2013" ;
+    rdfs:seeAlso             <https://www.iso.org/standard/55723.html> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/https-schema-org-definedtermset>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Defined Term Set"@en ;
+    skos:definition          """A set of defined terms, for example a set of categories or a classification scheme, a glossary, dictionary or enumeration."""@en ;
+    skos:notation            "https-schema-org-definedtermset" ;
+    dcterms:identifier       "https-schema-org-definedtermset" ;
+    dcterms:source           "schema.org" ;
+    rdfs:seeAlso             <https://schema.org/> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/deliverable>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Deliverable"@en ;
+    skos:definition          """A document containing a project report, intended to be delivered to a customer or funding agency describing the results achieved within a specific project."""@en ;
+    skos:notation            "deliverable" ;
+    dcterms:identifier       "deliverable" ;
+    dcterms:source           "FaBiO" ;
+    rdfs:seeAlso             <http://www.sparontologies.net/ontologies/fabio> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/described-value-domain>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Described Value Domain"@en ;
+    skos:definition          """Value domain that is specified by a description or specification, such as a rule, a procedure or a range (i.e. interval)"""@en ;
+    skos:notation            "described-value-domain" ;
+    dcterms:identifier       "described-value-domain" ;
+    dcterms:source           "ISO/IEC 11179-31:2023" ;
+    rdfs:seeAlso             <https://www.iso.org/standard/78901.html> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-org-spar-fabio-disciplinedictionary>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Discipline Dictionary"@en ;
+    skos:definition          """A discipline dictionary is a collection of subject disciplines."""@en ;
+    skos:notation            "http-purl-org-spar-fabio-disciplinedictionary" ;
+    dcterms:identifier       "http-purl-org-spar-fabio-disciplinedictionary" ;
+    dcterms:source           "FaBiO" ;
+    rdfs:seeAlso             <http://www.sparontologies.net/ontologies/fabio> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/enumerated-value-domain>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Enumerated Value Domain"@en ;
+    skos:definition          """Value domain that is specified by a list of all its permissible values"""@en ;
+    skos:notation            "enumerated-value-domain" ;
+    dcterms:identifier       "enumerated-value-domain" ;
+    dcterms:source           "ISO/IEC 20944-1:2013" ;
+    rdfs:seeAlso             <https://www.iso.org/standard/55723.html> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-obolibrary-org-obo-ncit-c18232>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Glossary"@en ;
+    skos:definition          """An alphabetical list of technical terms in some specialized field of knowledge; usually published as an appendix to a text on that field."""@en ;
+    skos:notation            "http-purl-obolibrary-org-obo-ncit-c18232" ;
+    dcterms:identifier       "http-purl-obolibrary-org-obo-ncit-c18232" ;
+    dcterms:source           "NCIT" ;
+    rdfs:seeAlso             <https://bioportal.bioontology.org/ontologies/NCIT> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/https-aristotle-cloud-help-concepts-aristotle-glossary-glossaryitem>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Glossary Item"@en ;
+    skos:definition          """A Glossary Item records a business term that is commonly used within the metadata registry."""@en ;
+    skos:notation            "https-aristotle-cloud-help-concepts-aristotle-glossary-glossaryitem" ;
+    dcterms:identifier       "https-aristotle-cloud-help-concepts-aristotle-glossary-glossaryitem" ;
+    dcterms:source           "Aristotle" ;
+    rdfs:seeAlso             <https://aristotle.cloud/help/concepts/aristotle_mdr/valuedomain> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/hierarchical-relationship>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Hierarchical Relationship"@en ;
+    skos:definition          """A relationship between or among terms in a controlled vocabulary that depicts broader (generic) to narrower (specific) or whole-part relationships; begins with the words broader term (BT), or narrower term (NT)."""@en ;
+    skos:notation            "hierarchical-relationship" ;
+    dcterms:identifier       "hierarchical-relationship" ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-org-coar-resource-type-gsza-y7v7>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Knowledge Organization System"@en ;
+    skos:definition          """All types of schemes for organizing information and promoting knowledge management. Knowledge organization systems include classification schemes that organize materials at a general level (such as books on a shelf), subject headings that provide more detailed access, and authority files that control variant versions of key information (such as geographic names and personal names). They also include less-traditional schemes, such as semantic artifacts, semantic networks and ontologies."""@en ;
+    skos:notation            "http-purl-org-coar-resource-type-gsza-y7v7" ;
+    dcterms:identifier       "http-purl-org-coar-resource-type-gsza-y7v7" ;
+    dcterms:source           "COAR" ;
+    rdfs:seeAlso             <http://purl.org/coar/resource_type> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/list>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "List"@en ;
+    skos:definition          """A limited set of terms arranged as a simple alphabetical list or in some other logically evident way; containing no relationships of any kind"""@en ;
+    skos:notation            "list" ;
+    dcterms:identifier       "list" ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-org-spar-fabio-metadata>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Metadata"@en ;
+    skos:definition          """A separate work that provides information describing one or more characteristics of a resource or entity."""@en ;
+    skos:notation            "http-purl-org-spar-fabio-metadata" ;
+    dcterms:identifier       "http-purl-org-spar-fabio-metadata" ;
+    dcterms:source           "FaBiO" ;
+    rdfs:seeAlso             <http://www.sparontologies.net/ontologies/fabio> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/metadata-standard>
+    a                        skos:Concept , prov:Plan ;
+    skos:prefLabel           "Metadata Standard"@en ;
+    skos:definition          """A set of formally agreed guidelines defining the structure, content, and semantics necessary to make data understandable, discoverable, and interoperable"""@en ;
+    skos:notation            "metadata-standard" ;
+    dcterms:identifier       "metadata-standard" ;
+    dcterms:source           "ISO 19115" ;
+    rdfs:seeAlso             <https://www.iso.org/standard/53798.html> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-org-spar-fabio-minimalinformationstandard>
+    a                        skos:Concept , prov:Plan ;
+    skos:prefLabel           "Minimum Information Standard"@en ;
+    skos:definition          """A metadata standard specifying items to be included when creating metadata describing a dataset of a particular type, or when creating a structured summary of the main findings of an article or report in a particular domain of interest, thereby ensuring adequate descriptive information is recorded for subsequent resource discovery and/or interpretation of the information described."""@en ;
+    skos:notation            "http-purl-org-spar-fabio-minimalinformationstandard" ;
+    dcterms:identifier       "http-purl-org-spar-fabio-minimalinformationstandard" ;
+    dcterms:source           "FaBiO" ;
+    rdfs:seeAlso             <http://www.sparontologies.net/ontologies/fabio> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/narrower-term>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Narrower Term"@en ;
+    skos:definition          """A term that is subordinate to another term or to multiple terms in a hierarchy. In thesauri, the relationship indicator for this type of term is NT."""@en ;
+    skos:notation            "narrower-term" ;
+    dcterms:identifier       "narrower-term" ;
+    dcterms:source           "ANSI/NISO Z39.19-2005" ;
+    rdfs:seeAlso             <https://www.niso.org/publications/ansiniso-z3919-2005-r2010> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/ontology>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Ontology"@en ;
+    skos:definition          """A formal model that allows knowledge to be represented for a specific domain. An ontology describes the types of things that exist (classes), the relationships between them (properties) and the logical ways those classes and properties can be used together (axioms)."""@en ;
+    skos:notation            "ontology" ;
+    dcterms:identifier       "ontology" ;
+    dcterms:source           "W3C LD Glossary" ;
+    rdfs:seeAlso             <https://www.w3.org/TR/ld-glossary/> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/permissible-value>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Permissible Value"@en ;
+    skos:definition          """Designation of a value meaning"""@en ;
+    skos:notation            "permissible-value" ;
+    dcterms:identifier       "permissible-value" ;
+    dcterms:source           "ISO/IEC 11179-31:2023" ;
+    rdfs:seeAlso             <https://www.iso.org/standard/78901.html> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/pick-list>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Pick List"@en ;
+    skos:definition          """A graphical user interface device that allows the user to select from a pre-set list of terms. Typically the list of terms is shown when the user clicks on a down arrow next to the entry box for the term."""@en ;
+    skos:notation            "pick-list" ;
+    dcterms:identifier       "pick-list" ;
+    dcterms:source           "ANSI/NISO Z39.19-2005" ;
+    rdfs:seeAlso             <https://www.niso.org/publications/ansiniso-z3919-2005-r2010> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-org-ontology-bibo-standard>
+    a                        skos:Concept , prov:Plan ;
+    skos:prefLabel           "Standard"@en ;
+    skos:definition          """A specification giving a precise statement of a process or a service requirement, often sanctioned by a nation or industry. A document describing a standard."""@en ;
+    skos:notation            "http-purl-org-ontology-bibo-standard" ;
+    dcterms:identifier       "http-purl-org-ontology-bibo-standard" ;
+    dcterms:source           "BIBO" ;
+    rdfs:seeAlso             <http://purl.org/ontology/bibo/> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-org-spar-fabio-taxonomy>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Taxonomy"@en ;
+    skos:definition          """A classification arranged in a hierarchical structure of classes and subclasses, showing parent-child isA relationships, or broader_than - narrower_than relationships."""@en ;
+    skos:notation            "http-purl-org-spar-fabio-taxonomy" ;
+    dcterms:identifier       "http-purl-org-spar-fabio-taxonomy" ;
+    dcterms:source           "FaBiO" ;
+    rdfs:seeAlso             <http://www.sparontologies.net/ontologies/fabio> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/terminological-dictionary>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Terminological Dictionary"@en ;
+    skos:definition          """Terminology resource that is designed to be used as a reference work"""@en ;
+    skos:notation            "terminological-dictionary" ;
+    dcterms:identifier       "terminological-dictionary" ;
+    dcterms:source           "ISO 1087:2019" ;
+    rdfs:seeAlso             <https://www.iso.org/standard/62330.html> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/thesaurus>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Thesaurus"@en ;
+    skos:definition          """Controlled and structured vocabulary in which concepts are represented by terms, organized so that relationships between concepts are made explicit, and preferred terms are accompanied by lead-in entries for synonyms or quasi-synonyms"""@en ;
+    skos:notation            "thesaurus" ;
+    dcterms:identifier       "thesaurus" ;
+    dcterms:source           "ISO25964-2:2013" ;
+    rdfs:seeAlso             <https://www.niso.org/schemas/iso25964> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/tree-structure>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Tree Structure"@en ;
+    skos:definition          """A controlled vocabulary display format in which the complete hierarchy of terms is shown. Each term is assigned a tree number or line number which leads from the alphabetical display to the hierarchical one. The hierarchical display is also known as systematic display."""@en ;
+    skos:notation            "tree-structure" ;
+    dcterms:identifier       "tree-structure" ;
+    dcterms:source           "ANSI/NISO Z39.19-2005" ;
+    rdfs:seeAlso             <https://www.niso.org/publications/ansiniso-z3919-2005-r2010> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/type-vocabulary>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Type Vocabulary"@en ;
+    skos:definition          """An atomized set of terms that characterize the nature of a resource"""@en ;
+    skos:notation            "type-vocabulary" ;
+    dcterms:identifier       "type-vocabulary" ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/uncontrolled-vocabulary>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Uncontrolled Vocabulary"@en ;
+    skos:definition          """A non-defined collection of words and phrases relating to a particular domain of knowledge, usually added freely by a community, in which homonyms, synonyms and similar ambiguities of meaning present in natural language are not formally disambiguated."""@en ;
+    skos:notation            "uncontrolled-vocabulary" ;
+    dcterms:identifier       "uncontrolled-vocabulary" ;
+    dcterms:source           "FaBiO" ;
+    rdfs:seeAlso             <http://www.sparontologies.net/ontologies/fabio> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/value-domain>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Value Domain"@en ;
+    skos:definition          """A resource type used to denote a collection of permissible values associated with a conceptual domain or term in a controlled vocabulary."""@en ;
+    skos:scopeNote           "Synonyms include codelist, value list, pick list, enumerated domain, and enumerated value set. Also defined in ISO/IEC 11179-3 as a class each instance of which models a value domain — a set of permissible values — providing representation without implication as to the associated Data Element Concept."@en ;
+    skos:notation            "value-domain" ;
+    dcterms:identifier       "value-domain" ;
+    dcterms:source           "Aristotle" ;
+    rdfs:seeAlso             <https://aristotle.cloud/help/concepts/aristotle_mdr/valuedomain> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-org-spar-fabio-vocabulary>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Vocabulary"@en ;
+    skos:definition          """Terminological dictionary which contains designations and definitions for one or more specific subject fields."""@en ;
+    skos:scopeNote           "Also defined as: a set of words constituting a language or used to describe a particular domain of knowledge (FaBiO); a collection of terms for a particular purpose (W3C LD Glossary)."@en ;
+    skos:notation            "http-purl-org-spar-fabio-vocabulary" ;
+    dcterms:identifier       "http-purl-org-spar-fabio-vocabulary" ;
+    dcterms:source           "ISO 1087:2019" ;
+    rdfs:seeAlso             <https://www.iso.org/standard/62330.html> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/term/vocabulary-mapping>
+    a                        skos:Concept , prov:Entity ;
+    skos:prefLabel           "Vocabulary Mapping"@en ;
+    skos:definition          """A mapping of correspondences between two vocabularies. For controlled vocabularies, such mappings may be expressed using SKOS (http://www.w3.org/2004/02/skos/)."""@en ;
+    skos:notation            "vocabulary-mapping" ;
+    dcterms:identifier       "vocabulary-mapping" ;
+    dcterms:source           "FaBiO" ;
+    rdfs:seeAlso             <http://www.sparontologies.net/ontologies/fabio> ;
+    dcterms:modified         "2026-06-10"^^xsd:date ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/kos-terms> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
+.
+
+# ==========================================================================
+# Collections (term categories)
+# ==========================================================================
+
+<https://kos.geospecimens.org/glossary/kos-terms/collection/data>
+    a                        skos:Collection ;
+    skos:prefLabel           "data"@en ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:member              <https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-obolibrary-org-obo-ncit-c41087> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/dataset> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/datatype> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/collection/kos-component>
+    a                        skos:Collection ;
+    skos:prefLabel           "kos-component"@en ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:member              <https://kos.geospecimens.org/glossary/kos-terms/term/category> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-obolibrary-org-obo-ncit-c41080> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/described-value-domain> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/enumerated-value-domain> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/https-aristotle-cloud-help-concepts-aristotle-glossary-glossaryitem> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/narrower-term> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/permissible-value> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/value-domain> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/collection/kos-type>
+    a                        skos:Collection ;
+    skos:prefLabel           "kos-type"@en ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:member              <https://kos.geospecimens.org/glossary/kos-terms/term/authority-file> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/authority-list> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-obolibrary-org-obo-omrse-00000262> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/classification-scheme> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/classification-system> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/codelist> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-org-spar-fabio-controlledvocabulary> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/https-w3id-org-iddo-dictionary> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/https-schema-org-definedtermset> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-org-spar-fabio-disciplinedictionary> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-obolibrary-org-obo-ncit-c18232> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-org-coar-resource-type-gsza-y7v7> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/list> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/ontology> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/pick-list> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-org-spar-fabio-taxonomy> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/terminological-dictionary> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/thesaurus> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/tree-structure> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/type-vocabulary> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/uncontrolled-vocabulary> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-org-spar-fabio-vocabulary> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/collection/metadata>
+    a                        skos:Collection ;
+    skos:prefLabel           "metadata"@en ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:member              <https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-org-spar-fabio-metadata> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/collection/relationship>
+    a                        skos:Collection ;
+    skos:prefLabel           "relationship"@en ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:member              <https://kos.geospecimens.org/glossary/kos-terms/term/hierarchical-relationship> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/vocabulary-mapping> ;
+.
+
+<https://kos.geospecimens.org/glossary/kos-terms/collection/standard>
+    a                        skos:Collection ;
+    skos:prefLabel           "standard"@en ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/kos-terms> ;
+    skos:member              <https://kos.geospecimens.org/glossary/kos-terms/term/data-interchange-standard> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/http-ncicb-nci-nih-gov-xml-owl-evs-thesaurus-owl-c103180> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/deliverable> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/metadata-standard> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-org-spar-fabio-minimalinformationstandard> ,
+                             <https://kos.geospecimens.org/glossary/kos-terms/term/http-purl-org-ontology-bibo-standard> ;
+.

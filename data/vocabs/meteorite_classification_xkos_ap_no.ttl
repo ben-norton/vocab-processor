@@ -134,6 +134,16 @@ mcref:wassonkallemeyn2002 a dct:BibliographicResource ;
     foaf:homepage <https://kos.geospecimens.org/> ;
     foaf:name "geospecimens.org"@en .
 
+_:agent_mineralogy_extension_task_group
+    a                        schema:Organization ;
+    schema:name              "Mineralogy Extension Task Group" ;
+    schema:affiliation       <https://www.tdwg.org/community/esp/mineralogy/> ;
+    schema:parentOrganization [
+        a            schema:Organization ;
+        schema:name  "Biodiversity Information Standards (TDWG)" ;
+    ] ;
+
+
 mcit:clan a skos:Concept ;
     skos:definition "Chondrite or achondrite groups with chemical, mineralogical and isotopic similarities suggesting a common, closely related precursor or formation region."@en ;
     skos:inScheme mc:itemTypes ;
@@ -1139,11 +1149,13 @@ mcref:weisberg2006 a dct:BibliographicResource ;
 mc:wmk2006 a skos:ConceptScheme ;
     dct:conformsTo <http://rdf-vocabulary.ddialliance.org/xkos>,
         <https://github.com/Informasjonsforvaltning/xkos-ap-no> ;
-    dct:creator <https://kos.geospecimens.org/meteorite/agent/geospecimens> ;
+    dcterms:creator          _:agent_mineralogy_extension_task_group ;
     dct:description "Hierarchical classification of meteorites after Weisberg M. K., McCoy T. J. and Krot A. N. (2006) Systematics and Evaluation of Meteorite Classification, Fig. 1: chondrites, primitive achondrites and achondrites organized in five ranks (division, class, clan, group, subgroup)."@en ;
     dct:identifier mc:wmk2006 ;
     dct:language <http://publications.europa.eu/resource/authority/language/ENG> ;
     dct:modified "2026-06-11"^^xsd:date ;
+    dct:publisher        _:agent_mineralogy_extension_task_group ;
+
     dct:publisher <https://kos.geospecimens.org/meteorite/agent/geospecimens> ;
     dct:source mcref:weisberg2006 ;
     dct:title "Meteorite Classification (Weisberg, McCoy & Krot 2006)"@en ;

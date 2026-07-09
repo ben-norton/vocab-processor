@@ -1,6 +1,6 @@
 # Geological Specimen Name Type — SKOS Mappings
 # Source: NameTypes.xlsx
-# Generated: 2026-05-12
+# Generated: 2026-07-01
 #
 # This file contains only SKOS match triples.
 # The main vocabulary file carries full concept metadata.
@@ -16,6 +16,11 @@
     skos:prefLabel      "Alternate Name"@en ;
     skos:broadMatch     <https://kos.resources.org/def/geological-specimen-name-type/geological-material-name> .
 
+<https://kos.resources.org/def/geological-specimen-name-type/authoritative-name>
+    a                   skos:Concept ;
+    skos:prefLabel      "Authoritative Name"@en ;
+    skos:broadMatch     <https://kos.resources.org/def/geological-specimen-name-type/geological-material-name> .
+
 <https://kos.resources.org/def/geological-specimen-name-type/cataloged-name>
     a                   skos:Concept ;
     skos:prefLabel      "Cataloged Name"@en ;
@@ -25,11 +30,6 @@
     a                   skos:Concept ;
     skos:prefLabel      "Classification"@en ;
     skos:broadMatch     <https://kos.resources.org/def/geological-specimen-name-type/formal-name> .
-
-<https://kos.resources.org/def/geological-specimen-name-type/formal-name>
-    a                   skos:Concept ;
-    skos:prefLabel      "Formal Name"@en ;
-    skos:broadMatch     <https://kos.resources.org/def/geological-specimen-name-type/geological-material-name> .
 
 <https://kos.resources.org/def/geological-specimen-name-type/group>
     a                   skos:Concept ;

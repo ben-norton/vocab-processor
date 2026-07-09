@@ -216,8 +216,18 @@ def _ordered_term(term: dict[str, Any]) -> dict[str, Any]:
 
 # ── Core build ──────────────────────────────────────────────────────────
 
-def build_glossary(slug: str, *, output: Path | None = None,
-                   include_term_uris: bool = False) -> Path:
+def assemble_glossary(slug: str, *, include_term_uris: bool = False
+                      ) -> tuple[dict[str, Any], dict[str, str], int]:
+    """Parse the standard 4-file glossary source set and return
+    ``(glossary, meta, skipped)``:
+
+      * ``glossary`` — the composed glossary dict (the JSON payload);
+      * ``meta``     — the raw ``glossary-meta.csv`` row (creator / publisher /
+        namespace prefix / rights, which are not copied into the JSON payload);
+      * ``skipped``  — count of term rows dropped for missing label/definition.
+
+    Shared by the JSON writer (:func:`build_glossary`) and the TTL writer
+    (``build_glossary_ttl.py``) so both consume one parser."""
     src_dir = GLOSS_SRC_DIR / slug
     if not src_dir.is_dir():
         raise SystemExit(f"ERROR: source folder not found: {src_dir}")
@@ -394,6 +404,17 @@ def build_glossary(slug: str, *, output: Path | None = None,
     glossary["terms"] = terms
     if sources_out:
         glossary["sources"] = sources_out
+
+    return glossary, meta, skipped
+
+
+def build_glossary(slug: str, *, output: Path | None = None,
+                   include_term_uris: bool = False) -> Path:
+    glossary, _meta, skipped = assemble_glossary(
+        slug, include_term_uris=include_term_uris)
+    categories  = glossary["categories"]
+    terms       = glossary["terms"]
+    sources_out = glossary.get("sources", [])
 
     # ── Write output ──────────────────────────────────────────────────
     out_path = output or (GLOSS_OUT_DIR / slug / "glossary.json")

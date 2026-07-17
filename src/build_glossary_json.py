@@ -41,10 +41,10 @@ Tolerated quirks in the source CSVs:
 
 Usage::
 
-    python utils/build_glossary_json.py <slug>
-    python utils/build_glossary_json.py collections-digitization
-    python utils/build_glossary_json.py kos-terms --output some/other/path.json
-    python utils/build_glossary_json.py --all
+    python src/build_glossary_json.py <slug>
+    python src/build_glossary_json.py collections-digitization
+    python src/build_glossary_json.py kos-terms --output some/other/path.json
+    python src/build_glossary_json.py --all
 """
 
 from __future__ import annotations

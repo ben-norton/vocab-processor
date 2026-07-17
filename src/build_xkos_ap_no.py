@@ -9,7 +9,11 @@ Inputs : meteorite_classification.csv  (items; columns per data dictionary)
 Profile: xkos-ap-no-shacl-v1.ttl (Norwegian application profile of XKOS)
 
 Column -> RDF mapping (informed by the data dictionary):
-  id          -> item IRI mc:MC_%04d + dct:identifier literal "MC_%04d"
+  id          -> row key only (hierarchy joins); the item IRI is minted from
+                 `name` as a lower-case hyphenated slug, mc:<slug>, matching
+                 the IRI pattern of the other geospecimens vocabularies
+                 (https://kos.geospecimens.org/def/meteorite-classification/<slug>).
+                 dct:identifier carries the same slug literal.
   parent_id   -> skos:broader + xkos:specializes (inverses asserted)
   rank        -> skos:member from the matching xkos:ClassificationLevel
   code        -> skos:notation (plain literal)
@@ -20,14 +24,15 @@ Column -> RDF mapping (informed by the data dictionary):
   depth, materialized_path, path_labels -> not serialized (derivable)
 """
 import csv
+import re
 from rdflib import Graph, Namespace, Literal, URIRef, BNode, RDF, RDFS, XSD
 from rdflib.namespace import SKOS, DCTERMS, FOAF
 from rdflib.collection import Collection
 
-BASE   = "https://kos.geospecimens.org/meteorite/"
+BASE   = "https://kos.geospecimens.org/def/meteorite-classification/"
 MC     = Namespace(BASE)
 MCLVL  = Namespace(BASE + "level/")
-MCIT   = Namespace(BASE + "itemtype/")
+MCIT   = Namespace(BASE + "item-type/")
 MCREF  = Namespace(BASE + "reference/")
 XKOS   = Namespace("http://rdf-vocabulary.ddialliance.org/xkos#")
 UNESKOS= Namespace("http://purl.org/umu/uneskos#")
@@ -39,16 +44,27 @@ for p, n in [("mc", MC), ("mclvl", MCLVL), ("mcit", MCIT), ("mcref", MCREF),
              ("dct", DCTERMS), ("foaf", FOAF), ("xsd", XSD)]:
     g.bind(p, n)
 
-UP = "/mnt/user-data/uploads/"
+UP = "../sources/classification-systems/meteorites/"
 items   = list(csv.DictReader(open(UP + "meteorite_classification.csv", encoding="utf-8-sig")))
 sources = list(csv.DictReader(open(UP + "meteorite_sources.csv", encoding="utf-8-sig")))
 
-scheme      = MC.wmk2006
-rank_scheme = MC.itemTypes
+# The main scheme lives at the base IRI (no trailing path segment), consistent
+# with the other geospecimens vocabularies, e.g. .../def/hazard-type.
+scheme      = URIRef(BASE.rstrip("/"))
+rank_scheme = MC["item-types"]
 agent       = MC["agent/geospecimens"]
 today       = Literal("2026-06-11", datatype=XSD.date)
 
-def iri(row_id): return MC["MC_%04d" % int(row_id)]
+def slugify(text):
+    return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
+
+by_id = {r["id"].strip(): r for r in items}
+_slugs = [slugify(r["name"]) for r in items]
+_dupes = {s for s in _slugs if _slugs.count(s) > 1}
+if _dupes:
+    raise SystemExit("duplicate concept slugs, disambiguate names: %s" % sorted(_dupes))
+
+def iri(row_id): return MC[slugify(by_id[str(row_id).strip()]["name"])]
 
 RANKS = ["division", "class", "clan", "group", "subgroup"]
 
@@ -141,13 +157,12 @@ g.add((RDF.nil, RDF.type, RDF.List))   # axiomatic; required by sh:class rdf:Lis
 g.add((scheme, XKOS.levels, head))
 
 # ---------------------------------------------------------------- items
-by_id = {r["id"]: r for r in items}
 for row in items:
     c = iri(row["id"])
     g.add((c, RDF.type, SKOS.Concept))
     g.add((c, SKOS.prefLabel, Literal(row["name"], lang="en")))
     g.add((c, SKOS.notation, Literal(row["code"])))
-    g.add((c, DCTERMS.identifier, Literal("MC_%04d" % int(row["id"]))))
+    g.add((c, DCTERMS.identifier, Literal(slugify(row["name"]))))
     g.add((c, SKOS.inScheme, scheme))
     g.add((c, UNESKOS.memberOf, scheme))
     g.add((scheme, UNESKOS.contains, c))
@@ -173,7 +188,7 @@ for row in items:
     if row["rank"] in level_iri:
         g.add((level_iri[row["rank"]], SKOS.member, c))
 
-out = "/home/claude/meteorite_classification_xkos_ap_no.ttl"
+out = "../sources/classification-systems/meteorites/meteorite-classification.ttl"
 g.serialize(out, format="turtle")
 print("triples:", len(g))
 print("written:", out)

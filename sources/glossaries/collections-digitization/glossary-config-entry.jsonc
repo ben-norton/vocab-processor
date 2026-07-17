@@ -8,7 +8,7 @@
   "id":          "collections-digitization",
   "title":       "Collections Digitization Glossary",
   "description": "Controlled glossary for the people, data, and workflows involved in digitising museum and natural-history collections.",
-  "uri":         "https://kos.geospecimens.org/kos/glossary/collection-digitization",
+  "uri":         "https://kos.geospecimens.org/glossary/collections-digitization",
 
   // ── CSV → JSON paths (read by scripts/csv-to-glossary.js) ─────────────
   "terms":   "glossaries/collections-digitization/glossary-terms.csv",

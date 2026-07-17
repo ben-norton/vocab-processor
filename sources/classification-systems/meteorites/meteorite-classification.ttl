@@ -1,0 +1,1215 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mc: <https://kos.geospecimens.org/def/meteorite-classification/> .
+@prefix mcit: <https://kos.geospecimens.org/def/meteorite-classification/item-type/> .
+@prefix mclvl: <https://kos.geospecimens.org/def/meteorite-classification/level/> .
+@prefix mcref: <https://kos.geospecimens.org/def/meteorite-classification/reference/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix uneskos: <http://purl.org/umu/uneskos#> .
+@prefix xkos: <http://rdf-vocabulary.ddialliance.org/xkos#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+() a rdf:List .
+
+mclvl:clan a xkos:ClassificationLevel ;
+    xkos:depth "3"^^xsd:positiveInteger ;
+    xkos:organizedBy mcit:clan ;
+    skos:member mc:acapulcoite-lodranite-clan,
+        mc:ci-clan,
+        mc:cm-co-clan,
+        mc:cr-clan,
+        mc:cv-ck-clan,
+        mc:eh-el-clan,
+        mc:h-l-ll-clan,
+        mc:hed-clan-vesta,
+        mc:irons,
+        mc:lunar-moon,
+        mc:martian-snc,
+        mc:pallasites-stony-iron,
+        mc:winonaite-iab-iiicd-clan ;
+    skos:prefLabel "Clan level"@en .
+
+mclvl:class a xkos:ClassificationLevel ;
+    xkos:depth "2"^^xsd:positiveInteger ;
+    xkos:organizedBy mcit:class ;
+    skos:member mc:carbonaceous-chondrites,
+        mc:enstatite-chondrites,
+        mc:ordinary-chondrites ;
+    skos:prefLabel "Class level"@en .
+
+mclvl:division a xkos:ClassificationLevel ;
+    xkos:depth "1"^^xsd:positiveInteger ;
+    xkos:organizedBy mcit:division ;
+    skos:member mc:achondrites,
+        mc:chondrites,
+        mc:primitive-achondrites ;
+    skos:prefLabel "Division level"@en .
+
+mclvl:group a xkos:ClassificationLevel ;
+    xkos:depth "4"^^xsd:positiveInteger ;
+    xkos:organizedBy mcit:group ;
+    skos:member mc:acapulcoite,
+        mc:angrite,
+        mc:aubrite,
+        mc:brachinite,
+        mc:cb-bencubbin-type,
+        mc:ch-high-metal,
+        mc:chassignite,
+        mc:ci-ivuna-type,
+        mc:ck-karoonda-type,
+        mc:cm-mighei-type,
+        mc:co-ornans-type,
+        mc:cr-renazzo-type,
+        mc:cv-vigarano-type,
+        mc:diogenite,
+        mc:eagle-station-pallasite,
+        mc:eh-high-iron,
+        mc:el-low-iron,
+        mc:eucrite,
+        mc:h-high-iron,
+        mc:howardite,
+        mc:iab-iron-silicate-bearing,
+        mc:ic-iron-group,
+        mc:iiab-iron-group,
+        mc:iic-iron-group,
+        mc:iid-iron-group,
+        mc:iie-iron-group,
+        mc:iiiab-iron-group,
+        mc:iiicd-iron-silicate-bearing,
+        mc:iiie-iron-group,
+        mc:iiif-iron-group,
+        mc:iva-iron-group,
+        mc:ivb-iron-group,
+        mc:k-kakangari-type,
+        mc:l-low-iron,
+        mc:ll-low-iron-low-metal,
+        mc:lodranite,
+        mc:main-group-pallasite,
+        mc:mesosiderite-stony-iron,
+        mc:nakhlite,
+        mc:orthopyroxenite-alh-84001,
+        mc:pyroxene-pallasite,
+        mc:r-rumuruti-type,
+        mc:shergottite,
+        mc:ureilite,
+        mc:winonaite ;
+    skos:prefLabel "Group level"@en .
+
+mclvl:subgroup a xkos:ClassificationLevel ;
+    xkos:depth "5"^^xsd:positiveInteger ;
+    xkos:organizedBy mcit:subgroup ;
+    skos:member mc:cb-subgroup-a,
+        mc:cb-subgroup-b,
+        mc:cv-subgroup-a-oxidized-allende-like,
+        mc:cv-subgroup-b-oxidized-bali-like,
+        mc:cv-subgroup-reduced ;
+    skos:prefLabel "Subgroup level"@en .
+
+mcref:lunarlit a dct:BibliographicResource ;
+    rdfs:label "lunar meteorite literature (Korotev; Lunar Meteorite Compendium)"@en ;
+    dct:bibliographicCitation "Korotev R. L. (2005) Lunar geochemistry as told by lunar meteorites. Chemie der Erde - Geochemistry, 65(4), 297-346; and Lunar Meteorite Compendium (Righter K., compiler), NASA Johnson Space Center."@en ;
+    dct:identifier <https://curator.jsc.nasa.gov/antmet/lmc/> .
+
+mcref:wassonkallemeyn2002 a dct:BibliographicResource ;
+    rdfs:label "Wasson & Kallemeyn (2002)"@en ;
+    dct:bibliographicCitation "Wasson J. T. and Kallemeyn G. W. (2002) The IAB iron-meteorite complex: A group, five subgroups, numerous grouplets, closely related, mainly formed by crystal segregation in rapidly cooling melts. Geochimica et Cosmochimica Acta, 66(13), 2445-2473."@en .
+
+<https://kos.geospecimens.org/def/meteorite-classification/agent/geospecimens> a foaf:Agent ;
+    foaf:homepage <https://kos.geospecimens.org/> ;
+    foaf:name "geospecimens.org"@en .
+
+mcit:clan a skos:Concept ;
+    skos:definition "Chondrite or achondrite groups with chemical, mineralogical and isotopic similarities suggesting a common, closely related precursor or formation region."@en ;
+    skos:inScheme mc:item-types ;
+    skos:prefLabel "clan"@en ;
+    skos:topConceptOf mc:item-types .
+
+mcit:class a skos:Concept ;
+    skos:definition "Group of chondrite or achondrite groups sharing primary whole-rock chemical and O-isotopic characteristics."@en ;
+    skos:inScheme mc:item-types ;
+    skos:prefLabel "class"@en ;
+    skos:topConceptOf mc:item-types .
+
+mcit:division a skos:Concept ;
+    skos:definition "Highest rank below the root: chondrites, primitive achondrites and achondrites."@en ;
+    skos:inScheme mc:item-types ;
+    skos:prefLabel "division"@en ;
+    skos:topConceptOf mc:item-types .
+
+mcit:group a skos:Concept ;
+    skos:definition "Minimum of five unpaired meteorites of similar petrologic, chemical and isotopic characteristics; the basic classification unit."@en ;
+    skos:inScheme mc:item-types ;
+    skos:prefLabel "group"@en ;
+    skos:topConceptOf mc:item-types .
+
+mcit:subgroup a skos:Concept ;
+    skos:definition "Subdivision of a group based on secondary chemical or petrographic distinctions."@en ;
+    skos:inScheme mc:item-types ;
+    skos:prefLabel "subgroup"@en ;
+    skos:topConceptOf mc:item-types .
+
+mc:acapulcoite a skos:Concept ;
+    dct:identifier "acapulcoite" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:acapulcoite-lodranite-clan ;
+    skos:broader mc:acapulcoite-lodranite-clan ;
+    skos:definition "Acapulcoites; fine-grained (150-230 um) equigranular rocks with near-chondritic mineral abundances and rare relict chondrules; formed by very low-degree partial melting (~950 C)."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "ACA" ;
+    skos:prefLabel "Acapulcoite"@en .
+
+mc:angrite a skos:Concept ;
+    dct:identifier "angrite" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:achondrites ;
+    skos:broader mc:achondrites ;
+    skos:definition "Angrites; vesicular basaltic igneous rocks with unusual Ca-Al-Ti-rich pyroxene, Ca-rich olivine and anorthitic plagioclase - the most alkali-depleted basalts known; O-isotopes near HED but mineralogically distinct."@en ;
+    skos:editorialNote "Connects directly to Achondrites"@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "ANG" ;
+    skos:prefLabel "Angrite"@en .
+
+mc:aubrite a skos:Concept ;
+    dct:identifier "aubrite" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:achondrites ;
+    skos:broader mc:achondrites ;
+    skos:definition "Aubrites (enstatite achondrites); highly reduced, brecciated rocks of nearly FeO-free enstatite with E-chondrite-like sulfides; likely linked to, but from a different parent body than, the EL chondrites."@en ;
+    skos:editorialNote "Connects directly to Achondrites"@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "AUB" ;
+    skos:prefLabel "Aubrite"@en .
+
+mc:brachinite a skos:Concept ;
+    dct:identifier "brachinite" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:primitive-achondrites ;
+    skos:broader mc:primitive-achondrites ;
+    skos:definition "Brachinites; medium- to coarse-grained, olivine-rich (74-98%) equigranular achondrites with near-chondritic lithophile abundances; debated origin as residues, cumulates, or recrystallized chondritic material."@en ;
+    skos:editorialNote "Connects directly to Primitive Achondrites (no clan box)"@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "BRA" ;
+    skos:prefLabel "Brachinite"@en .
+
+mc:cb-subgroup-a a skos:Concept ;
+    dct:identifier "cb-subgroup-a" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:cb-bencubbin-type ;
+    skos:broader mc:cb-bencubbin-type ;
+    skos:definition "CBa; ~60 vol% metal, centimeter-sized chondrules, metal with 5-8 wt% Ni, d15N up to ~1000 per mil."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "CB_a" ;
+    skos:prefLabel "CB subgroup a"@en .
+
+mc:cb-subgroup-b a skos:Concept ;
+    dct:identifier "cb-subgroup-b" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:cb-bencubbin-type ;
+    skos:broader mc:cb-bencubbin-type ;
+    skos:definition "CBb; >70 vol% metal, millimeter-sized chondrules, metal with 4-15 wt% Ni, d15N ~200 per mil; argued to be the more primitive nebular endmember."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "CB_b" ;
+    skos:prefLabel "CB subgroup b"@en .
+
+mc:ch-high-metal a skos:Concept ;
+    dct:identifier "ch-high-metal" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:cr-clan ;
+    skos:broader mc:cr-clan ;
+    skos:definition "ALH 85085-type; high metal (~20 vol%), tiny (<100 um) mostly cryptocrystalline chondrules, virtually no matrix, very large d15N anomalies."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "CH" ;
+    skos:prefLabel "CH (high-metal)"@en .
+
+mc:chassignite a skos:Concept ;
+    dct:identifier "chassignite" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:martian-snc ;
+    skos:broader mc:martian-snc ;
+    skos:definition "Chassignites; olivine-rich (dunitic) cumulate martian rocks (e.g., Chassigny)."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "CHA" ;
+    skos:prefLabel "Chassignite"@en .
+
+mc:ci-ivuna-type a skos:Concept ;
+    dct:identifier "ci-ivuna-type" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:ci-clan ;
+    skos:broader mc:ci-clan ;
+    skos:definition "Ivuna-type; among the most primitive solar-system materials, bulk composition close to the solar photosphere. All petrologic type 1: heavily hydrated, brecciated, chondrule- and CAI-free phyllosilicate-rich rocks."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "CI" ;
+    skos:prefLabel "CI (Ivuna-type)"@en .
+
+mc:ck-karoonda-type a skos:Concept ;
+    dct:identifier "ck-karoonda-type" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:cv-ck-clan ;
+    skos:broader mc:cv-ck-clan ;
+    skos:definition "Karoonda-type; matrix-rich with large (700-1000 um) porphyritic chondrules; highly oxidized (fayalitic olivine, abundant magnetite), mostly high petrologic type 4-6."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "CK" ;
+    skos:prefLabel "CK (Karoonda-type)"@en .
+
+mc:cm-mighei-type a skos:Concept ;
+    dct:identifier "cm-mighei-type" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:cm-co-clan ;
+    skos:broader mc:cm-co-clan ;
+    skos:definition "Mighei-type; the most abundant C chondrites. Small (~300 um) chondrules, abundant matrix, CAIs/AOAs partly replaced by phyllosilicates; mostly aqueously altered type 2 (some type 1)."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "CM" ;
+    skos:prefLabel "CM (Mighei-type)"@en .
+
+mc:co-ornans-type a skos:Concept ;
+    dct:identifier "co-ornans-type" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:cm-co-clan ;
+    skos:broader mc:cm-co-clan ;
+    skos:definition "Ornans-type; small (~150 um) chondrules with 30-45 vol% matrix; petrologic types 3.0-3.7, O-isotopes on the CCAM line overlapping CV."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "CO" ;
+    skos:prefLabel "CO (Ornans-type)"@en .
+
+mc:cr-renazzo-type a skos:Concept ;
+    dct:identifier "cr-renazzo-type" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:cr-clan ;
+    skos:broader mc:cr-clan ;
+    skos:definition "Renazzo-type; mostly type 2, with large metal-rich porphyritic Mg-rich chondrules with multilayered rims, hydrated matrix, solar-Ni/Co metal, and large d15N."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "CR" ;
+    skos:prefLabel "CR (Renazzo-type)"@en .
+
+mc:cv-subgroup-a-oxidized-allende-like a skos:Concept ;
+    dct:identifier "cv-subgroup-a-oxidized-allende-like" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:cv-vigarano-type ;
+    skos:broader mc:cv-vigarano-type ;
+    skos:definition "Oxidized Allende-like CV (CVoxA); secondary ferrous olivine, Ca,Fe-pyroxene, andradite and nepheline/sodalite, coarser matrix than CVoxB with only minor phyllosilicates."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "CV_A" ;
+    skos:prefLabel "CV subgroup A (oxidized, Allende-like)"@en .
+
+mc:cv-subgroup-b-oxidized-bali-like a skos:Concept ;
+    dct:identifier "cv-subgroup-b-oxidized-bali-like" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:cv-vigarano-type ;
+    skos:broader mc:cv-vigarano-type ;
+    skos:definition "Oxidized Bali-like CV (CVoxB); aqueously altered with abundant phyllosilicates, magnetite, fayalite and Ca,Fe-pyroxenes; highest matrix/chondrule ratio."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "CV_B" ;
+    skos:prefLabel "CV subgroup B (oxidized, Bali-like)"@en .
+
+mc:cv-subgroup-reduced a skos:Concept ;
+    dct:identifier "cv-subgroup-reduced" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:cv-vigarano-type ;
+    skos:broader mc:cv-vigarano-type ;
+    skos:definition "Reduced CV (CVred); lowest matrix/chondrule and highest metal/magnetite ratios, with only minor nepheline/sodalite and Ca,Fe-pyroxenes."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "CV_red" ;
+    skos:prefLabel "CV subgroup (reduced)"@en .
+
+mc:diogenite a skos:Concept ;
+    dct:identifier "diogenite" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:hed-clan-vesta ;
+    skos:broader mc:hed-clan-vesta ;
+    skos:definition "Diogenites; coarse orthopyroxene cumulates from deeper plutonic levels of the HED parent body."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "DIO" ;
+    skos:prefLabel "Diogenite"@en .
+
+mc:eagle-station-pallasite a skos:Concept ;
+    dct:identifier "eagle-station-pallasite" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:pallasites-stony-iron ;
+    skos:broader mc:pallasites-stony-iron ;
+    skos:definition "Eagle Station grouplet; more ferroan, Ca-rich olivine and distinct O-isotopes; metal resembles IIF irons (higher Ni and Ir)."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "ES PAL" ;
+    skos:prefLabel "Eagle Station pallasite"@en .
+
+mc:eh-high-iron a skos:Concept ;
+    dct:identifier "eh-high-iron" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:eh-el-clan ;
+    skos:broader mc:eh-el-clan ;
+    skos:definition "High-Fe enstatite chondrites; more reduced, niningerite-bearing, with Si-rich (2-3 wt%) metal."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "EH" ;
+    skos:prefLabel "EH (high iron)"@en .
+
+mc:el-low-iron a skos:Concept ;
+    dct:identifier "el-low-iron" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:eh-el-clan ;
+    skos:broader mc:eh-el-clan ;
+    skos:definition "Low-Fe enstatite chondrites; alabandite-bearing, <1 wt% Si in metal, ranging to higher petrologic types (EL6)."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "EL" ;
+    skos:prefLabel "EL (low iron)"@en .
+
+mc:eucrite a skos:Concept ;
+    dct:identifier "eucrite" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:hed-clan-vesta ;
+    skos:broader mc:hed-clan-vesta ;
+    skos:definition "Eucrites; basalts of plagioclase and clinopyroxene (pyroxene Fe/Mn ~30) from near-surface flows or intrusives; commonly brecciated."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "EUC" ;
+    skos:prefLabel "Eucrite"@en .
+
+mc:h-high-iron a skos:Concept ;
+    dct:identifier "h-high-iron" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:h-l-ll-clan ;
+    skos:broader mc:h-l-ll-clan ;
+    skos:definition "Highest total Fe and metallic-Fe/FeO ratio among O chondrites; equilibrated olivine Fa16-20."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "H" ;
+    skos:prefLabel "H (high iron)"@en .
+
+mc:howardite a skos:Concept ;
+    dct:identifier "howardite" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:hed-clan-vesta ;
+    skos:broader mc:hed-clan-vesta ;
+    skos:definition "Howardites; polymict regolith breccias mixing eucritic and diogenitic clasts."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "HOW" ;
+    skos:prefLabel "Howardite"@en .
+
+mc:iab-iron-silicate-bearing a skos:Concept ;
+    dct:identifier "iab-iron-silicate-bearing" ;
+    dct:source mcref:wassonkallemeyn2002,
+        mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:winonaite-iab-iiicd-clan ;
+    skos:broader mc:winonaite-iab-iiicd-clan ;
+    skos:definition "Silicate-bearing iron group whose inclusions resemble winonaites in mineralogy and O-isotopes; historically called 'nonmagmatic,' with textures suggesting impact mixing of metal and silicate. Wasson & Kallemeyn (2002) merge IAB+IIICD as the 'IAB complex.'"@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "IAB" ;
+    skos:prefLabel "IAB iron (silicate-bearing)"@en .
+
+mc:ic-iron-group a skos:Concept ;
+    dct:identifier "ic-iron-group" ;
+    dct:source mcref:scottwasson1975,
+        mcref:wassonironseries ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:irons ;
+    skos:broader mc:irons ;
+    skos:definition "Magmatic iron group resolved on Ga/Ge-Ni plots; interpreted as a fractionally crystallized asteroid core."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "IC" ;
+    skos:prefLabel "IC iron group"@en .
+
+mc:iiab-iron-group a skos:Concept ;
+    dct:identifier "iiab-iron-group" ;
+    dct:source mcref:scottwasson1975,
+        mcref:wassonironseries ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:irons ;
+    skos:broader mc:irons ;
+    skos:definition "Largest magmatic iron group (hexahedrites/coarse octahedrites); a fractional-crystallization trend from a single core."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "IIAB" ;
+    skos:prefLabel "IIAB iron group"@en .
+
+mc:iic-iron-group a skos:Concept ;
+    dct:identifier "iic-iron-group" ;
+    dct:source mcref:scottwasson1975,
+        mcref:wassonironseries ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:irons ;
+    skos:broader mc:irons ;
+    skos:definition "Magmatic iron group with a traditional core-crystallization history."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "IIC" ;
+    skos:prefLabel "IIC iron group"@en .
+
+mc:iid-iron-group a skos:Concept ;
+    dct:identifier "iid-iron-group" ;
+    dct:source mcref:scottwasson1975,
+        mcref:wassonironseries ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:irons ;
+    skos:broader mc:irons ;
+    skos:definition "Magmatic iron group formed by fractional crystallization in an asteroid core."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "IID" ;
+    skos:prefLabel "IID iron group"@en .
+
+mc:iie-iron-group a skos:Concept ;
+    dct:identifier "iie-iron-group" ;
+    dct:source mcref:scottwasson1975,
+        mcref:wassonironseries,
+        mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:irons ;
+    skos:broader mc:irons ;
+    skos:definition "Silicate-bearing iron group; some silicates resemble H chondrites. Historically 'nonmagmatic,' with poorly defined elemental trends suggesting impact mixing of metal and silicate."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "IIE" ;
+    skos:prefLabel "IIE iron group"@en .
+
+mc:iiiab-iron-group a skos:Concept ;
+    dct:identifier "iiiab-iron-group" ;
+    dct:source mcref:scottwasson1975,
+        mcref:wassonironseries ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:irons ;
+    skos:broader mc:irons ;
+    skos:definition "One of the largest magmatic iron groups (octahedrites); a single fractional-crystallization sequence (former IIIA+IIIB), with metal close to main-group-pallasite composition."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "IIIAB" ;
+    skos:prefLabel "IIIAB iron group"@en .
+
+mc:iiicd-iron-silicate-bearing a skos:Concept ;
+    dct:identifier "iiicd-iron-silicate-bearing" ;
+    dct:source mcref:wassonkallemeyn2002,
+        mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:winonaite-iab-iiicd-clan ;
+    skos:broader mc:winonaite-iab-iiicd-clan ;
+    skos:definition "Silicate-bearing iron group historically paired with IAB; Wasson & Kallemeyn (2002) treat IAB+IIICD as a single IAB complex. Geochemical trends differ from the magmatic groups."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "IIICD" ;
+    skos:prefLabel "IIICD iron (silicate-bearing)"@en .
+
+mc:iiie-iron-group a skos:Concept ;
+    dct:identifier "iiie-iron-group" ;
+    dct:source mcref:scottwasson1975,
+        mcref:wassonironseries ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:irons ;
+    skos:broader mc:irons ;
+    skos:definition "Magmatic iron group resembling IIIA/IIIAB but resolved by lower Ga/Ni and Ge/Ni, larger kamacite bandwidths, and haxonite (carbide) in its members."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "IIIE" ;
+    skos:prefLabel "IIIE iron group"@en .
+
+mc:iiif-iron-group a skos:Concept ;
+    dct:identifier "iiif-iron-group" ;
+    dct:source mcref:scottwasson1975,
+        mcref:wassonironseries ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:irons ;
+    skos:broader mc:irons ;
+    skos:definition "Small, volatile-depleted (low Ga/Ge) magmatic iron group, distinct from IIIAB."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "IIIF" ;
+    skos:prefLabel "IIIF iron group"@en .
+
+mc:iva-iron-group a skos:Concept ;
+    dct:identifier "iva-iron-group" ;
+    dct:source mcref:scottwasson1975,
+        mcref:wassonironseries ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:irons ;
+    skos:broader mc:irons ;
+    skos:definition "Volatile-depleted magmatic iron group (fine octahedrites) with a range of cooling rates, suggesting metal pods at varying depths in a partially molten body."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "IVA" ;
+    skos:prefLabel "IVA iron group"@en .
+
+mc:ivb-iron-group a skos:Concept ;
+    dct:identifier "ivb-iron-group" ;
+    dct:source mcref:scottwasson1975,
+        mcref:wassonironseries ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:irons ;
+    skos:broader mc:irons ;
+    skos:definition "Most volatile-depleted iron group; metal matches a high-temperature (~1270 K) nebular condensate, implying high-temperature accretion."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "IVB" ;
+    skos:prefLabel "IVB iron group"@en .
+
+mc:k-kakangari-type a skos:Concept ;
+    dct:identifier "k-kakangari-type" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:chondrites ;
+    skos:broader mc:chondrites ;
+    skos:definition "Kakangari-type grouplet; chemically, mineralogically and isotopically distinct from the C, O and E classes; high matrix, Fe-poor olivine/enstatite, O-isotopes below the TF line; a candidate first member of a fourth chondrite class."@en ;
+    skos:editorialNote "Connects directly to Chondrites in figure (no class/clan box)"@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "K" ;
+    skos:prefLabel "K (Kakangari-type)"@en .
+
+mc:l-low-iron a skos:Concept ;
+    dct:identifier "l-low-iron" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:h-l-ll-clan ;
+    skos:broader mc:h-l-ll-clan ;
+    skos:definition "Intermediate Fe content among O chondrites; equilibrated olivine Fa23-26."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "L" ;
+    skos:prefLabel "L (low iron)"@en .
+
+mc:ll-low-iron-low-metal a skos:Concept ;
+    dct:identifier "ll-low-iron-low-metal" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:h-l-ll-clan ;
+    skos:broader mc:h-l-ll-clan ;
+    skos:definition "Lowest Fe and metal among O chondrites; equilibrated olivine Fa27-32."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "LL" ;
+    skos:prefLabel "LL (low iron, low metal)"@en .
+
+mc:lodranite a skos:Concept ;
+    dct:identifier "lodranite" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:acapulcoite-lodranite-clan ;
+    skos:broader mc:acapulcoite-lodranite-clan ;
+    skos:definition "Lodranites; coarse-grained (540-700 um) olivine-pyroxene rocks depleted in plagioclase and troilite; residues of higher-degree partial melting (~1250 C) with basaltic-melt removal."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "LOD" ;
+    skos:prefLabel "Lodranite"@en .
+
+mc:lunar-moon a skos:Concept ;
+    dct:identifier "lunar-moon" ;
+    dct:source mcref:lunarlit,
+        mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:achondrites ;
+    skos:broader mc:achondrites ;
+    skos:definition "Lunar meteorites; rocks launched from the Moon, sharing mineralogy/Fe-Mn and O-isotopes with Apollo/Luna samples but sampling random sites (including the farside). Mainly feldspathic-highland breccias, mare basalts/breccias, and mingled breccias."@en ;
+    skos:editorialNote "No group boxes shown in figure"@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "Moon" ;
+    skos:prefLabel "Lunar (Moon)"@en .
+
+mc:main-group-pallasite a skos:Concept ;
+    dct:identifier "main-group-pallasite" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:pallasites-stony-iron ;
+    skos:broader mc:pallasites-stony-iron ;
+    skos:definition "Main-group pallasites; olivine-metal rocks whose metal resembles Ni-rich IIIAB irons and whose O-isotopes match the HEDs (no proven genetic link)."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "MG PAL" ;
+    skos:prefLabel "Main-group pallasite"@en .
+
+mc:mesosiderite-stony-iron a skos:Concept ;
+    dct:identifier "mesosiderite-stony-iron" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:achondrites ;
+    skos:broader mc:achondrites ;
+    skos:definition "Mesosiderites; stony-iron breccias of roughly equal silicate (basalt/gabbro/pyroxenite clasts) and Fe,Ni-metal+troilite, with metal intimately mixed with similarly sized silicate grains."@en ;
+    skos:editorialNote "Connects directly to Achondrites"@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "MES" ;
+    skos:prefLabel "Mesosiderite (stony-iron)"@en .
+
+mc:nakhlite a skos:Concept ;
+    dct:identifier "nakhlite" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:martian-snc ;
+    skos:broader mc:martian-snc ;
+    skos:definition "Nakhlites; clinopyroxene (augite)-rich cumulate rocks from Mars."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "NAK" ;
+    skos:prefLabel "Nakhlite"@en .
+
+mc:orthopyroxenite-alh-84001 a skos:Concept ;
+    dct:identifier "orthopyroxenite-alh-84001" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:martian-snc ;
+    skos:broader mc:martian-snc ;
+    skos:definition "Orthopyroxenite represented by ALH 84001, a ~4.5 Ga coarse orthopyroxene cumulate from Mars, originally misclassified as a diogenite."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "OPX" ;
+    skos:prefLabel "Orthopyroxenite (ALH 84001)"@en .
+
+mc:pyroxene-pallasite a skos:Concept ;
+    dct:identifier "pyroxene-pallasite" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:pallasites-stony-iron ;
+    skos:broader mc:pallasites-stony-iron ;
+    skos:definition "Pyroxene-pallasite grouplet (e.g., Vermillion, Y-8451); contain mm-sized pyroxene, with metal and O-isotopes distinguishing them from the other pallasites."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "PP PAL" ;
+    skos:prefLabel "Pyroxene pallasite"@en .
+
+mc:r-rumuruti-type a skos:Concept ;
+    dct:identifier "r-rumuruti-type" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:chondrites ;
+    skos:broader mc:chondrites ;
+    skos:definition "Rumuruti-type; highly oxidized, FeO-rich olivine (Fa37-40), nearly metal-free, ~50% matrix; highest delta-17O of any chondrite group; affiliated with but distinct from the O class (possibly a separate class or O clan)."@en ;
+    skos:editorialNote "Connects directly to Chondrites in figure (no class/clan box)"@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "R" ;
+    skos:prefLabel "R (Rumuruti-type)"@en .
+
+mc:shergottite a skos:Concept ;
+    dct:identifier "shergottite" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:martian-snc ;
+    skos:broader mc:martian-snc ;
+    skos:definition "Shergottites; basaltic and lherzolitic/olivine-phyric volcanic-plutonic rocks, mostly young (<1.3 Ga); the most abundant martian meteorites."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "SHE" ;
+    skos:prefLabel "Shergottite"@en .
+
+mc:ureilite a skos:Concept ;
+    dct:identifier "ureilite" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:primitive-achondrites ;
+    skos:broader mc:primitive-achondrites ;
+    skos:definition "Ureilites; olivine-pyroxene rocks with interstitial graphite/diamond, metal and sulfides and reduced olivine rims; O-isotopes scatter along the CCAM line. Interpreted as partial-melt residues / mantle rock of the ureilite parent body."@en ;
+    skos:editorialNote "Connects directly to Primitive Achondrites (no clan box)"@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "URE" ;
+    skos:prefLabel "Ureilite"@en .
+
+mc:winonaite a skos:Concept ;
+    dct:identifier "winonaite" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:specializes mc:winonaite-iab-iiicd-clan ;
+    skos:broader mc:winonaite-iab-iiicd-clan ;
+    skos:definition "Winonaites; chondritic mineralogy/composition but recrystallized achondritic textures; mineral compositions between E and H chondrites, with Fe,Ni-FeS veins recording first partial melts."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:notation "WIN" ;
+    skos:prefLabel "Winonaite"@en .
+
+mc:ci-clan a skos:Concept ;
+    dct:identifier "ci-clan" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:generalizes mc:ci-ivuna-type ;
+    xkos:specializes mc:carbonaceous-chondrites ;
+    skos:broader mc:carbonaceous-chondrites ;
+    skos:definition "Single-group clan; CI chondrites show nothing linking them to the other carbonaceous clans."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:narrower mc:ci-ivuna-type ;
+    skos:notation "CI" ;
+    skos:prefLabel "CI clan"@en .
+
+mc:enstatite-chondrites a skos:Concept ;
+    dct:identifier "enstatite-chondrites" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:generalizes mc:eh-el-clan ;
+    xkos:specializes mc:chondrites ;
+    skos:broader mc:chondrites ;
+    skos:definition "Chondrites formed under highly reducing conditions, with Fe-poor silicates, Si-bearing metal and unusual sulfides/nitrides; O-isotopes on the TF line near Earth and the Moon. Two groups."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:narrower mc:eh-el-clan ;
+    skos:notation "E" ;
+    skos:prefLabel "Enstatite chondrites"@en .
+
+mc:ordinary-chondrites a skos:Concept ;
+    dct:identifier "ordinary-chondrites" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:generalizes mc:h-l-ll-clan ;
+    xkos:specializes mc:chondrites ;
+    skos:broader mc:chondrites ;
+    skos:definition "The most abundant chondrites (>85% of falls); abundant large chondrules, low matrix, refractory-lithophile abundances below CI, O-isotopes above the TF line. The three groups form one clan."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:narrower mc:h-l-ll-clan ;
+    skos:notation "O" ;
+    skos:prefLabel "Ordinary chondrites"@en .
+
+mc:acapulcoite-lodranite-clan a skos:Concept ;
+    dct:identifier "acapulcoite-lodranite-clan" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:generalizes mc:acapulcoite,
+        mc:lodranite ;
+    xkos:specializes mc:primitive-achondrites ;
+    skos:broader mc:primitive-achondrites ;
+    skos:definition "Acapulcoite-Lodranite clan; primitive achondrites with similar, spread O-isotopes; residues/products of low-degree partial melting of a chondritic precursor."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:narrower mc:acapulcoite,
+        mc:lodranite ;
+    skos:notation "ACA-LOD" ;
+    skos:prefLabel "Acapulcoite-Lodranite clan"@en .
+
+mc:cb-bencubbin-type a skos:Concept ;
+    dct:identifier "cb-bencubbin-type" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:generalizes mc:cb-subgroup-a,
+        mc:cb-subgroup-b ;
+    xkos:specializes mc:cr-clan ;
+    skos:broader mc:cr-clan ;
+    skos:definition "Bencubbin-type; extreme metal (60-80 vol%), cryptocrystalline/barred chondrules, strong volatile-lithophile depletion and heavy-N enrichment; subgroups CBa and CBb."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:narrower mc:cb-subgroup-a,
+        mc:cb-subgroup-b ;
+    skos:notation "CB" ;
+    skos:prefLabel "CB (Bencubbin-type)"@en .
+
+mc:cm-co-clan a skos:Concept ;
+    dct:identifier "cm-co-clan" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:generalizes mc:cm-mighei-type,
+        mc:co-ornans-type ;
+    xkos:specializes mc:carbonaceous-chondrites ;
+    skos:broader mc:carbonaceous-chondrites ;
+    skos:definition "Clan linking the CM and CO groups by similar chondrule sizes, refractory-lithophile abundances, and high-temperature-mineral O-isotopes."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:narrower mc:cm-mighei-type,
+        mc:co-ornans-type ;
+    skos:notation "CM-CO" ;
+    skos:prefLabel "CM-CO clan"@en .
+
+mc:cv-ck-clan a skos:Concept ;
+    dct:identifier "cv-ck-clan" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:generalizes mc:ck-karoonda-type,
+        mc:cv-vigarano-type ;
+    xkos:specializes mc:carbonaceous-chondrites ;
+    skos:broader mc:carbonaceous-chondrites ;
+    skos:definition "Clan grouping CV and CK chondrites, which share overlapping CCAM-line O-isotopes and magnetite chemistry; low-type CK resembles oxidized CV."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:narrower mc:ck-karoonda-type,
+        mc:cv-vigarano-type ;
+    skos:notation "CV-CK" ;
+    skos:prefLabel "CV-CK clan"@en .
+
+mc:eh-el-clan a skos:Concept ;
+    dct:identifier "eh-el-clan" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:generalizes mc:eh-high-iron,
+        mc:el-low-iron ;
+    xkos:specializes mc:enstatite-chondrites ;
+    skos:broader mc:enstatite-chondrites ;
+    skos:definition "Single enstatite-chondrite clan; EH and EL are distinguished mainly by sulfide chemistry and metal Si content."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:narrower mc:eh-high-iron,
+        mc:el-low-iron ;
+    skos:notation "EH-EL" ;
+    skos:prefLabel "EH-EL clan"@en .
+
+mc:meteorites a skos:Concept ;
+    dct:identifier "meteorites" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:generalizes mc:achondrites,
+        mc:chondrites,
+        mc:primitive-achondrites ;
+    skos:definition "Solid extraterrestrial fragments that survive atmospheric passage; classified by mineralogy, petrography, bulk chemistry and O-isotopes into chondrites, primitive achondrites and achondrites."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:narrower mc:achondrites,
+        mc:chondrites,
+        mc:primitive-achondrites ;
+    skos:notation "Meteorites" ;
+    skos:prefLabel "Meteorites"@en ;
+    skos:topConceptOf <https://kos.geospecimens.org/def/meteorite-classification> .
+
+mc:cr-clan a skos:Concept ;
+    dct:identifier "cr-clan" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:generalizes mc:cb-bencubbin-type,
+        mc:ch-high-metal,
+        mc:cr-renazzo-type ;
+    xkos:specializes mc:carbonaceous-chondrites ;
+    skos:broader mc:carbonaceous-chondrites ;
+    skos:definition "Clan of the metal-rich CR, CH and CB groups (plus ungrouped LEW 85332), united by solar-Ni/Co metal, strong volatile-lithophile depletions, CR-line O-isotopes, and large d15N anomalies."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:narrower mc:cb-bencubbin-type,
+        mc:ch-high-metal,
+        mc:cr-renazzo-type ;
+    skos:notation "CR" ;
+    skos:prefLabel "CR clan"@en .
+
+mc:cv-vigarano-type a skos:Concept ;
+    dct:identifier "cv-vigarano-type" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:generalizes mc:cv-subgroup-a-oxidized-allende-like,
+        mc:cv-subgroup-b-oxidized-bali-like,
+        mc:cv-subgroup-reduced ;
+    xkos:specializes mc:cv-ck-clan ;
+    skos:broader mc:cv-ck-clan ;
+    skos:definition "Vigarano-type; abundant matrix, large (~1 mm) chondrules and abundant large CAIs/AOAs; all type 3, divided into oxidized and reduced subgroups."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:narrower mc:cv-subgroup-a-oxidized-allende-like,
+        mc:cv-subgroup-b-oxidized-bali-like,
+        mc:cv-subgroup-reduced ;
+    skos:notation "CV" ;
+    skos:prefLabel "CV (Vigarano-type)"@en .
+
+mc:h-l-ll-clan a skos:Concept ;
+    dct:identifier "h-l-ll-clan" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:generalizes mc:h-high-iron,
+        mc:l-low-iron,
+        mc:ll-low-iron-low-metal ;
+    xkos:specializes mc:ordinary-chondrites ;
+    skos:broader mc:ordinary-chondrites ;
+    skos:definition "Single ordinary-chondrite clan; H, L and LL overlap in O-isotopes and petrology, indicating close kinship."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:narrower mc:h-high-iron,
+        mc:l-low-iron,
+        mc:ll-low-iron-low-metal ;
+    skos:notation "H-L-LL" ;
+    skos:prefLabel "H-L-LL clan"@en .
+
+mc:hed-clan-vesta a skos:Concept ;
+    dct:identifier "hed-clan-vesta" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:generalizes mc:diogenite,
+        mc:eucrite,
+        mc:howardite ;
+    xkos:specializes mc:achondrites ;
+    skos:broader mc:achondrites ;
+    skos:definition "HED clan (howardites-eucrites-diogenites); basalts and orthopyroxene cumulates from a common asteroidal parent, sharing O-isotopes and pyroxene Fe/Mn; spectrally linked to asteroid 4 Vesta."@en ;
+    skos:editorialNote "howardite-eucrite-diogenite; parent body inferred as Vesta"@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:narrower mc:diogenite,
+        mc:eucrite,
+        mc:howardite ;
+    skos:notation "Vesta?" ;
+    skos:prefLabel "HED clan (Vesta?)"@en .
+
+mc:pallasites-stony-iron a skos:Concept ;
+    dct:identifier "pallasites-stony-iron" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:generalizes mc:eagle-station-pallasite,
+        mc:main-group-pallasite,
+        mc:pyroxene-pallasite ;
+    xkos:specializes mc:achondrites ;
+    skos:broader mc:achondrites ;
+    skos:definition "Pallasites; olivine-metal (+troilite) stony-irons. 'Pallasite' is essentially a textural term: the main-group, Eagle Station and pyroxene pallasites (plus ungrouped Milton) formed on separate parent bodies and do not form a true clan/group."@en ;
+    skos:editorialNote "Unlabeled shared connector in figure (clan-row grouping)"@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:narrower mc:eagle-station-pallasite,
+        mc:main-group-pallasite,
+        mc:pyroxene-pallasite ;
+    skos:notation "PAL" ;
+    skos:prefLabel "Pallasites (stony-iron)"@en .
+
+mc:winonaite-iab-iiicd-clan a skos:Concept ;
+    dct:identifier "winonaite-iab-iiicd-clan" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:generalizes mc:iab-iron-silicate-bearing,
+        mc:iiicd-iron-silicate-bearing,
+        mc:winonaite ;
+    xkos:specializes mc:primitive-achondrites ;
+    skos:broader mc:primitive-achondrites ;
+    skos:definition "Winonaite-IAB-IIICD clan; silicate mineralogy and O-isotopes link winonaites to silicate inclusions in IAB (and possibly IIICD) irons, implying a shared or similar parent body."@en ;
+    skos:editorialNote "Clan box reads 'WIN-IAB-IICD' in figure"@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:narrower mc:iab-iron-silicate-bearing,
+        mc:iiicd-iron-silicate-bearing,
+        mc:winonaite ;
+    skos:notation "WIN-IAB-IIICD" ;
+    skos:prefLabel "Winonaite-IAB-IIICD clan"@en .
+
+mc:item-types a skos:ConceptScheme ;
+    dct:description "Flat vocabulary of the five hierarchy ranks used by the Weisberg, McCoy & Krot (2006) meteorite classification; referenced by the classification levels via xkos:organizedBy."@en ;
+    dct:identifier mc:item-types ;
+    dct:language <http://publications.europa.eu/resource/authority/language/ENG> ;
+    dct:modified "2026-06-11"^^xsd:date ;
+    dct:publisher <https://kos.geospecimens.org/def/meteorite-classification/agent/geospecimens> ;
+    dct:title "Meteorite classification item types"@en ;
+    uneskos:contains mcit:clan,
+        mcit:class,
+        mcit:division,
+        mcit:group,
+        mcit:subgroup ;
+    xkos:numberOfLevels "1"^^xsd:positiveInteger ;
+    skos:hasTopConcept mcit:clan,
+        mcit:class,
+        mcit:division,
+        mcit:group,
+        mcit:subgroup .
+
+mcref:scottwasson1975 a dct:BibliographicResource ;
+    rdfs:label "Scott & Wasson (1975)"@en ;
+    dct:bibliographicCitation "Scott E. R. D. and Wasson J. T. (1975) Classification and properties of iron meteorites. Reviews of Geophysics and Space Physics, 13(4), 527-546."@en ;
+    dct:identifier <https://doi.org/10.1029/RG013i004p00527> .
+
+mcref:wassonironseries a dct:BibliographicResource ;
+    rdfs:label "Wasson iron-classification series"@en ;
+    dct:bibliographicCitation "Wasson J. T. and coworkers (1967-1976) 'The chemical classification of iron meteorites' (multi-part series), Geochimica et Cosmochimica Acta; e.g. Wasson J. T. and Kimberlin J. (1967) Part II, GCA 31, 149-178."@en .
+
+mc:carbonaceous-chondrites a skos:Concept ;
+    dct:identifier "carbonaceous-chondrites" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:generalizes mc:ci-clan,
+        mc:cm-co-clan,
+        mc:cr-clan,
+        mc:cv-ck-clan ;
+    xkos:specializes mc:chondrites ;
+    skos:broader mc:chondrites ;
+    skos:definition "Chondrite class with Mg-normalized refractory-lithophile abundances at or above CI and O-isotopes plotting near or below the terrestrial fractionation line; eight groups."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:narrower mc:ci-clan,
+        mc:cm-co-clan,
+        mc:cr-clan,
+        mc:cv-ck-clan ;
+    skos:notation "C" ;
+    skos:prefLabel "Carbonaceous chondrites"@en .
+
+mc:martian-snc a skos:Concept ;
+    dct:identifier "martian-snc" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:generalizes mc:chassignite,
+        mc:nakhlite,
+        mc:orthopyroxenite-alh-84001,
+        mc:shergottite ;
+    xkos:specializes mc:achondrites ;
+    skos:broader mc:achondrites ;
+    skos:definition "Martian (SNC) meteorites; crustal igneous rocks from Mars defining a unique slope-0.52 O-isotope line, with trapped gases matching the martian atmosphere. Includes shergottites, nakhlites, chassignites and orthopyroxenite ALH 84001."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:narrower mc:chassignite,
+        mc:nakhlite,
+        mc:orthopyroxenite-alh-84001,
+        mc:shergottite ;
+    skos:notation "Mars" ;
+    skos:prefLabel "Martian (SNC)"@en .
+
+mc:primitive-achondrites a skos:Concept ;
+    dct:identifier "primitive-achondrites" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:generalizes mc:acapulcoite-lodranite-clan,
+        mc:brachinite,
+        mc:ureilite,
+        mc:winonaite-iab-iiicd-clan ;
+    xkos:specializes mc:meteorites ;
+    skos:broader mc:meteorites ;
+    skos:definition "Nonchondritic meteorites with igneous or recrystallized textures that retain a chemical/isotopic affinity to chondritic precursors; interpreted as residues or low-degree partial melts that did not fully differentiate."@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:narrower mc:acapulcoite-lodranite-clan,
+        mc:brachinite,
+        mc:ureilite,
+        mc:winonaite-iab-iiicd-clan ;
+    skos:notation "Primitive Achondrites" ;
+    skos:prefLabel "Primitive achondrites"@en .
+
+mc:chondrites a skos:Concept ;
+    dct:identifier "chondrites" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:generalizes mc:carbonaceous-chondrites,
+        mc:enstatite-chondrites,
+        mc:k-kakangari-type,
+        mc:ordinary-chondrites,
+        mc:r-rumuruti-type ;
+    xkos:specializes mc:meteorites ;
+    skos:broader mc:meteorites ;
+    skos:definition "Undifferentiated meteorites with broadly solar (CI-like) bulk compositions minus the most volatile elements, from bodies that never underwent planetary melting; most contain chondrules. 15 groups across the C, O and E classes plus R and K."@en ;
+    skos:editorialNote "Division label in figure: Undifferentiated"@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:narrower mc:carbonaceous-chondrites,
+        mc:enstatite-chondrites,
+        mc:k-kakangari-type,
+        mc:ordinary-chondrites,
+        mc:r-rumuruti-type ;
+    skos:notation "Chondrites" ;
+    skos:prefLabel "Chondrites"@en .
+
+mc:achondrites a skos:Concept ;
+    dct:identifier "achondrites" ;
+    dct:source mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:generalizes mc:angrite,
+        mc:aubrite,
+        mc:hed-clan-vesta,
+        mc:irons,
+        mc:lunar-moon,
+        mc:martian-snc,
+        mc:mesosiderite-stony-iron,
+        mc:pallasites-stony-iron ;
+    xkos:specializes mc:meteorites ;
+    skos:broader mc:meteorites ;
+    skos:definition "Differentiated meteorites - igneous rocks, melt residues, or breccias of igneous fragments - from asteroids, Mars and the Moon that experienced a high degree of melting; includes stones, stony-irons and irons."@en ;
+    skos:editorialNote "Division label in figure: Differentiated"@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:narrower mc:angrite,
+        mc:aubrite,
+        mc:hed-clan-vesta,
+        mc:irons,
+        mc:lunar-moon,
+        mc:martian-snc,
+        mc:mesosiderite-stony-iron,
+        mc:pallasites-stony-iron ;
+    skos:notation "Achondrites" ;
+    skos:prefLabel "Achondrites"@en .
+
+mc:irons a skos:Concept ;
+    dct:identifier "irons" ;
+    dct:source mcref:scottwasson1975,
+        mcref:wassonironseries,
+        mcref:weisberg2006 ;
+    uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
+    xkos:generalizes mc:ic-iron-group,
+        mc:iiab-iron-group,
+        mc:iic-iron-group,
+        mc:iid-iron-group,
+        mc:iie-iron-group,
+        mc:iiiab-iron-group,
+        mc:iiie-iron-group,
+        mc:iiif-iron-group,
+        mc:iva-iron-group,
+        mc:ivb-iron-group ;
+    xkos:specializes mc:achondrites ;
+    skos:broader mc:achondrites ;
+    skos:definition "Iron meteorites; mostly cores of differentiated asteroids. The chemical classification (Scott & Wasson) uses Ga, Ge, Ir and Ni - a Roman numeral plus a letter - resolving 13 groups; ~10 are consistent with fractional crystallization in separate cores, and ~15% of irons (40% in Antarctica) are ungrouped."@en ;
+    skos:editorialNote "Unlabeled shared connector in figure (clan-row grouping)"@en ;
+    skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
+    skos:narrower mc:ic-iron-group,
+        mc:iiab-iron-group,
+        mc:iic-iron-group,
+        mc:iid-iron-group,
+        mc:iie-iron-group,
+        mc:iiiab-iron-group,
+        mc:iiie-iron-group,
+        mc:iiif-iron-group,
+        mc:iva-iron-group,
+        mc:ivb-iron-group ;
+    skos:notation "IRON" ;
+    skos:prefLabel "Irons"@en .
+
+mcref:weisberg2006 a dct:BibliographicResource ;
+    rdfs:label "Weisberg et al. (2006)"@en ;
+    dct:bibliographicCitation "Weisberg M. K., McCoy T. J., and Krot A. N. (2006) Systematics and Evaluation of Meteorite Classification. In Meteorites and the Early Solar System II (D. S. Lauretta and H. Y. McSween Jr., eds.), pp. 19-52. University of Arizona Press, Tucson."@en ;
+    dct:identifier <urn:isbn:9780816525621> .
+
+<https://kos.geospecimens.org/def/meteorite-classification> a skos:ConceptScheme ;
+    dct:creator <https://kos.geospecimens.org/def/meteorite-classification/agent/geospecimens> ;
+    dct:description "Hierarchical classification of meteorites after Weisberg M. K., McCoy T. J. and Krot A. N. (2006) Systematics and Evaluation of Meteorite Classification, Fig. 1: chondrites, primitive achondrites and achondrites organized in five ranks (division, class, clan, group, subgroup)."@en ;
+    dct:identifier <https://kos.geospecimens.org/def/meteorite-classification> ;
+    dct:language <http://publications.europa.eu/resource/authority/language/ENG> ;
+    dct:modified "2026-06-11"^^xsd:date ;
+    dct:publisher <https://kos.geospecimens.org/def/meteorite-classification/agent/geospecimens> ;
+    dct:source mcref:weisberg2006 ;
+    dct:title "Meteorite Classification (Weisberg, McCoy & Krot 2006)"@en ;
+    uneskos:contains mc:acapulcoite,
+        mc:acapulcoite-lodranite-clan,
+        mc:achondrites,
+        mc:angrite,
+        mc:aubrite,
+        mc:brachinite,
+        mc:carbonaceous-chondrites,
+        mc:cb-bencubbin-type,
+        mc:cb-subgroup-a,
+        mc:cb-subgroup-b,
+        mc:ch-high-metal,
+        mc:chassignite,
+        mc:chondrites,
+        mc:ci-clan,
+        mc:ci-ivuna-type,
+        mc:ck-karoonda-type,
+        mc:cm-co-clan,
+        mc:cm-mighei-type,
+        mc:co-ornans-type,
+        mc:cr-clan,
+        mc:cr-renazzo-type,
+        mc:cv-ck-clan,
+        mc:cv-subgroup-a-oxidized-allende-like,
+        mc:cv-subgroup-b-oxidized-bali-like,
+        mc:cv-subgroup-reduced,
+        mc:cv-vigarano-type,
+        mc:diogenite,
+        mc:eagle-station-pallasite,
+        mc:eh-el-clan,
+        mc:eh-high-iron,
+        mc:el-low-iron,
+        mc:enstatite-chondrites,
+        mc:eucrite,
+        mc:h-high-iron,
+        mc:h-l-ll-clan,
+        mc:hed-clan-vesta,
+        mc:howardite,
+        mc:iab-iron-silicate-bearing,
+        mc:ic-iron-group,
+        mc:iiab-iron-group,
+        mc:iic-iron-group,
+        mc:iid-iron-group,
+        mc:iie-iron-group,
+        mc:iiiab-iron-group,
+        mc:iiicd-iron-silicate-bearing,
+        mc:iiie-iron-group,
+        mc:iiif-iron-group,
+        mc:irons,
+        mc:iva-iron-group,
+        mc:ivb-iron-group,
+        mc:k-kakangari-type,
+        mc:l-low-iron,
+        mc:ll-low-iron-low-metal,
+        mc:lodranite,
+        mc:lunar-moon,
+        mc:main-group-pallasite,
+        mc:martian-snc,
+        mc:mesosiderite-stony-iron,
+        mc:meteorites,
+        mc:nakhlite,
+        mc:ordinary-chondrites,
+        mc:orthopyroxenite-alh-84001,
+        mc:pallasites-stony-iron,
+        mc:primitive-achondrites,
+        mc:pyroxene-pallasite,
+        mc:r-rumuruti-type,
+        mc:shergottite,
+        mc:ureilite,
+        mc:winonaite,
+        mc:winonaite-iab-iiicd-clan ;
+    xkos:levels [ a rdf:List ;
+            rdf:first mclvl:division ;
+            rdf:rest [ a rdf:List ;
+                    rdf:first mclvl:class ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first mclvl:clan ;
+                            rdf:rest [ a rdf:List ;
+                                    rdf:first mclvl:group ;
+                                    rdf:rest [ a rdf:List ;
+                                            rdf:first mclvl:subgroup ;
+                                            rdf:rest () ] ] ] ] ] ;
+    xkos:numberOfLevels "5"^^xsd:positiveInteger ;
+    skos:hasTopConcept mc:meteorites .
+

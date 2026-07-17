@@ -2,7 +2,7 @@
   "id": "collections-digitization",
   "title": "Collections Digitization Glossary",
   "description": "Controlled glossary for the people, data, and workflows involved in digitising museum and natural-history collections.",
-  "uri": "https://kos.geospecimens.org/kos/glossary/collection-digitization",
+  "uri": "https://kos.geospecimens.org/glossary/collections-digitization",
   "version": "2026-05-16",
   "created": "2026-03-05",
   "modified": "2026-03-05",
@@ -1191,12 +1191,12 @@
     {
       "id": "pid",
       "label": "Persistent Identifier",
-      "definition": "Unique identifier that ensures permanent access for a digital object by providing access to it independently of its physical location or current ownership. PID are a generalized reference and not specific to a particular standardized format such as a UUID Notation: PID",
+      "definition": "A globally unique, interoperable, machine-readable and resolvable identifier that disambiguates an entity and provides long-term access to it independent of the entity's physical location or current ownership. The term denotes a general concept and is not tied to any particular standardized format (e.g., UUID).",
       "category": "identifiers",
       "provClass": "prov:Entity",
       "source": "ISO 5127:2017(en) Information and documentation — Foundation and vocabulary",
       "example": "https://orcid.org/0000-0002-5819-9134",
-      "modified": "2026-03-05"
+      "modified": "2026-07-11"
     },
     {
       "id": "physical-collection",
@@ -1222,12 +1222,12 @@
     },
     {
       "id": "pipeline",
-      "label": "Pipeline",
+      "label": "Data Pipeline",
       "definition": "Full set of logically connected steps needed to transform input data into a result, for which one or more outputs of one data transformation step can be the input of one or more subsequent steps",
       "category": "data",
       "provClass": "prov:Entity",
       "source": "ISO/IEC 11179-34:2024(en) Information technology — Metadata registries (MDR) — Part 34: Metamodel for computable data registration",
-      "modified": "2026-03-05"
+      "modified": "2026-07-12"
     },
     {
       "id": "plan",
@@ -1262,12 +1262,20 @@
     {
       "id": "preparation",
       "label": "Preparation",
-      "definition": "Activities, taking place after specimen acquisition, to make material suitable for a specific purpose such as laboratory (tissue) analysis or long-term preservation",
+      "definition": "An activity, taking place after specimen acquisition, to make a material suitable for a specific purpose such as laboratory (tissue) analysis or long-term preservation",
       "category": "collections",
       "provClass": "prov:Activity",
       "source": "This Document",
+      "modified": "2026-07-11"
+    },
+    {
+      "id": "preparation-object",
+      "label": "Preparation Object",
+      "definition": "The result of a process performed after specimen collection to render a material entity (collection object) suitable for a defined purpose, such as laboratory (tissue) analysis or long-term preservation.",
+      "category": "collections",
+      "source": "This Document",
       "scopeNote": "The term and associated definition are strictly within the scope of a museum collection and not intended for wider application.",
-      "modified": "2026-03-05"
+      "modified": "2026-07-11"
     },
     {
       "id": "preparator",

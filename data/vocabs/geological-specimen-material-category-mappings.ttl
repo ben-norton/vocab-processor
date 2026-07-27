@@ -1,6 +1,6 @@
 # Geological Specimen Material Category — SKOS Mappings
 # Source: GeologicalSpecimenMaterialCategories.xlsx
-# Generated: 2026-07-01
+# Generated: 2026-07-27
 #
 # This file contains only SKOS match triples.
 # The main vocabulary file carries full concept metadata.

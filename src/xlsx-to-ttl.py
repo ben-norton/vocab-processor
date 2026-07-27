@@ -28,9 +28,9 @@ Sheets consumed per workbook:
   Mappings / Mapping              — SKOS match properties per concept
 
 Run from the project root:
-  python utils/xlsx-to-ttl.py                # process all workbooks
-  python utils/xlsx-to-ttl.py HazardTypes    # process one workbook by name
-  python utils/xlsx-to-ttl.py HazardTypes.xlsx
+  python src/xlsx-to-ttl.py                # process all workbooks
+  python src/xlsx-to-ttl.py HazardTypes    # process one workbook by name
+  python src/xlsx-to-ttl.py HazardTypes.xlsx
 
 Dependencies: openpyxl (required), rdflib (optional, for post-hoc validation).
 """

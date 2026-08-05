@@ -1,0 +1,1303 @@
+{
+  "id": "geological-collections-glossary",
+  "title": "Geological Collections Glossary",
+  "description": "Terms and definitions supporting the Geological Collections Conceptual Data Model (GCDM), an ontologically grounded conceptual data model for geologic specimen collections. Terms are drawn from the Terms subsections of the GCDM manuscript and cover data modeling and ontology, compound specimens, names and classification systems, stratigraphy, geologic age, and geologic settings and sampling events.",
+  "uri": "https://kos.geospecimens.org/glossary/gcdm",
+  "version": "2026-07-30",
+  "created": "2026-07-30",
+  "modified": "2026-07-30",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "categories": [
+    {
+      "id": "compound-specimens",
+      "label": "Compound Specimens"
+    },
+    {
+      "id": "data-modeling-and-ontology",
+      "label": "Data Modeling and Ontology"
+    },
+    {
+      "id": "geologic-age",
+      "label": "Geologic Age"
+    },
+    {
+      "id": "geologic-settings-and-sampling",
+      "label": "Geologic Settings and Sampling"
+    },
+    {
+      "id": "names-and-classification-systems",
+      "label": "Names and Classification Systems"
+    },
+    {
+      "id": "stratigraphy",
+      "label": "Stratigraphy"
+    }
+  ],
+  "scopeNote": "Covers the concepts required to interpret and implement the GCDM: data-modeling and ontology vocabulary, the compound specimen construct and its parts, names and classification systems, stratigraphic units, geologic age (relative and chronometric), and geologic settings and sampling events. Definitions are either reproduced from the cited standard or reference work, adapted from it, or authored for the GCDM; the provenance of each definition is recorded per term. Domain-specific classification values (e.g., individual Dana or Nickel-Strunz classes) are out of scope and are maintained in the GCDM Master Dictionary.",
+  "changeNote": "2026-07-30: Initial release. 105 terms extracted from the Terms subsections (§2.1, §3.1, §4.1, §5.1, §6.1, §7.1) of GCDM manuscript version 2026-07-27, with 44 cited sources resolved against the manuscript bibliography.",
+  "historyNote": "This glossary was created as part of the GeoSpecify and SwissCollNet programs. The terms and definitions are intended to accompany an upcoming publication Geological Collections Conceptual Data Model (GCDM)",
+  "externalLinks": [
+    {
+      "label": "GeoSpecimens knowledge-organization system",
+      "url": "https://kos.geospecimens.org/"
+    },
+    {
+      "label": "Glossary landing page",
+      "url": "https://kos.geospecimens.org/glossary/gcdm"
+    },
+    {
+      "label": "Specify Collections Management Platform",
+      "url": "https://www.specifysoftware.org/"
+    }
+  ],
+  "terms": [
+    {
+      "id": "concept",
+      "label": "Concept",
+      "definition": "A unit of knowledge created by a unique combination of characteristics.",
+      "category": "data-modeling-and-ontology",
+      "provClass": "prov:Entity",
+      "source": "ISO 5127:2017",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "conceptual-model",
+      "label": "Conceptual Model",
+      "definition": "An abstract model or representation of data for a particular domain or field of study, independent of any specific software or information system.",
+      "category": "data-modeling-and-ontology",
+      "provClass": "prov:Plan",
+      "source": "Baca 2016",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "data-model",
+      "label": "Data Model",
+      "definition": "Graphical and/or lexical representation of data, specifying their properties, structure, and interrelationships.",
+      "category": "data-modeling-and-ontology",
+      "provClass": "prov:Plan",
+      "source": "ISO/IEC 11179-1:2023",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "identifier",
+      "label": "Identifier",
+      "definition": "An unambiguous reference to the resource within a given context.",
+      "category": "data-modeling-and-ontology",
+      "provClass": "prov:Entity",
+      "source": "http://purl.org/dc/elements/1.1/identifier",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "logical-data-model",
+      "label": "Logical Data Model",
+      "definition": "A data model that includes all entities and the relationships among them based on the structures identified in a conceptual data model and that specifies all attributes for each entity.",
+      "category": "data-modeling-and-ontology",
+      "provClass": "prov:Plan",
+      "source": "Baca 2016",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "model",
+      "label": "Model",
+      "definition": "A simplified representation or abstraction of a system, process, or concept.",
+      "category": "data-modeling-and-ontology",
+      "provClass": "prov:Plan",
+      "source": "W3C DPV n.d.",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "ontology",
+      "label": "Ontology",
+      "definition": "Specification of concrete or abstract things and the relationships among them in a prescribed domain of knowledge.",
+      "category": "data-modeling-and-ontology",
+      "provClass": "prov:Plan",
+      "source": "ISO/IEC TR 19763-9 2015",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "physical-data-model",
+      "label": "Physical Data Model",
+      "definition": "A technical representation detailing how data is physically organized and constrained within a database system, focusing on tables, columns, and constraints rather than entities and attributes.",
+      "category": "data-modeling-and-ontology",
+      "provClass": "prov:Plan",
+      "source": "Hughes 2015",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "agent",
+      "label": "Agent",
+      "definition": "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity.",
+      "category": "compound-specimens",
+      "provClass": "prov:Agent",
+      "source": "http://www.w3.org/ns/prov#",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "activity",
+      "label": "Activity",
+      "definition": "Something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.",
+      "category": "compound-specimens",
+      "provClass": "prov:Activity",
+      "source": "http://www.w3.org/ns/prov#",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "collection-object",
+      "label": "Collection Object",
+      "definition": "A physical object that belongs to a museum collection.",
+      "category": "compound-specimens",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "compound-specimen",
+      "label": "Compound Specimen",
+      "definition": "A collection object comprised of one or more discernible parts, called specimen parts, unified by physical attachment. The object's identity is determined by its specimen parts, which are distinguished from one another within a specific context.",
+      "category": "compound-specimens",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "scopeNote": "Central construct of the GCDM. Contrast with Simple Specimen, which carries a single determination and no discernible parts. See GCDM section 3.2.",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "compound-specimen-model",
+      "label": "Compound Specimen Model",
+      "definition": "A conceptual data model in which a single physical object, a compound specimen, is composed of and defined by its specimen parts.",
+      "category": "compound-specimens",
+      "provClass": "prov:Plan",
+      "source": "This Document",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "specimen-part",
+      "label": "Specimen Part",
+      "definition": "A physically discernible, proximal portion of a compound specimen that carries a single determination and belongs to a single material category, distinguished from the rest of the parent specimen by its physical and chemical exclusivity.",
+      "category": "compound-specimens",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "scopeNote": "The unit of determination in the GCDM. Each Specimen Part carries exactly one determination and belongs to exactly one Material Category. See GCDM section 3.3.",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "specimen-part-proportion",
+      "label": "Specimen Part Proportion",
+      "definition": "Refers to the qualitative or quantitative representation of the abundance of a Specimen Part within a parent Compound Specimen.",
+      "category": "compound-specimens",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "scopeNote": "May be recorded qualitatively (e.g. dominant, subordinate, trace) or quantitatively (e.g. percentage). See GCDM section 3.3.2.",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "specimen-part-relation",
+      "label": "Specimen Part Relation",
+      "definition": "A described uni-directional association between two specimen parts, a source and target, within the scope of the parent compound specimen. A relation is defined from the perspective of the source specimen part and described using a relation predicate.",
+      "category": "compound-specimens",
+      "provClass": "prov:Entity",
+      "source": "Richard et al. 2007",
+      "scopeNote": "Directed from source part to target part and scoped to the parent Compound Specimen. See GCDM section 3.5.",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "specimen-part-role",
+      "label": "Specimen Part Role",
+      "definition": "Specifies the relationship between a Specimen Part and its parent compound specimen. Roles are dependent upon both the part and parent object. For instance, a rock (material category) within the parent specimen plays the role of clast and is dependent on both the specimen part and the parent specimen for its existence.",
+      "category": "compound-specimens",
+      "provClass": "prov:Entity",
+      "source": "Brodaric & Richard 2021",
+      "scopeNote": "Roles are contextual: the same material plays different roles depending on the parent object. See GCDM section 3.3.2.",
+      "example": "clast; matrix; host; inclusion",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "material-category",
+      "label": "Material Category",
+      "definition": "A value from a top-level, generalized categorization scheme for geologic materials, in which each geologic material, a Compound Specimen or a Specimen Part, belongs to one and only one Material Category. For any given collection, the set of Material Categories should comprehensively account for all parts found across every specimen in that collection.",
+      "category": "compound-specimens",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "scopeNote": "The set of Material Categories used by a collection should be mutually exclusive and jointly exhaustive for that collection.",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "determination",
+      "label": "Determination",
+      "definition": "The identity of a specimen represented by a name based on formal criteria evaluated by a domain expert. In biological collections, the determination is represented by a taxonomic classification, primarily a genus and species (e.g., Vulpes vulpes, Accipiter cooperii). In the geosciences domain, examples of determination include Almandine, Granite, and Plantae.",
+      "category": "compound-specimens",
+      "provClass": "prov:Entity",
+      "source": "BCO 2021",
+      "example": "Almandine; Granite; Plantae; (biological analogues) Vulpes vulpes, Accipiter cooperii",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "geologic-material",
+      "label": "Geologic Material",
+      "definition": "An amount of matter primarily (dominantly) having parts created by geologic processes and can include minor parts that are not of geologic origin, such as organic material, and can be solid, fluid, or a mix.",
+      "category": "compound-specimens",
+      "provClass": "prov:Entity",
+      "source": "Brodaric & Richard 2021",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "geologic-specimen",
+      "label": "Geologic Specimen",
+      "definition": "A collection object comprised, in part, of geologic material.",
+      "category": "compound-specimens",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "material-entity",
+      "label": "Material Entity",
+      "definition": "A material entity is an entity that exists in full during the length of time of its existence, persists through this time while maintaining its identity, and has no temporal parts.",
+      "category": "compound-specimens",
+      "provClass": "prov:Entity",
+      "source": "BFO 2020",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "object",
+      "label": "Object",
+      "definition": "An object is a maximal causally unified material entity, meaning b is a material entity which is such that its material parts are tied together in such a way that, in environments typical for entities of the type in question.",
+      "category": "compound-specimens",
+      "provClass": "prov:Entity",
+      "source": "Smith 2012",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "relation-predicate",
+      "label": "Relation Predicate",
+      "definition": "Describes the nature of the relationship between two specimen parts within the scope of a compound specimen.",
+      "category": "compound-specimens",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "simple-specimen",
+      "label": "Simple Specimen",
+      "definition": "A collection object identified by a single determination without discernible parts.",
+      "category": "compound-specimens",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "simple-specimen-model",
+      "label": "Simple Specimen Model",
+      "definition": "The conceptual model for the digital representation of physical specimens where each entity is characterized by one and only one determination without any discernible parts.",
+      "category": "compound-specimens",
+      "provClass": "prov:Plan",
+      "source": "This Document",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "alternate-name",
+      "label": "Alternate Name",
+      "definition": "An alternate lexical label to the preferred term for an entity.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Entity",
+      "source": "Bechhofer & Miles 2009",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "authoritative-name",
+      "label": "Authoritative Name",
+      "definition": "A name sanctioned by an authority based on a defined set of unambiguous criteria and belonging to a formal nomenclature.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "authority",
+      "label": "Authority",
+      "definition": "Identifies the entity responsible for assigning and maintaining a formalized classification system.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Organization",
+      "source": "This Document",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "classification",
+      "label": "Classification",
+      "definition": "Activity involving grouping similar or related things together; separating dissimilar or unrelated things; and arranging the resulting groups in a logical and helpful sequence.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Activity",
+      "source": "Bechhofer & Miles 2009",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "classification-code",
+      "label": "Classification Code",
+      "definition": "Encoded classification of an object represented by a graphical symbol that conforms to an encoding scheme defined as part of the classification scheme.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Entity",
+      "source": "IEC 81714-2:2006",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "classification-family",
+      "label": "Classification Family",
+      "definition": "A grouping of related classification series (skos:Collection); e.g., all mineral classifications.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "scopeNote": "Modeled as skos:Collection. See GCDM section 4.5.3.",
+      "example": "All mineral classifications considered together",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "classification-item",
+      "label": "Classification Item",
+      "definition": "A single node of a classification scheme, one concept or named entry, modeled as a skos:Concept, to which a Specimen Part is classified.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "scopeNote": "Modeled as skos:Concept. See GCDM section 4.5.3.",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "classification-item-relation",
+      "label": "Classification Item Relation",
+      "definition": "A reified, directed parent–child edge between two Classification Items that constitutes the hierarchy, typed by skos:broader/skos:narrower.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "scopeNote": "Reified edge typed by skos:broader / skos:narrower. See GCDM section 4.5.3.",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "classification-level",
+      "label": "Classification Level",
+      "definition": "A stratified tier comprised of nodes with a shared level of granularity in a hierarchy.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "classification-name",
+      "label": "Classification Name",
+      "definition": "A formalized name belonging to a classification system maintained by an authoritative body.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "classification-rank",
+      "label": "Classification Rank",
+      "definition": "An identifier assigned to a classification level commonly expressed using a numeric identifier or lexical label.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "classification-rank-relation",
+      "label": "Classification Rank Relation",
+      "definition": "A reified ordering relation between two Classification Ranks, present only for ranked schemes.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "scopeNote": "Present only for ranked schemes. See GCDM section 4.5.3.",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "classification-scheme",
+      "label": "Classification Scheme",
+      "definition": "A method of organization according to a set of pre-established principles, usually characterized by a notation system and a hierarchical structure of relationships among the entities. This standard defines the structure and organization of a classification system, including its hierarchical ranks.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Plan",
+      "source": "ANSI/NISO 2005",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "classification-series",
+      "label": "Classification Series",
+      "definition": "The time-ordered set of successive versions of one classification (skos:OrderedCollection); e.g., the editions of Dana.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "scopeNote": "Modeled as skos:OrderedCollection. See GCDM section 4.5.3.",
+      "example": "The successive editions of the Dana classification",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "classification-system",
+      "label": "Classification System",
+      "definition": "A terminological resource that has characteristics of mutual exclusiveness and exhaustiveness to aggregate data to a pre-prescribed level of specialization for a specific purpose. Extends the classification scheme concept to include the values used to populate a classification scheme.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Plan",
+      "source": "ISO 17117-1 2025",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "classification-term",
+      "label": "Classification Term",
+      "definition": "A single concept in a classification system or scheme at any hierarchical level.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "classification-version",
+      "label": "Classification Version",
+      "definition": "A versioned instance of a classification scheme.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Plan",
+      "source": "Neuchâtel Group 2004",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "confirmation-protocol",
+      "label": "Confirmation Protocol",
+      "definition": "The procedure by which a Name is verified or confirmed for a specimen.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Plan",
+      "source": "This Document",
+      "scopeNote": "Carried by the determinedBy relation in GCDM Figure 10.",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "depth",
+      "label": "Depth",
+      "definition": "The numeric distance of a nested level from the root of a hierarchy in a stratified classification scheme.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Entity",
+      "source": "DDI Alliance n.d.",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "hierarchy",
+      "label": "Hierarchy",
+      "definition": "Concept system in which all concepts are related in hierarchical relations that form a partial ordering.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Entity",
+      "source": "ISO/IEC 11179-1:2023",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "identification",
+      "label": "Identification",
+      "definition": "The process of recognizing an entity in a particular domain as distinct from other entities.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Activity",
+      "source": "ISO 5127:2017",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "linnaean-taxonomy",
+      "label": "Linnaean Taxonomy",
+      "definition": "A classification system for grouping both living and extinct organisms, governed by the relevant nomenclatural codes (the International Code of Zoological Nomenclature for animals; the International Code of Nomenclature for algae, fungi, and plants). Generally, the parent-child relationships in the Linnaean hierarchy represent the lineage evolution between species.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Plan",
+      "source": "This Document",
+      "scopeNote": "Governed by the International Code of Zoological Nomenclature for animals and the International Code of Nomenclature for algae, fungi, and plants.",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "monohierarchy",
+      "label": "Monohierarchy",
+      "definition": "Hierarchical arrangement of concepts in a classification scheme in which each concept can have only one broader concept at the level immediately above.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Entity",
+      "source": "Hodge 2000",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "name",
+      "label": "Name",
+      "definition": "The primary means of identification of objects and concepts for humans.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Entity",
+      "source": "ISO 11179-3:2023",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "name-type",
+      "label": "Name Type",
+      "definition": "The category of a Name, Specimen, Authoritative, or Alternate, assigned through the hasType relation.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "scopeNote": "Assigned through the hasType relation in GCDM Figure 10.",
+      "example": "Specimen; Authoritative; Alternate",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "naming-authority",
+      "label": "Naming Authority",
+      "definition": "A registration authority that allocates names according to specified rules.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Organization",
+      "source": "ISO/IEC 2382:2015",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "nomenclature-status",
+      "label": "Nomenclature Status",
+      "definition": "The standing of a Name within its nomenclatural system (e.g., approved, superseded), recorded through the hasStatus relation.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "scopeNote": "Recorded through the hasStatus relation in GCDM Figure 10.",
+      "example": "approved; superseded",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "specimen-name",
+      "label": "Specimen Name",
+      "definition": "Refers to any name assigned to a specimen at the object level (before atomization into specimen parts). Specimen names are often written as compound terms, a concatenation of multiple informal and formal identifiers.",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "scopeNote": "Applies at the object level, before atomization into specimen parts; often a concatenation of informal and formal identifiers.",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "value-set",
+      "label": "Value Set",
+      "definition": "The range of values used to populate a classification scheme (or classification scheme variant).",
+      "category": "names-and-classification-systems",
+      "provClass": "prov:Entity",
+      "source": "Neuchâtel Group 2004",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "biostratigraphic-unit",
+      "label": "Biostratigraphic Unit",
+      "definition": "Geologic units defined or characterized on the basis of their contained fossils. Biostratigraphic units exist only where the particular diagnostic feature or attribute on which they are based has been identified.",
+      "category": "stratigraphy",
+      "provClass": "prov:Entity",
+      "source": "ISSC 2000",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "chronostratigraphic-unit",
+      "label": "Chronostratigraphic Unit",
+      "definition": "Bodies of rocks, layered or unlayered, that are defined between specified stratigraphic horizons which represent specified intervals of geologic time.",
+      "category": "stratigraphy",
+      "provClass": "prov:Entity",
+      "source": "ISSC 2000",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "geologic-unit",
+      "label": "Geologic Unit",
+      "definition": "A body of rock that persists through time, forming a discrete and definable unit. Geologic units are identified by their geometric, compositional, and internal structural characteristics, as well as their spatio-temporal relations with other rock bodies.",
+      "category": "stratigraphy",
+      "provClass": "prov:Entity",
+      "source": "Garcia et al. 2019",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "geologic-unit-type",
+      "label": "Geologic Unit Type",
+      "definition": "A scheme that specifies concepts used to categorize types of geologic units. Unit types are differentiated based on their defining composition, temporal context, or other physical properties.",
+      "category": "stratigraphy",
+      "provClass": "prov:Plan",
+      "source": "Richard et al. 2007",
+      "example": "Lithostratigraphic; Chronostratigraphic; Biostratigraphic; Magnetostratigraphic; Tectonostratigraphic; Lithodemic",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "law-of-superposition",
+      "label": "Law of Superposition",
+      "definition": "A general law upon which all geologic chronology is based, where younger lithostratigraphic units lie atop older lithostratigraphic units.",
+      "category": "stratigraphy",
+      "provClass": "prov:Entity",
+      "source": "Neuendorf et al. 2005",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "lithodemic-unit",
+      "label": "Lithodemic Unit",
+      "definition": "A defined body of predominantly intrusive, highly deformed, and (or) highly metamorphosed rock, distinguished and delimited based on rock characteristics.",
+      "category": "stratigraphy",
+      "provClass": "prov:Entity",
+      "source": "NACSN 2005",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "lithology",
+      "label": "Lithology",
+      "definition": "(a) The description of rocks, especially in hand specimens and outcrops, based on characteristics such as color, mineralogic composition, and grain size. (b) The physical character of a rock.",
+      "category": "stratigraphy",
+      "provClass": "prov:Entity",
+      "source": "Neuendorf et al. 2005",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "lithostratigraphic-unit",
+      "label": "Lithostratigraphic Unit",
+      "definition": "A defined body of sedimentary, extrusive igneous, metasedimentary, or metavolcanic strata that is distinguished and delimited based on lithic characteristics and stratigraphic position.",
+      "category": "stratigraphy",
+      "provClass": "prov:Entity",
+      "source": "NACSN 2005",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "magnetostratigraphic-unit",
+      "label": "Magnetostratigraphic Unit",
+      "definition": "Bodies of rock strata unified by similar magnetic characteristics which allow them to be differentiated from adjacent strata.",
+      "category": "stratigraphy",
+      "provClass": "prov:Entity",
+      "source": "Opdyke & Channell 1996",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "stratigraphy",
+      "label": "Stratigraphy",
+      "definition": "The description of all rock bodies forming the Earth's crust and their organization into distinctive, useful, mappable units based on their inherent properties or attributes in order to establish their distribution and relationship in space and their succession in time, and to interpret geologic history.",
+      "category": "stratigraphy",
+      "provClass": "prov:Activity",
+      "source": "ISSC 2000",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "tectonostratigraphic-unit",
+      "label": "Tectonostratigraphic Unit",
+      "definition": "Geologic unit defined on basis of structural or deformation features, mutual relations, origin or historical evolution. Contained material may be igneous, sedimentary, or metamorphic.",
+      "category": "stratigraphy",
+      "provClass": "prov:Entity",
+      "source": "CGI 2016",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "geochronologic-boundary",
+      "label": "Geochronologic Boundary",
+      "definition": "Temporal boundaries defined with reference to some geologic evidence such as, for instance, fossil appearance/disappearance or significant change in local rock lithology.",
+      "category": "geologic-age",
+      "provClass": "prov:Entity",
+      "source": "Perrin et al. 2011",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "geochronologic-era",
+      "label": "Geochronologic Era",
+      "definition": "A named interval of geologic time of any rank, used to express a Relative Age as a bounded ordinal interval.",
+      "category": "geologic-age",
+      "provClass": "prov:Entity",
+      "source": "Cox and Richard 2015",
+      "scopeNote": "Used to express a Relative Age as a bounded ordinal interval. See GCDM Figure 22a.",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "geochronologic-interpretation",
+      "label": "Geochronologic Interpretation",
+      "definition": "An interpretation made by a geologist of the age of a specimen made by statistical analysis of a single collection of observations. A specimen may have multiple geochronological interpretations made on it, each related to a different observation collection.",
+      "category": "geologic-age",
+      "provClass": "prov:Entity",
+      "source": "INSPIRE MIF n.d.",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "geochronologic-rank",
+      "label": "Geochronologic Rank",
+      "definition": "The hierarchical level of a Geochronologic Era, Eon, Era, Period, Epoch, Age, carried through the hasRank relation.",
+      "category": "geologic-age",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "scopeNote": "Carried through the hasRank relation in GCDM Figure 22a.",
+      "example": "Eon; Era; Period; Epoch; Age",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "geochronologic-unit",
+      "label": "Geochronologic Unit",
+      "definition": "A specialized time ordinal interval used to subdivide geologic time based on a corresponding chronostratigraphic unit.",
+      "category": "geologic-age",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "geochronology",
+      "label": "Geochronology",
+      "definition": "The science of determining absolute ages of geologic events and Earth materials. The primary technique utilizes radioactive isotopes and the production and accumulation of radiogenic daughter isotopes naturally present on Earth. It can be applied to various samples, including rocks, minerals, and biological materials.",
+      "category": "geologic-age",
+      "provClass": "prov:Activity",
+      "source": "Ellam 2021",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "geologic-event",
+      "label": "Geologic Event",
+      "definition": "An identifiable event during which one or more geologic processes act to modify geologic entities.",
+      "category": "geologic-age",
+      "provClass": "prov:Activity",
+      "source": "CGI 2016",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "geologic-process",
+      "label": "Geologic Process",
+      "definition": "A natural process that affects the geologic record by acting upon one geologic entity to produce another geologic entity at a later time.",
+      "category": "geologic-age",
+      "provClass": "prov:Activity",
+      "source": "Neuendorf et al. 2005",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "geologic-timescale",
+      "label": "Geologic Timescale",
+      "definition": "A temporal reference system that subdivides all the time since Earth formed into named intervals (units) of abstract time and subdivides all the rocks formed since Earth formed into the successions of rock formed during each particular interval of time.",
+      "category": "geologic-age",
+      "provClass": "prov:Entity",
+      "source": "Allaby 2020",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "chronometric-age",
+      "label": "Chronometric Age",
+      "definition": "The age of a geologic event that resulted in the formation of a geologic material, expressed numerically and based on the results of a dating technique such as radiometric dating or dendrochronology. The value is an interpretation of the timing of that event rather than a direct, certain measurement of the specimen's age; it is conventionally termed absolute age, and also radiometric or apparent age.",
+      "category": "geologic-age",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "scopeNote": "Conventionally termed absolute age, and also radiometric or apparent age. See GCDM section 6.4.",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "lower-temporal-boundary",
+      "label": "Lower Temporal Boundary",
+      "definition": "The older (earlier) limit of an interval, the point in time at which the interval begins. By convention, older is \"lower\" (deeper in the stratigraphic column).",
+      "category": "geologic-age",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "scopeNote": "By convention, older is 'lower' (deeper in the stratigraphic column).",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "radioactive-decay",
+      "label": "Radioactive Decay",
+      "definition": "The process where an unstable parent isotope loses particles from its atomic nucleus (decay) to form a daughter isotope (product) at a constant rate.",
+      "category": "geologic-age",
+      "provClass": "prov:Activity",
+      "source": "This Document",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "radiometric-age",
+      "label": "Radiometric Age",
+      "definition": "Geologic age expressed in years determined by quantitatively measuring radioactive elements and their decay products.",
+      "category": "geologic-age",
+      "provClass": "prov:Entity",
+      "source": "McGraw-Hill 2003",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "radiometric-dating",
+      "label": "Radiometric Dating",
+      "definition": "Determination of a numeric (absolute) age by measuring the relative abundances of a radioactive parent isotope and its stable daughter product, together with the known decay constant, in a mineral or rock.",
+      "category": "geologic-age",
+      "provClass": "prov:Activity",
+      "source": "McGraw-Hill 2003",
+      "example": "U-Pb; K-Ar; Ar-Ar; Rb-Sr",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "regional-timescale",
+      "label": "Regional Timescale",
+      "definition": "A family of geologic timescales based on the strata and fossil record observed in a specific area, typically at the country or regional level.",
+      "category": "geologic-age",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "relative-age",
+      "label": "Relative Age",
+      "definition": "The geologic age of a fossil organism, rock, or geologic feature or event defined relative to other organisms, rocks, or features or events rather than in terms of years.",
+      "category": "geologic-age",
+      "provClass": "prov:Entity",
+      "source": "McGraw-Hill 2003",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "relative-dating",
+      "label": "Relative Dating",
+      "definition": "Proper chronological placement of a feature, object, or happening in the geologic time scale without reference to its absolute age.",
+      "category": "geologic-age",
+      "provClass": "prov:Activity",
+      "source": "McGraw-Hill 2003",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "time-interval",
+      "label": "Time Interval",
+      "definition": "A temporal entity with an extent or duration.",
+      "category": "geologic-age",
+      "provClass": "prov:Entity",
+      "source": "Cox and Little 2022",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "upper-temporal-boundary",
+      "label": "Upper Temporal Boundary",
+      "definition": "The younger (later) limit of an interval, the point in time at which the interval ends. By convention, younger is \"upper.\"",
+      "category": "geologic-age",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "scopeNote": "By convention, younger is 'upper'.",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "feature",
+      "label": "Feature",
+      "definition": "Abstraction of real-world phenomena.",
+      "category": "geologic-settings-and-sampling",
+      "provClass": "prov:Entity",
+      "source": "ISO 19101-1 2014",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "feature-of-interest",
+      "label": "Feature of Interest",
+      "definition": "A feature of interest is an abstraction of a real-world phenomenon that is being sampled or transformed in an act of Sampling.",
+      "category": "geologic-settings-and-sampling",
+      "provClass": "prov:Entity",
+      "source": "TERN Ontology 2020",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "geologic-environment",
+      "label": "Geologic Environment",
+      "definition": "Physical conditions found on the Earth's surface, which are determined by factors such as climate, tectonics, physiography, geography and within the Earth's interior, determined by pressure, temperature, chemical environment, and tectonics.",
+      "category": "geologic-settings-and-sampling",
+      "provClass": "prov:Entity",
+      "source": "Brodaric & Richard 2021",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "geologic-event-environment",
+      "label": "Geologic Event Environment",
+      "definition": "The physical setting within which a Geologic Event takes place.",
+      "category": "geologic-settings-and-sampling",
+      "provClass": "prov:Entity",
+      "source": "CGI 2016",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "geologic-feature",
+      "label": "Geologic Feature",
+      "definition": "A physical or conceptual feature that is hypothesized to exist coherently in the Earth and that results from geologic processes.",
+      "category": "geologic-settings-and-sampling",
+      "provClass": "prov:Entity",
+      "source": "SWEET Ontology n.d.",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "material-sample",
+      "label": "Material Sample",
+      "definition": "A physical result of a sampling (or subsampling) event. Material samples are typically collected and either preserved or destructively processed.",
+      "category": "geologic-settings-and-sampling",
+      "provClass": "prov:Entity",
+      "source": "TERN Ontology 2020",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "petrographic-province",
+      "label": "Petrographic Province",
+      "definition": "A broad area in which similar igneous rocks are formed during the same period of igneous activity.",
+      "category": "geologic-settings-and-sampling",
+      "provClass": "prov:Entity",
+      "source": "McGraw-Hill 2003",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "physiographic-feature",
+      "label": "Physiographic Feature",
+      "definition": "A natural feature of the solid surface of the Earth or other planetary body.",
+      "category": "geologic-settings-and-sampling",
+      "provClass": "prov:Entity",
+      "source": "INRAE 2021",
+      "scopeNote": "The manuscript cites 'FAO 2025' alongside INRAE 2021 for this definition; that citation is not resolved in the manuscript bibliography.",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "physiographic-province",
+      "label": "Physiographic Province",
+      "definition": "A region in which all parts are similar in geologic structure and climate and which has consequently had a unified geomorphic history; a region whose pattern of relief features or landforms differs significantly from adjacent regions.",
+      "category": "geologic-settings-and-sampling",
+      "provClass": "prov:Entity",
+      "source": "Neuendorf et al. 2005",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "province",
+      "label": "Province",
+      "definition": "Any large area or region considered as a whole, all parts characterized by similar features or a history differing significantly from adjacent areas.",
+      "category": "geologic-settings-and-sampling",
+      "provClass": "prov:Entity",
+      "source": "Neuendorf et al. 2005",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "quarry",
+      "label": "Quarry",
+      "definition": "An open or surface mineral working, usually for extracting building stone, such as slate, limestone, etc. It is distinguished from a mine because a quarry usually is open at the top and front, and, in ordinary use of the term, by the character of the material extracted.",
+      "category": "geologic-settings-and-sampling",
+      "provClass": "prov:Entity",
+      "source": "Ralph et al. 2025",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "sample",
+      "label": "Sample",
+      "definition": "A feature which is intended to be representative of a `FeatureOfInterest` on which `Observations` may be made.",
+      "category": "geologic-settings-and-sampling",
+      "provClass": "prov:Entity",
+      "source": "TERN Ontology 2020",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "sampling-event",
+      "label": "Sampling Event",
+      "definition": "An activity of Sampling carries out a (Sampling) Procedure to create or transform one or more Samples.",
+      "category": "geologic-settings-and-sampling",
+      "provClass": "prov:Activity",
+      "source": "TERN Ontology 2020",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "sampling-feature",
+      "label": "Sampling Feature",
+      "definition": "The feature of interest a sample is intended to be representative of.",
+      "category": "geologic-settings-and-sampling",
+      "provClass": "prov:Entity",
+      "source": "ISO 19101-1 2014",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "sampling-feature-type",
+      "label": "Sampling Feature Type",
+      "definition": "The nature of the feature such as whether the feature is the result of natural processes.",
+      "category": "geologic-settings-and-sampling",
+      "provClass": "prov:Entity",
+      "source": "ISO 19101-1 2014",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "sampling-location",
+      "label": "Sampling Location",
+      "definition": "The geographic place where a sampling event takes place.",
+      "category": "geologic-settings-and-sampling",
+      "provClass": "prov:Entity",
+      "source": "This Document",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "tectonic-province",
+      "label": "Tectonic Province",
+      "definition": "Groups of provinces linked by a common tectonic history are designated tectonic provinces. Tectonic provinces may contain a collection of sedimentary, igneous, structural, metamorphic, and metallogenic provinces.",
+      "category": "geologic-settings-and-sampling",
+      "provClass": "prov:Entity",
+      "source": "Raymond 2011",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "tectonic-setting",
+      "label": "Tectonic Setting",
+      "definition": "A geologic event environment defined by relationships to tectonic plates on or in the Earth.",
+      "category": "geologic-settings-and-sampling",
+      "provClass": "prov:Entity",
+      "source": "CGI 2016",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "terrane",
+      "label": "Terrane",
+      "definition": "A fault-bounded area or region with different layers, rock structures, and geologic history from nearby areas that are not connected to them by unconformable contacts or changes in the rock's surface.",
+      "category": "geologic-settings-and-sampling",
+      "provClass": "prov:Entity",
+      "source": "Allaby 2020",
+      "modified": "2026-07-30"
+    },
+    {
+      "id": "mine",
+      "label": "Mine",
+      "definition": "A work for excavating minerals using pits, shafts, levels, tunnels, etc., as opposed to a quarry, where the whole excavation is open. In general, the existence of a mine is determined by the mode in which the mineral is obtained, not by its chemical or geologic character. The term also includes only excavations for their minerals or valuable mineral deposits.",
+      "category": "geologic-settings-and-sampling",
+      "provClass": "prov:Entity",
+      "source": "Ricketts 1943",
+      "modified": "2026-07-30"
+    }
+  ],
+  "sources": [
+    {
+      "title": "A Dictionary of Geology and Earth Sciences (5th ed.)",
+      "notation": "Allaby 2020",
+      "description": "Allaby, M. (Ed.). (2020). A dictionary of geology and Earth sciences (5th ed.). Oxford University Press. https://doi.org/10.1093/acref/9780198839033.001.0001",
+      "url": "https://doi.org/10.1093/acref/9780198839033.001.0001"
+    },
+    {
+      "title": "A geologic timescale ontology and service",
+      "notation": "Cox and Richard 2015",
+      "description": "Cox, S. J. D., & Richard, S. M. (2015). A geologic timescale ontology and service. Earth Science Informatics, 8(1), 5–19. https://doi.org/10.1007/s12145-014-0170-6",
+      "url": "https://doi.org/10.1007/s12145-014-0170-6"
+    },
+    {
+      "title": "Agile Data Warehousing for the Enterprise",
+      "notation": "Hughes 2015",
+      "description": "Hughes, R. (2015). Agile data warehousing for the enterprise: A guide for solution architects and project leaders. Newnes.",
+      "url": null
+    },
+    {
+      "title": "American Mining Law with Forms and Precedents (4th ed., Bulletin 123)",
+      "notation": "Ricketts 1943",
+      "description": "Ricketts, A. H. (1943). American mining law with forms and precedents (4th ed., Bulletin 123). California Division of Mines.",
+      "url": null
+    },
+    {
+      "title": "ANSI/NISO Z39.19-2005 (R2010) Guidelines for the construction, format, and management of monolingual controlled vocabularies",
+      "notation": "ANSI/NISO 2005",
+      "description": "ANSI/NISO. (2005). Guidelines for the construction, format, and management of monolingual controlled vocabularies (ANSI/NISO Z39.19-2005 [R2010]). National Information Standards Organization.",
+      "url": "https://www.niso.org/publications/ansiniso-z3919-2005-r2010"
+    },
+    {
+      "title": "Basic Formal Ontology (BFO) 2020 / ISO/IEC 21838-2:2021",
+      "notation": "BFO 2020",
+      "description": "ISO/IEC 21838-2:2021, Information technology - Top-level ontologies (TLO) - Part 2: Basic Formal Ontology (BFO). NOTE: cited in the Terms sections as 'BFO 2020' but not present in the GCDM reference list; a bibliography entry is required.",
+      "url": "https://www.iso.org/standard/74572.html"
+    },
+    {
+      "title": "Biological Collections Ontology (BCO)",
+      "notation": "BCO 2021",
+      "description": "Biological Collections Ontology (BCO). (2021). Biological Collections Ontology (Version 2021-11-14) [OWL ontology]. OBO Foundry. http://purl.obolibrary.org/obo/bco/releases/2021-11-14/bco.owl",
+      "url": "http://purl.obolibrary.org/obo/bco/releases/2021-11-14/bco.owl"
+    },
+    {
+      "title": "CGI geoscience vocabularies: Concept schemas v2016.01",
+      "notation": "CGI 2016",
+      "description": "Commission for the Management and Application of Geoscience Information. (2016). CGI geoscience vocabularies: Concept schemas v2016.01. https://cgi.vocabs.ga.gov.au/vocab/",
+      "url": "https://cgi.vocabs.ga.gov.au/vocab/"
+    },
+    {
+      "title": "Data Privacy Vocabulary - Technology concepts (v2.2)",
+      "notation": "W3C DPV n.d.",
+      "description": "W3C Data Privacy Vocabularies and Controls Community Group. (n.d.). Technology concepts (v2.2). https://w3c.github.io/dpv/2.2/tech/",
+      "url": "https://w3c.github.io/dpv/2.2/tech/"
+    },
+    {
+      "title": "Dictionary of Geology and Mineralogy (2nd ed.)",
+      "notation": "McGraw-Hill 2003",
+      "description": "McGraw-Hill. (2003). Dictionary of geology and mineralogy (2nd ed.). McGraw-Hill.",
+      "url": null
+    },
+    {
+      "title": "Dublin Core Metadata Element Set - identifier",
+      "notation": "http://purl.org/dc/elements/1.1/identifier",
+      "description": "Dublin Core Metadata Element Set, element 'identifier'. Cited in §2.1 as a bare term URI. NOTE: not present in the GCDM reference list; a bibliography entry is required.",
+      "url": "http://purl.org/dc/elements/1.1/identifier"
+    },
+    {
+      "title": "FAO (2025) - reference unresolved",
+      "notation": "FAO 2025",
+      "description": "Cited in the definition of Physiographic Feature (§7.1) alongside INRAE 2021, but no corresponding entry appears in the GCDM reference list. NOTE: the bibliography entry must be supplied before publication.",
+      "url": null
+    },
+    {
+      "title": "Geologic time formalization: An improved formal model for describing time successions and their correlation",
+      "notation": "Perrin et al. 2011",
+      "description": "Perrin, M., Morel, O., Mastella, L., & Lorenzatti, A. (2011). Geologic time formalization: An improved formal model for describing time successions and their correlation. Earth Science Informatics, 4(2), 81–96. https://doi.org/10.1007/s12145-011-0080-9",
+      "url": "https://doi.org/10.1007/s12145-011-0080-9"
+    },
+    {
+      "title": "Geoscience terminology development for the National Geologic Map Database",
+      "notation": "Richard et al. 2003",
+      "description": "Richard, S. M., Matti, J. C., & Soller, D. R. (2003). Geoscience terminology development for the National Geologic Map Database. In D. R. Soller (Ed.), Digital Mapping Techniques '03, Workshop proceedings (U.S. Geological Survey Open-File Report No. 03-471). U.S. Geological Survey. https://pubs.usgs.gov/of/2003/of03-471/richard1/",
+      "url": "https://pubs.usgs.gov/of/2003/of03-471/richard1/"
+    },
+    {
+      "title": "GeoSciML: A GML application for geoscience information interchange",
+      "notation": "Richard et al. 2007",
+      "description": "Richard, S. M., Boisvert, E., Brodaric, B., Cox, S., Duffy, T., Holmberg, J., Johnson, B., Laxton, J., Lindberg, T., Ritchie, A., Robida, F., Sen, M., Serrano, J., Simons, B., & Wyborn, L. A. I. (2007). GeoSciML, A GML application for geoscience information interchange. In D. R. Soller (Ed.), Digital Mapping Techniques '06, Workshop proceedings (U.S. Geological Survey Open-File Report No. 2007-1285, pp. 47–59). U.S. Geological Survey. https://pubs.usgs.gov/of/2007/1285/pdf/Richard.pdf",
+      "url": "https://pubs.usgs.gov/of/2007/1285/pdf/Richard.pdf"
+    },
+    {
+      "title": "Glossary of Geology (5th ed.)",
+      "notation": "Neuendorf et al. 2005",
+      "description": "Neuendorf, K. K. E., Mehl, J. P., & Jackson, J. A. (Eds.). (2005). Glossary of geology (5th ed.). American Geological Institute.",
+      "url": null
+    },
+    {
+      "title": "Glossary, in Introduction to Metadata (3rd ed.)",
+      "notation": "Baca 2016",
+      "description": "Baca, M. (2016). Glossary. In M. Baca (Ed.), Introduction to metadata (3rd ed.). Getty Publications. http://www.getty.edu/publications/intrometadata/glossary/",
+      "url": "http://www.getty.edu/publications/intrometadata/glossary/"
+    },
+    {
+      "title": "IEC 81714-2:2006 Design of graphical symbols for use in the technical documentation of products - Part 2",
+      "notation": "IEC 81714-2:2006",
+      "description": "International Electrotechnical Commission. (2006). Design of graphical symbols for use in the technical documentation of products, Part 2: Specification for graphical symbols in a computer sensible form, including graphical symbols for a reference library, and requirements for their interchange (IEC Standard No. 81714-2:2006). https://www.iso.org/standard/41267.html",
+      "url": "https://www.iso.org/standard/41267.html"
+    },
+    {
+      "title": "INRAE Thesaurus",
+      "notation": "INRAE 2021",
+      "description": "INRAE. (2021). INRAE thesaurus. https://doi.org/10.15454/J8GANU",
+      "url": "https://doi.org/10.15454/J8GANU"
+    },
+    {
+      "title": "INSPIRE consolidated UML model",
+      "notation": "INSPIRE MIF n.d.",
+      "description": "INSPIRE Maintenance and Implementation Framework (MIF) Team. (n.d.). INSPIRE consolidated UML model. European Commission. https://inspire.ec.europa.eu/data-model/approved/r4618-ir-ifs/",
+      "url": "https://inspire.ec.europa.eu/data-model/approved/r4618-ir-ifs/"
+    },
+    {
+      "title": "International Stratigraphic Guide - An abridged version",
+      "notation": "ISSC 2000",
+      "description": "International Subcommission on Stratigraphic Classification. (2000). International stratigraphic guide, An abridged version. GeoArabia, 5(2), 231–266. https://doi.org/10.2113/geoarabia0502231",
+      "url": "https://doi.org/10.2113/geoarabia0502231"
+    },
+    {
+      "title": "ISO 17117-1:2025 Health informatics - Terminological resources - Part 1: Characteristics",
+      "notation": "ISO 17117-1 2025",
+      "description": "International Organization for Standardization. (2025). Health informatics, Terminological resources, Part 1: Characteristics (ISO Standard No. 17117-1:2025). https://www.iso.org/standard/88565.html",
+      "url": "https://www.iso.org/standard/88565.html"
+    },
+    {
+      "title": "ISO 19101-1:2014 Geographic information - Reference model - Part 1: Fundamentals",
+      "notation": "ISO 19101-1 2014",
+      "description": "International Organization for Standardization. (2014). Geographic information, Reference model, Part 1: Fundamentals (ISO Standard No. 19101-1:2014). https://www.iso.org/standard/59164.html",
+      "url": "https://www.iso.org/standard/59164.html"
+    },
+    {
+      "title": "ISO 5127:2017 Information and documentation - Foundation and vocabulary",
+      "notation": "ISO 5127:2017",
+      "description": "International Organization for Standardization. (2017). Information and documentation, Foundation and vocabulary (ISO Standard No. 5127:2017). https://www.iso.org/standard/59743.html",
+      "url": "https://www.iso.org/standard/59743.html"
+    },
+    {
+      "title": "ISO/IEC 11179-1:2023 Metadata registries - Part 1: Framework",
+      "notation": "ISO/IEC 11179-1:2023",
+      "description": "International Organization for Standardization. (2023). Information technology, Metadata registries (MDR), Part 1: Framework (ISO/IEC Standard No. 11179-1:2023). https://www.iso.org/standard/78914.html",
+      "url": "https://www.iso.org/standard/78914.html"
+    },
+    {
+      "title": "ISO/IEC 11179-3:2023 Metadata registries - Part 3: Registry metamodel and basic attributes",
+      "notation": "ISO 11179-3:2023",
+      "description": "International Organization for Standardization. (2023). Information technology, Metadata registries (MDR), Part 3: Registry metamodel and basic attributes (ISO Standard No. 11179-3:2023). https://www.iso.org/standard/78915.html",
+      "url": "https://www.iso.org/standard/78915.html"
+    },
+    {
+      "title": "ISO/IEC 2382:2015 Information technology - Vocabulary",
+      "notation": "ISO/IEC 2382:2015",
+      "description": "International Organization for Standardization. (2015). Information technology, Vocabulary (ISO/IEC Standard No. 2382:2015). https://www.iso.org/standard/63598.html",
+      "url": "https://www.iso.org/standard/63598.html"
+    },
+    {
+      "title": "ISO/IEC TR 19763-9:2015 Metamodel framework for interoperability - Part 9: On demand model selection",
+      "notation": "ISO/IEC TR 19763-9 2015",
+      "description": "International Organization for Standardization & International Electrotechnical Commission. (2015). Information technology, Metamodel framework for interoperability (MFI), Part 9: On demand model selection (ISO/IEC TR No. 19763-9:2015). https://www.iso.org/standard/56080.html",
+      "url": "https://www.iso.org/standard/56080.html"
+    },
+    {
+      "title": "Magnetic Stratigraphy",
+      "notation": "Opdyke & Channell 1996",
+      "description": "Opdyke, N. D., & Channell, J. E. T. (1996). Magnetic stratigraphy. Academic Press.",
+      "url": null
+    },
+    {
+      "title": "Mindat.org: The open access mineralogy database",
+      "notation": "Ralph et al. 2025",
+      "description": "Ralph, J., Von Bargen, D., Martynov, P., Zhang, J., Que, X., Prabhu, A., Morrison, S. M., Li, W., Chen, W., & Ma, X. (2025). Mindat.org: The open access mineralogy database. https://www.mindat.org/",
+      "url": "https://www.mindat.org/"
+    },
+    {
+      "title": "Neuchatel Terminology Model Part I: Classification database object types and their attributes (v2.1)",
+      "notation": "Neuchâtel Group 2004",
+      "description": "Neuchâtel Group. (2004). Neuchâtel terminology model Part I: Classification database object types and their attributes (Version 2.1). UNECE Statswiki.",
+      "url": null
+    },
+    {
+      "title": "North American Stratigraphic Code",
+      "notation": "NACSN 2005",
+      "description": "North American Commission on Stratigraphic Nomenclature. (2005). North American stratigraphic code. AAPG Bulletin, 89(11), 1547–1591. https://doi.org/10.1306/07050504129",
+      "url": "https://doi.org/10.1306/07050504129"
+    },
+    {
+      "title": "On classifying material entities in Basic Formal Ontology",
+      "notation": "Smith 2012",
+      "description": "Smith, B. (2012). On classifying material entities in Basic Formal Ontology. In B. Smith, R. Mizoguchi, & S. Nakagawa (Eds.), Interdisciplinary ontology: Proceedings of the Third Interdisciplinary Ontology Meeting (Vol. 3, pp. 1–13). Keio University Press.",
+      "url": null
+    },
+    {
+      "title": "PROV-O: The PROV Ontology",
+      "notation": "http://www.w3.org/ns/prov#",
+      "description": "W3C PROV Ontology. Cited in §3.1 as the bare class URIs http://www.w3.org/ns/prov#Agent and http://www.w3.org/ns/prov#Activity. NOTE: not present in the GCDM reference list; a bibliography entry is required.",
+      "url": "http://www.w3.org/ns/prov#"
+    },
+    {
+      "title": "Radiogenic isotopes and mantle evolution",
+      "notation": "Ellam 2021",
+      "description": "Ellam, R. M. (2021). Radiogenic isotopes and mantle evolution. In D. Alderton & S. A. Elias (Eds.), Encyclopedia of geology (pp. 330–344). Academic Press. https://doi.org/10.1016/B978-0-12-409548-9.12533-3",
+      "url": "https://doi.org/10.1016/B978-0-12-409548-9.12533-3"
+    },
+    {
+      "title": "Scientific definition of Australian geological provinces, regions and events",
+      "notation": "Raymond 2011",
+      "description": "Raymond, O. (2011). Scientific definition of Australian geological provinces, regions and events. Geoscience Australia. https://pid.geoscience.gov.au/dataset/ga/73068",
+      "url": "https://pid.geoscience.gov.au/dataset/ga/73068"
+    },
+    {
+      "title": "SKOS Simple Knowledge Organization System Reference",
+      "notation": "Bechhofer & Miles 2009",
+      "description": "Bechhofer, S., & Miles, A. (2009). SKOS simple knowledge organization system reference (W3C Recommendation). World Wide Web Consortium. https://www.w3.org/TR/skos-reference/",
+      "url": "https://www.w3.org/TR/skos-reference/"
+    },
+    {
+      "title": "SWEET Ontology - Realm Geologic (v3.6.0)",
+      "notation": "SWEET Ontology n.d.",
+      "description": "Raskin, R. G., & Pan, M. J. (n.d.). SWEET Ontology Realm Geologic (v3.6.0). http://sweetontology.net/realmGeol",
+      "url": "http://sweetontology.net/realmGeol"
+    },
+    {
+      "title": "Systems of Knowledge Organization for Digital Libraries: Beyond Traditional Authority Files",
+      "notation": "Hodge 2000",
+      "description": "Hodge, G. (2000). Systems of knowledge organization for digital libraries: Beyond traditional authority files. Council on Library and Information Resources. http://www.clir.org/pubs/reports/pub91/contents.html",
+      "url": "http://www.clir.org/pubs/reports/pub91/contents.html"
+    },
+    {
+      "title": "TERN Ontology",
+      "notation": "TERN Ontology 2020",
+      "description": "Terrestrial Ecosystem Research Network. (2020). TERN ontology. https://w3id.org/tern/ontologies/tern",
+      "url": "https://w3id.org/tern/ontologies/tern"
+    },
+    {
+      "title": "The GeoCore ontology: A core ontology for general use in geology",
+      "notation": "Garcia et al. 2019",
+      "description": "Garcia, L. F., Abel, M., Perrin, M., & dos Santos Alvarenga, R. (2019). The GeoCore ontology: A core ontology for general use in geology. Computers & Geosciences, 135, Article 104387. https://doi.org/10.1016/j.cageo.2019.104387",
+      "url": "https://doi.org/10.1016/j.cageo.2019.104387"
+    },
+    {
+      "title": "The GeoScience Ontology reference (Open File 8796)",
+      "notation": "Brodaric & Richard 2021",
+      "description": "Brodaric, B., & Richard, S. M. (2021). The GeoScience Ontology reference (Open File 8796). Geological Survey of Canada. https://doi.org/10.4095/328296",
+      "url": "https://doi.org/10.4095/328296"
+    },
+    {
+      "title": "This Document",
+      "notation": null,
+      "description": "Term defined within the Geological Collections Conceptual Data Model (GCDM) manuscript; no external source.",
+      "url": null
+    },
+    {
+      "title": "Time Ontology in OWL",
+      "notation": "Cox and Little 2022",
+      "description": "Cox, S. J. D., & Little, C. (Eds.). (2022). Time ontology in OWL (W3C Candidate Recommendation Draft, 15 November 2022). World Wide Web Consortium. https://www.w3.org/TR/owl-time/",
+      "url": "https://www.w3.org/TR/owl-time/"
+    },
+    {
+      "title": "XKOS: An SKOS extension for representing statistical classifications",
+      "notation": "DDI Alliance n.d.",
+      "description": "DDI Alliance. (n.d.). XKOS: An SKOS extension for representing statistical classifications. https://rdf-vocabulary.ddialliance.org/xkos.html",
+      "url": "https://rdf-vocabulary.ddialliance.org/xkos.html"
+    }
+  ]
+}

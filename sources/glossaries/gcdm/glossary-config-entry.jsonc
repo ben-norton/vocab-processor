@@ -1,0 +1,49 @@
+// GCDM glossary entry for data/config/glossaries.json.
+// Copy the object below (without these comments) into the `glossaries: [ ... ]`
+// array of data/config/glossaries.json, then run:
+//   npm run csv && npm run glossaries
+//
+// NOTE: the template shipped with `"terms"` pointing at glossary-sources.csv.
+// That is the *terms* input path (glossary-sources.csv is picked up separately
+// as the sources file), so it is corrected to glossary-terms.csv below.
+//
+// NOTE: the generated CSVs are staged in sources/glossaries/gcdm/generated/.
+// The paths below assume they are promoted to sources/glossaries/gcdm/ before
+// the build is run; adjust to .../gcdm/generated/... if you build in place.
+
+{
+  // ── Identity ──────────────────────────────────────────────────────────
+  "id":          "geological-collections-glossary",
+  "title":       "Geological Collections Glossary",
+  "description": "Terms and definitions supporting the Geological Collections Conceptual Data Model (GCDM), an ontologically grounded conceptual data model for geologic specimen collections. Terms are drawn from the Terms subsections of the GCDM manuscript and cover data modeling and ontology, compound specimens, names and classification systems, stratigraphy, geologic age, and geologic settings and sampling events.",
+  "uri":         "https://kos.geospecimens.org/glossary/gcdm",
+
+  // ── CSV → JSON paths (read by scripts/csv-to-glossary.js) ─────────────
+  "terms":   "sources/glossaries/gcdm/glossary-terms.csv",
+  "output":  "data/glossaries/gcdm/glossary.json",
+
+  // ── Editorial notes (all optional, all passthrough) ───────────────────
+  "scopeNote":   "Covers the concepts required to interpret and implement the GCDM: data-modeling and ontology vocabulary, the compound specimen construct and its parts, names and classification systems, stratigraphic units, geologic age (relative and chronometric), and geologic settings and sampling events. Definitions are either reproduced from the cited standard or reference work, adapted from it, or authored for the GCDM; the provenance of each definition is recorded per term. Domain-specific classification values (e.g., individual Dana or Nickel-Strunz classes) are out of scope and are maintained in the GCDM Master Dictionary.",
+  "changeNote":  "2026-07-30: Initial release. 105 terms extracted from the Terms subsections (§2.1, §3.1, §4.1, §5.1, §6.1, §7.1) of GCDM manuscript version 2026-07-27, with 44 cited sources resolved against the manuscript bibliography.",
+  "historyNote": "This glossary was created as part of the GeoSpecify and SwissCollNet programs. The terms and definitions are intended to accompany an upcoming publication Geological Collections Conceptual Data Model (GCDM)",
+
+  // ── Versioning (passthrough where supported) ──────────────────────────
+  "version":     "2026-07-30",
+  "created":     "2026-07-30",
+  "modified":    "2026-07-30",
+
+  // ── Licensing (not yet wired through csv-to-glossary.js) ──────────────
+  "license":     "https://creativecommons.org/licenses/by/4.0/",
+
+  // ── External links → rdfs:seeAlso (passthrough) ───────────────────────
+  "externalLinks": [
+    { "label": "GeoSpecimens knowledge-organization system", "url": "https://kos.geospecimens.org/" },
+    { "label": "Glossary landing page",                      "url": "https://kos.geospecimens.org/glossary/gcdm" },
+    { "label": "Specify Collections Management Platform",    "url": "https://www.specifysoftware.org/" }
+  ]
+
+  // ── Derived at build time (do not set here) ───────────────────────────
+  // "categories": [...]   — derived from unique `category` values in glossary-terms.csv
+  // "terms":      [...]   — parsed from glossary-terms.csv (note: distinct from the "terms" path field above)
+  // "sources":    [...]   — parsed from glossary-sources.csv if provided
+}

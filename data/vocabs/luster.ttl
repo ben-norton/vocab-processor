@@ -4,10 +4,10 @@
 # Generated: 2026-07-02
 #
 # Data issues / transformation notes:
-#  1. vocabularyIRI uses http:// scheme. Concept IRIs in this workbook typically use https://. Consider normalizing to https:// for the scheme IRI.
-#  2. vocabularyIRI is <http://kos.geospecimens.org/def/luster>, but concept IRIs live under 1 distinct parent IRI(s):
-#         - <https://kos.geospecimens.org/def/luster> (does NOT match scheme)
-#       Transcribed as-written; reconcile in source if this is unintended.
+#  1. Luster.xlsx writes vocabularyIRI and conceptIRI with the http:// scheme.
+#       Both are normalised to https://kos.geospecimens.org, the canonical host,
+#       by normalize_iri() in src/xlsx-to-ttl.py. The scheme subject and the
+#       concept IRIs therefore share one base and the persistent URIs resolve.
 
 # Standard prefixes
 @prefix dcat:        <http://www.w3.org/ns/dcat#> .
@@ -26,7 +26,7 @@
 # ConceptScheme
 # ============================================================================
 
-<http://kos.geospecimens.org/def/luster>
+<https://kos.geospecimens.org/def/luster>
     a                        skos:ConceptScheme ;
     skos:prefLabel           "Luster"@en ;
     dcterms:title            "Luster"@en ;
@@ -87,9 +87,9 @@
     a                        skos:Concept ;
     skos:prefLabel           "Waxy"@en ;
     skos:definition          """A luster resembling that of wax, giving the mineral a soft, slightly matte sheen, as seen in chalcedony."""@en ;
-    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/luster> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
-    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/luster> ;
     skos:notation            "waxy" ;
 .
 
@@ -98,9 +98,9 @@
     skos:prefLabel           "Adamantine"@en ;
     skos:definition          """A brilliant, highly reflective luster characteristic of transparent to translucent minerals with a high refractive index, such as diamond and cerussite."""@en ;
     dcterms:provenance       "Wenk, H.-R., & Bulakh, A. (2016). Minerals: Their constitution and origin (2nd ed.). Cambridge University Press."@en ;
-    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/luster> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
-    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/luster> ;
     skos:notation            "adamantine" ;
 .
 
@@ -108,9 +108,9 @@
     a                        skos:Concept ;
     skos:prefLabel           "Dull"@en ;
     skos:definition          """A luster in which the surface diffuses rather than reflects light, appearing lackluster even when smooth; characteristic of earthy minerals."""@en ;
-    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/luster> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
-    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/luster> ;
     skos:notation            "dull" ;
 .
 
@@ -119,9 +119,9 @@
     skos:prefLabel           "Greasy"@en ;
     skos:definition          """A luster resembling that of an oily surface, giving the mineral a greasy appearance to the eye or touch."""@en ;
     dcterms:provenance       "Wenk, H.-R., & Bulakh, A. (2016). Minerals: Their constitution and origin (2nd ed.). Cambridge University Press."@en ;
-    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/luster> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
-    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/luster> ;
     skos:notation            "greasy" ;
 .
 
@@ -130,9 +130,9 @@
     skos:prefLabel           "Metallic"@en ;
     skos:definition          """A luster resembling that of polished metal, characteristic of opaque minerals that strongly reflect light, such as galena and pyrite."""@en ;
     dcterms:provenance       "Wenk, H.-R., & Bulakh, A. (2016). Minerals: Their constitution and origin (2nd ed.). Cambridge University Press."@en ;
-    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/luster> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
-    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/luster> ;
     skos:notation            "metallic" ;
 .
 
@@ -141,9 +141,9 @@
     skos:prefLabel           "Pearly"@en ;
     skos:definition          """A luster resembling that of mother-of-pearl, produced by the reflection of light from closely spaced parallel surfaces, as in muscovite and talc."""@en ;
     dcterms:provenance       "Wenk, H.-R., & Bulakh, A. (2016). Minerals: Their constitution and origin (2nd ed.). Cambridge University Press."@en ;
-    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/luster> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
-    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/luster> ;
     skos:notation            "pearly" ;
 .
 
@@ -151,9 +151,9 @@
     a                        skos:Concept ;
     skos:prefLabel           "Waxy"@en ;
     skos:definition          """A luster resembling that of wax, giving the mineral a soft, slightly matte sheen, as seen in chalcedony."""@en ;
-    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/luster> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
-    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/luster> ;
     skos:notation            "waxy" ;
 .
 
@@ -162,9 +162,9 @@
     skos:prefLabel           "Vitreous"@en ;
     skos:definition          """A luster resembling that of glass; the most common mineral luster, exhibited for example by quartz."""@en ;
     dcterms:provenance       "Wenk, H.-R., & Bulakh, A. (2016). Minerals: Their constitution and origin (2nd ed.). Cambridge University Press."@en ;
-    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/luster> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
-    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/luster> ;
     skos:notation            "vitreous" ;
 .
 
@@ -172,9 +172,9 @@
     a                        skos:Concept ;
     skos:prefLabel           "Submetallic"@en ;
     skos:definition          """A luster intermediate between metallic and non-metallic, exhibited by minerals that are imperfectly or weakly metallic in appearance, such as chromite."""@en ;
-    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/luster> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
-    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/luster> ;
     skos:notation            "submetallic" ;
 .
 
@@ -182,9 +182,9 @@
     a                        skos:Concept ;
     skos:prefLabel           "Silky"@en ;
     skos:definition          """A luster resembling that of silk, produced by the reflection of light from fine parallel fibers, characteristic of fibrous minerals such as chrysotile."""@en ;
-    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/luster> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
-    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/luster> ;
     skos:notation            "silky" ;
 .
 
@@ -192,9 +192,9 @@
     a                        skos:Concept ;
     skos:prefLabel           "Resinous"@en ;
     skos:definition          """A luster resembling that of resin, seen on the fractured surfaces of certain minerals such as opal, sulfur, amber, and sphalerite."""@en ;
-    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/luster> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
-    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/luster> ;
     skos:notation            "resinous" ;
 .
 
@@ -202,9 +202,9 @@
     a                        skos:Concept ;
     skos:prefLabel           "Smoky"@en ;
     skos:definition          """A smoky, brownish to grayish-black appearance arising from the diffusion and partial absorption of light within an otherwise translucent mineral, as in smoky quartz."""@en ;
-    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/luster> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
-    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/luster> ;
     skos:notation            "smoky" ;
 .
 
@@ -212,9 +212,9 @@
     a                        skos:Concept ;
     skos:prefLabel           "Translucent"@en ;
     skos:definition          """A translucent appearance in which light passes through the mineral but is diffused, so that objects viewed through it appear obscured."""@en ;
-    skos:inScheme            <http://kos.geospecimens.org/def/luster> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/luster> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
-    skos:topConceptOf        <http://kos.geospecimens.org/def/luster> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/luster> ;
     skos:notation            "translucent" ;
 .
 

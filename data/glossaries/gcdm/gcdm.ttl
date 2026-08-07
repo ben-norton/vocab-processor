@@ -17,7 +17,7 @@
 # ConceptScheme
 # ==========================================================================
 
-<https://kos.geospecimens.org/glossary/gcdm>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary>
     a                        skos:ConceptScheme ;
     dcterms:identifier       "geological-collections-glossary" ;
     skos:prefLabel           "Geological Collections Glossary"@en ;
@@ -29,7 +29,7 @@
     dcterms:created          "2026-07-30"^^xsd:date ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
     dcat:version             "2026-07-30" ;
-    vann:preferredNamespaceUri <https://kos.geospecimens.org/glossary/gcdm/> ;
+    vann:preferredNamespaceUri <https://kos.geospecimens.org/glossary/geological-collections-glossary/> ;
     vann:preferredNamespacePrefix "gcdm" ;
     skos:scopeNote           "Covers the concepts required to interpret and implement the GCDM: data-modeling and ontology vocabulary, the compound specimen construct and its parts, names and classification systems, stratigraphic units, geologic age (relative and chronometric), and geologic settings and sampling events. Definitions are either reproduced from the cited standard or reference work, adapted from it, or authored for the GCDM; the provenance of each definition is recorded per term. Domain-specific classification values (e.g., individual Dana or Nickel-Strunz classes) are out of scope and are maintained in the GCDM Master Dictionary."@en ;
     skos:historyNote         "This glossary was created as part of the GeoSpecify and SwissCollNet programs. The terms and definitions are intended to accompany an upcoming publication Geological Collections Conceptual Data Model (GCDM)"@en ;
@@ -37,113 +37,113 @@
     dcterms:license          <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:rights           "Definitions reproduced or adapted from third-party standards and reference works remain the property of their respective rights holders and are cited in glossary-sources.csv. Compiled glossary (c) 2026 the GCDM authors, released under CC BY 4.0." ;
     rdfs:seeAlso             <https://kos.geospecimens.org/> ,
-                             <https://kos.geospecimens.org/glossary/gcdm> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary> ,
                              <https://www.specifysoftware.org/> ;
-    skos:hasTopConcept       <https://kos.geospecimens.org/glossary/gcdm/term/concept> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/conceptual-model> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/data-model> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/identifier> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/logical-data-model> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/model> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/ontology> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/physical-data-model> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/agent> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/activity> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/collection-object> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/compound-specimen> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/compound-specimen-model> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/specimen-part> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/specimen-part-proportion> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/specimen-part-relation> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/specimen-part-role> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/material-category> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/determination> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geologic-material> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geologic-specimen> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/material-entity> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/object> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/relation-predicate> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/simple-specimen> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/simple-specimen-model> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/alternate-name> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/authoritative-name> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/authority> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-code> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-family> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-item> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-item-relation> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-level> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-name> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-rank> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-rank-relation> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-scheme> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-series> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-system> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-term> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-version> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/confirmation-protocol> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/depth> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/hierarchy> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/identification> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/linnaean-taxonomy> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/monohierarchy> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/name> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/name-type> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/naming-authority> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/nomenclature-status> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/specimen-name> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/value-set> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/biostratigraphic-unit> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/chronostratigraphic-unit> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geologic-unit> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geologic-unit-type> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/law-of-superposition> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/lithodemic-unit> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/lithology> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/lithostratigraphic-unit> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/magnetostratigraphic-unit> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/stratigraphy> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/tectonostratigraphic-unit> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geochronologic-boundary> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geochronologic-era> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geochronologic-interpretation> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geochronologic-rank> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geochronologic-unit> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geochronology> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geologic-event> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geologic-process> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geologic-timescale> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/chronometric-age> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/lower-temporal-boundary> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/radioactive-decay> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/radiometric-age> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/radiometric-dating> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/regional-timescale> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/relative-age> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/relative-dating> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/time-interval> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/upper-temporal-boundary> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/feature> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/feature-of-interest> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geologic-environment> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geologic-event-environment> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geologic-feature> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/material-sample> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/petrographic-province> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/physiographic-feature> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/physiographic-province> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/province> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/quarry> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/sample> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/sampling-event> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/sampling-feature> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/sampling-feature-type> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/sampling-location> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/tectonic-province> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/tectonic-setting> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/terrane> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/mine> ;
+    skos:hasTopConcept       <https://kos.geospecimens.org/glossary/geological-collections-glossary/concept> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/conceptual-model> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/data-model> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/identifier> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/logical-data-model> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/model> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/ontology> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/physical-data-model> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/agent> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/activity> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/collection-object> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/compound-specimen> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/compound-specimen-model> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/specimen-part> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/specimen-part-proportion> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/specimen-part-relation> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/specimen-part-role> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/material-category> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/determination> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-material> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-specimen> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/material-entity> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/object> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/relation-predicate> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/simple-specimen> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/simple-specimen-model> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/alternate-name> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/authoritative-name> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/authority> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-code> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-family> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-item> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-item-relation> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-level> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-name> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-rank> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-rank-relation> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-scheme> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-series> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-system> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-term> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-version> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/confirmation-protocol> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/depth> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/hierarchy> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/identification> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/linnaean-taxonomy> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/monohierarchy> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/name> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/name-type> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/naming-authority> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/nomenclature-status> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/specimen-name> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/value-set> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/biostratigraphic-unit> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/chronostratigraphic-unit> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-unit> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-unit-type> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/law-of-superposition> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/lithodemic-unit> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/lithology> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/lithostratigraphic-unit> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/magnetostratigraphic-unit> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/stratigraphy> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/tectonostratigraphic-unit> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geochronologic-boundary> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geochronologic-era> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geochronologic-interpretation> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geochronologic-rank> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geochronologic-unit> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geochronology> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-event> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-process> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-timescale> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/chronometric-age> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/lower-temporal-boundary> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/radioactive-decay> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/radiometric-age> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/radiometric-dating> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/regional-timescale> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/relative-age> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/relative-dating> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/time-interval> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/upper-temporal-boundary> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/feature> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/feature-of-interest> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-environment> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-event-environment> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-feature> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/material-sample> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/petrographic-province> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/physiographic-feature> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/physiographic-province> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/province> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/quarry> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/sample> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/sampling-event> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/sampling-feature> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/sampling-feature-type> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/sampling-location> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/tectonic-province> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/tectonic-setting> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/terrane> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/mine> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
@@ -151,7 +151,7 @@
 # Concepts
 # ==========================================================================
 
-<https://kos.geospecimens.org/glossary/gcdm/term/concept>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/concept>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Concept"@en ;
     skos:definition          """A unit of knowledge created by a unique combination of characteristics."""@en ;
@@ -159,12 +159,12 @@
     dcterms:identifier       "concept" ;
     dcterms:source           "ISO 5127:2017" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/conceptual-model>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/conceptual-model>
     a                        skos:Concept , prov:Plan ;
     skos:prefLabel           "Conceptual Model"@en ;
     skos:definition          """An abstract model or representation of data for a particular domain or field of study, independent of any specific software or information system."""@en ;
@@ -172,12 +172,12 @@
     dcterms:identifier       "conceptual-model" ;
     dcterms:source           "Baca 2016" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/data-model>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/data-model>
     a                        skos:Concept , prov:Plan ;
     skos:prefLabel           "Data Model"@en ;
     skos:definition          """Graphical and/or lexical representation of data, specifying their properties, structure, and interrelationships."""@en ;
@@ -185,12 +185,12 @@
     dcterms:identifier       "data-model" ;
     dcterms:source           "ISO/IEC 11179-1:2023" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/identifier>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/identifier>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Identifier"@en ;
     skos:definition          """An unambiguous reference to the resource within a given context."""@en ;
@@ -198,12 +198,12 @@
     dcterms:identifier       "identifier" ;
     dcterms:source           "http://purl.org/dc/elements/1.1/identifier" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/logical-data-model>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/logical-data-model>
     a                        skos:Concept , prov:Plan ;
     skos:prefLabel           "Logical Data Model"@en ;
     skos:definition          """A data model that includes all entities and the relationships among them based on the structures identified in a conceptual data model and that specifies all attributes for each entity."""@en ;
@@ -211,12 +211,12 @@
     dcterms:identifier       "logical-data-model" ;
     dcterms:source           "Baca 2016" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/model>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/model>
     a                        skos:Concept , prov:Plan ;
     skos:prefLabel           "Model"@en ;
     skos:definition          """A simplified representation or abstraction of a system, process, or concept."""@en ;
@@ -224,12 +224,12 @@
     dcterms:identifier       "model" ;
     dcterms:source           "W3C DPV n.d." ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/ontology>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/ontology>
     a                        skos:Concept , prov:Plan ;
     skos:prefLabel           "Ontology"@en ;
     skos:definition          """Specification of concrete or abstract things and the relationships among them in a prescribed domain of knowledge."""@en ;
@@ -237,12 +237,12 @@
     dcterms:identifier       "ontology" ;
     dcterms:source           "ISO/IEC TR 19763-9 2015" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/physical-data-model>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/physical-data-model>
     a                        skos:Concept , prov:Plan ;
     skos:prefLabel           "Physical Data Model"@en ;
     skos:definition          """A technical representation detailing how data is physically organized and constrained within a database system, focusing on tables, columns, and constraints rather than entities and attributes."""@en ;
@@ -250,12 +250,12 @@
     dcterms:identifier       "physical-data-model" ;
     dcterms:source           "Hughes 2015" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/agent>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/agent>
     a                        skos:Concept , prov:Agent ;
     skos:prefLabel           "Agent"@en ;
     skos:definition          """An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity."""@en ;
@@ -263,12 +263,12 @@
     dcterms:identifier       "agent" ;
     dcterms:source           "http://www.w3.org/ns/prov#" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/activity>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/activity>
     a                        skos:Concept , prov:Activity ;
     skos:prefLabel           "Activity"@en ;
     skos:definition          """Something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities."""@en ;
@@ -276,12 +276,12 @@
     dcterms:identifier       "activity" ;
     dcterms:source           "http://www.w3.org/ns/prov#" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/collection-object>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/collection-object>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Collection Object"@en ;
     skos:definition          """A physical object that belongs to a museum collection."""@en ;
@@ -289,12 +289,12 @@
     dcterms:identifier       "collection-object" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/compound-specimen>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/compound-specimen>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Compound Specimen"@en ;
     skos:definition          """A collection object comprised of one or more discernible parts, called specimen parts, unified by physical attachment. The object's identity is determined by its specimen parts, which are distinguished from one another within a specific context."""@en ;
@@ -303,12 +303,12 @@
     dcterms:identifier       "compound-specimen" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/compound-specimen-model>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/compound-specimen-model>
     a                        skos:Concept , prov:Plan ;
     skos:prefLabel           "Compound Specimen Model"@en ;
     skos:definition          """A conceptual data model in which a single physical object, a compound specimen, is composed of and defined by its specimen parts."""@en ;
@@ -316,12 +316,12 @@
     dcterms:identifier       "compound-specimen-model" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/specimen-part>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/specimen-part>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Specimen Part"@en ;
     skos:definition          """A physically discernible, proximal portion of a compound specimen that carries a single determination and belongs to a single material category, distinguished from the rest of the parent specimen by its physical and chemical exclusivity."""@en ;
@@ -330,12 +330,12 @@
     dcterms:identifier       "specimen-part" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/specimen-part-proportion>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/specimen-part-proportion>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Specimen Part Proportion"@en ;
     skos:definition          """Refers to the qualitative or quantitative representation of the abundance of a Specimen Part within a parent Compound Specimen."""@en ;
@@ -344,12 +344,12 @@
     dcterms:identifier       "specimen-part-proportion" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/specimen-part-relation>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/specimen-part-relation>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Specimen Part Relation"@en ;
     skos:definition          """A described uni-directional association between two specimen parts, a source and target, within the scope of the parent compound specimen. A relation is defined from the perspective of the source specimen part and described using a relation predicate."""@en ;
@@ -358,12 +358,12 @@
     dcterms:identifier       "specimen-part-relation" ;
     dcterms:source           "Richard et al. 2007" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/specimen-part-role>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/specimen-part-role>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Specimen Part Role"@en ;
     skos:definition          """Specifies the relationship between a Specimen Part and its parent compound specimen. Roles are dependent upon both the part and parent object. For instance, a rock (material category) within the parent specimen plays the role of clast and is dependent on both the specimen part and the parent specimen for its existence."""@en ;
@@ -373,12 +373,12 @@
     dcterms:identifier       "specimen-part-role" ;
     dcterms:source           "Brodaric & Richard 2021" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/material-category>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/material-category>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Material Category"@en ;
     skos:definition          """A value from a top-level, generalized categorization scheme for geologic materials, in which each geologic material, a Compound Specimen or a Specimen Part, belongs to one and only one Material Category. For any given collection, the set of Material Categories should comprehensively account for all parts found across every specimen in that collection."""@en ;
@@ -387,12 +387,12 @@
     dcterms:identifier       "material-category" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/determination>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/determination>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Determination"@en ;
     skos:definition          """The identity of a specimen represented by a name based on formal criteria evaluated by a domain expert. In biological collections, the determination is represented by a taxonomic classification, primarily a genus and species (e.g., Vulpes vulpes, Accipiter cooperii). In the geosciences domain, examples of determination include Almandine, Granite, and Plantae."""@en ;
@@ -401,12 +401,12 @@
     dcterms:identifier       "determination" ;
     dcterms:source           "BCO 2021" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/geologic-material>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-material>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Geologic Material"@en ;
     skos:definition          """An amount of matter primarily (dominantly) having parts created by geologic processes and can include minor parts that are not of geologic origin, such as organic material, and can be solid, fluid, or a mix."""@en ;
@@ -414,12 +414,12 @@
     dcterms:identifier       "geologic-material" ;
     dcterms:source           "Brodaric & Richard 2021" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/geologic-specimen>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-specimen>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Geologic Specimen"@en ;
     skos:definition          """A collection object comprised, in part, of geologic material."""@en ;
@@ -427,12 +427,12 @@
     dcterms:identifier       "geologic-specimen" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/material-entity>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/material-entity>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Material Entity"@en ;
     skos:definition          """A material entity is an entity that exists in full during the length of time of its existence, persists through this time while maintaining its identity, and has no temporal parts."""@en ;
@@ -440,12 +440,12 @@
     dcterms:identifier       "material-entity" ;
     dcterms:source           "BFO 2020" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/object>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/object>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Object"@en ;
     skos:definition          """An object is a maximal causally unified material entity, meaning b is a material entity which is such that its material parts are tied together in such a way that, in environments typical for entities of the type in question."""@en ;
@@ -453,12 +453,12 @@
     dcterms:identifier       "object" ;
     dcterms:source           "Smith 2012" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/relation-predicate>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/relation-predicate>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Relation Predicate"@en ;
     skos:definition          """Describes the nature of the relationship between two specimen parts within the scope of a compound specimen."""@en ;
@@ -466,12 +466,12 @@
     dcterms:identifier       "relation-predicate" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/simple-specimen>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/simple-specimen>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Simple Specimen"@en ;
     skos:definition          """A collection object identified by a single determination without discernible parts."""@en ;
@@ -479,12 +479,12 @@
     dcterms:identifier       "simple-specimen" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/simple-specimen-model>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/simple-specimen-model>
     a                        skos:Concept , prov:Plan ;
     skos:prefLabel           "Simple Specimen Model"@en ;
     skos:definition          """The conceptual model for the digital representation of physical specimens where each entity is characterized by one and only one determination without any discernible parts."""@en ;
@@ -492,12 +492,12 @@
     dcterms:identifier       "simple-specimen-model" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/alternate-name>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/alternate-name>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Alternate Name"@en ;
     skos:definition          """An alternate lexical label to the preferred term for an entity."""@en ;
@@ -505,12 +505,12 @@
     dcterms:identifier       "alternate-name" ;
     dcterms:source           "Bechhofer & Miles 2009" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/authoritative-name>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/authoritative-name>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Authoritative Name"@en ;
     skos:definition          """A name sanctioned by an authority based on a defined set of unambiguous criteria and belonging to a formal nomenclature."""@en ;
@@ -518,12 +518,12 @@
     dcterms:identifier       "authoritative-name" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/authority>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/authority>
     a                        skos:Concept , prov:Organization ;
     skos:prefLabel           "Authority"@en ;
     skos:definition          """Identifies the entity responsible for assigning and maintaining a formalized classification system."""@en ;
@@ -531,12 +531,12 @@
     dcterms:identifier       "authority" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/classification>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/classification>
     a                        skos:Concept , prov:Activity ;
     skos:prefLabel           "Classification"@en ;
     skos:definition          """Activity involving grouping similar or related things together; separating dissimilar or unrelated things; and arranging the resulting groups in a logical and helpful sequence."""@en ;
@@ -544,12 +544,12 @@
     dcterms:identifier       "classification" ;
     dcterms:source           "Bechhofer & Miles 2009" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/classification-code>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-code>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Classification Code"@en ;
     skos:definition          """Encoded classification of an object represented by a graphical symbol that conforms to an encoding scheme defined as part of the classification scheme."""@en ;
@@ -557,12 +557,12 @@
     dcterms:identifier       "classification-code" ;
     dcterms:source           "IEC 81714-2:2006" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/classification-family>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-family>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Classification Family"@en ;
     skos:definition          """A grouping of related classification series (skos:Collection); e.g., all mineral classifications."""@en ;
@@ -572,12 +572,12 @@
     dcterms:identifier       "classification-family" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/classification-item>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-item>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Classification Item"@en ;
     skos:definition          """A single node of a classification scheme, one concept or named entry, modeled as a skos:Concept, to which a Specimen Part is classified."""@en ;
@@ -586,12 +586,12 @@
     dcterms:identifier       "classification-item" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/classification-item-relation>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-item-relation>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Classification Item Relation"@en ;
     skos:definition          """A reified, directed parent–child edge between two Classification Items that constitutes the hierarchy, typed by skos:broader/skos:narrower."""@en ;
@@ -600,12 +600,12 @@
     dcterms:identifier       "classification-item-relation" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/classification-level>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-level>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Classification Level"@en ;
     skos:definition          """A stratified tier comprised of nodes with a shared level of granularity in a hierarchy."""@en ;
@@ -613,12 +613,12 @@
     dcterms:identifier       "classification-level" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/classification-name>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-name>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Classification Name"@en ;
     skos:definition          """A formalized name belonging to a classification system maintained by an authoritative body."""@en ;
@@ -626,12 +626,12 @@
     dcterms:identifier       "classification-name" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/classification-rank>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-rank>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Classification Rank"@en ;
     skos:definition          """An identifier assigned to a classification level commonly expressed using a numeric identifier or lexical label."""@en ;
@@ -639,12 +639,12 @@
     dcterms:identifier       "classification-rank" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/classification-rank-relation>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-rank-relation>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Classification Rank Relation"@en ;
     skos:definition          """A reified ordering relation between two Classification Ranks, present only for ranked schemes."""@en ;
@@ -653,12 +653,12 @@
     dcterms:identifier       "classification-rank-relation" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/classification-scheme>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-scheme>
     a                        skos:Concept , prov:Plan ;
     skos:prefLabel           "Classification Scheme"@en ;
     skos:definition          """A method of organization according to a set of pre-established principles, usually characterized by a notation system and a hierarchical structure of relationships among the entities. This standard defines the structure and organization of a classification system, including its hierarchical ranks."""@en ;
@@ -666,12 +666,12 @@
     dcterms:identifier       "classification-scheme" ;
     dcterms:source           "ANSI/NISO 2005" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/classification-series>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-series>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Classification Series"@en ;
     skos:definition          """The time-ordered set of successive versions of one classification (skos:OrderedCollection); e.g., the editions of Dana."""@en ;
@@ -681,12 +681,12 @@
     dcterms:identifier       "classification-series" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/classification-system>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-system>
     a                        skos:Concept , prov:Plan ;
     skos:prefLabel           "Classification System"@en ;
     skos:definition          """A terminological resource that has characteristics of mutual exclusiveness and exhaustiveness to aggregate data to a pre-prescribed level of specialization for a specific purpose. Extends the classification scheme concept to include the values used to populate a classification scheme."""@en ;
@@ -694,12 +694,12 @@
     dcterms:identifier       "classification-system" ;
     dcterms:source           "ISO 17117-1 2025" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/classification-term>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-term>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Classification Term"@en ;
     skos:definition          """A single concept in a classification system or scheme at any hierarchical level."""@en ;
@@ -707,12 +707,12 @@
     dcterms:identifier       "classification-term" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/classification-version>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-version>
     a                        skos:Concept , prov:Plan ;
     skos:prefLabel           "Classification Version"@en ;
     skos:definition          """A versioned instance of a classification scheme."""@en ;
@@ -720,12 +720,12 @@
     dcterms:identifier       "classification-version" ;
     dcterms:source           "Neuchâtel Group 2004" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/confirmation-protocol>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/confirmation-protocol>
     a                        skos:Concept , prov:Plan ;
     skos:prefLabel           "Confirmation Protocol"@en ;
     skos:definition          """The procedure by which a Name is verified or confirmed for a specimen."""@en ;
@@ -734,12 +734,12 @@
     dcterms:identifier       "confirmation-protocol" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/depth>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/depth>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Depth"@en ;
     skos:definition          """The numeric distance of a nested level from the root of a hierarchy in a stratified classification scheme."""@en ;
@@ -747,12 +747,12 @@
     dcterms:identifier       "depth" ;
     dcterms:source           "DDI Alliance n.d." ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/hierarchy>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/hierarchy>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Hierarchy"@en ;
     skos:definition          """Concept system in which all concepts are related in hierarchical relations that form a partial ordering."""@en ;
@@ -760,12 +760,12 @@
     dcterms:identifier       "hierarchy" ;
     dcterms:source           "ISO/IEC 11179-1:2023" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/identification>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/identification>
     a                        skos:Concept , prov:Activity ;
     skos:prefLabel           "Identification"@en ;
     skos:definition          """The process of recognizing an entity in a particular domain as distinct from other entities."""@en ;
@@ -773,12 +773,12 @@
     dcterms:identifier       "identification" ;
     dcterms:source           "ISO 5127:2017" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/linnaean-taxonomy>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/linnaean-taxonomy>
     a                        skos:Concept , prov:Plan ;
     skos:prefLabel           "Linnaean Taxonomy"@en ;
     skos:definition          """A classification system for grouping both living and extinct organisms, governed by the relevant nomenclatural codes (the International Code of Zoological Nomenclature for animals; the International Code of Nomenclature for algae, fungi, and plants). Generally, the parent-child relationships in the Linnaean hierarchy represent the lineage evolution between species."""@en ;
@@ -787,12 +787,12 @@
     dcterms:identifier       "linnaean-taxonomy" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/monohierarchy>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/monohierarchy>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Monohierarchy"@en ;
     skos:definition          """Hierarchical arrangement of concepts in a classification scheme in which each concept can have only one broader concept at the level immediately above."""@en ;
@@ -800,12 +800,12 @@
     dcterms:identifier       "monohierarchy" ;
     dcterms:source           "Hodge 2000" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/name>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/name>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Name"@en ;
     skos:definition          """The primary means of identification of objects and concepts for humans."""@en ;
@@ -813,12 +813,12 @@
     dcterms:identifier       "name" ;
     dcterms:source           "ISO 11179-3:2023" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/name-type>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/name-type>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Name Type"@en ;
     skos:definition          """The category of a Name, Specimen, Authoritative, or Alternate, assigned through the hasType relation."""@en ;
@@ -828,12 +828,12 @@
     dcterms:identifier       "name-type" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/naming-authority>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/naming-authority>
     a                        skos:Concept , prov:Organization ;
     skos:prefLabel           "Naming Authority"@en ;
     skos:definition          """A registration authority that allocates names according to specified rules."""@en ;
@@ -841,12 +841,12 @@
     dcterms:identifier       "naming-authority" ;
     dcterms:source           "ISO/IEC 2382:2015" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/nomenclature-status>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/nomenclature-status>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Nomenclature Status"@en ;
     skos:definition          """The standing of a Name within its nomenclatural system (e.g., approved, superseded), recorded through the hasStatus relation."""@en ;
@@ -856,12 +856,12 @@
     dcterms:identifier       "nomenclature-status" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/specimen-name>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/specimen-name>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Specimen Name"@en ;
     skos:definition          """Refers to any name assigned to a specimen at the object level (before atomization into specimen parts). Specimen names are often written as compound terms, a concatenation of multiple informal and formal identifiers."""@en ;
@@ -870,12 +870,12 @@
     dcterms:identifier       "specimen-name" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/value-set>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/value-set>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Value Set"@en ;
     skos:definition          """The range of values used to populate a classification scheme (or classification scheme variant)."""@en ;
@@ -883,12 +883,12 @@
     dcterms:identifier       "value-set" ;
     dcterms:source           "Neuchâtel Group 2004" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/biostratigraphic-unit>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/biostratigraphic-unit>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Biostratigraphic Unit"@en ;
     skos:definition          """Geologic units defined or characterized on the basis of their contained fossils. Biostratigraphic units exist only where the particular diagnostic feature or attribute on which they are based has been identified."""@en ;
@@ -896,12 +896,12 @@
     dcterms:identifier       "biostratigraphic-unit" ;
     dcterms:source           "ISSC 2000" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/chronostratigraphic-unit>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/chronostratigraphic-unit>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Chronostratigraphic Unit"@en ;
     skos:definition          """Bodies of rocks, layered or unlayered, that are defined between specified stratigraphic horizons which represent specified intervals of geologic time."""@en ;
@@ -909,12 +909,12 @@
     dcterms:identifier       "chronostratigraphic-unit" ;
     dcterms:source           "ISSC 2000" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/geologic-unit>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-unit>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Geologic Unit"@en ;
     skos:definition          """A body of rock that persists through time, forming a discrete and definable unit. Geologic units are identified by their geometric, compositional, and internal structural characteristics, as well as their spatio-temporal relations with other rock bodies."""@en ;
@@ -922,12 +922,12 @@
     dcterms:identifier       "geologic-unit" ;
     dcterms:source           "Garcia et al. 2019" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/geologic-unit-type>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-unit-type>
     a                        skos:Concept , prov:Plan ;
     skos:prefLabel           "Geologic Unit Type"@en ;
     skos:definition          """A scheme that specifies concepts used to categorize types of geologic units. Unit types are differentiated based on their defining composition, temporal context, or other physical properties."""@en ;
@@ -936,12 +936,12 @@
     dcterms:identifier       "geologic-unit-type" ;
     dcterms:source           "Richard et al. 2007" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/law-of-superposition>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/law-of-superposition>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Law of Superposition"@en ;
     skos:definition          """A general law upon which all geologic chronology is based, where younger lithostratigraphic units lie atop older lithostratigraphic units."""@en ;
@@ -949,12 +949,12 @@
     dcterms:identifier       "law-of-superposition" ;
     dcterms:source           "Neuendorf et al. 2005" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/lithodemic-unit>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/lithodemic-unit>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Lithodemic Unit"@en ;
     skos:definition          """A defined body of predominantly intrusive, highly deformed, and (or) highly metamorphosed rock, distinguished and delimited based on rock characteristics."""@en ;
@@ -962,12 +962,12 @@
     dcterms:identifier       "lithodemic-unit" ;
     dcterms:source           "NACSN 2005" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/lithology>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/lithology>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Lithology"@en ;
     skos:definition          """(a) The description of rocks, especially in hand specimens and outcrops, based on characteristics such as color, mineralogic composition, and grain size. (b) The physical character of a rock."""@en ;
@@ -975,12 +975,12 @@
     dcterms:identifier       "lithology" ;
     dcterms:source           "Neuendorf et al. 2005" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/lithostratigraphic-unit>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/lithostratigraphic-unit>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Lithostratigraphic Unit"@en ;
     skos:definition          """A defined body of sedimentary, extrusive igneous, metasedimentary, or metavolcanic strata that is distinguished and delimited based on lithic characteristics and stratigraphic position."""@en ;
@@ -988,12 +988,12 @@
     dcterms:identifier       "lithostratigraphic-unit" ;
     dcterms:source           "NACSN 2005" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/magnetostratigraphic-unit>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/magnetostratigraphic-unit>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Magnetostratigraphic Unit"@en ;
     skos:definition          """Bodies of rock strata unified by similar magnetic characteristics which allow them to be differentiated from adjacent strata."""@en ;
@@ -1001,12 +1001,12 @@
     dcterms:identifier       "magnetostratigraphic-unit" ;
     dcterms:source           "Opdyke & Channell 1996" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/stratigraphy>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/stratigraphy>
     a                        skos:Concept , prov:Activity ;
     skos:prefLabel           "Stratigraphy"@en ;
     skos:definition          """The description of all rock bodies forming the Earth's crust and their organization into distinctive, useful, mappable units based on their inherent properties or attributes in order to establish their distribution and relationship in space and their succession in time, and to interpret geologic history."""@en ;
@@ -1014,12 +1014,12 @@
     dcterms:identifier       "stratigraphy" ;
     dcterms:source           "ISSC 2000" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/tectonostratigraphic-unit>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/tectonostratigraphic-unit>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Tectonostratigraphic Unit"@en ;
     skos:definition          """Geologic unit defined on basis of structural or deformation features, mutual relations, origin or historical evolution. Contained material may be igneous, sedimentary, or metamorphic."""@en ;
@@ -1027,12 +1027,12 @@
     dcterms:identifier       "tectonostratigraphic-unit" ;
     dcterms:source           "CGI 2016" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/geochronologic-boundary>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/geochronologic-boundary>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Geochronologic Boundary"@en ;
     skos:definition          """Temporal boundaries defined with reference to some geologic evidence such as, for instance, fossil appearance/disappearance or significant change in local rock lithology."""@en ;
@@ -1040,12 +1040,12 @@
     dcterms:identifier       "geochronologic-boundary" ;
     dcterms:source           "Perrin et al. 2011" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/geochronologic-era>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/geochronologic-era>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Geochronologic Era"@en ;
     skos:definition          """A named interval of geologic time of any rank, used to express a Relative Age as a bounded ordinal interval."""@en ;
@@ -1054,12 +1054,12 @@
     dcterms:identifier       "geochronologic-era" ;
     dcterms:source           "Cox and Richard 2015" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/geochronologic-interpretation>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/geochronologic-interpretation>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Geochronologic Interpretation"@en ;
     skos:definition          """An interpretation made by a geologist of the age of a specimen made by statistical analysis of a single collection of observations. A specimen may have multiple geochronological interpretations made on it, each related to a different observation collection."""@en ;
@@ -1067,12 +1067,12 @@
     dcterms:identifier       "geochronologic-interpretation" ;
     dcterms:source           "INSPIRE MIF n.d." ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/geochronologic-rank>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/geochronologic-rank>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Geochronologic Rank"@en ;
     skos:definition          """The hierarchical level of a Geochronologic Era, Eon, Era, Period, Epoch, Age, carried through the hasRank relation."""@en ;
@@ -1082,12 +1082,12 @@
     dcterms:identifier       "geochronologic-rank" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/geochronologic-unit>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/geochronologic-unit>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Geochronologic Unit"@en ;
     skos:definition          """A specialized time ordinal interval used to subdivide geologic time based on a corresponding chronostratigraphic unit."""@en ;
@@ -1095,12 +1095,12 @@
     dcterms:identifier       "geochronologic-unit" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/geochronology>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/geochronology>
     a                        skos:Concept , prov:Activity ;
     skos:prefLabel           "Geochronology"@en ;
     skos:definition          """The science of determining absolute ages of geologic events and Earth materials. The primary technique utilizes radioactive isotopes and the production and accumulation of radiogenic daughter isotopes naturally present on Earth. It can be applied to various samples, including rocks, minerals, and biological materials."""@en ;
@@ -1108,12 +1108,12 @@
     dcterms:identifier       "geochronology" ;
     dcterms:source           "Ellam 2021" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/geologic-event>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-event>
     a                        skos:Concept , prov:Activity ;
     skos:prefLabel           "Geologic Event"@en ;
     skos:definition          """An identifiable event during which one or more geologic processes act to modify geologic entities."""@en ;
@@ -1121,12 +1121,12 @@
     dcterms:identifier       "geologic-event" ;
     dcterms:source           "CGI 2016" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/geologic-process>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-process>
     a                        skos:Concept , prov:Activity ;
     skos:prefLabel           "Geologic Process"@en ;
     skos:definition          """A natural process that affects the geologic record by acting upon one geologic entity to produce another geologic entity at a later time."""@en ;
@@ -1134,12 +1134,12 @@
     dcterms:identifier       "geologic-process" ;
     dcterms:source           "Neuendorf et al. 2005" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/geologic-timescale>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-timescale>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Geologic Timescale"@en ;
     skos:definition          """A temporal reference system that subdivides all the time since Earth formed into named intervals (units) of abstract time and subdivides all the rocks formed since Earth formed into the successions of rock formed during each particular interval of time."""@en ;
@@ -1147,12 +1147,12 @@
     dcterms:identifier       "geologic-timescale" ;
     dcterms:source           "Allaby 2020" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/chronometric-age>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/chronometric-age>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Chronometric Age"@en ;
     skos:definition          """The age of a geologic event that resulted in the formation of a geologic material, expressed numerically and based on the results of a dating technique such as radiometric dating or dendrochronology. The value is an interpretation of the timing of that event rather than a direct, certain measurement of the specimen's age; it is conventionally termed absolute age, and also radiometric or apparent age."""@en ;
@@ -1161,12 +1161,12 @@
     dcterms:identifier       "chronometric-age" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/lower-temporal-boundary>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/lower-temporal-boundary>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Lower Temporal Boundary"@en ;
     skos:definition          """The older (earlier) limit of an interval, the point in time at which the interval begins. By convention, older is "lower" (deeper in the stratigraphic column)."""@en ;
@@ -1175,12 +1175,12 @@
     dcterms:identifier       "lower-temporal-boundary" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/radioactive-decay>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/radioactive-decay>
     a                        skos:Concept , prov:Activity ;
     skos:prefLabel           "Radioactive Decay"@en ;
     skos:definition          """The process where an unstable parent isotope loses particles from its atomic nucleus (decay) to form a daughter isotope (product) at a constant rate."""@en ;
@@ -1188,12 +1188,12 @@
     dcterms:identifier       "radioactive-decay" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/radiometric-age>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/radiometric-age>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Radiometric Age"@en ;
     skos:definition          """Geologic age expressed in years determined by quantitatively measuring radioactive elements and their decay products."""@en ;
@@ -1201,12 +1201,12 @@
     dcterms:identifier       "radiometric-age" ;
     dcterms:source           "McGraw-Hill 2003" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/radiometric-dating>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/radiometric-dating>
     a                        skos:Concept , prov:Activity ;
     skos:prefLabel           "Radiometric Dating"@en ;
     skos:definition          """Determination of a numeric (absolute) age by measuring the relative abundances of a radioactive parent isotope and its stable daughter product, together with the known decay constant, in a mineral or rock."""@en ;
@@ -1215,12 +1215,12 @@
     dcterms:identifier       "radiometric-dating" ;
     dcterms:source           "McGraw-Hill 2003" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/regional-timescale>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/regional-timescale>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Regional Timescale"@en ;
     skos:definition          """A family of geologic timescales based on the strata and fossil record observed in a specific area, typically at the country or regional level."""@en ;
@@ -1228,12 +1228,12 @@
     dcterms:identifier       "regional-timescale" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/relative-age>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/relative-age>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Relative Age"@en ;
     skos:definition          """The geologic age of a fossil organism, rock, or geologic feature or event defined relative to other organisms, rocks, or features or events rather than in terms of years."""@en ;
@@ -1241,12 +1241,12 @@
     dcterms:identifier       "relative-age" ;
     dcterms:source           "McGraw-Hill 2003" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/relative-dating>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/relative-dating>
     a                        skos:Concept , prov:Activity ;
     skos:prefLabel           "Relative Dating"@en ;
     skos:definition          """Proper chronological placement of a feature, object, or happening in the geologic time scale without reference to its absolute age."""@en ;
@@ -1254,12 +1254,12 @@
     dcterms:identifier       "relative-dating" ;
     dcterms:source           "McGraw-Hill 2003" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/time-interval>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/time-interval>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Time Interval"@en ;
     skos:definition          """A temporal entity with an extent or duration."""@en ;
@@ -1267,12 +1267,12 @@
     dcterms:identifier       "time-interval" ;
     dcterms:source           "Cox and Little 2022" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/upper-temporal-boundary>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/upper-temporal-boundary>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Upper Temporal Boundary"@en ;
     skos:definition          """The younger (later) limit of an interval, the point in time at which the interval ends. By convention, younger is "upper.""""@en ;
@@ -1281,12 +1281,12 @@
     dcterms:identifier       "upper-temporal-boundary" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/feature>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/feature>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Feature"@en ;
     skos:definition          """Abstraction of real-world phenomena."""@en ;
@@ -1294,12 +1294,12 @@
     dcterms:identifier       "feature" ;
     dcterms:source           "ISO 19101-1 2014" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/feature-of-interest>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/feature-of-interest>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Feature of Interest"@en ;
     skos:definition          """A feature of interest is an abstraction of a real-world phenomenon that is being sampled or transformed in an act of Sampling."""@en ;
@@ -1307,12 +1307,12 @@
     dcterms:identifier       "feature-of-interest" ;
     dcterms:source           "TERN Ontology 2020" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/geologic-environment>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-environment>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Geologic Environment"@en ;
     skos:definition          """Physical conditions found on the Earth's surface, which are determined by factors such as climate, tectonics, physiography, geography and within the Earth's interior, determined by pressure, temperature, chemical environment, and tectonics."""@en ;
@@ -1320,12 +1320,12 @@
     dcterms:identifier       "geologic-environment" ;
     dcterms:source           "Brodaric & Richard 2021" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/geologic-event-environment>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-event-environment>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Geologic Event Environment"@en ;
     skos:definition          """The physical setting within which a Geologic Event takes place."""@en ;
@@ -1333,12 +1333,12 @@
     dcterms:identifier       "geologic-event-environment" ;
     dcterms:source           "CGI 2016" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/geologic-feature>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-feature>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Geologic Feature"@en ;
     skos:definition          """A physical or conceptual feature that is hypothesized to exist coherently in the Earth and that results from geologic processes."""@en ;
@@ -1346,12 +1346,12 @@
     dcterms:identifier       "geologic-feature" ;
     dcterms:source           "SWEET Ontology n.d." ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/material-sample>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/material-sample>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Material Sample"@en ;
     skos:definition          """A physical result of a sampling (or subsampling) event. Material samples are typically collected and either preserved or destructively processed."""@en ;
@@ -1359,12 +1359,12 @@
     dcterms:identifier       "material-sample" ;
     dcterms:source           "TERN Ontology 2020" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/petrographic-province>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/petrographic-province>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Petrographic Province"@en ;
     skos:definition          """A broad area in which similar igneous rocks are formed during the same period of igneous activity."""@en ;
@@ -1372,12 +1372,12 @@
     dcterms:identifier       "petrographic-province" ;
     dcterms:source           "McGraw-Hill 2003" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/physiographic-feature>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/physiographic-feature>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Physiographic Feature"@en ;
     skos:definition          """A natural feature of the solid surface of the Earth or other planetary body."""@en ;
@@ -1386,12 +1386,12 @@
     dcterms:identifier       "physiographic-feature" ;
     dcterms:source           "INRAE 2021" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/physiographic-province>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/physiographic-province>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Physiographic Province"@en ;
     skos:definition          """A region in which all parts are similar in geologic structure and climate and which has consequently had a unified geomorphic history; a region whose pattern of relief features or landforms differs significantly from adjacent regions."""@en ;
@@ -1399,12 +1399,12 @@
     dcterms:identifier       "physiographic-province" ;
     dcterms:source           "Neuendorf et al. 2005" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/province>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/province>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Province"@en ;
     skos:definition          """Any large area or region considered as a whole, all parts characterized by similar features or a history differing significantly from adjacent areas."""@en ;
@@ -1412,12 +1412,12 @@
     dcterms:identifier       "province" ;
     dcterms:source           "Neuendorf et al. 2005" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/quarry>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/quarry>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Quarry"@en ;
     skos:definition          """An open or surface mineral working, usually for extracting building stone, such as slate, limestone, etc. It is distinguished from a mine because a quarry usually is open at the top and front, and, in ordinary use of the term, by the character of the material extracted."""@en ;
@@ -1425,12 +1425,12 @@
     dcterms:identifier       "quarry" ;
     dcterms:source           "Ralph et al. 2025" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/sample>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/sample>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Sample"@en ;
     skos:definition          """A feature which is intended to be representative of a `FeatureOfInterest` on which `Observations` may be made."""@en ;
@@ -1438,12 +1438,12 @@
     dcterms:identifier       "sample" ;
     dcterms:source           "TERN Ontology 2020" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/sampling-event>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/sampling-event>
     a                        skos:Concept , prov:Activity ;
     skos:prefLabel           "Sampling Event"@en ;
     skos:definition          """An activity of Sampling carries out a (Sampling) Procedure to create or transform one or more Samples."""@en ;
@@ -1451,12 +1451,12 @@
     dcterms:identifier       "sampling-event" ;
     dcterms:source           "TERN Ontology 2020" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/sampling-feature>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/sampling-feature>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Sampling Feature"@en ;
     skos:definition          """The feature of interest a sample is intended to be representative of."""@en ;
@@ -1464,12 +1464,12 @@
     dcterms:identifier       "sampling-feature" ;
     dcterms:source           "ISO 19101-1 2014" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/sampling-feature-type>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/sampling-feature-type>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Sampling Feature Type"@en ;
     skos:definition          """The nature of the feature such as whether the feature is the result of natural processes."""@en ;
@@ -1477,12 +1477,12 @@
     dcterms:identifier       "sampling-feature-type" ;
     dcterms:source           "ISO 19101-1 2014" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/sampling-location>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/sampling-location>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Sampling Location"@en ;
     skos:definition          """The geographic place where a sampling event takes place."""@en ;
@@ -1490,12 +1490,12 @@
     dcterms:identifier       "sampling-location" ;
     dcterms:source           "This Document" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/tectonic-province>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/tectonic-province>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Tectonic Province"@en ;
     skos:definition          """Groups of provinces linked by a common tectonic history are designated tectonic provinces. Tectonic provinces may contain a collection of sedimentary, igneous, structural, metamorphic, and metallogenic provinces."""@en ;
@@ -1503,12 +1503,12 @@
     dcterms:identifier       "tectonic-province" ;
     dcterms:source           "Raymond 2011" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/tectonic-setting>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/tectonic-setting>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Tectonic Setting"@en ;
     skos:definition          """A geologic event environment defined by relationships to tectonic plates on or in the Earth."""@en ;
@@ -1516,12 +1516,12 @@
     dcterms:identifier       "tectonic-setting" ;
     dcterms:source           "CGI 2016" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/terrane>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/terrane>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Terrane"@en ;
     skos:definition          """A fault-bounded area or region with different layers, rock structures, and geologic history from nearby areas that are not connected to them by unconformable contacts or changes in the rock's surface."""@en ;
@@ -1529,12 +1529,12 @@
     dcterms:identifier       "terrane" ;
     dcterms:source           "Allaby 2020" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/term/mine>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/mine>
     a                        skos:Concept , prov:Entity ;
     skos:prefLabel           "Mine"@en ;
     skos:definition          """A work for excavating minerals using pits, shafts, levels, tunnels, etc., as opposed to a quarry, where the whole excavation is open. In general, the existence of a mine is determined by the mode in which the mineral is obtained, not by its chemical or geologic character. The term also includes only excavations for their minerals or valuable mineral deposits."""@en ;
@@ -1542,8 +1542,8 @@
     dcterms:identifier       "mine" ;
     dcterms:source           "Ricketts 1943" ;
     dcterms:modified         "2026-07-30"^^xsd:date ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/glossary/gcdm> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/stable> ;
 .
 
@@ -1551,143 +1551,143 @@
 # Collections (term categories)
 # ==========================================================================
 
-<https://kos.geospecimens.org/glossary/gcdm/collection/compound-specimens>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/collection/compound-specimens>
     a                        skos:Collection ;
     skos:prefLabel           "Compound Specimens"@en ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:member              <https://kos.geospecimens.org/glossary/gcdm/term/agent> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/activity> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/collection-object> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/compound-specimen> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/compound-specimen-model> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/specimen-part> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/specimen-part-proportion> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/specimen-part-relation> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/specimen-part-role> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/material-category> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/determination> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geologic-material> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geologic-specimen> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/material-entity> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/object> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/relation-predicate> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/simple-specimen> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/simple-specimen-model> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:member              <https://kos.geospecimens.org/glossary/geological-collections-glossary/agent> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/activity> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/collection-object> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/compound-specimen> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/compound-specimen-model> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/specimen-part> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/specimen-part-proportion> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/specimen-part-relation> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/specimen-part-role> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/material-category> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/determination> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-material> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-specimen> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/material-entity> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/object> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/relation-predicate> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/simple-specimen> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/simple-specimen-model> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/collection/data-modeling-and-ontology>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/collection/data-modeling-and-ontology>
     a                        skos:Collection ;
     skos:prefLabel           "Data Modeling and Ontology"@en ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:member              <https://kos.geospecimens.org/glossary/gcdm/term/concept> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/conceptual-model> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/data-model> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/identifier> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/logical-data-model> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/model> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/ontology> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/physical-data-model> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:member              <https://kos.geospecimens.org/glossary/geological-collections-glossary/concept> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/conceptual-model> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/data-model> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/identifier> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/logical-data-model> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/model> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/ontology> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/physical-data-model> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/collection/geologic-age>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/collection/geologic-age>
     a                        skos:Collection ;
     skos:prefLabel           "Geologic Age"@en ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:member              <https://kos.geospecimens.org/glossary/gcdm/term/geochronologic-boundary> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geochronologic-era> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geochronologic-interpretation> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geochronologic-rank> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geochronologic-unit> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geochronology> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geologic-event> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geologic-process> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geologic-timescale> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/chronometric-age> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/lower-temporal-boundary> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/radioactive-decay> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/radiometric-age> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/radiometric-dating> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/regional-timescale> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/relative-age> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/relative-dating> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/time-interval> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/upper-temporal-boundary> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:member              <https://kos.geospecimens.org/glossary/geological-collections-glossary/geochronologic-boundary> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geochronologic-era> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geochronologic-interpretation> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geochronologic-rank> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geochronologic-unit> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geochronology> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-event> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-process> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-timescale> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/chronometric-age> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/lower-temporal-boundary> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/radioactive-decay> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/radiometric-age> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/radiometric-dating> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/regional-timescale> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/relative-age> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/relative-dating> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/time-interval> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/upper-temporal-boundary> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/collection/geologic-settings-and-sampling>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/collection/geologic-settings-and-sampling>
     a                        skos:Collection ;
     skos:prefLabel           "Geologic Settings and Sampling"@en ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:member              <https://kos.geospecimens.org/glossary/gcdm/term/feature> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/feature-of-interest> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geologic-environment> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geologic-event-environment> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geologic-feature> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/material-sample> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/petrographic-province> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/physiographic-feature> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/physiographic-province> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/province> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/quarry> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/sample> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/sampling-event> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/sampling-feature> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/sampling-feature-type> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/sampling-location> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/tectonic-province> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/tectonic-setting> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/terrane> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/mine> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:member              <https://kos.geospecimens.org/glossary/geological-collections-glossary/feature> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/feature-of-interest> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-environment> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-event-environment> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-feature> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/material-sample> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/petrographic-province> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/physiographic-feature> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/physiographic-province> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/province> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/quarry> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/sample> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/sampling-event> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/sampling-feature> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/sampling-feature-type> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/sampling-location> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/tectonic-province> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/tectonic-setting> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/terrane> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/mine> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/collection/names-and-classification-systems>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/collection/names-and-classification-systems>
     a                        skos:Collection ;
     skos:prefLabel           "Names and Classification Systems"@en ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:member              <https://kos.geospecimens.org/glossary/gcdm/term/alternate-name> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/authoritative-name> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/authority> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-code> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-family> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-item> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-item-relation> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-level> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-name> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-rank> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-rank-relation> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-scheme> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-series> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-system> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-term> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/classification-version> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/confirmation-protocol> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/depth> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/hierarchy> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/identification> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/linnaean-taxonomy> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/monohierarchy> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/name> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/name-type> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/naming-authority> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/nomenclature-status> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/specimen-name> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/value-set> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:member              <https://kos.geospecimens.org/glossary/geological-collections-glossary/alternate-name> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/authoritative-name> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/authority> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-code> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-family> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-item> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-item-relation> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-level> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-name> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-rank> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-rank-relation> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-scheme> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-series> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-system> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-term> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/classification-version> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/confirmation-protocol> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/depth> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/hierarchy> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/identification> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/linnaean-taxonomy> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/monohierarchy> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/name> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/name-type> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/naming-authority> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/nomenclature-status> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/specimen-name> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/value-set> ;
 .
 
-<https://kos.geospecimens.org/glossary/gcdm/collection/stratigraphy>
+<https://kos.geospecimens.org/glossary/geological-collections-glossary/collection/stratigraphy>
     a                        skos:Collection ;
     skos:prefLabel           "Stratigraphy"@en ;
-    skos:inScheme            <https://kos.geospecimens.org/glossary/gcdm> ;
-    skos:member              <https://kos.geospecimens.org/glossary/gcdm/term/biostratigraphic-unit> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/chronostratigraphic-unit> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geologic-unit> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/geologic-unit-type> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/law-of-superposition> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/lithodemic-unit> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/lithology> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/lithostratigraphic-unit> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/magnetostratigraphic-unit> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/stratigraphy> ,
-                             <https://kos.geospecimens.org/glossary/gcdm/term/tectonostratigraphic-unit> ;
+    skos:inScheme            <https://kos.geospecimens.org/glossary/geological-collections-glossary> ;
+    skos:member              <https://kos.geospecimens.org/glossary/geological-collections-glossary/biostratigraphic-unit> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/chronostratigraphic-unit> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-unit> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/geologic-unit-type> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/law-of-superposition> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/lithodemic-unit> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/lithology> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/lithostratigraphic-unit> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/magnetostratigraphic-unit> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/stratigraphy> ,
+                             <https://kos.geospecimens.org/glossary/geological-collections-glossary/tectonostratigraphic-unit> ;
 .

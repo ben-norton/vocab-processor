@@ -19,7 +19,7 @@ Output (default)::
 RDF shape:
 
   * one ``skos:ConceptScheme`` at the glossary ``uri``;
-  * one ``skos:Concept`` per term at ``<uri>/term/<term-id>``; a flat glossary
+  * one ``skos:Concept`` per term at ``<uri>/<term-id>``; a flat glossary
     has no hierarchy, so every concept is a top concept
     (``skos:topConceptOf`` + scheme ``skos:hasTopConcept``);
   * one ``skos:Collection`` per term category at ``<uri>/collection/<cat-id>``,
@@ -305,7 +305,11 @@ def build_glossary_ttl(slug: str, *, output: Path | None = None,
     status = (glossary.get("status") or status).strip() or DEFAULT_STATUS
 
     terms = glossary["terms"]
-    term_uri = {t["id"]: f"{scheme_uri}/term/{t['id']}" for t in terms}
+    # <scheme>/<term-id>, not <scheme>/term/<term-id>: this must match the IRI
+    # vocab-publisher serves and registers (termUri() in
+    # src/utils/rdf-serializers.js, and the /glossary/{id}/{tid} path the PHP
+    # resolver negotiates). A /term/ segment mints IRIs that resolve nowhere.
+    term_uri = {t["id"]: f"{scheme_uri}/{t['id']}" for t in terms}
     term_iris = [term_uri[t["id"]] for t in terms]
 
     # Category id -> member concept IRIs (in term order).

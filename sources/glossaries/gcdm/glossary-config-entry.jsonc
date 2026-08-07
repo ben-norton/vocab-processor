@@ -16,7 +16,7 @@
   "id":          "geological-collections-glossary",
   "title":       "Geological Collections Glossary",
   "description": "Terms and definitions supporting the Geological Collections Conceptual Data Model (GCDM), an ontologically grounded conceptual data model for geologic specimen collections. Terms are drawn from the Terms subsections of the GCDM manuscript and cover data modeling and ontology, compound specimens, names and classification systems, stratigraphy, geologic age, and geologic settings and sampling events.",
-  "uri":         "https://kos.geospecimens.org/glossary/gcdm",
+  "uri":         "https://kos.geospecimens.org/glossary/geological-collections-glossary",
 
   // ── CSV → JSON paths (read by scripts/csv-to-glossary.js) ─────────────
   "terms":   "sources/glossaries/gcdm/glossary-terms.csv",
@@ -38,7 +38,7 @@
   // ── External links → rdfs:seeAlso (passthrough) ───────────────────────
   "externalLinks": [
     { "label": "GeoSpecimens knowledge-organization system", "url": "https://kos.geospecimens.org/" },
-    { "label": "Glossary landing page",                      "url": "https://kos.geospecimens.org/glossary/gcdm" },
+    { "label": "Glossary landing page",                      "url": "https://kos.geospecimens.org/glossary/geological-collections-glossary" },
     { "label": "Specify Collections Management Platform",    "url": "https://www.specifysoftware.org/" }
   ]
 

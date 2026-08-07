@@ -503,7 +503,11 @@ def detect_issues(
     if ns_sheet_name and "namespeces" in ns_sheet_name.lower():
         issues.append('The namespaces sheet is named "Namespeces" (typo for "Namespaces").')
 
-    scheme_iri = str((cs_data.get("vocabularyIRI") or [""])[0]).strip()
+    # Compare against what actually gets emitted: conceptIRI is normalised by
+    # the loaders and the scheme subject by render_concept_scheme(), so the raw
+    # workbook value would report scheme/concept mismatches that do not exist
+    # in the generated TTL.
+    scheme_iri = normalize_iri(str((cs_data.get("vocabularyIRI") or [""])[0]).strip())
 
     if scheme_iri.startswith("http://") and any(
         str(r.get("conceptIRI", "")).startswith("https://") for r in concepts
@@ -532,7 +536,7 @@ def detect_issues(
 
     bad_inschem: set[str] = set()
     for r in concepts:
-        ins = str(r.get("inScheme", "")).strip()
+        ins = normalize_iri(str(r.get("inScheme", "")).strip())
         if ins and ins != scheme_iri:
             bad_inschem.add(ins)
     if bad_inschem:
@@ -696,7 +700,12 @@ def render_concept_scheme(
     contributor_ref: str | None,
     prov_attrs: list[tuple[str, list[str]]],
 ) -> str:
-    scheme_iri = str(cs_data["vocabularyIRI"][0]).strip()
+    # Normalise, as render_ttl() does when deriving the slug and as the concept
+    # loaders do for conceptIRI. Emitting the raw value here let a workbook with
+    # http://kos.geospecimens.org write a ConceptScheme subject that no longer
+    # matched its own concepts — and that the publisher's URI registry, which
+    # only accepts the canonical https host, could not resolve.
+    scheme_iri = normalize_iri(str(cs_data["vocabularyIRI"][0]).strip())
 
     def first(key: str) -> str | None:
         vals = cs_data.get(key)

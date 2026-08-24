@@ -30,16 +30,14 @@
   // ── Versioning (passthrough where supported) ──────────────────────────
   "version":     "2026-07-30",
   "created":     "2026-07-30",
-  "modified":    "2026-07-30",
+  "modified":    "2026-08-09",
 
   // ── Licensing (not yet wired through csv-to-glossary.js) ──────────────
   "license":     "https://creativecommons.org/licenses/by/4.0/",
 
   // ── External links → rdfs:seeAlso (passthrough) ───────────────────────
   "externalLinks": [
-    { "label": "GeoSpecimens knowledge-organization system", "url": "https://kos.geospecimens.org/" },
-    { "label": "Glossary landing page",                      "url": "https://kos.geospecimens.org/glossary/geological-collections-glossary" },
-    { "label": "Specify Collections Management Platform",    "url": "https://www.specifysoftware.org/" }
+    { "label": "Glossary landing page",                      "url": "https://kos.geospecimens.org/glossary/geological-collections-glossary" }
   ]
 
   // ── Derived at build time (do not set here) ───────────────────────────

@@ -5,7 +5,7 @@
   "uri": "https://kos.geospecimens.org/glossary/geological-collections-glossary",
   "version": "2026-07-30",
   "created": "2026-07-30",
-  "modified": "2026-07-30",
+  "modified": "2026-08-09",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "categories": [
     {
@@ -25,6 +25,10 @@
       "label": "Geologic Settings and Sampling"
     },
     {
+      "id": "name",
+      "label": "Name"
+    },
+    {
       "id": "names-and-classification-systems",
       "label": "Names and Classification Systems"
     },
@@ -38,16 +42,8 @@
   "historyNote": "This glossary was created as part of the GeoSpecify and SwissCollNet programs. The terms and definitions are intended to accompany an upcoming publication Geological Collections Conceptual Data Model (GCDM)",
   "externalLinks": [
     {
-      "label": "GeoSpecimens knowledge-organization system",
-      "url": "https://kos.geospecimens.org/"
-    },
-    {
       "label": "Glossary landing page",
       "url": "https://kos.geospecimens.org/glossary/geological-collections-glossary"
-    },
-    {
-      "label": "Specify Collections Management Platform",
-      "url": "https://www.specifysoftware.org/"
     }
   ],
   "terms": [
@@ -710,11 +706,12 @@
     {
       "id": "geochronologic-unit",
       "label": "Geochronologic Unit",
-      "definition": "A specialized time ordinal interval used to subdivide geologic time based on a corresponding chronostratigraphic unit.",
+      "definition": "A proper temporal interval that is a named, ranked subdivision of geologic time within a hierarchical ordinal temporal reference system, whose bounding instants are fixed either by designated reference points in the stratigraphic record or by assigned numerical ages, and which is the temporal counterpart of the chronostratigraphic unit of corresponding rank.",
       "category": "geologic-age",
       "provClass": "prov:Entity",
       "source": "This Document",
-      "modified": "2026-07-30"
+      "scopeNote": "Time, not rock. The material counterpart is a chronostratigraphic unit bearing the same proper name. Numerical ages are calibrations of the bounding instants, not part of the unit's identity.",
+      "modified": "2026-08-09"
     },
     {
       "id": "geochronology",
@@ -1026,6 +1023,54 @@
       "provClass": "prov:Entity",
       "source": "Ricketts 1943",
       "modified": "2026-07-30"
+    },
+    {
+      "id": "division",
+      "label": "Division (Minerals)",
+      "definition": "The second rank of the Nickel–Strunz hierarchy, subdividing a class by a combination of chemical composition and crystal-structural type; encoded as the first letter of the Nickel–Strunz code. Equivalent to the IMA \"subclass\" level. E.g. within class 9 (silicates), division D = inosilicates (chain/ribbon silicates).",
+      "category": "name",
+      "provClass": "prov:Entity",
+      "source": "Strunz & Nickel 2001, Mills et al. 2009, Wikidata Q396527",
+      "scopeNote": "In the Nickel–Strunz mineral classification, the rank immediately below class (the first letter of the code), subdividing a class by chemical composition together with crystal-structure type; termed 'subclass' in the IMA/CNMNC scheme.",
+      "modified": "2026-08-09"
+    },
+    {
+      "id": "type",
+      "label": "Type (Minerals)",
+      "definition": "In the Dana system, the rank below class and above group: a subdivision of a class based on more specific chemical/structural criteria — chiefly the cation-to-anion ratio and, in some classes, atomic structure. Encoded as the second number of the Dana number (quartz 75.1.3.1 → type 1).",
+      "category": "name",
+      "provClass": "prov:Entity",
+      "source": "Gaines et al. 1997",
+      "scopeNote": "In the Dana system of mineralogy, the rank between class and group (the second element of the Dana number), subdividing a class by more specific chemical criteria such as the cation-to-anion ratio, and in some classes by atomic structure.",
+      "modified": "2026-08-09"
+    },
+    {
+      "id": "group",
+      "label": "Group (Minerals)",
+      "definition": "A mineral group consists of two or more minerals with the same or essentially the same structure, and composed of chemically similar elements.",
+      "category": "name",
+      "provClass": "prov:Entity",
+      "source": "Mills et al. 2009",
+      "modified": "2026-08-09"
+    },
+    {
+      "id": "structural-group",
+      "label": "Structural Group",
+      "definition": "An informal descriptor for a set of minerals sharing essentially the same crystal structure (isostructural minerals). Under the standardized IMA/CNMNC nomenclature it is not a distinct rank; it corresponds to a formal group (isostructural species) or supergroup (isostructural groups). Historic usage such as \"apatite structural group\" has been replaced by formal frameworks — e.g. the apatite supergroup, subdivided into groups (Pasero et al. 2010), and the amphibole supergroup (Hawthorne et al. 2012).",
+      "category": "name",
+      "provClass": "prov:Entity",
+      "source": "Mills et al. 2009, Pasero et al. 2010, Hawthorne et al. 2012",
+      "scopeNote": "Informal term for a set of minerals having essentially the same crystal structure (isostructural minerals). Not a formal rank in the IMA/CNMNC hierarchy, where such a set constitutes a mineral group, or a supergroup of structurally related groups.",
+      "modified": "2026-08-09"
+    },
+    {
+      "id": "species",
+      "label": "Species (Minerals)",
+      "definition": "The base unit of mineral classification: a naturally occurring mineral distinguished by a unique combination of characteristic chemical composition and distinct crystal structure. Two minerals are different species if they differ in either composition or structure. Species status is adjudicated by the IMA Commission on New Minerals, Nomenclature and Classification (CNMNC). Underlying definition of a mineral (Nickel 1995, verbatim): In general terms, a mineral is an element or a chemical compound that is normally crystalline and that has been formed as a result of geological processes.",
+      "category": "name",
+      "provClass": "prov:Entity",
+      "scopeNote": "The fundamental unit of mineral classification: a naturally occurring substance, normally crystalline and formed by geological processes, distinguished by a unique combination of chemical composition and crystal structure, and recognized as a distinct species by the IMA/CNMNC.",
+      "modified": "2026-08-09"
     }
   ],
   "sources": [
@@ -1298,6 +1343,36 @@
       "notation": "DDI Alliance n.d.",
       "description": "DDI Alliance. (n.d.). XKOS: An SKOS extension for representing statistical classifications. https://rdf-vocabulary.ddialliance.org/xkos.html",
       "url": "https://rdf-vocabulary.ddialliance.org/xkos.html"
+    },
+    {
+      "title": "Dana Classification System",
+      "notation": "Gaines et al (1997)",
+      "description": "Gaines, R.V., Skinner, H.C.W., Foord, E.E., Mason, B. & Rosenzweig, A., 1997, Dana's New Mineralogy: The System of Mineralogy of James Dwight Dana and Edward Salisbury Dana, 8th ed.: New York, John Wiley & Sons, 1819 p.",
+      "url": null
+    },
+    {
+      "title": "Nomenclature of the amphibole supergroup",
+      "notation": "Hawthorns et al. (2012)",
+      "description": "Hawthorne, F.C., Oberti, R., Harlow, G.E., Maresch, W.V., Martin, R.F., Schumacher, J.C. & Welch, M.D., 2012, Nomenclature of the amphibole supergroup: American Mineralogist, v. 97, p. 2031–2048.",
+      "url": null
+    },
+    {
+      "title": "The standardisation of mineral group hierarchies",
+      "notation": "Mills et al. (2009)",
+      "description": "Mills, S.J., Hatert, F., Nickel, E.H. & Ferraris, G., 2009, The standardisation of mineral group hierarchies: application to recent nomenclature proposals: European Journal of Mineralogy, v. 21, no. 5, p. 1073–1080. DOI 10.1127/0935-1221/2009/0021-1994.",
+      "url": "https://doi.org/10.1127/0935-1221/2009/0021-1994"
+    },
+    {
+      "title": "Nomenclature of the apatite supergroup minerals",
+      "notation": "Pasero et al. (2010)",
+      "description": "Pasero, M., Kampf, A.R., Ferraris, C., Pekov, I.V., Rakovan, J. & White, T.J., 2010, Nomenclature of the apatite supergroup minerals: European Journal of Mineralogy, v. 22, p. 163–179.",
+      "url": null
+    },
+    {
+      "title": "Nickel-Strunz Classification System",
+      "notation": "Strunz & Nickel (2001)",
+      "description": "Strunz, H. & Nickel, E.H., 2001, Strunz Mineralogical Tables: Chemical-Structural Mineral Classification System, 9th ed.: Stuttgart, E. Schweizerbart, 870 p.",
+      "url": null
     }
   ]
 }

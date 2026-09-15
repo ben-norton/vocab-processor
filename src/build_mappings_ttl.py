@@ -399,7 +399,7 @@ def main() -> None:
             continue
 
         if result is None:
-            print(f"SKIP {xlsx.name}: no Mappings sheet or no data")
+            print(f"SKIP {xlsx.name}: no Mappings sheet, or it has column headers only")
             continue
 
         ttl, slug, count = result

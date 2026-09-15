@@ -55,7 +55,7 @@
 # Vocabulary Agent Mappings
 # ============================================================================
 
-<https://kos.resources.org/def/aggregate-form>
+<https://kos.geospecimens.org/def/aggregate-form>
     a skos:ConceptScheme ;
     prov:qualifiedAssociation [
         a prov:Association ;
@@ -69,7 +69,7 @@
     ] ;
 .
 
-<https://kos.resources.org/def/constituent-part-proportion>
+<https://kos.geospecimens.org/def/constituent-part-proportion>
     a skos:ConceptScheme ;
     prov:qualifiedAssociation [
         a prov:Association ;
@@ -83,7 +83,7 @@
     ] ;
 .
 
-<https://kos.resources.org/def/geological-specimen-material-type>
+<https://kos.geospecimens.org/def/geological-specimen-material-category>
     a skos:ConceptScheme ;
     prov:qualifiedAssociation [
         a prov:Association ;
@@ -97,7 +97,7 @@
     ] ;
 .
 
-<https://kos.resources.org/def/geological-specimen-name-type>
+<https://kos.geospecimens.org/def/geological-specimen-name-type>
     a skos:ConceptScheme ;
     prov:qualifiedAssociation [
         a prov:Association ;
@@ -111,7 +111,44 @@
     ] ;
 .
 
-<https://kos.resources.org/def/hazard-type>
+<https://kos.geospecimens.org/def/hazard-type>
+    a skos:ConceptScheme ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent <https://kos.geospecimens.org/org/ben-norton> ;
+        prov:hadRole isoroles:publisher , isoroles:author ;
+    ] ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent <https://kos.geospecimens.org/org/minext> ;
+        prov:hadRole isoroles:editor , isoroles:custodian ;
+    ] ;
+.
+
+<https://kos.geospecimens.org/def/kos-meta>
+    a skos:ConceptScheme ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent <https://kos.geospecimens.org/org/ben-norton> ;
+        prov:hadRole isoroles:publisher , isoroles:author , isoroles:custodian ;
+    ] ;
+.
+
+<https://kos.geospecimens.org/def/luster>
+    a skos:ConceptScheme ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent <https://kos.geospecimens.org/org/ben-norton> ;
+        prov:hadRole isoroles:publisher , isoroles:author ;
+    ] ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent <https://kos.geospecimens.org/org/minext> ;
+        prov:hadRole isoroles:editor , isoroles:custodian ;
+    ] ;
+.
+
+<https://kos.geospecimens.org/vocab/geological-material-assertion-types>
     a skos:ConceptScheme ;
     prov:qualifiedAssociation [
         a prov:Association ;

@@ -13,7 +13,8 @@ Checks performed for each .ttl file:
 Run from the project root:
     python utils/validate-ttl.py [path ...]
 
-If no paths are given, all *.ttl files in data/vocabs/ are validated.
+If no paths are given, all *.ttl files in data/vocabs/ are validated, except
+the agent registry agents.ttl and the *-mappings.ttl files.
 """
 
 from __future__ import annotations
@@ -38,9 +39,7 @@ REG = Namespace("http://purl.org/linked-data/registry#")
 # ---------------------------------------------------------------------------
 
 REQUIRED_SCHEME_PROPS: list[tuple[str, URIRef]] = [
-    ("skos:prefLabel",      SKOS.prefLabel),
     ("dcterms:title",       DCTERMS.title),
-    ("skos:definition",     SKOS.definition),
     ("dcterms:description", DCTERMS.description),
     ("dcterms:created",     DCTERMS.created),
     ("dcterms:modified",    DCTERMS.modified),
@@ -284,7 +283,12 @@ def main(argv: list[str]) -> int:
     if argv:
         paths = [Path(p) for p in argv]
     else:
-        paths = sorted(default_dir.glob("*.ttl"))
+        # Neither declares a ConceptScheme: agents.ttl is the central agent
+        # registry, and *-mappings.ttl files carry only SKOS match triples.
+        paths = sorted(
+            p for p in default_dir.glob("*.ttl")
+            if p.name != "agents.ttl" and not p.name.endswith("-mappings.ttl")
+        )
 
     if not paths:
         print(f"No .ttl files found in {default_dir}")

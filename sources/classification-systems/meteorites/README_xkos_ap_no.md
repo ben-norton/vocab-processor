@@ -97,5 +97,11 @@ literature reference containing internal semicolons).
 
 ## Reproducibility
 
-`build_xkos_ap_no.py` (rdflib) rebuilds the file from the three CSVs;
+`build_xkos_ap_no.py` (rdflib) rebuilds the file from the CSVs. Scheme-level
+metadata (base IRI, namespaces, prefixes, titles, publisher, language,
+`modified`) is read from `meteorite_classification_scheme.csv`, where a value
+can reference another key as `{key}` (e.g. `{base_iri}/level/`). Run
+`python src/build_xkos_ap_no.py` from any directory. It writes
+`meteorite-classification.ttl` here and an identical copy to
+`data/vocabs/` for the publisher;
 validation: `python3 -m pyshacl -s xkos-ap-no-shacl-v1.ttl <file>`.

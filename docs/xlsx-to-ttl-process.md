@@ -20,7 +20,7 @@ Each workbook follows a shared convention but with variations that the pipeline 
 - **Concept Scheme** — a two-column, key-value layout whose rows describe the vocabulary as a whole.
 - **Concepts** — a tabular sheet with one row per concept.
 - **Namespaces** *(or* **Namespeces**, *a recurring typo)* — prefix-to-IRI mappings.
-- **Agents** *(optional)* — rows describing creators, editors, publishers, affiliations, and roles.
+An **Agents** sheet in a vocabulary workbook is **ignored**. Agents are populated strictly from `sources/xlsx/Agents.xlsx`, which `xlsx-to-ttl.py` reads once per run: its `map` sheet (`agentURI`, `resourceURI`, `hadRole`) assigns agents and roles to each scheme IRI, and those agents are appended to that vocabulary's TTL. When a workbook still has an Agents sheet, the output header notes that it was ignored. `Agents.xlsx` also feeds `build_agents_ttl.py`, which writes the central agent registry `data/vocabs/agents.ttl` (used by vocab-publisher as its agent lookup). After editing `Agents.xlsx`, re-run both scripts.
 
 Additional sheets (`Meta`, `Mappings`, `SSSOM`) exist in the workbooks but are out of scope for this SKOS scheme file. Mappings belong in separate files.
 
@@ -34,7 +34,6 @@ Three naming styles coexist across the four workbooks, and the pipeline normaliz
 
 ### Optional elements
 
-- The `Agents` sheet is absent in `HazardTypes.xlsx` — handled by omitting the Agents block and the `prov:qualifiedAttribution` properties on the scheme.
 - The `skos:broader` column is absent in flat vocabularies (CPP, HAZ) — handled by simply not emitting broader triples.
 - The `skos:inScheme` column is absent in HAZ — handled by defaulting to the scheme IRI on each concept.
 
@@ -46,7 +45,18 @@ Each generated `.ttl` file follows the same layout:
 2. **Prefix declarations** — a fixed set of standard prefixes plus any workbook-specific prefixes from the Namespaces sheet that aren't redundant
 3. **ConceptScheme block** — one `skos:ConceptScheme` node with all metadata properties
 4. **Concepts section** — one block per `skos:Concept`
-5. **Agents section** *(when present)* — `schema:Person` / `schema:Organization` descriptions, plus the affiliation organizations
+
+5. **Agents section** — for each agent mapped to the scheme in `Agents.xlsx`, plus every registry agent it references (memberOf, parent organisation, relations — transitively): a `schema:Person` / `schema:Organization` block rendered by `build_agents_ttl.render_agent_block`.
+
+The scheme block carries one `prov:qualifiedAttribution` per mapped agent:
+
+```turtle
+prov:qualifiedAttribution [
+    a             prov:Attribution ;
+    prov:agent    <agent-iri> ;
+    dcat:hadRole  isoroles:publisher , isoroles:author ;
+] ;
+```
 
 ## Field mapping
 
@@ -59,7 +69,7 @@ Each generated `.ttl` file follows the same layout:
 | `title` | `dcterms:title` | `@en` |
 | `definition` | `skos:definition` | Triple-quoted `@en` (long text) |
 | `description` | `dcterms:description` | Triple-quoted `@en` |
-| `publisher` / `creator` / `contributor` | `dcterms:publisher` / `creator` / `contributor` | Resolves to agent IRI (or blank node) via fuzzy name match against the Agents sheet; falls back to an `@en` string literal if no match |
+| `publisher` / `creator` / `contributor` | `dcterms:publisher` / `creator` / `contributor` | IRIs of the agents mapped to the scheme in `Agents.xlsx` with role `isoroles:publisher` / `isoroles:author` or `originator` / `isoroles:contributor`; falls back to the `@en` literal from the Concept Scheme sheet when no agent has the role |
 | `provenance` | `dcterms:provenance` | `@en` |
 | `created` / `modified` | `dcterms:created` / `modified` | `YYYYMMDD` integer converted to `xsd:date` (`2026-04-09`) |
 | `version` | `dcat:version` | Plain string (DCAT convention) |
@@ -92,27 +102,6 @@ Each generated `.ttl` file follows the same layout:
 
 Each concept is also typed `a skos:Concept`.
 
-### Agents sheet → PROV attribution + `schema:*` descriptions
-
-Each agent row produces:
-
-- A node typed by `agentType` (e.g., `schema:Person`, `schema:Organization`), identified by `agentURI` when present, otherwise a named blank node `_:agent_<slug_of_name>`.
-- `schema:name`, `schema:email`, and `schema:affiliation` properties from the corresponding columns.
-- `schema:parentOrganization` as a blank-node `schema:Organization` with `schema:name`.
-- A separate `schema:Organization` node for the `affiliationURI` with `schema:name = affiliationName`.
-
-Roles are expressed on the scheme via a `prov:qualifiedAttribution` blank node:
-
-```turtle
-prov:qualifiedAttribution [
-    a             prov:Attribution ;
-    prov:agent    <agent-iri> ;
-    dcat:hadRole  isoroles:editor ;
-] ;
-```
-
-Multiple roles in one cell (e.g., `isoroles:publisher, isoroles:creator`) become multiple `dcat:hadRole` objects on the same attribution.
-
 ### Namespaces sheet → `@prefix` declarations
 
 A fixed set of standard prefixes is always emitted regardless of the source sheet (`dcat`, `dcterms`, `isoroles`, `owl`, `prov`, `rdf`, `rdfs`, `reg`, `schema`, `skos`, `status`, `vann`, `vocdermods`, `xsd`). Workbook-specific prefixes from the sheet are added after that, deduplicated by namespace value against the standard set.
@@ -121,8 +110,8 @@ A fixed set of standard prefixes is always emitted regardless of the source shee
 
 These are places where the spreadsheet was ambiguous or where multiple valid encodings existed, resolved consistently across all four files:
 
-- **Agents without an `agentURI` get a named blank node** rather than falling back to `affiliationURI`. This avoids conflating agent identity with affiliation — particularly important for CPP, where the Task Group's affiliation is `https://tdwg.org` (the parent org, not the group).
-- **Roles are expressed via `prov:qualifiedAttribution`** with `dcat:hadRole` pointing to `isoroles:*`, rather than treating `isoroles:*` values as predicates. `dcterms:publisher` / `creator` / `contributor` still point directly at agent IRIs for consumers that don't traverse PROV.
+- **Agents are authored once in `Agents.xlsx`, centralised in `agents.ttl`, and embedded per vocabulary.** `agents.ttl` remains the single registry and the publisher's lookup. Each vocabulary TTL also carries copies of its own agent descriptions and role attributions, so an individually exported vocabulary has no dependency on `agents.ttl`.
+- **Roles are expressed via `prov:qualifiedAttribution`** with `dcat:hadRole` pointing to `isoroles:*` (the pattern `vocab-publisher`'s `profiles.ttl` renders). `dcterms:publisher` / `creator` / `contributor` also point directly at the agent IRIs, for consumers that don't traverse PROV.
 - **`regstatus:derivationMode` is emitted as `reg:derivationMode`.** The `regstatus:` prefix isn't declared in any sheet, and semantically `derivationMode` is a property rather than a status value; `reg:derivationMode` matches the Prez / linked.data.gov.au convention paired with `vocdermods:` values.
 - **Dates typed as `xsd:date`** (`dcterms:created`, `dcterms:modified`), converting `YYYYMMDD` integers to ISO 8601 `YYYY-MM-DD`.
 - **Version kept as a plain string** per DCAT practice, even when it looks like a date.
@@ -171,4 +160,3 @@ In rough priority order — these would eliminate the majority of the flagged is
 4. Fix GSMT's `skos:broader` for "Rock Core" (currently points to a concept under the wrong base) and NameTypes' `skos:broader` for "Structural Group" (points to `.../group-name`, likely intended `.../group`).
 5. Clean up GSMT's `prov:wasDerivedFrom` cell — one entry is two citations smooshed together, and another is duplicated.
 6. Rename the property `regstatus:derivationMode` to `reg:derivationMode` in the Concept Scheme sheets to match the declared registry prefix.
-7. Add an Agents sheet to `HazardTypes.xlsx` if the scheme is intended to have the same PROV attribution structure as the other three.

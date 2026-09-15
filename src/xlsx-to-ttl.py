@@ -7,9 +7,8 @@ Features included from xlsx-to-ttl.py
   • Workbook-specific namespace prefixes via the Namespaces / Namespeces sheet
   • Formula-aware conceptIRI resolution (="base/"&ColRef cells)
   • Explicit CS_KEY_ALIASES and CONCEPT_COL_ALIASES lookup tables
-  • 3-pass dcterms:creator / publisher / contributor agent resolution
-  • Separate affiliation organisation blocks for schema:Person agents
-  • prov:qualifiedAttribution with dcat:hadRole per agent
+  • dcterms:creator / publisher / contributor resolved from Agents.xlsx roles
+  • prov:qualifiedAttribution + agent descriptions embedded from Agents.xlsx
   • Data-quality issue detection (IRI scheme, inScheme consistency, broader refs)
   • Post-hoc rdflib validation (optional, requires rdflib)
 
@@ -24,8 +23,11 @@ Sheets consumed per workbook:
   Concept Scheme / ConceptScheme  — key-value ConceptScheme metadata
   Concepts                        — one row per concept
   Namespaces / Namespeces         — workbook-specific prefix declarations
-  Agents                          — agent descriptions + role attribution
   Mappings / Mapping              — SKOS match properties per concept
+
+Agents come solely from sources/xlsx/Agents.xlsx (read once per run): its 'map'
+sheet assigns agents + roles to each scheme IRI, and those agents are appended to
+that vocabulary's TTL. An Agents sheet inside a vocabulary workbook is ignored.
 
 Run from the project root:
   python src/xlsx-to-ttl.py                # process all workbooks
@@ -45,11 +47,13 @@ from pathlib import Path
 
 import openpyxl
 
+import build_agents_ttl as _agents
 from cleanup_ttl_prefixes import analyse as _analyse_prefixes, clean_text as _clean_prefixes
 
-ROOT     = Path(__file__).resolve().parents[1]
-XLSX_DIR = ROOT / "sources" / "xlsx"
-OUT_DIR  = ROOT / "data" / "vocabs"
+ROOT        = Path(__file__).resolve().parents[1]
+XLSX_DIR    = ROOT / "sources" / "xlsx"
+OUT_DIR     = ROOT / "data" / "vocabs"
+AGENTS_XLSX = XLSX_DIR / "Agents.xlsx"
 
 # ---------------------------------------------------------------------------
 # Prefix registry
@@ -221,11 +225,6 @@ def iri_slug(iri: str) -> str:
     return iri.rstrip("/").rsplit("/", 1)[-1]
 
 
-def agent_bnode(name: str) -> str:
-    slug = re.sub(r"[^a-z0-9]+", "_", name.lower()).strip("_")
-    return f"_:agent_{slug}"
-
-
 def clean_iri(s: str) -> str:
     """Strip trailing punctuation artifacts (commas, angle brackets) from an IRI."""
     return s.strip().strip("<>").rstrip(",;").strip()
@@ -258,7 +257,6 @@ INDENT    = "    "      # 4 spaces for top-level properties
 PROP_W    = 25          # property column width (value starts at col 29)
 BN_INDENT = "        "  # 8 spaces inside attribution blank nodes
 BN_PROP_W = 17          # property column width inside attribution blank nodes
-INNER_PW  = 13          # property column width inside nested blank nodes
 
 
 def _prop(p: str, v: str, indent: str = INDENT, width: int = PROP_W) -> str:
@@ -431,22 +429,6 @@ def load_namespaces_sheet(ws) -> list[tuple[str, str]]:
     return pairs
 
 
-def load_agents_sheet(ws) -> list[dict]:
-    rows = list(ws.iter_rows(values_only=True))
-    if not rows:
-        return []
-    headers = [str(h).strip() if h not in (None, "") else None for h in rows[0]]
-    agents = []
-    for row in rows[1:]:
-        rec: dict = {}
-        for h, v in zip(headers, row):
-            if h and v not in (None, "") and str(v).strip():
-                rec[h] = str(v).strip()
-        if rec:
-            agents.append(rec)
-    return agents
-
-
 def load_mappings_sheet(ws) -> dict[str, dict[str, list[str]]]:
     """Return {conceptIRI: {matchType: [targetIRI, ...]}} from a Mappings sheet.
 
@@ -574,103 +556,95 @@ def detect_issues(
 
 
 # ---------------------------------------------------------------------------
-# Agent resolution
+# Agents (from Agents.xlsx)
 # ---------------------------------------------------------------------------
 
-def _agent_ref(a: dict) -> str | None:
-    """Return the Turtle subject term for an agent: '<URI>' or '_:bnode'."""
-    uri  = (a.get("agentURI")  or "").strip()
-    name = (a.get("agentName") or "").strip()
-    if uri:
-        return f"<{uri}>"
-    if name:
-        return agent_bnode(name)
-    return None
+# dcterms: property on the scheme → the isoroles that populate it.
+DC_ROLE_MAP: dict[str, tuple[str, ...]] = {
+    "creator":     ("isoroles:author", "isoroles:originator"),
+    "publisher":   ("isoroles:publisher",),
+    "contributor": ("isoroles:contributor",),
+}
+
+
+def _norm_role(r: str) -> str:
+    """Repair the 'isorole:' typo and bracket full-IRI roles."""
+    if r.startswith("isorole:") and not r.startswith("isoroles:"):
+        return "isoroles:" + r[len("isorole:"):]
+    if r.startswith(("http://", "https://")):
+        return f"<{r}>"
+    return r
+
+
+def load_agent_registry(path: Path) -> dict | None:
+    """Load Agents.xlsx: agent rows, agent-agent relations, per-scheme roles.
+
+    Returns None when the workbook is absent. Scheme IRIs from the 'map' sheet
+    are normalised so they match the scheme subjects this script emits.
+    """
+    if not path.is_file():
+        return None
+    agents: dict[str, list[dict]] = {}
+    for row in _agents.load_agents(path):
+        if uri := row.get("agentURI"):
+            agents.setdefault(uri, []).append(row)
+    relations: dict[str, list[tuple[str, str]]] = {}
+    for src, tgt, pred in _agents.load_agent_relations(path):
+        relations.setdefault(src, []).append((pred, tgt))
+    roles: dict[str, dict[str, list[str]]] = {}
+    for agent_uri, resource_uri, had_role in _agents.load_relations(path):
+        per_agent = roles.setdefault(normalize_iri(resource_uri), {}).setdefault(agent_uri, [])
+        for role in map(_norm_role, _agents.split_roles(had_role)):
+            if role not in per_agent:
+                per_agent.append(role)
+    return {"agents": agents, "relations": relations, "roles": roles}
+
+
+def agents_for_scheme(registry: dict, scheme_roles: dict[str, list[str]]) -> list[str]:
+    """Mapped agents plus every registry agent they reference (memberOf, parent
+    organisation, relations), transitively, so each is described in the file."""
+    agents, relations = registry["agents"], registry["relations"]
+    order: list[str] = []
+    queue = list(scheme_roles)
+    while queue:
+        uri = queue.pop(0)
+        if uri in order or uri not in agents:
+            continue
+        order.append(uri)
+        for row in agents[uri]:
+            queue += [row[k] for k in ("memberOfURI", "parentOrgURI") if row.get(k)]
+        queue += [tgt for _pred, tgt in relations.get(uri, [])]
+    return order
 
 
 def resolve_dc_refs(
-    cs_data: dict, agents: list[dict]
+    cs_data: dict, scheme_roles: dict[str, list[str]]
 ) -> tuple[str | None, str | None, str | None]:
     """Return (creator_ref, publisher_ref, contributor_ref) for dcterms: properties.
 
-    Uses a 3-pass strategy:
-      1. Match agents by hadRole value
-      2. Match agents by name against CS-sheet creator / publisher values
-      3. Fall back to the first agent for any still-unresolved slot
-    Final fallback: plain literal from the CS sheet.
+    Each resolves to the IRIs of agents mapped to this scheme in Agents.xlsx
+    with a matching role (DC_ROLE_MAP); failing that, the plain @en literal
+    from the Concept Scheme sheet.
     """
-    creator_name     = (cs_data.get("creator")     or [None])[0]
-    publisher_name   = (cs_data.get("publisher")   or [None])[0]
-    contributor_name = (cs_data.get("contributor") or [None])[0]
+    def ref(key: str) -> str | None:
+        iris = [f"<{a}>" for a, roles in scheme_roles.items()
+                if any(r in DC_ROLE_MAP[key] for r in roles)]
+        if iris:
+            return " , ".join(iris)
+        val = (cs_data.get(key) or [None])[0]
+        return ttl_str(val) if val and str(val).strip() else None
 
-    creator_ref = publisher_ref = contributor_ref = None
-
-    for a in agents:
-        ref   = _agent_ref(a)
-        roles = (a.get("hadRole") or "").lower()
-        if not ref:
-            continue
-        if "creator" in roles and creator_ref is None:
-            creator_ref = ref
-        if "publisher" in roles and publisher_ref is None:
-            publisher_ref = ref
-        if "contributor" in roles and contributor_ref is None:
-            contributor_ref = ref
-
-    for a in agents:
-        name = (a.get("agentName") or "").strip()
-        ref  = _agent_ref(a) or (
-            f"<{a['affiliationURI'].strip()}>" if a.get("affiliationURI") else None
-        )
-        if not ref:
-            continue
-        if creator_name and name == creator_name and creator_ref is None:
-            creator_ref = ref
-        if publisher_name and name == publisher_name and publisher_ref is None:
-            publisher_ref = ref
-        if contributor_name and name == contributor_name and contributor_ref is None:
-            contributor_ref = ref
-
-    if agents:
-        fallback = _agent_ref(agents[0])
-        if fallback is None and agents[0].get("affiliationURI"):
-            fallback = f"<{agents[0]['affiliationURI'].strip()}>"
-        if fallback:
-            creator_ref     = creator_ref     or fallback
-            publisher_ref   = publisher_ref   or fallback
-            contributor_ref = contributor_ref or fallback
-
-    if creator_ref is None and creator_name:
-        creator_ref = ttl_str(creator_name)
-    if publisher_ref is None and publisher_name:
-        publisher_ref = ttl_str(publisher_name)
-    if contributor_ref is None and contributor_name:
-        contributor_ref = ttl_str(contributor_name)
-
-    return creator_ref, publisher_ref, contributor_ref
-
-
-def build_prov_attributions(agents: list[dict]) -> list[tuple[str, list[str]]]:
-    """Return [(agent_ref, [role, ...]), ...], one entry per distinct agent."""
-    seen:  dict[str, list[str]] = {}
-    order: list[str] = []
-    for a in agents:
-        ref   = _agent_ref(a)
-        roles = [r.strip() for r in (a.get("hadRole") or "").split(",") if r.strip()]
-        if not ref:
-            continue
-        if ref not in seen:
-            seen[ref] = []
-            order.append(ref)
-        seen[ref].extend(roles)
-    return [(ref, seen[ref]) for ref in order]
+    return ref("creator"), ref("publisher"), ref("contributor")
 
 
 # ---------------------------------------------------------------------------
 # Block renderers
 # ---------------------------------------------------------------------------
 
-def render_prefix_block(wb_namespaces: list[tuple[str, str]]) -> str:
+def render_prefix_block(
+    wb_namespaces: list[tuple[str, str]],
+    agent_prefixes: list[tuple[str, str]] | None = None,
+) -> str:
     w = max(len(p) + 1 for p, _ in STANDARD_PREFIXES)
     lines = ["# Standard prefixes"]
     for p, ns in STANDARD_PREFIXES:
@@ -689,6 +663,16 @@ def render_prefix_block(wb_namespaces: list[tuple[str, str]]) -> str:
             label = f"{p}:"
             lines.append(f"@prefix {label:<{we}}  <{ns}> .")
 
+    declared = STANDARD_PREFIX_NAMES | {p for p, _ in extras}
+    agent_extras = [(p, ns) for p, ns in agent_prefixes or [] if p not in declared]
+    if agent_extras:
+        wa = max(len(p) + 1 for p, _ in agent_extras)
+        lines.append("")
+        lines.append("# Agent prefixes (from Agents.xlsx)")
+        for p, ns in agent_extras:
+            label = f"{p}:"
+            lines.append(f"@prefix {label:<{wa}}  <{ns}> .")
+
     return "\n".join(lines)
 
 
@@ -698,7 +682,7 @@ def render_concept_scheme(
     creator_ref: str | None,
     publisher_ref: str | None,
     contributor_ref: str | None,
-    prov_attrs: list[tuple[str, list[str]]],
+    attributions: list[tuple[str, list[str]]] | None = None,
 ) -> str:
     # Normalise, as render_ttl() does when deriving the slug and as the concept
     # loaders do for conceptIRI. Emitting the raw value here let a workbook with
@@ -788,20 +772,13 @@ def render_concept_scheme(
     if top_concepts:
         lines.append(_multi("skos:hasTopConcept", [f"<{iri}>" for iri in top_concepts]))
 
-    def _norm_role(r: str) -> str:
-        if r.startswith("isorole:") and not r.startswith("isoroles:"):
-            return "isoroles:" + r[len("isorole:"):]
-        return r
-
-    for agent_ref, roles in prov_attrs:
-        role_vals = " , ".join(_norm_role(r) for r in roles) if roles else "isoroles:unknown"
-        lines.extend([
-            f"{INDENT}prov:qualifiedAttribution [",
-            f"{BN_INDENT}{'a':<{BN_PROP_W}}prov:Attribution ;",
-            f"{BN_INDENT}{'prov:agent':<{BN_PROP_W}}{agent_ref} ;",
-            f"{BN_INDENT}{'dcat:hadRole':<{BN_PROP_W}}{role_vals} ;",
-            f"{INDENT}] ;",
-        ])
+    for agent_ref, roles in attributions or []:
+        lines.append(f"{INDENT}prov:qualifiedAttribution [")
+        lines.append(f"{BN_INDENT}{'a':<{BN_PROP_W}}prov:Attribution ;")
+        lines.append(f"{BN_INDENT}{'prov:agent':<{BN_PROP_W}}{agent_ref} ;")
+        if roles:
+            lines.append(f"{BN_INDENT}{'dcat:hadRole':<{BN_PROP_W}}{' , '.join(roles)} ;")
+        lines.append(f"{INDENT}] ;")
 
     lines.append(".")
     return "\n".join(lines)
@@ -887,74 +864,15 @@ def render_concept(
     return "\n".join(lines)
 
 
-def render_agent_blocks(agents: list[dict]) -> list[str]:
-    """Return Turtle blocks for all agents.
-
-    Emits a separate schema:Organization block for each unique affiliation URI
-    referenced by a schema:Person agent.
-    """
-    blocks: list[str] = []
-    seen_aff: set[str] = set()
-
-    for a in agents:
-        uri      = (a.get("agentURI")        or "").strip()
-        name     = (a.get("agentName")       or "").strip()
-        email    = (a.get("agentEmail")      or "").strip()
-        atype    = (a.get("agentType")       or "schema:Thing").strip()
-        aff_uri  = (a.get("affiliationURI")  or a.get("memberOfURI")   or "").strip()
-        aff_name = (a.get("affiliationName") or a.get("memberOfName")  or "").strip()
-        url      = (a.get("agentURL")        or a.get("agentHomepage") or "").strip()
-
-        subject = f"<{uri}>" if uri else (agent_bnode(name) if name else None)
-        if subject is None:
-            continue
-
-        lines = [subject]
-        lines.append(_prop("a", atype))
-        if name:
-            lines.append(_prop("schema:name", ttl_plain(name)))
-        if email:
-            lines.append(_prop("schema:email", ttl_plain(email)))
-        if url:
-            lines.append(_prop("schema:url", f"<{url}>"))
-
-        is_person = "person" in atype.lower()
-        is_org    = "organization" in atype.lower() or "organisation" in atype.lower()
-
-        if is_person and aff_uri:
-            lines.append(_prop("schema:affiliation", f"<{aff_uri}>"))
-        elif is_org:
-            if aff_uri:
-                lines.append(_prop("schema:affiliation", f"<{aff_uri}>"))
-            if aff_name:
-                lines.extend([
-                    f"{INDENT}schema:parentOrganization [",
-                    f"{BN_INDENT}{'a':<{INNER_PW}}schema:Organization ;",
-                    f"{BN_INDENT}{'schema:name':<{INNER_PW}}{ttl_plain(aff_name)} ;",
-                    f"{INDENT}] ;",
-                ])
-
-        lines.append(".")
-        blocks.append("\n".join(lines))
-
-        # Separate block for person's affiliation organisation
-        if is_person and aff_uri and aff_uri not in seen_aff:
-            seen_aff.add(aff_uri)
-            aff_lines = [f"<{aff_uri}>", _prop("a", "schema:Organization")]
-            if aff_name:
-                aff_lines.append(_prop("schema:name", ttl_plain(aff_name)))
-            aff_lines.append(".")
-            blocks.append("\n".join(aff_lines))
-
-    return blocks
-
-
 # ---------------------------------------------------------------------------
 # Main pipeline
 # ---------------------------------------------------------------------------
 
-def render_ttl(xlsx_path: Path) -> tuple[str, str]:
-    """Return (ttl_text, scheme_slug) for a given workbook.
+def render_ttl(xlsx_path: Path, registry: dict | None = None) -> tuple[str, str, str]:
+    """Return (ttl_text, scheme_slug, scheme_iri) for a given workbook.
+
+    `registry` is the loaded Agents.xlsx (load_agent_registry); agents mapped
+    to this scheme there are appended to the output.
 
     The workbook is loaded twice:
       data_only=False  — preserves formula strings for conceptIRI resolution
@@ -967,13 +885,12 @@ def render_ttl(xlsx_path: Path) -> tuple[str, str]:
     cs_ws,  _       = _find_ws(wb_calc, "Concept Scheme", "ConceptScheme")
     con_ws, _       = _find_ws(wb_raw,  "Concepts")
     ns_ws,  ns_name = _find_ws(wb_calc, "Namespaces", "Namespeces")
-    ag_ws,  _       = _find_ws(wb_calc, "Agents")
+    ag_ws,  _       = _find_ws(wb_calc, "Agents")   # detected only, to note it is ignored
     map_ws, _       = _find_ws(wb_calc, "Mappings", "Mapping")
 
     cs_data       = load_cs_sheet(cs_ws)         if cs_ws  else {}
     concepts      = load_concepts_sheet(con_ws)  if con_ws else []
     wb_namespaces = load_namespaces_sheet(ns_ws) if ns_ws  else []
-    agents        = load_agents_sheet(ag_ws)     if ag_ws  else []
     mappings      = load_mappings_sheet(map_ws)  if map_ws else {}
 
     scheme_iri = str((cs_data.get("vocabularyIRI") or [""])[0]).strip()
@@ -993,16 +910,29 @@ def render_ttl(xlsx_path: Path) -> tuple[str, str]:
             seen_top.add(c_iri)
             top_concepts.append(c_iri)
 
-    creator_ref, publisher_ref, contributor_ref = resolve_dc_refs(cs_data, agents)
-    prov_attrs = build_prov_attributions(agents)
+    scheme_roles = dict(registry["roles"].get(scheme_iri, {})) if registry else {}
+    agent_uris   = agents_for_scheme(registry, scheme_roles) if registry else []
+    used_agent_prefixes: set[str] = set()
+    agent_blocks = [
+        _agents.render_agent_block(
+            uri, registry["agents"][uri], registry["relations"].get(uri, []),
+            used_agent_prefixes,
+        )
+        for uri in agent_uris
+    ]
+    agent_prefixes = [(p, ns) for p, ns in _agents.PREFIXES if p in used_agent_prefixes]
+    attributions   = [(f"<{a}>", roles) for a, roles in scheme_roles.items()]
+
+    creator_ref, publisher_ref, contributor_ref = resolve_dc_refs(cs_data, scheme_roles)
     issues     = detect_issues(cs_data, concepts, ns_name)
 
     sheets_used: list[str] = []
     if cs_ws:  sheets_used.append("Concept Scheme")
     if con_ws: sheets_used.append("Concepts")
     if ns_ws:  sheets_used.append(ns_name or "Namespaces")
-    if ag_ws:  sheets_used.append("Agents")
-    if map_ws: sheets_used.append("Mappings")
+    # A Mappings sheet with only column headers counts as absent.
+    if any(t for m in mappings.values() for t in m.values()):
+        sheets_used.append("Mappings")
 
     today = _dt.date.today().isoformat()
     out: list[str] = []
@@ -1011,6 +941,14 @@ def render_ttl(xlsx_path: Path) -> tuple[str, str]:
     out.append(f"# {vocab_name} — SKOS ConceptScheme")
     out.append(f"# Generated from {xlsx_path.name}")
     out.append(f"# Source sheets used: {', '.join(sheets_used)}")
+    if ag_ws:
+        out.append("# Agents sheet ignored — agents come from Agents.xlsx")
+    if registry is not None:
+        if scheme_roles:
+            out.append(f"# Agents: {len(scheme_roles)} mapped to this scheme in Agents.xlsx, "
+                       f"{len(agent_uris)} described below")
+        else:
+            out.append("# Agents: none mapped to this scheme in the Agents.xlsx 'map' sheet")
     out.append(f"# Generated: {today}")
     if issues:
         out.append("#")
@@ -1022,7 +960,7 @@ def render_ttl(xlsx_path: Path) -> tuple[str, str]:
                 out.append(f"#  {ln}")
     out.append("")
 
-    out.append(render_prefix_block(wb_namespaces))
+    out.append(render_prefix_block(wb_namespaces, agent_prefixes))
     out.append("")
 
     out.append("# " + "=" * 76)
@@ -1032,7 +970,7 @@ def render_ttl(xlsx_path: Path) -> tuple[str, str]:
     out.append(render_concept_scheme(
         cs_data, top_concepts,
         creator_ref, publisher_ref, contributor_ref,
-        prov_attrs,
+        attributions,
     ))
     out.append("")
 
@@ -1044,18 +982,16 @@ def render_ttl(xlsx_path: Path) -> tuple[str, str]:
         out.append(render_concept(rec, scheme_iri, mappings))
         out.append("")
 
-    if agents:
-        agent_blocks = render_agent_blocks(agents)
-        if agent_blocks:
-            out.append("# " + "=" * 76)
-            out.append("# Agents")
-            out.append("# " + "=" * 76)
+    if agent_blocks:
+        out.append("# " + "=" * 76)
+        out.append("# Agents (from Agents.xlsx)")
+        out.append("# " + "=" * 76)
+        out.append("")
+        for block in agent_blocks:
+            out.append(block)
             out.append("")
-            for block in agent_blocks:
-                out.append(block)
-                out.append("")
 
-    return "\n".join(out).rstrip() + "\n", scheme_slug
+    return "\n".join(out).rstrip() + "\n", scheme_slug, scheme_iri
 
 
 def main() -> None:
@@ -1101,13 +1037,19 @@ def main() -> None:
         print(f"No .xlsx files found in {XLSX_DIR}")
         return
 
-    processed: list[Path] = []
+    registry = load_agent_registry(AGENTS_XLSX)
+    if registry is None:
+        print(f"WARNING: {AGENTS_XLSX.relative_to(ROOT)} not found — no agents will be embedded")
+
+    processed:    list[Path] = []
+    seen_schemes: set[str]   = set()
     for xlsx in xlsx_files:
         try:
-            ttl, slug = render_ttl(xlsx)
+            ttl, slug, scheme_iri = render_ttl(xlsx, registry)
         except Exception as exc:
             print(f"ERROR processing {xlsx.name}: {exc}")
             continue
+        seen_schemes.add(scheme_iri)
         out_path = OUT_DIR / f"{slug}.ttl"
         out_path.write_text(ttl, encoding="utf-8")
         print(f"wrote {out_path.relative_to(ROOT)}  ({len(ttl):,} bytes)")
@@ -1118,6 +1060,12 @@ def main() -> None:
             cleaned = _clean_prefixes(ttl, set(unused))
             out_path.write_text(cleaned, encoding="utf-8")
             print(f"  removed unused prefixes: {', '.join(sorted(unused))}")
+
+    if registry and not args.vocab:
+        unmatched = sorted(set(registry["roles"]) - seen_schemes)
+        if unmatched:
+            print("WARNING: Agents.xlsx 'map' sheet references scheme IRI(s) "
+                  "with no vocabulary workbook:\n  " + "\n  ".join(unmatched))
 
     try:
         import rdflib

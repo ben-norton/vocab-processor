@@ -27,7 +27,7 @@ mclvl:clan a xkos:ClassificationLevel ;
         mc:irons,
         mc:lunar-moon,
         mc:martian-snc,
-        mc:pallasites-stony-iron,
+        mc:pallasites,
         mc:winonaite-iab-iiicd-clan ;
     skos:prefLabel "Clan level"@en .
 
@@ -87,9 +87,9 @@ mclvl:group a xkos:ClassificationLevel ;
         mc:ll-low-iron-low-metal,
         mc:lodranite,
         mc:main-group-pallasite,
-        mc:mesosiderite-stony-iron,
+        mc:mesosiderite,
         mc:nakhlite,
-        mc:orthopyroxenite-alh-84001,
+        mc:orthopyroxenite,
         mc:pyroxene-pallasite,
         mc:r-rumuruti-type,
         mc:shergottite,
@@ -344,8 +344,8 @@ mc:eagle-station-pallasite a skos:Concept ;
     dct:identifier "eagle-station-pallasite" ;
     dct:source mcref:weisberg2006 ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
-    xkos:specializes mc:pallasites-stony-iron ;
-    skos:broader mc:pallasites-stony-iron ;
+    xkos:specializes mc:pallasites ;
+    skos:broader mc:pallasites ;
     skos:definition "Eagle Station grouplet; more ferroan, Ca-rich olivine and distinct O-isotopes; metal resembles IIF irons (higher Ni and Ir)."@en ;
     skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
     skos:notation "ES PAL" ;
@@ -613,15 +613,15 @@ mc:main-group-pallasite a skos:Concept ;
     dct:identifier "main-group-pallasite" ;
     dct:source mcref:weisberg2006 ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
-    xkos:specializes mc:pallasites-stony-iron ;
-    skos:broader mc:pallasites-stony-iron ;
+    xkos:specializes mc:pallasites ;
+    skos:broader mc:pallasites ;
     skos:definition "Main-group pallasites; olivine-metal rocks whose metal resembles Ni-rich IIIAB irons and whose O-isotopes match the HEDs (no proven genetic link)."@en ;
     skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
     skos:notation "MG PAL" ;
     skos:prefLabel "Main-group pallasite"@en .
 
-mc:mesosiderite-stony-iron a skos:Concept ;
-    dct:identifier "mesosiderite-stony-iron" ;
+mc:mesosiderite a skos:Concept ;
+    dct:identifier "mesosiderite" ;
     dct:source mcref:weisberg2006 ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:achondrites ;
@@ -630,7 +630,7 @@ mc:mesosiderite-stony-iron a skos:Concept ;
     skos:editorialNote "Connects directly to Achondrites"@en ;
     skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
     skos:notation "MES" ;
-    skos:prefLabel "Mesosiderite (stony-iron)"@en .
+    skos:prefLabel "Mesosiderite"@en .
 
 mc:nakhlite a skos:Concept ;
     dct:identifier "nakhlite" ;
@@ -643,8 +643,8 @@ mc:nakhlite a skos:Concept ;
     skos:notation "NAK" ;
     skos:prefLabel "Nakhlite"@en .
 
-mc:orthopyroxenite-alh-84001 a skos:Concept ;
-    dct:identifier "orthopyroxenite-alh-84001" ;
+mc:orthopyroxenite a skos:Concept ;
+    dct:identifier "orthopyroxenite" ;
     dct:source mcref:weisberg2006 ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:martian-snc ;
@@ -652,14 +652,14 @@ mc:orthopyroxenite-alh-84001 a skos:Concept ;
     skos:definition "Orthopyroxenite represented by ALH 84001, a ~4.5 Ga coarse orthopyroxene cumulate from Mars, originally misclassified as a diogenite."@en ;
     skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
     skos:notation "OPX" ;
-    skos:prefLabel "Orthopyroxenite (ALH 84001)"@en .
+    skos:prefLabel "Orthopyroxenite"@en .
 
 mc:pyroxene-pallasite a skos:Concept ;
     dct:identifier "pyroxene-pallasite" ;
     dct:source mcref:weisberg2006 ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
-    xkos:specializes mc:pallasites-stony-iron ;
-    skos:broader mc:pallasites-stony-iron ;
+    xkos:specializes mc:pallasites ;
+    skos:broader mc:pallasites ;
     skos:definition "Pyroxene-pallasite grouplet (e.g., Vermillion, Y-8451); contain mm-sized pyroxene, with metal and O-isotopes distinguishing them from the other pallasites."@en ;
     skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
     skos:notation "PP PAL" ;
@@ -908,10 +908,10 @@ mc:hed-clan-vesta a skos:Concept ;
         mc:eucrite,
         mc:howardite ;
     skos:notation "Vesta?" ;
-    skos:prefLabel "HED clan (Vesta?)"@en .
+    skos:prefLabel "HED clan (Vesta)"@en .
 
-mc:pallasites-stony-iron a skos:Concept ;
-    dct:identifier "pallasites-stony-iron" ;
+mc:pallasites a skos:Concept ;
+    dct:identifier "pallasites" ;
     dct:source mcref:weisberg2006 ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:generalizes mc:eagle-station-pallasite,
@@ -926,7 +926,7 @@ mc:pallasites-stony-iron a skos:Concept ;
         mc:main-group-pallasite,
         mc:pyroxene-pallasite ;
     skos:notation "PAL" ;
-    skos:prefLabel "Pallasites (stony-iron)"@en .
+    skos:prefLabel "Pallasites"@en .
 
 mc:winonaite-iab-iiicd-clan a skos:Concept ;
     dct:identifier "winonaite-iab-iiicd-clan" ;
@@ -999,7 +999,7 @@ mc:martian-snc a skos:Concept ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:generalizes mc:chassignite,
         mc:nakhlite,
-        mc:orthopyroxenite-alh-84001,
+        mc:orthopyroxenite,
         mc:shergottite ;
     xkos:specializes mc:achondrites ;
     skos:broader mc:achondrites ;
@@ -1007,7 +1007,7 @@ mc:martian-snc a skos:Concept ;
     skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
     skos:narrower mc:chassignite,
         mc:nakhlite,
-        mc:orthopyroxenite-alh-84001,
+        mc:orthopyroxenite,
         mc:shergottite ;
     skos:notation "Mars" ;
     skos:prefLabel "Martian (SNC)"@en .
@@ -1063,8 +1063,8 @@ mc:achondrites a skos:Concept ;
         mc:irons,
         mc:lunar-moon,
         mc:martian-snc,
-        mc:mesosiderite-stony-iron,
-        mc:pallasites-stony-iron ;
+        mc:mesosiderite,
+        mc:pallasites ;
     xkos:specializes mc:meteorites ;
     skos:broader mc:meteorites ;
     skos:definition "Differentiated meteorites - igneous rocks, melt residues, or breccias of igneous fragments - from asteroids, Mars and the Moon that experienced a high degree of melting; includes stones, stony-irons and irons."@en ;
@@ -1076,8 +1076,8 @@ mc:achondrites a skos:Concept ;
         mc:irons,
         mc:lunar-moon,
         mc:martian-snc,
-        mc:mesosiderite-stony-iron,
-        mc:pallasites-stony-iron ;
+        mc:mesosiderite,
+        mc:pallasites ;
     skos:notation "Achondrites" ;
     skos:prefLabel "Achondrites"@en .
 
@@ -1186,12 +1186,12 @@ mcref:weisberg2006 a dct:BibliographicResource ;
         mc:lunar-moon,
         mc:main-group-pallasite,
         mc:martian-snc,
-        mc:mesosiderite-stony-iron,
+        mc:mesosiderite,
         mc:meteorites,
         mc:nakhlite,
         mc:ordinary-chondrites,
-        mc:orthopyroxenite-alh-84001,
-        mc:pallasites-stony-iron,
+        mc:orthopyroxenite,
+        mc:pallasites,
         mc:primitive-achondrites,
         mc:pyroxene-pallasite,
         mc:r-rumuruti-type,

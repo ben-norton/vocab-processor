@@ -3,16 +3,23 @@
 Build an XKOS-AP-NO conformant serialization of the Weisberg, McCoy & Krot
 (2006) meteorite classification.
 
-Inputs : meteorite_classification.csv  (items; columns per data dictionary)
+Inputs (sources/classification-systems/meteorites/):
+         meteorite_classification_scheme.csv (scheme-level metadata: IRIs,
+                                        namespaces, prefixes, titles, publisher,
+                                        language, date; key,value,notes rows)
+         meteorite_classification.csv  (items; columns per data dictionary)
          meteorite_data_dictionary.csv (column semantics -> predicate mapping)
          meteorite_sources.csv         (bibliography -> provenance resources)
+
+Values in the scheme CSV may reference other keys as {key}, e.g.
+level_namespace = {base_iri}/level/, so the base domain is edited in one place.
 Profile: xkos-ap-no-shacl-v1.ttl (Norwegian application profile of XKOS)
 
 Column -> RDF mapping (informed by the data dictionary):
   id          -> row key only (hierarchy joins); the item IRI is minted from
-                 `name` as a lower-case hyphenated slug, mc:<slug>, matching
-                 the IRI pattern of the other geospecimens vocabularies
-                 (https://kos.geospecimens.org/def/meteorite-classification/<slug>).
+                 `name` as a lower-case hyphenated slug, <concept_namespace><slug>,
+                 matching the IRI pattern of the other geospecimens vocabularies
+                 (e.g. https://kos.geospecimens.org/def/meteorite-classification/<slug>).
                  dct:identifier carries the same slug literal.
   parent_id   -> skos:broader + xkos:specializes (inverses asserted)
   rank        -> skos:member from the matching xkos:ClassificationLevel
@@ -25,35 +32,75 @@ Column -> RDF mapping (informed by the data dictionary):
 """
 import csv
 import re
+from datetime import date
+from pathlib import Path
 from rdflib import Graph, Namespace, Literal, URIRef, BNode, RDF, RDFS, XSD
 from rdflib.namespace import SKOS, DCTERMS, FOAF
 from rdflib.collection import Collection
 
-BASE   = "https://kos.geospecimens.org/def/meteorite-classification/"
-MC     = Namespace(BASE)
-MCLVL  = Namespace(BASE + "level/")
-MCIT   = Namespace(BASE + "item-type/")
-MCREF  = Namespace(BASE + "reference/")
+ROOT = Path(__file__).resolve().parents[1]
+UP   = ROOT / "sources" / "classification-systems" / "meteorites"
+
+REQUIRED_META = [
+    "scheme_iri", "concept_namespace", "concept_prefix", "level_namespace",
+    "level_prefix", "item_type_namespace", "item_type_prefix",
+    "reference_namespace", "reference_prefix", "title", "description",
+    "source_reference", "creator_iri", "language_iri", "publisher_iri",
+    "publisher_name", "publisher_homepage", "rank_scheme_iri",
+    "rank_scheme_title", "rank_scheme_description",
+]
+
+
+def load_scheme_meta(path: Path) -> dict[str, str]:
+    """Read key,value rows from the scheme metadata CSV and resolve {key}
+    references between values (e.g. {base_iri}/level/)."""
+    with open(path, encoding="utf-8-sig", newline="") as f:
+        meta = {r["key"].strip(): (r["value"] or "").strip()
+                for r in csv.DictReader(f) if (r["key"] or "").strip()}
+    ref = re.compile(r"\{(\w+)\}")
+    for _ in range(len(meta)):
+        resolved = {k: ref.sub(lambda m: meta.get(m.group(1), m.group(0)), v)
+                    for k, v in meta.items()}
+        if resolved == meta:
+            break
+        meta = resolved
+    missing    = [k for k in REQUIRED_META if not meta.get(k)]
+    unresolved = {k: v for k, v in meta.items() if ref.search(v)}
+    if missing or unresolved:
+        raise SystemExit(f"{path.name}: missing keys {missing}, "
+                         f"unresolved references {unresolved}")
+    return meta
+
+
+META = load_scheme_meta(UP / "meteorite_classification_scheme.csv")
+
+MC     = Namespace(META["concept_namespace"])
+MCLVL  = Namespace(META["level_namespace"])
+MCIT   = Namespace(META["item_type_namespace"])
+MCREF  = Namespace(META["reference_namespace"])
 XKOS   = Namespace("http://rdf-vocabulary.ddialliance.org/xkos#")
 UNESKOS= Namespace("http://purl.org/umu/uneskos#")
-EULANG = URIRef("http://publications.europa.eu/resource/authority/language/ENG")
+EULANG = URIRef(META["language_iri"])
 
 g = Graph()
-for p, n in [("mc", MC), ("mclvl", MCLVL), ("mcit", MCIT), ("mcref", MCREF),
+for p, n in [(META["concept_prefix"], MC), (META["level_prefix"], MCLVL),
+             (META["item_type_prefix"], MCIT), (META["reference_prefix"], MCREF),
              ("xkos", XKOS), ("uneskos", UNESKOS), ("skos", SKOS),
              ("dct", DCTERMS), ("foaf", FOAF), ("xsd", XSD)]:
     g.bind(p, n)
 
-UP = "../sources/classification-systems/meteorites/"
-items   = list(csv.DictReader(open(UP + "meteorite_classification.csv", encoding="utf-8-sig")))
-sources = list(csv.DictReader(open(UP + "meteorite_sources.csv", encoding="utf-8-sig")))
+items   = list(csv.DictReader(open(UP / "meteorite_classification.csv", encoding="utf-8-sig")))
+sources = list(csv.DictReader(open(UP / "meteorite_sources.csv", encoding="utf-8-sig")))
 
-# The main scheme lives at the base IRI (no trailing path segment), consistent
-# with the other geospecimens vocabularies, e.g. .../def/hazard-type.
-scheme      = URIRef(BASE.rstrip("/"))
-rank_scheme = MC["item-types"]
-agent       = MC["agent/geospecimens"]
-today       = Literal("2026-06-11", datatype=XSD.date)
+if META["source_reference"] not in {s["cite_key"] for s in sources}:
+    raise SystemExit(f"source_reference {META['source_reference']!r} is not a "
+                     "cite_key in meteorite_sources.csv")
+
+scheme      = URIRef(META["scheme_iri"])
+rank_scheme = URIRef(META["rank_scheme_iri"])
+agent       = URIRef(META["publisher_iri"])
+creator     = URIRef(META["creator_iri"])
+today       = Literal(META.get("modified") or date.today().isoformat(), datatype=XSD.date)
 
 def slugify(text):
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
@@ -70,8 +117,8 @@ RANKS = ["division", "class", "clan", "group", "subgroup"]
 
 # ---------------------------------------------------------------- publisher
 g.add((agent, RDF.type, FOAF.Agent))
-g.add((agent, FOAF.name, Literal("geospecimens.org", lang="en")))
-g.add((agent, FOAF.homepage, URIRef("https://kos.geospecimens.org/")))
+g.add((agent, FOAF.name, Literal(META["publisher_name"], lang="en")))
+g.add((agent, FOAF.homepage, URIRef(META["publisher_homepage"])))
 
 # ---------------------------------------------------------------- bibliography
 src_by_short = {}
@@ -92,29 +139,20 @@ for s in sources:
 # ---------------------------------------------------------------- main scheme
 g.add((scheme, RDF.type, SKOS.ConceptScheme))
 g.add((scheme, DCTERMS.identifier, URIRef(str(scheme))))
-g.add((scheme, DCTERMS.title,
-       Literal("Meteorite Classification (Weisberg, McCoy & Krot 2006)", lang="en")))
-g.add((scheme, DCTERMS.description, Literal(
-    "Hierarchical classification of meteorites after Weisberg M. K., McCoy T. J. "
-    "and Krot A. N. (2006) Systematics and Evaluation of Meteorite Classification, "
-    "Fig. 1: chondrites, primitive achondrites and achondrites organized in five "
-    "ranks (division, class, clan, group, subgroup).", lang="en")))
+g.add((scheme, DCTERMS.title, Literal(META["title"], lang="en")))
+g.add((scheme, DCTERMS.description, Literal(META["description"], lang="en")))
 g.add((scheme, DCTERMS.publisher, agent))
-g.add((scheme, DCTERMS.creator, agent))
+g.add((scheme, DCTERMS.creator, creator))
 g.add((scheme, DCTERMS.language, EULANG))
 g.add((scheme, DCTERMS.modified, today))
-g.add((scheme, DCTERMS.source, MCREF.weisberg2006))
-g.add((scheme, XKOS.numberOfLevels, Literal("5", datatype=XSD.positiveInteger)))
+g.add((scheme, DCTERMS.source, MCREF[META["source_reference"]]))
+g.add((scheme, XKOS.numberOfLevels, Literal(str(len(RANKS)), datatype=XSD.positiveInteger)))
 
 # ---------------------------------------------------------------- rank scheme
 g.add((rank_scheme, RDF.type, SKOS.ConceptScheme))
 g.add((rank_scheme, DCTERMS.identifier, URIRef(str(rank_scheme))))
-g.add((rank_scheme, DCTERMS.title,
-       Literal("Meteorite classification item types", lang="en")))
-g.add((rank_scheme, DCTERMS.description, Literal(
-    "Flat vocabulary of the five hierarchy ranks used by the Weisberg, McCoy & "
-    "Krot (2006) meteorite classification; referenced by the classification "
-    "levels via xkos:organizedBy.", lang="en")))
+g.add((rank_scheme, DCTERMS.title, Literal(META["rank_scheme_title"], lang="en")))
+g.add((rank_scheme, DCTERMS.description, Literal(META["rank_scheme_description"], lang="en")))
 g.add((rank_scheme, DCTERMS.publisher, agent))
 g.add((rank_scheme, DCTERMS.language, EULANG))
 g.add((rank_scheme, DCTERMS.modified, today))
@@ -188,7 +226,11 @@ for row in items:
     if row["rank"] in level_iri:
         g.add((level_iri[row["rank"]], SKOS.member, c))
 
-out = "../sources/classification-systems/meteorites/meteorite-classification.ttl"
-g.serialize(out, format="turtle")
+# Written next to the source CSVs and into data/vocabs/ (the copy the
+# publisher picks up), so the two never drift apart.
+ttl = g.serialize(format="turtle")
 print("triples:", len(g))
-print("written:", out)
+for out in (UP / "meteorite-classification.ttl",
+            ROOT / "data" / "vocabs" / "meteorite-classification.ttl"):
+    out.write_text(ttl, encoding="utf-8")
+    print("written:", out.relative_to(ROOT))

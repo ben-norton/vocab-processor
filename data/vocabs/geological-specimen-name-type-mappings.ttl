@@ -1,6 +1,6 @@
 # Geological Specimen Name Type — SKOS Mappings
 # Source: NameTypes.xlsx
-# Generated: 2026-07-27
+# Generated: 2026-09-11
 #
 # This file contains only SKOS match triples.
 # The main vocabulary file carries full concept metadata.

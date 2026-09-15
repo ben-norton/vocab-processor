@@ -1,6 +1,6 @@
 # Aggregate Form — SKOS Mappings
 # Source: AggregateForm.xlsx
-# Generated: 2026-07-27
+# Generated: 2026-09-11
 #
 # This file contains only SKOS match triples.
 # The main vocabulary file carries full concept metadata.
@@ -11,32 +11,32 @@
 # Mappings
 # ============================================================================
 
-<https://kos.resources.org/def/aggregate-form/acicular-parallel>
+<https://kos.geospecimens.org/def/aggregate-form/acicular-parallel>
     a                   skos:Concept ;
     skos:prefLabel      "Acicular Parallel"@en ;
-    skos:broadMatch     <https://kos.resources.org/def/aggregate-form/acicular> .
+    skos:broadMatch     <https://kos.geospecimens.org/def/aggregate-form/acicular> .
 
-<https://kos.resources.org/def/aggregate-form/acicular-radial>
+<https://kos.geospecimens.org/def/aggregate-form/acicular-radial>
     a                   skos:Concept ;
     skos:prefLabel      "Acicular Radial"@en ;
-    skos:broadMatch     <https://kos.resources.org/def/aggregate-form/acicular> .
+    skos:broadMatch     <https://kos.geospecimens.org/def/aggregate-form/acicular> .
 
-<https://kos.resources.org/def/aggregate-form/acicular-random>
+<https://kos.geospecimens.org/def/aggregate-form/acicular-random>
     a                   skos:Concept ;
     skos:prefLabel      "Acicular Random"@en ;
-    skos:broadMatch     <https://kos.resources.org/def/aggregate-form/acicular> .
+    skos:broadMatch     <https://kos.geospecimens.org/def/aggregate-form/acicular> .
 
-<https://kos.resources.org/def/aggregate-form/fibrous-parallel>
+<https://kos.geospecimens.org/def/aggregate-form/fibrous-parallel>
     a                   skos:Concept ;
     skos:prefLabel      "Fibrous, Parallel"@en ;
-    skos:broadMatch     <https://kos.resources.org/def/aggregate-form/fibrous> .
+    skos:broadMatch     <https://kos.geospecimens.org/def/aggregate-form/fibrous> .
 
-<https://kos.resources.org/def/aggregate-form/fibrous-random>
+<https://kos.geospecimens.org/def/aggregate-form/fibrous-random>
     a                   skos:Concept ;
     skos:prefLabel      "Fibrous, Random"@en ;
-    skos:broadMatch     <https://kos.resources.org/def/aggregate-form/fibrous> .
+    skos:broadMatch     <https://kos.geospecimens.org/def/aggregate-form/fibrous> .
 
-<https://kos.resources.org/def/aggregate-form/foliated-lamellar>
+<https://kos.geospecimens.org/def/aggregate-form/foliated-lamellar>
     a                   skos:Concept ;
     skos:prefLabel      "Foliated, Lamellar"@en ;
-    skos:broadMatch     <https://kos.resources.org/def/aggregate-form/fibrous> .
+    skos:broadMatch     <https://kos.geospecimens.org/def/aggregate-form/fibrous> .

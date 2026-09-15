@@ -136,12 +136,12 @@ Notes:
 
 ## 3. Validation — the 8 checks (`validate-ttl.py`)
 
-Runs on `data/vocabs/*.ttl` by default, or any path(s) you pass. **Errors fail
+Runs on `data/vocabs/*.ttl` by default, except `agents.ttl` and `*-mappings.ttl` (no ConceptScheme), or on any path(s) you pass. **Errors fail
 the run (exit 1); warnings don't.**
 
 1. **Turtle syntax** — parses under `rdflib`
 2. **ConceptScheme** — exactly one `skos:ConceptScheme`
-3. **Scheme props** — `skos:prefLabel`, `dcterms:title`, `skos:definition`, `dcterms:description`, `dcterms:created`, `dcterms:modified`, `dcterms:publisher`, `dcterms:creator`, `reg:status`
+3. **Scheme props** — `dcterms:title`, `dcterms:description`, `dcterms:created`, `dcterms:modified`, `dcterms:publisher`, `dcterms:creator`, `reg:status`
 4. **Concept props** — every `skos:Concept` has `skos:prefLabel`, `skos:definition`, `skos:inScheme`, `reg:status`
 5. **inScheme** — each concept's `skos:inScheme` points at the scheme
 6. **Top concepts** — `hasTopConcept` / `topConceptOf` are bidirectionally consistent
@@ -149,7 +149,7 @@ the run (exit 1); warnings don't.**
 8. **Duplicate labels** — no two concepts share a `prefLabel` in the same language
 
 ```bash
-python src/validate-ttl.py                          # all data/vocabs/*.ttl
+python src/validate-ttl.py                          # data/vocabs/*.ttl (minus agents / mappings)
 python src/validate-ttl.py data/vocabs/hazard-type.ttl
 python src/validate-ttl.py data/glossaries/kos-terms/kos-terms.ttl
 ```

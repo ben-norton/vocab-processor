@@ -97,6 +97,15 @@ def escape_ttl(s: str) -> str:
     return s.replace("\\", "\\\\").replace('"', '\\"')
 
 
+def normalize_iri(iri: str) -> str:
+    """Rewrite http://kos.geospecimens.org → https://, as xlsx-to-ttl.py does,
+    so scheme IRIs here match the scheme subjects of the vocabulary files."""
+    iri = iri.strip()
+    if iri.startswith("http://kos.geospecimens.org"):
+        iri = "https://" + iri[len("http://"):]
+    return iri
+
+
 def _scheme_variants(iri: str) -> tuple[str, ...]:
     """Return (iri, iri-with-scheme-swapped) so http↔https data typos still match."""
     if iri.startswith("http://"):
@@ -218,7 +227,7 @@ def load_relations(xlsx_path: Path) -> list[tuple[str, str, str]]:
         if a and r:
             relations.append((
                 str(a).strip(),
-                str(r).strip(),
+                normalize_iri(str(r)),
                 str(role).strip() if role else "",
             ))
     return relations

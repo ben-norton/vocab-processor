@@ -1,13 +1,16 @@
 # Hazard Types — SKOS ConceptScheme
 # Generated from HazardTypes.xlsx
-# Source sheets used: Concept Scheme, Concepts, Namespaces, Agents, Mappings
-# Generated: 2026-07-02
+# Source sheets used: Concept Scheme, Concepts, Namespaces, Mappings
+# Agents sheet ignored — agents come from Agents.xlsx
+# Agents: 2 mapped to this scheme in Agents.xlsx, 4 described below
+# Generated: 2026-09-11
 
 # Standard prefixes
 @prefix dcat:        <http://www.w3.org/ns/dcat#> .
 @prefix dcterms:     <http://purl.org/dc/terms/> .
 @prefix isoroles:    <http://def.isotc211.org/iso19115-1/2014/CitationAndResponsiblePartyInformation/code/CI_RoleCode/> .
 @prefix prov:        <http://www.w3.org/ns/prov#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix reg:         <http://purl.org/linked-data/registry#> .
 @prefix schema:      <https://schema.org/> .
 @prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
@@ -17,19 +20,24 @@
 # Workbook-specific prefixes (from the Namespaces sheet)
 @prefix smpl-cndtn:  <https://linked.data.gov.au/def/sample-condition> .
 
+# Agent prefixes (from Agents.xlsx)
+@prefix agrelon:  <https://d-nb.info/standards/elementset/agrelon#> .
+@prefix cmns-av:  <https://www.omg.org/spec/Commons/AnnotationVocabulary/> .
+@prefix org:      <http://www.w3.org/ns/org#> .
+
 # ============================================================================
 # ConceptScheme
 # ============================================================================
 
-<https://kos.resources.org/def/hazard-type>
+<https://kos.geospecimens.org/def/hazard-type>
     a                        skos:ConceptScheme ;
     skos:prefLabel           "Hazard Types"@en ;
     dcterms:title            "Hazard Types"@en ;
     skos:definition          """The Hazard Type vocabulary is a SKOS concept scheme for describing the nature of hazards associated with specific materials, with coverage spanning the biological and geological collections domains."""@en ;
     dcterms:description      """The Hazard Type vocabulary is a SKOS concept scheme for describing the nature of hazards associated with specific materials, with coverage spanning the biological and geological collections domains."""@en ;
-    dcterms:publisher        _:agent_mineralogy_extension_task_group ;
-    dcterms:creator          _:agent_mineralogy_extension_task_group ;
-    dcterms:contributor      <https://orcid.org/0000-0002-5819-9134> ;
+    dcterms:publisher        <https://kos.geospecimens.org/org/ben-norton> ;
+    dcterms:creator          <https://kos.geospecimens.org/org/ben-norton> ;
+    dcterms:contributor      "TDWG Mineralogy Extension Task Group"@en ;
     dcterms:provenance       "Compiled by the TDWG Mineralogy Extension Task Group to support community use and the new term hazardType, released as part of a broader set of terms extending Darwin Core coverage to mineralogical and geological collections."@en ;
     dcterms:created          "2026-04-09"^^xsd:date ;
     dcterms:modified         "2026-04-09"^^xsd:date ;
@@ -48,21 +56,21 @@
     schema:license           <https://creativecommons.org/licenses/by/4.0/> ;
     reg:derivationMode       <https://linked.data.gov.au/def/vocdermods/subsetting-and-extension> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
-    skos:hasTopConcept       <https://kos.resources.org/def/hazard-type/radioactive> ,
-                             <https://kos.resources.org/def/hazard-type/toxic> ,
-                             <https://kos.resources.org/def/hazard-type/carcinogen> ,
-                             <https://kos.resources.org/def/hazard-type/flammable> ,
-                             <https://kos.resources.org/def/hazard-type/explosive> ,
-                             <https://kos.resources.org/def/hazard-type/corrosive> ;
+    skos:hasTopConcept       <https://kos.geospecimens.org/def/hazard-type/radioactive> ,
+                             <https://kos.geospecimens.org/def/hazard-type/toxic> ,
+                             <https://kos.geospecimens.org/def/hazard-type/carcinogen> ,
+                             <https://kos.geospecimens.org/def/hazard-type/flammable> ,
+                             <https://kos.geospecimens.org/def/hazard-type/explosive> ,
+                             <https://kos.geospecimens.org/def/hazard-type/corrosive> ;
     prov:qualifiedAttribution [
         a                prov:Attribution ;
-        prov:agent       <https://orcid.org/0000-0002-5819-9134> ;
-        dcat:hadRole     isoroles:editor ;
+        prov:agent       <https://kos.geospecimens.org/org/ben-norton> ;
+        dcat:hadRole     isoroles:publisher , isoroles:author ;
     ] ;
     prov:qualifiedAttribution [
         a                prov:Attribution ;
-        prov:agent       _:agent_mineralogy_extension_task_group ;
-        dcat:hadRole     isoroles:publisher , isoroles:creator ;
+        prov:agent       <https://kos.geospecimens.org/org/minext> ;
+        dcat:hadRole     isoroles:editor , isoroles:custodian ;
     ] ;
 .
 
@@ -70,93 +78,114 @@
 # Concepts
 # ============================================================================
 
-<https://kos.resources.org/def/hazard-type/radioactive>
+<https://kos.geospecimens.org/def/hazard-type/radioactive>
     a                        skos:Concept ;
     skos:prefLabel           "Radioactive"@en ;
     skos:definition          """Any material containing unstable atoms that emit ionizing radiation as it decays."""@en ;
     dcterms:provenance       "Term is exact match with the concept defined by the NCIT Thesaurus. Therefore, the conceptIRI, prefLabel, and definition are maintained."@en ;
-    skos:inScheme            <https://kos.resources.org/def/hazard-type> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/hazard-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
-    skos:topConceptOf        <https://kos.resources.org/def/hazard-type> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/hazard-type> ;
     skos:notation            "radioactive" ;
     skos:exactMatch          <http://purl.obolibrary.org/obo/NCIT_C347> ;
 .
 
-<https://kos.resources.org/def/hazard-type/toxic>
+<https://kos.geospecimens.org/def/hazard-type/toxic>
     a                        skos:Concept ;
     skos:prefLabel           "Toxic"@en ;
     skos:definition          """A chemical or biological substance which is capable of causing illness, debilitation or death, to living organisms, tissues or cells."""@en ;
     dcterms:provenance       "Term is exact match with the concept defined by the Experimental Condition Ontology. Therefore, the conceptIRI, prefLabel, and definition are maintained."@en ;
-    skos:inScheme            <https://kos.resources.org/def/hazard-type> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/hazard-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
-    skos:topConceptOf        <https://kos.resources.org/def/hazard-type> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/hazard-type> ;
     skos:notation            "toxic" ;
     skos:exactMatch          <http://purl.obolibrary.org/obo/XCO_0000239> ;
 .
 
-<https://kos.resources.org/def/hazard-type/carcinogen>
+<https://kos.geospecimens.org/def/hazard-type/carcinogen>
     a                        skos:Concept ;
     skos:prefLabel           "Carcinogen"@en ;
     skos:definition          """A role played by a chemical compound which is known to induce a process of carcinogenesis by corrupting normal cellular pathways, leading to the acquistion of tumoral capabilities."""@en ;
     dcterms:provenance       "Term is exact match with the concept defined by he Chemical Entities of Biological Interest concept scheme. Therefore, the conceptIRI, prefLabel, and definition are maintained."@en ;
-    skos:inScheme            <https://kos.resources.org/def/hazard-type> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/hazard-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
-    skos:topConceptOf        <https://kos.resources.org/def/hazard-type> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/hazard-type> ;
     skos:notation            "carcinogen" ;
     skos:exactMatch          <http://purl.obolibrary.org/obo/CHEBI_50903> ;
 .
 
-<https://kos.resources.org/def/hazard-type/flammable>
+<https://kos.geospecimens.org/def/hazard-type/flammable>
     a                        skos:Concept ;
     skos:prefLabel           "Flammable"@en ;
     skos:definition          """A sample or preparation containing inflammable, flammable or flame-sustaining materials, whether naturally, or as part of treatment or storage materials."""@en ;
-    skos:inScheme            <https://kos.resources.org/def/hazard-type> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/hazard-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
-    skos:topConceptOf        <https://kos.resources.org/def/hazard-type> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/hazard-type> ;
     skos:notation            "flammable" ;
     skos:exactMatch          <https://linked.data.gov.au/def/sample-condition/flammable> ;
 .
 
-<https://kos.resources.org/def/hazard-type/explosive>
+<https://kos.geospecimens.org/def/hazard-type/explosive>
     a                        skos:Concept ;
     skos:prefLabel           "Explosive"@en ;
     skos:definition          """A solid or liquid chemical which is in itself capable by chemical reaction of producing gas at such a temperature and pressure and at such a speed as to cause damage to the surroundings."""@en ;
     dcterms:provenance       "Definition based on the US Code of Federal Regulations. Occupational Health and Safety Standards. Section 1910."@en ;
-    skos:inScheme            <https://kos.resources.org/def/hazard-type> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/hazard-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
-    skos:topConceptOf        <https://kos.resources.org/def/hazard-type> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/hazard-type> ;
     skos:notation            "explosive" ;
 .
 
-<https://kos.resources.org/def/hazard-type/corrosive>
+<https://kos.geospecimens.org/def/hazard-type/corrosive>
     a                        skos:Concept ;
     skos:prefLabel           "Corrosive"@en ;
     skos:definition          """A material that causes visible destruction of, or irreversible alterations in living tissue by chemical action at the site of contact."""@en ;
     dcterms:provenance       "Definition is based on the US Code of Federal Regulations. Occupational Health and Safety Standards."@en ;
-    skos:inScheme            <https://kos.resources.org/def/hazard-type> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/hazard-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
-    skos:topConceptOf        <https://kos.resources.org/def/hazard-type> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/hazard-type> ;
     skos:notation            "corrosive" ;
 .
 
 # ============================================================================
-# Agents
+# Agents (from Agents.xlsx)
 # ============================================================================
 
-<https://orcid.org/0000-0002-5819-9134>
-    a                        schema:Person ;
-    schema:name              "Ben Norton" ;
-    schema:email             "ben.norton@yale.edu" ;
-    schema:affiliation       <https://scientific-collections.gbif.org/institution/75f50140-830d-4630-a290-3d6e951a7c29> ;
+<https://kos.geospecimens.org/org/ben-norton>
+    a schema:Person ;
+    schema:name "Ben Norton" ;
+    schema:identifier <https://orcid.org/0000-0002-5819-9134> ;
+    schema:email "ben.norton@yale.edu" ;
+    schema:url "https://mbnorton.com"^^xsd:anyURI ;
+    schema:parentOrganization <https://kos.geospecimens.org/org/yale-university> ;
+    schema:memberOf <https://kos.geospecimens.org/org/minext> ;
+    agrelon:hasEmployer <https://kos.geospecimens.org/org/yale-university> ;
+    agrelon:isMemberOf <https://kos.geospecimens.org/org/minext> ;
 .
 
-<https://scientific-collections.gbif.org/institution/75f50140-830d-4630-a290-3d6e951a7c29>
-    a                        schema:Organization ;
-    schema:name              "Yale University" ;
+<https://kos.geospecimens.org/org/minext>
+    a schema:Organization ;
+    schema:name "Mineralogy Extension Task Group" ;
+    schema:url "https://www.tdwg.org/community/esp/mineralogy/"^^xsd:anyURI ;
+    schema:homepage "https://www.tdwg.org/community/esp/mineralogy/"^^xsd:anyURI ;
+    cmns-av:acronym "MinExt" ;
+    schema:memberOf <https://kos.geospecimens.org/org/tdwg> ;
+    org:unitOf <https://kos.geospecimens.org/org/tdwg> ;
 .
 
-_:agent_mineralogy_extension_task_group
-    a                        schema:Organization ;
-    schema:name              "Mineralogy Extension Task Group" ;
-    schema:affiliation       <https://www.tdwg.org/community/esp/mineralogy/> ;
+<https://kos.geospecimens.org/org/yale-university>
+    a schema:Organization ;
+    schema:name "Yale University" ;
+    schema:url "https://www.yale.edu"^^xsd:anyURI ;
+    schema:homepage "https://www.yale.edu"^^xsd:anyURI ;
+    rdfs:comment "Also identified by GBIF GRSciColl IRI: https://scientific-collections.gbif.org/institution/75f50140-830d-4630-a290-3d6e951a7c29"@en ;
+.
+
+<https://kos.geospecimens.org/org/tdwg>
+    a schema:Organization ;
+    schema:name "Biodiversity Information Standards" ;
+    schema:url "https://www.tdwg.org"^^xsd:anyURI ;
+    schema:homepage "https://www.tdwg.org"^^xsd:anyURI ;
+    cmns-av:acronym "TDWG" ;
+    rdfs:comment "Taxonomic Databases Working Group, now Biodiversity Information Standards"@en ;
 .

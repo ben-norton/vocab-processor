@@ -1,19 +1,15 @@
 # Luster — SKOS ConceptScheme
 # Generated from Luster.xlsx
-# Source sheets used: Concept Scheme, Concepts, Namespaces, Agents, Mappings
-# Generated: 2026-07-02
-#
-# Data issues / transformation notes:
-#  1. Luster.xlsx writes vocabularyIRI and conceptIRI with the http:// scheme.
-#       Both are normalised to https://kos.geospecimens.org, the canonical host,
-#       by normalize_iri() in src/xlsx-to-ttl.py. The scheme subject and the
-#       concept IRIs therefore share one base and the persistent URIs resolve.
+# Source sheets used: Concept Scheme, Concepts, Namespaces
+# Agents: 2 mapped to this scheme in Agents.xlsx, 4 described below
+# Generated: 2026-09-11
 
 # Standard prefixes
 @prefix dcat:        <http://www.w3.org/ns/dcat#> .
 @prefix dcterms:     <http://purl.org/dc/terms/> .
 @prefix isoroles:    <http://def.isotc211.org/iso19115-1/2014/CitationAndResponsiblePartyInformation/code/CI_RoleCode/> .
 @prefix prov:        <http://www.w3.org/ns/prov#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix reg:         <http://purl.org/linked-data/registry#> .
 @prefix schema:      <https://schema.org/> .
 @prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
@@ -21,6 +17,11 @@
 @prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
 
 # Workbook-specific prefixes (from the Namespaces sheet)
+
+# Agent prefixes (from Agents.xlsx)
+@prefix agrelon:  <https://d-nb.info/standards/elementset/agrelon#> .
+@prefix cmns-av:  <https://www.omg.org/spec/Commons/AnnotationVocabulary/> .
+@prefix org:      <http://www.w3.org/ns/org#> .
 
 # ============================================================================
 # ConceptScheme
@@ -32,9 +33,9 @@
     dcterms:title            "Luster"@en ;
     skos:definition          """Luster (also spelled lustre) is the appearance of a mineral surface in terms of its light-reflecting qualities — the manner, intensity, and quality with which light is reflected from the surface of a mineral. It is a key diagnostic property used in mineral identification and is described qualitatively (e.g. metallic, vitreous, adamantine, pearly, resinous, silky, greasy, waxy, dull) rather than measured numerically."""@en ;
     dcterms:description      """A controlled vocabulary enumerating the types of luster exhibited by minerals — the qualitative descriptors of how light is reflected from a mineral's surface. The scheme provides standardized terms (such as metallic, submetallic, vitreous, adamantine, pearly, resinous, silky, greasy, waxy, and dull) to support the consistent description, cataloguing, and identification of mineral specimens in earth science and geological collections."""@en ;
-    dcterms:publisher        _:agent_mineralogy_extension_task_group ;
-    dcterms:creator          _:agent_mineralogy_extension_task_group ;
-    dcterms:contributor      <https://kos.resources.org/org/1aa8581b-5ccd-48b1-b72e-5622a35b87af> ;
+    dcterms:publisher        <https://kos.geospecimens.org/org/ben-norton> ;
+    dcterms:creator          <https://kos.geospecimens.org/org/ben-norton> ;
+    dcterms:contributor      "TDWG Mineralogy Extension Task Group"@en ;
     dcterms:provenance       "Compiled by members of the TDWG Mineralogy Extension Task Group to support earth sciences collection community. The vocabulary was released as part of a broader set of terms extending Darwin Core coverage to mineralogical and geological collections."@en ;
     dcterms:created          "2026-04-28"^^xsd:date ;
     dcterms:modified         "2026-04-28"^^xsd:date ;
@@ -64,18 +65,13 @@
                              <https://kos.geospecimens.org/def/luster/translucent> ;
     prov:qualifiedAttribution [
         a                prov:Attribution ;
-        prov:agent       <https://kos.resources.org/org/1aa8581b-5ccd-48b1-b72e-5622a35b87af> ;
-        dcat:hadRole     isoroles:editor ;
+        prov:agent       <https://kos.geospecimens.org/org/ben-norton> ;
+        dcat:hadRole     isoroles:publisher , isoroles:author ;
     ] ;
     prov:qualifiedAttribution [
         a                prov:Attribution ;
-        prov:agent       _:agent_mineralogy_extension_task_group ;
-        dcat:hadRole     isoroles:publisher , isoroles:creator ;
-    ] ;
-    prov:qualifiedAttribution [
-        a                prov:Attribution ;
-        prov:agent       _:agent_biodiversity_information_standards ;
-        dcat:hadRole     isoroles:unknown ;
+        prov:agent       <https://kos.geospecimens.org/org/minext> ;
+        dcat:hadRole     isoroles:editor , isoroles:custodian ;
     ] ;
 .
 
@@ -219,32 +215,44 @@
 .
 
 # ============================================================================
-# Agents
+# Agents (from Agents.xlsx)
 # ============================================================================
 
-<https://kos.resources.org/org/1aa8581b-5ccd-48b1-b72e-5622a35b87af>
-    a                        schema:Person ;
-    schema:name              "Ben Norton" ;
-    schema:email             "ben.norton@yale.edu" ;
-    schema:affiliation       <https://scientific-collections.gbif.org/institution/75f50140-830d-4630-a290-3d6e951a7c29> ;
+<https://kos.geospecimens.org/org/ben-norton>
+    a schema:Person ;
+    schema:name "Ben Norton" ;
+    schema:identifier <https://orcid.org/0000-0002-5819-9134> ;
+    schema:email "ben.norton@yale.edu" ;
+    schema:url "https://mbnorton.com"^^xsd:anyURI ;
+    schema:parentOrganization <https://kos.geospecimens.org/org/yale-university> ;
+    schema:memberOf <https://kos.geospecimens.org/org/minext> ;
+    agrelon:hasEmployer <https://kos.geospecimens.org/org/yale-university> ;
+    agrelon:isMemberOf <https://kos.geospecimens.org/org/minext> ;
 .
 
-<https://scientific-collections.gbif.org/institution/75f50140-830d-4630-a290-3d6e951a7c29>
-    a                        schema:Organization ;
+<https://kos.geospecimens.org/org/minext>
+    a schema:Organization ;
+    schema:name "Mineralogy Extension Task Group" ;
+    schema:url "https://www.tdwg.org/community/esp/mineralogy/"^^xsd:anyURI ;
+    schema:homepage "https://www.tdwg.org/community/esp/mineralogy/"^^xsd:anyURI ;
+    cmns-av:acronym "MinExt" ;
+    schema:memberOf <https://kos.geospecimens.org/org/tdwg> ;
+    org:unitOf <https://kos.geospecimens.org/org/tdwg> ;
 .
 
-_:agent_mineralogy_extension_task_group
-    a                        schema:Organization ;
-    schema:name              "Mineralogy Extension Task Group" ;
-    schema:affiliation       <https://www.tdwg.org/community/esp/mineralogy/> ;
-    schema:parentOrganization [
-        a            schema:Organization ;
-        schema:name  "Biodiversity Information Standards (TDWG)" ;
-    ] ;
+<https://kos.geospecimens.org/org/yale-university>
+    a schema:Organization ;
+    schema:name "Yale University" ;
+    schema:url "https://www.yale.edu"^^xsd:anyURI ;
+    schema:homepage "https://www.yale.edu"^^xsd:anyURI ;
+    rdfs:comment "Also identified by GBIF GRSciColl IRI: https://scientific-collections.gbif.org/institution/75f50140-830d-4630-a290-3d6e951a7c29"@en ;
 .
 
-_:agent_biodiversity_information_standards
-    a                        schema:Organization ;
-    schema:name              "Biodiversity Information Standards" ;
-    schema:affiliation       <https://www.tdwg.org> ;
+<https://kos.geospecimens.org/org/tdwg>
+    a schema:Organization ;
+    schema:name "Biodiversity Information Standards" ;
+    schema:url "https://www.tdwg.org"^^xsd:anyURI ;
+    schema:homepage "https://www.tdwg.org"^^xsd:anyURI ;
+    cmns-av:acronym "TDWG" ;
+    rdfs:comment "Taxonomic Databases Working Group, now Biodiversity Information Standards"@en ;
 .

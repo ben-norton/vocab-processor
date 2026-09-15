@@ -1,0 +1,23 @@
+key,value,notes
+base_iri,https://kos.geospecimens.org/def/meteorite-classification,Base IRI (no trailing slash); other values reference it as {base_iri}
+scheme_iri,{base_iri},Main classification skos:ConceptScheme
+concept_namespace,{base_iri}/,Concept IRIs are this namespace plus a slug of the name column in meteorite_classification.csv
+concept_prefix,mc,Turtle prefix for concept_namespace
+level_namespace,{base_iri}/level/,xkos:ClassificationLevel IRIs
+level_prefix,mclvl,Turtle prefix for level_namespace
+item_type_namespace,{base_iri}/item-type/,Rank (item type) concept IRIs
+item_type_prefix,mcit,Turtle prefix for item_type_namespace
+reference_namespace,{base_iri}/reference/,dct:BibliographicResource IRIs (namespace plus cite_key from meteorite_sources.csv)
+reference_prefix,mcref,Turtle prefix for reference_namespace
+title,"Meteorite Classification (Weisberg, McCoy & Krot 2006)",dct:title (@en) of the main scheme
+description,"Hierarchical classification of meteorites after Weisberg M. K., McCoy T. J. and Krot A. N. (2006) Systematics and Evaluation of Meteorite Classification, Fig. 1: chondrites, primitive achondrites and achondrites organized in five ranks (division, class, clan, group, subgroup).",dct:description (@en) of the main scheme
+source_reference,weisberg2006,cite_key in meteorite_sources.csv used as the main scheme's dct:source
+creator_iri,{publisher_iri},dct:creator of the main scheme
+language_iri,http://publications.europa.eu/resource/authority/language/ENG,dct:language of both schemes (EU language authority IRI; required by XKOS-AP-NO)
+modified,2026-06-11,dct:modified of both schemes (YYYY-MM-DD); leave blank to use the build date
+publisher_iri,{base_iri}/agent/geospecimens,dct:publisher of both schemes (typed foaf:Agent)
+publisher_name,geospecimens.org,foaf:name (@en) of the publisher
+publisher_homepage,https://kos.geospecimens.org/,foaf:homepage of the publisher
+rank_scheme_iri,{base_iri}/item-types,Rank vocabulary skos:ConceptScheme (target of xkos:organizedBy)
+rank_scheme_title,Meteorite classification item types,dct:title (@en) of the rank scheme
+rank_scheme_description,"Flat vocabulary of the five hierarchy ranks used by the Weisberg, McCoy & Krot (2006) meteorite classification; referenced by the classification levels via xkos:organizedBy.",dct:description (@en) of the rank scheme

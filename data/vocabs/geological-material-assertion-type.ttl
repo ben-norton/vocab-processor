@@ -1,13 +1,16 @@
 # Geological Material Assertion Types — SKOS ConceptScheme
-# Generated from MaterialAssertions.xlsx
+# Generated from GeologicalMaterialAssertionTypes.xlsx
 # Source sheets used: Concept Scheme, Concepts, Namespaces
-# Agents: none mapped to this scheme in the Agents.xlsx 'map' sheet
+# Agents: 2 mapped to this scheme in Agents.xlsx, 4 described below
 # Generated: 2026-09-30
 
 # Standard prefixes
 @prefix dcat:        <http://www.w3.org/ns/dcat#> .
 @prefix dcterms:     <http://purl.org/dc/terms/> .
+@prefix isoroles:    <http://def.isotc211.org/iso19115-1/2014/CitationAndResponsiblePartyInformation/code/CI_RoleCode/> .
+@prefix prov:        <http://www.w3.org/ns/prov#> .
 @prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix reg:         <http://purl.org/linked-data/registry#> .
 @prefix schema:      <https://schema.org/> .
 @prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
@@ -15,6 +18,11 @@
 @prefix xsd:         <http://www.w3.org/2001/XMLSchema#> .
 
 # Workbook-specific prefixes (from the Namespaces sheet)
+
+# Agent prefixes (from Agents.xlsx)
+@prefix agrelon:  <https://d-nb.info/standards/elementset/agrelon#> .
+@prefix cmns-av:  <https://www.omg.org/spec/Commons/AnnotationVocabulary/> .
+@prefix org:      <http://www.w3.org/ns/org#> .
 
 # ============================================================================
 # ConceptScheme
@@ -24,8 +32,8 @@
     a                        skos:ConceptScheme ;
     dcterms:title            "Geological Material Assertion Types"@en ;
     dcterms:description      """The Geological Material Assertion Types vocabulary provides a standardized set of assertion types for describing the observable, measurable, and structural qualities of geological materials, with particular emphasis on mineral specimens held in earth science collections. It currently contains 17 concepts covering specimen dimensions (verbatim size, measured width, height, and depth in millimeters, maximum axial dimension), crystallographic and morphological characteristics (aggregate form, crystal habit, crystal form, twinning law, cleavage, exsolution texture), optical and surface properties (color, luster, luminescence description), and compositional or associational features (associated minerals, inclusions, alteration description). Each concept is expressed as an rdf:Property with a definition, usage guidance, and examples. The vocabulary was developed by the TDWG Mineralogy Extension Task Group and is intended for use in conjunction with the Darwin Core Data Package (DwC-DP, https://dwc.tdwg.org/dp/), where its terms supply values for the assertionType field of the MaterialAssertion table. In Darwin Core Archives, the same terms may be used in MeasurementOrFact or as keys in dynamicProperties."""@en ;
-    dcterms:publisher        "TDWG Mineralogy Extension Task Group"@en ;
-    dcterms:creator          "TDWG Mineralogy Extension Task Group"@en ;
+    dcterms:publisher        <https://kos.geospecimens.org/org/ben-norton> ;
+    dcterms:creator          <https://kos.geospecimens.org/org/ben-norton> ;
     dcterms:contributor      "TDWG Mineralogy Extension Task Group"@en ;
     dcterms:provenance       "Compiled by the TDWG Mineralogy Extension Task Group for community use and to support the extension release by providing standardized categories for Constituent Part Names, especially those associated with Minerals"@en ;
     dcterms:created          "2026-09-11"^^xsd:date ;
@@ -62,6 +70,16 @@
                              <https://kos.geospecimens.org/def/geological-material-assertion-type/inclusions> ,
                              <https://kos.geospecimens.org/def/geological-material-assertion-type/luminescence-description> ,
                              <https://kos.geospecimens.org/def/geological-material-assertion-type/alteration-description> ;
+    prov:qualifiedAttribution [
+        a                prov:Attribution ;
+        prov:agent       <https://kos.geospecimens.org/org/ben-norton> ;
+        dcat:hadRole     isoroles:publisher , isoroles:author ;
+    ] ;
+    prov:qualifiedAttribution [
+        a                prov:Attribution ;
+        prov:agent       <https://kos.geospecimens.org/org/minext> ;
+        dcat:hadRole     isoroles:editor , isoroles:custodian ;
+    ] ;
 .
 
 # ============================================================================
@@ -250,4 +268,47 @@
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "alterationDescription" ;
+.
+
+# ============================================================================
+# Agents (from Agents.xlsx)
+# ============================================================================
+
+<https://kos.geospecimens.org/org/ben-norton>
+    a schema:Person ;
+    schema:name "Ben Norton" ;
+    schema:identifier <https://orcid.org/0000-0002-5819-9134> ;
+    schema:email "ben.norton@yale.edu" ;
+    schema:url "https://mbnorton.com"^^xsd:anyURI ;
+    schema:parentOrganization <https://kos.geospecimens.org/org/yale-university> ;
+    schema:memberOf <https://kos.geospecimens.org/org/minext> ;
+    agrelon:hasEmployer <https://kos.geospecimens.org/org/yale-university> ;
+    agrelon:isMemberOf <https://kos.geospecimens.org/org/minext> ;
+.
+
+<https://kos.geospecimens.org/org/minext>
+    a schema:Organization ;
+    schema:name "Mineralogy Extension Task Group" ;
+    schema:url "https://www.tdwg.org/community/esp/mineralogy/"^^xsd:anyURI ;
+    schema:homepage "https://www.tdwg.org/community/esp/mineralogy/"^^xsd:anyURI ;
+    cmns-av:acronym "MinExt" ;
+    schema:memberOf <https://kos.geospecimens.org/org/tdwg> ;
+    org:unitOf <https://kos.geospecimens.org/org/tdwg> ;
+.
+
+<https://kos.geospecimens.org/org/yale-university>
+    a schema:Organization ;
+    schema:name "Yale University" ;
+    schema:url "https://www.yale.edu"^^xsd:anyURI ;
+    schema:homepage "https://www.yale.edu"^^xsd:anyURI ;
+    rdfs:comment "Also identified by GBIF GRSciColl IRI: https://scientific-collections.gbif.org/institution/75f50140-830d-4630-a290-3d6e951a7c29"@en ;
+.
+
+<https://kos.geospecimens.org/org/tdwg>
+    a schema:Organization ;
+    schema:name "Biodiversity Information Standards" ;
+    schema:url "https://www.tdwg.org"^^xsd:anyURI ;
+    schema:homepage "https://www.tdwg.org"^^xsd:anyURI ;
+    cmns-av:acronym "TDWG" ;
+    rdfs:comment "Taxonomic Databases Working Group, now Biodiversity Information Standards"@en ;
 .

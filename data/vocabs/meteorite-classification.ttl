@@ -1,11 +1,12 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix mc: <https://kos.geospecimens.org/def/meteorite-classification/> .
-@prefix mcit: <https://kos.geospecimens.org/def/meteorite-classification/item-type/> .
 @prefix mclvl: <https://kos.geospecimens.org/def/meteorite-classification/level/> .
+@prefix mcrank: <https://kos.geospecimens.org/def/meteorite-classification/rank/> .
 @prefix mcref: <https://kos.geospecimens.org/def/meteorite-classification/reference/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix uneskos: <http://purl.org/umu/uneskos#> .
 @prefix xkos: <http://rdf-vocabulary.ddialliance.org/xkos#> .
@@ -15,7 +16,7 @@
 
 mclvl:clan a xkos:ClassificationLevel ;
     xkos:depth "3"^^xsd:positiveInteger ;
-    xkos:organizedBy mcit:clan ;
+    xkos:organizedBy mcrank:clan ;
     skos:member mc:acapulcoite-lodranite-clan,
         mc:ci-clan,
         mc:cm-co-clan,
@@ -33,7 +34,7 @@ mclvl:clan a xkos:ClassificationLevel ;
 
 mclvl:class a xkos:ClassificationLevel ;
     xkos:depth "2"^^xsd:positiveInteger ;
-    xkos:organizedBy mcit:class ;
+    xkos:organizedBy mcrank:class ;
     skos:member mc:carbonaceous-chondrites,
         mc:enstatite-chondrites,
         mc:ordinary-chondrites ;
@@ -41,7 +42,7 @@ mclvl:class a xkos:ClassificationLevel ;
 
 mclvl:division a xkos:ClassificationLevel ;
     xkos:depth "1"^^xsd:positiveInteger ;
-    xkos:organizedBy mcit:division ;
+    xkos:organizedBy mcrank:division ;
     skos:member mc:achondrites,
         mc:chondrites,
         mc:primitive-achondrites ;
@@ -49,7 +50,7 @@ mclvl:division a xkos:ClassificationLevel ;
 
 mclvl:group a xkos:ClassificationLevel ;
     xkos:depth "4"^^xsd:positiveInteger ;
-    xkos:organizedBy mcit:group ;
+    xkos:organizedBy mcrank:group ;
     skos:member mc:acapulcoite,
         mc:angrite,
         mc:aubrite,
@@ -99,7 +100,7 @@ mclvl:group a xkos:ClassificationLevel ;
 
 mclvl:subgroup a xkos:ClassificationLevel ;
     xkos:depth "5"^^xsd:positiveInteger ;
-    xkos:organizedBy mcit:subgroup ;
+    xkos:organizedBy mcrank:subgroup ;
     skos:member mc:cb-subgroup-a,
         mc:cb-subgroup-b,
         mc:cv-subgroup-a-oxidized-allende-like,
@@ -116,43 +117,10 @@ mcref:wassonkallemeyn2002 a dct:BibliographicResource ;
     rdfs:label "Wasson & Kallemeyn (2002)"@en ;
     dct:bibliographicCitation "Wasson J. T. and Kallemeyn G. W. (2002) The IAB iron-meteorite complex: A group, five subgroups, numerous grouplets, closely related, mainly formed by crystal segregation in rapidly cooling melts. Geochimica et Cosmochimica Acta, 66(13), 2445-2473."@en .
 
-<https://kos.geospecimens.org/def/meteorite-classification/agent/geospecimens> a foaf:Agent ;
-    foaf:homepage <https://kos.geospecimens.org/> ;
-    foaf:name "geospecimens.org"@en .
-
-mcit:clan a skos:Concept ;
-    skos:definition "Chondrite or achondrite groups with chemical, mineralogical and isotopic similarities suggesting a common, closely related precursor or formation region."@en ;
-    skos:inScheme mc:item-types ;
-    skos:prefLabel "clan"@en ;
-    skos:topConceptOf mc:item-types .
-
-mcit:class a skos:Concept ;
-    skos:definition "Group of chondrite or achondrite groups sharing primary whole-rock chemical and O-isotopic characteristics."@en ;
-    skos:inScheme mc:item-types ;
-    skos:prefLabel "class"@en ;
-    skos:topConceptOf mc:item-types .
-
-mcit:division a skos:Concept ;
-    skos:definition "Highest rank below the root: chondrites, primitive achondrites and achondrites."@en ;
-    skos:inScheme mc:item-types ;
-    skos:prefLabel "division"@en ;
-    skos:topConceptOf mc:item-types .
-
-mcit:group a skos:Concept ;
-    skos:definition "Minimum of five unpaired meteorites of similar petrologic, chemical and isotopic characteristics; the basic classification unit."@en ;
-    skos:inScheme mc:item-types ;
-    skos:prefLabel "group"@en ;
-    skos:topConceptOf mc:item-types .
-
-mcit:subgroup a skos:Concept ;
-    skos:definition "Subdivision of a group based on secondary chemical or petrographic distinctions."@en ;
-    skos:inScheme mc:item-types ;
-    skos:prefLabel "subgroup"@en ;
-    skos:topConceptOf mc:item-types .
-
 mc:acapulcoite a skos:Concept ;
     dct:identifier "acapulcoite" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:acapulcoite-lodranite-clan ;
     skos:broader mc:acapulcoite-lodranite-clan ;
@@ -161,9 +129,14 @@ mc:acapulcoite a skos:Concept ;
     skos:notation "ACA" ;
     skos:prefLabel "Acapulcoite"@en .
 
+<https://kos.geospecimens.org/def/meteorite-classification/agent/geospecimens> a foaf:Agent ;
+    foaf:homepage <https://kos.geospecimens.org/> ;
+    foaf:name "geospecimens.org"@en .
+
 mc:angrite a skos:Concept ;
     dct:identifier "angrite" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:achondrites ;
     skos:broader mc:achondrites ;
@@ -176,6 +149,7 @@ mc:angrite a skos:Concept ;
 mc:aubrite a skos:Concept ;
     dct:identifier "aubrite" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:achondrites ;
     skos:broader mc:achondrites ;
@@ -188,6 +162,7 @@ mc:aubrite a skos:Concept ;
 mc:brachinite a skos:Concept ;
     dct:identifier "brachinite" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:primitive-achondrites ;
     skos:broader mc:primitive-achondrites ;
@@ -200,6 +175,7 @@ mc:brachinite a skos:Concept ;
 mc:cb-subgroup-a a skos:Concept ;
     dct:identifier "cb-subgroup-a" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:cb-bencubbin-type ;
     skos:broader mc:cb-bencubbin-type ;
@@ -211,6 +187,7 @@ mc:cb-subgroup-a a skos:Concept ;
 mc:cb-subgroup-b a skos:Concept ;
     dct:identifier "cb-subgroup-b" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:cb-bencubbin-type ;
     skos:broader mc:cb-bencubbin-type ;
@@ -222,6 +199,7 @@ mc:cb-subgroup-b a skos:Concept ;
 mc:ch-high-metal a skos:Concept ;
     dct:identifier "ch-high-metal" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:cr-clan ;
     skos:broader mc:cr-clan ;
@@ -233,6 +211,7 @@ mc:ch-high-metal a skos:Concept ;
 mc:chassignite a skos:Concept ;
     dct:identifier "chassignite" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:martian-snc ;
     skos:broader mc:martian-snc ;
@@ -244,6 +223,7 @@ mc:chassignite a skos:Concept ;
 mc:ci-ivuna-type a skos:Concept ;
     dct:identifier "ci-ivuna-type" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:ci-clan ;
     skos:broader mc:ci-clan ;
@@ -255,6 +235,7 @@ mc:ci-ivuna-type a skos:Concept ;
 mc:ck-karoonda-type a skos:Concept ;
     dct:identifier "ck-karoonda-type" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:cv-ck-clan ;
     skos:broader mc:cv-ck-clan ;
@@ -266,6 +247,7 @@ mc:ck-karoonda-type a skos:Concept ;
 mc:cm-mighei-type a skos:Concept ;
     dct:identifier "cm-mighei-type" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:cm-co-clan ;
     skos:broader mc:cm-co-clan ;
@@ -277,6 +259,7 @@ mc:cm-mighei-type a skos:Concept ;
 mc:co-ornans-type a skos:Concept ;
     dct:identifier "co-ornans-type" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:cm-co-clan ;
     skos:broader mc:cm-co-clan ;
@@ -288,6 +271,7 @@ mc:co-ornans-type a skos:Concept ;
 mc:cr-renazzo-type a skos:Concept ;
     dct:identifier "cr-renazzo-type" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:cr-clan ;
     skos:broader mc:cr-clan ;
@@ -299,6 +283,7 @@ mc:cr-renazzo-type a skos:Concept ;
 mc:cv-subgroup-a-oxidized-allende-like a skos:Concept ;
     dct:identifier "cv-subgroup-a-oxidized-allende-like" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:cv-vigarano-type ;
     skos:broader mc:cv-vigarano-type ;
@@ -310,6 +295,7 @@ mc:cv-subgroup-a-oxidized-allende-like a skos:Concept ;
 mc:cv-subgroup-b-oxidized-bali-like a skos:Concept ;
     dct:identifier "cv-subgroup-b-oxidized-bali-like" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:cv-vigarano-type ;
     skos:broader mc:cv-vigarano-type ;
@@ -321,6 +307,7 @@ mc:cv-subgroup-b-oxidized-bali-like a skos:Concept ;
 mc:cv-subgroup-reduced a skos:Concept ;
     dct:identifier "cv-subgroup-reduced" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:cv-vigarano-type ;
     skos:broader mc:cv-vigarano-type ;
@@ -332,6 +319,7 @@ mc:cv-subgroup-reduced a skos:Concept ;
 mc:diogenite a skos:Concept ;
     dct:identifier "diogenite" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:hed-clan-vesta ;
     skos:broader mc:hed-clan-vesta ;
@@ -343,6 +331,7 @@ mc:diogenite a skos:Concept ;
 mc:eagle-station-pallasite a skos:Concept ;
     dct:identifier "eagle-station-pallasite" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:pallasites ;
     skos:broader mc:pallasites ;
@@ -354,6 +343,7 @@ mc:eagle-station-pallasite a skos:Concept ;
 mc:eh-high-iron a skos:Concept ;
     dct:identifier "eh-high-iron" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:eh-el-clan ;
     skos:broader mc:eh-el-clan ;
@@ -365,6 +355,7 @@ mc:eh-high-iron a skos:Concept ;
 mc:el-low-iron a skos:Concept ;
     dct:identifier "el-low-iron" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:eh-el-clan ;
     skos:broader mc:eh-el-clan ;
@@ -376,6 +367,7 @@ mc:el-low-iron a skos:Concept ;
 mc:eucrite a skos:Concept ;
     dct:identifier "eucrite" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:hed-clan-vesta ;
     skos:broader mc:hed-clan-vesta ;
@@ -387,6 +379,7 @@ mc:eucrite a skos:Concept ;
 mc:h-high-iron a skos:Concept ;
     dct:identifier "h-high-iron" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:h-l-ll-clan ;
     skos:broader mc:h-l-ll-clan ;
@@ -398,6 +391,7 @@ mc:h-high-iron a skos:Concept ;
 mc:howardite a skos:Concept ;
     dct:identifier "howardite" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:hed-clan-vesta ;
     skos:broader mc:hed-clan-vesta ;
@@ -410,6 +404,7 @@ mc:iab-iron-silicate-bearing a skos:Concept ;
     dct:identifier "iab-iron-silicate-bearing" ;
     dct:source mcref:wassonkallemeyn2002,
         mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:winonaite-iab-iiicd-clan ;
     skos:broader mc:winonaite-iab-iiicd-clan ;
@@ -422,6 +417,7 @@ mc:ic-iron-group a skos:Concept ;
     dct:identifier "ic-iron-group" ;
     dct:source mcref:scottwasson1975,
         mcref:wassonironseries ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:irons ;
     skos:broader mc:irons ;
@@ -434,6 +430,7 @@ mc:iiab-iron-group a skos:Concept ;
     dct:identifier "iiab-iron-group" ;
     dct:source mcref:scottwasson1975,
         mcref:wassonironseries ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:irons ;
     skos:broader mc:irons ;
@@ -446,6 +443,7 @@ mc:iic-iron-group a skos:Concept ;
     dct:identifier "iic-iron-group" ;
     dct:source mcref:scottwasson1975,
         mcref:wassonironseries ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:irons ;
     skos:broader mc:irons ;
@@ -458,6 +456,7 @@ mc:iid-iron-group a skos:Concept ;
     dct:identifier "iid-iron-group" ;
     dct:source mcref:scottwasson1975,
         mcref:wassonironseries ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:irons ;
     skos:broader mc:irons ;
@@ -471,6 +470,7 @@ mc:iie-iron-group a skos:Concept ;
     dct:source mcref:scottwasson1975,
         mcref:wassonironseries,
         mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:irons ;
     skos:broader mc:irons ;
@@ -483,6 +483,7 @@ mc:iiiab-iron-group a skos:Concept ;
     dct:identifier "iiiab-iron-group" ;
     dct:source mcref:scottwasson1975,
         mcref:wassonironseries ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:irons ;
     skos:broader mc:irons ;
@@ -495,6 +496,7 @@ mc:iiicd-iron-silicate-bearing a skos:Concept ;
     dct:identifier "iiicd-iron-silicate-bearing" ;
     dct:source mcref:wassonkallemeyn2002,
         mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:winonaite-iab-iiicd-clan ;
     skos:broader mc:winonaite-iab-iiicd-clan ;
@@ -507,6 +509,7 @@ mc:iiie-iron-group a skos:Concept ;
     dct:identifier "iiie-iron-group" ;
     dct:source mcref:scottwasson1975,
         mcref:wassonironseries ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:irons ;
     skos:broader mc:irons ;
@@ -519,6 +522,7 @@ mc:iiif-iron-group a skos:Concept ;
     dct:identifier "iiif-iron-group" ;
     dct:source mcref:scottwasson1975,
         mcref:wassonironseries ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:irons ;
     skos:broader mc:irons ;
@@ -531,6 +535,7 @@ mc:iva-iron-group a skos:Concept ;
     dct:identifier "iva-iron-group" ;
     dct:source mcref:scottwasson1975,
         mcref:wassonironseries ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:irons ;
     skos:broader mc:irons ;
@@ -543,6 +548,7 @@ mc:ivb-iron-group a skos:Concept ;
     dct:identifier "ivb-iron-group" ;
     dct:source mcref:scottwasson1975,
         mcref:wassonironseries ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:irons ;
     skos:broader mc:irons ;
@@ -554,6 +560,7 @@ mc:ivb-iron-group a skos:Concept ;
 mc:k-kakangari-type a skos:Concept ;
     dct:identifier "k-kakangari-type" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:chondrites ;
     skos:broader mc:chondrites ;
@@ -566,6 +573,7 @@ mc:k-kakangari-type a skos:Concept ;
 mc:l-low-iron a skos:Concept ;
     dct:identifier "l-low-iron" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:h-l-ll-clan ;
     skos:broader mc:h-l-ll-clan ;
@@ -577,6 +585,7 @@ mc:l-low-iron a skos:Concept ;
 mc:ll-low-iron-low-metal a skos:Concept ;
     dct:identifier "ll-low-iron-low-metal" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:h-l-ll-clan ;
     skos:broader mc:h-l-ll-clan ;
@@ -588,6 +597,7 @@ mc:ll-low-iron-low-metal a skos:Concept ;
 mc:lodranite a skos:Concept ;
     dct:identifier "lodranite" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:acapulcoite-lodranite-clan ;
     skos:broader mc:acapulcoite-lodranite-clan ;
@@ -600,6 +610,7 @@ mc:lunar-moon a skos:Concept ;
     dct:identifier "lunar-moon" ;
     dct:source mcref:lunarlit,
         mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:achondrites ;
     skos:broader mc:achondrites ;
@@ -612,6 +623,7 @@ mc:lunar-moon a skos:Concept ;
 mc:main-group-pallasite a skos:Concept ;
     dct:identifier "main-group-pallasite" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:pallasites ;
     skos:broader mc:pallasites ;
@@ -623,6 +635,7 @@ mc:main-group-pallasite a skos:Concept ;
 mc:mesosiderite a skos:Concept ;
     dct:identifier "mesosiderite" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:achondrites ;
     skos:broader mc:achondrites ;
@@ -635,6 +648,7 @@ mc:mesosiderite a skos:Concept ;
 mc:nakhlite a skos:Concept ;
     dct:identifier "nakhlite" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:martian-snc ;
     skos:broader mc:martian-snc ;
@@ -646,6 +660,7 @@ mc:nakhlite a skos:Concept ;
 mc:orthopyroxenite a skos:Concept ;
     dct:identifier "orthopyroxenite" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:martian-snc ;
     skos:broader mc:martian-snc ;
@@ -657,6 +672,7 @@ mc:orthopyroxenite a skos:Concept ;
 mc:pyroxene-pallasite a skos:Concept ;
     dct:identifier "pyroxene-pallasite" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:pallasites ;
     skos:broader mc:pallasites ;
@@ -668,6 +684,7 @@ mc:pyroxene-pallasite a skos:Concept ;
 mc:r-rumuruti-type a skos:Concept ;
     dct:identifier "r-rumuruti-type" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:chondrites ;
     skos:broader mc:chondrites ;
@@ -677,9 +694,28 @@ mc:r-rumuruti-type a skos:Concept ;
     skos:notation "R" ;
     skos:prefLabel "R (Rumuruti-type)"@en .
 
+mcrank:division a skos:Concept ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    xkos:next mcrank:class ;
+    skos:definition "Highest rank, directly below the root (Meteorites): chondrites, primitive achondrites and achondrites."@en ;
+    skos:inScheme mc:rank ;
+    skos:notation "1" ;
+    skos:prefLabel "division"@en ;
+    skos:topConceptOf mc:rank .
+
+mcrank:subgroup a skos:Concept ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    xkos:previous mcrank:group ;
+    skos:definition "Subdivision of a group based on secondary chemical or petrographic distinctions."@en ;
+    skos:inScheme mc:rank ;
+    skos:notation "5" ;
+    skos:prefLabel "subgroup"@en ;
+    skos:topConceptOf mc:rank .
+
 mc:shergottite a skos:Concept ;
     dct:identifier "shergottite" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:martian-snc ;
     skos:broader mc:martian-snc ;
@@ -691,6 +727,7 @@ mc:shergottite a skos:Concept ;
 mc:ureilite a skos:Concept ;
     dct:identifier "ureilite" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:primitive-achondrites ;
     skos:broader mc:primitive-achondrites ;
@@ -703,6 +740,7 @@ mc:ureilite a skos:Concept ;
 mc:winonaite a skos:Concept ;
     dct:identifier "winonaite" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:specializes mc:winonaite-iab-iiicd-clan ;
     skos:broader mc:winonaite-iab-iiicd-clan ;
@@ -711,9 +749,40 @@ mc:winonaite a skos:Concept ;
     skos:notation "WIN" ;
     skos:prefLabel "Winonaite"@en .
 
+mcrank:clan a skos:Concept ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    xkos:next mcrank:group ;
+    xkos:previous mcrank:class ;
+    skos:definition "Chondrite or achondrite groups with chemical, mineralogical and isotopic similarities suggesting a common, closely related precursor or formation region."@en ;
+    skos:inScheme mc:rank ;
+    skos:notation "3" ;
+    skos:prefLabel "clan"@en ;
+    skos:topConceptOf mc:rank .
+
+mcrank:class a skos:Concept ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    xkos:next mcrank:clan ;
+    xkos:previous mcrank:division ;
+    skos:definition "Group of chondrite or achondrite groups sharing primary whole-rock chemical and O-isotopic characteristics."@en ;
+    skos:inScheme mc:rank ;
+    skos:notation "2" ;
+    skos:prefLabel "class"@en ;
+    skos:topConceptOf mc:rank .
+
+mcrank:group a skos:Concept ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    xkos:next mcrank:subgroup ;
+    xkos:previous mcrank:clan ;
+    skos:definition "Minimum of five unpaired meteorites of similar petrologic, chemical and isotopic characteristics; the basic classification unit."@en ;
+    skos:inScheme mc:rank ;
+    skos:notation "4" ;
+    skos:prefLabel "group"@en ;
+    skos:topConceptOf mc:rank .
+
 mc:ci-clan a skos:Concept ;
     dct:identifier "ci-clan" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:generalizes mc:ci-ivuna-type ;
     xkos:specializes mc:carbonaceous-chondrites ;
@@ -727,6 +796,7 @@ mc:ci-clan a skos:Concept ;
 mc:enstatite-chondrites a skos:Concept ;
     dct:identifier "enstatite-chondrites" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:generalizes mc:eh-el-clan ;
     xkos:specializes mc:chondrites ;
@@ -734,12 +804,13 @@ mc:enstatite-chondrites a skos:Concept ;
     skos:definition "Chondrites formed under highly reducing conditions, with Fe-poor silicates, Si-bearing metal and unusual sulfides/nitrides; O-isotopes on the TF line near Earth and the Moon. Two groups."@en ;
     skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
     skos:narrower mc:eh-el-clan ;
-    skos:notation "E" ;
+    skos:notation "Enstatite" ;
     skos:prefLabel "Enstatite chondrites"@en .
 
 mc:ordinary-chondrites a skos:Concept ;
     dct:identifier "ordinary-chondrites" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:generalizes mc:h-l-ll-clan ;
     xkos:specializes mc:chondrites ;
@@ -747,12 +818,13 @@ mc:ordinary-chondrites a skos:Concept ;
     skos:definition "The most abundant chondrites (>85% of falls); abundant large chondrules, low matrix, refractory-lithophile abundances below CI, O-isotopes above the TF line. The three groups form one clan."@en ;
     skos:inScheme <https://kos.geospecimens.org/def/meteorite-classification> ;
     skos:narrower mc:h-l-ll-clan ;
-    skos:notation "O" ;
+    skos:notation "Ordinary" ;
     skos:prefLabel "Ordinary chondrites"@en .
 
 mc:acapulcoite-lodranite-clan a skos:Concept ;
     dct:identifier "acapulcoite-lodranite-clan" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:generalizes mc:acapulcoite,
         mc:lodranite ;
@@ -768,6 +840,7 @@ mc:acapulcoite-lodranite-clan a skos:Concept ;
 mc:cb-bencubbin-type a skos:Concept ;
     dct:identifier "cb-bencubbin-type" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:generalizes mc:cb-subgroup-a,
         mc:cb-subgroup-b ;
@@ -783,6 +856,7 @@ mc:cb-bencubbin-type a skos:Concept ;
 mc:cm-co-clan a skos:Concept ;
     dct:identifier "cm-co-clan" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:generalizes mc:cm-mighei-type,
         mc:co-ornans-type ;
@@ -798,6 +872,7 @@ mc:cm-co-clan a skos:Concept ;
 mc:cv-ck-clan a skos:Concept ;
     dct:identifier "cv-ck-clan" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:generalizes mc:ck-karoonda-type,
         mc:cv-vigarano-type ;
@@ -813,6 +888,7 @@ mc:cv-ck-clan a skos:Concept ;
 mc:eh-el-clan a skos:Concept ;
     dct:identifier "eh-el-clan" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:generalizes mc:eh-high-iron,
         mc:el-low-iron ;
@@ -828,6 +904,7 @@ mc:eh-el-clan a skos:Concept ;
 mc:meteorites a skos:Concept ;
     dct:identifier "meteorites" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:generalizes mc:achondrites,
         mc:chondrites,
@@ -844,6 +921,7 @@ mc:meteorites a skos:Concept ;
 mc:cr-clan a skos:Concept ;
     dct:identifier "cr-clan" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:generalizes mc:cb-bencubbin-type,
         mc:ch-high-metal,
@@ -861,6 +939,7 @@ mc:cr-clan a skos:Concept ;
 mc:cv-vigarano-type a skos:Concept ;
     dct:identifier "cv-vigarano-type" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:generalizes mc:cv-subgroup-a-oxidized-allende-like,
         mc:cv-subgroup-b-oxidized-bali-like,
@@ -878,6 +957,7 @@ mc:cv-vigarano-type a skos:Concept ;
 mc:h-l-ll-clan a skos:Concept ;
     dct:identifier "h-l-ll-clan" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:generalizes mc:h-high-iron,
         mc:l-low-iron,
@@ -895,6 +975,7 @@ mc:h-l-ll-clan a skos:Concept ;
 mc:hed-clan-vesta a skos:Concept ;
     dct:identifier "hed-clan-vesta" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:generalizes mc:diogenite,
         mc:eucrite,
@@ -913,6 +994,7 @@ mc:hed-clan-vesta a skos:Concept ;
 mc:pallasites a skos:Concept ;
     dct:identifier "pallasites" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:generalizes mc:eagle-station-pallasite,
         mc:main-group-pallasite,
@@ -931,6 +1013,7 @@ mc:pallasites a skos:Concept ;
 mc:winonaite-iab-iiicd-clan a skos:Concept ;
     dct:identifier "winonaite-iab-iiicd-clan" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:generalizes mc:iab-iron-silicate-bearing,
         mc:iiicd-iron-silicate-bearing,
@@ -946,24 +1029,27 @@ mc:winonaite-iab-iiicd-clan a skos:Concept ;
     skos:notation "WIN-IAB-IIICD" ;
     skos:prefLabel "Winonaite-IAB-IIICD clan"@en .
 
-mc:item-types a skos:ConceptScheme ;
-    dct:description "Flat vocabulary of the five hierarchy ranks used by the Weisberg, McCoy & Krot (2006) meteorite classification; referenced by the classification levels via xkos:organizedBy."@en ;
-    dct:identifier mc:item-types ;
+mc:rank a skos:ConceptScheme ;
+    dct:created "2026-06-11"^^xsd:date ;
+    dct:creator <https://kos.geospecimens.org/def/meteorite-classification/agent/geospecimens> ;
+    dct:description "The five hierarchy ranks used by the Weisberg, McCoy & Krot (2006) meteorite classification, in descending order: division (highest; children of the root, Meteorites), class, clan, group, subgroup. Ordered by skos:notation and linked by xkos:next / xkos:previous; referenced by the classification levels via xkos:organizedBy."@en ;
+    dct:identifier mc:rank ;
     dct:language <http://publications.europa.eu/resource/authority/language/ENG> ;
     dct:modified "2026-06-11"^^xsd:date ;
     dct:publisher <https://kos.geospecimens.org/def/meteorite-classification/agent/geospecimens> ;
-    dct:title "Meteorite classification item types"@en ;
-    uneskos:contains mcit:clan,
-        mcit:class,
-        mcit:division,
-        mcit:group,
-        mcit:subgroup ;
+    dct:title "Meteorite classification ranks"@en ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    uneskos:contains mcrank:clan,
+        mcrank:class,
+        mcrank:division,
+        mcrank:group,
+        mcrank:subgroup ;
     xkos:numberOfLevels "1"^^xsd:positiveInteger ;
-    skos:hasTopConcept mcit:clan,
-        mcit:class,
-        mcit:division,
-        mcit:group,
-        mcit:subgroup .
+    skos:hasTopConcept mcrank:clan,
+        mcrank:class,
+        mcrank:division,
+        mcrank:group,
+        mcrank:subgroup .
 
 mcref:scottwasson1975 a dct:BibliographicResource ;
     rdfs:label "Scott & Wasson (1975)"@en ;
@@ -977,6 +1063,7 @@ mcref:wassonironseries a dct:BibliographicResource ;
 mc:carbonaceous-chondrites a skos:Concept ;
     dct:identifier "carbonaceous-chondrites" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:generalizes mc:ci-clan,
         mc:cm-co-clan,
@@ -990,12 +1077,13 @@ mc:carbonaceous-chondrites a skos:Concept ;
         mc:cm-co-clan,
         mc:cr-clan,
         mc:cv-ck-clan ;
-    skos:notation "C" ;
+    skos:notation "Carbonaceous" ;
     skos:prefLabel "Carbonaceous chondrites"@en .
 
 mc:martian-snc a skos:Concept ;
     dct:identifier "martian-snc" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:generalizes mc:chassignite,
         mc:nakhlite,
@@ -1015,6 +1103,7 @@ mc:martian-snc a skos:Concept ;
 mc:primitive-achondrites a skos:Concept ;
     dct:identifier "primitive-achondrites" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:generalizes mc:acapulcoite-lodranite-clan,
         mc:brachinite,
@@ -1034,6 +1123,7 @@ mc:primitive-achondrites a skos:Concept ;
 mc:chondrites a skos:Concept ;
     dct:identifier "chondrites" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:generalizes mc:carbonaceous-chondrites,
         mc:enstatite-chondrites,
@@ -1056,6 +1146,7 @@ mc:chondrites a skos:Concept ;
 mc:achondrites a skos:Concept ;
     dct:identifier "achondrites" ;
     dct:source mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:generalizes mc:angrite,
         mc:aubrite,
@@ -1086,6 +1177,7 @@ mc:irons a skos:Concept ;
     dct:source mcref:scottwasson1975,
         mcref:wassonironseries,
         mcref:weisberg2006 ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:memberOf <https://kos.geospecimens.org/def/meteorite-classification> ;
     xkos:generalizes mc:ic-iron-group,
         mc:iiab-iron-group,
@@ -1121,6 +1213,7 @@ mcref:weisberg2006 a dct:BibliographicResource ;
     dct:identifier <urn:isbn:9780816525621> .
 
 <https://kos.geospecimens.org/def/meteorite-classification> a skos:ConceptScheme ;
+    dct:created "2026-06-11"^^xsd:date ;
     dct:creator <https://kos.geospecimens.org/def/meteorite-classification/agent/geospecimens> ;
     dct:description "Hierarchical classification of meteorites after Weisberg M. K., McCoy T. J. and Krot A. N. (2006) Systematics and Evaluation of Meteorite Classification, Fig. 1: chondrites, primitive achondrites and achondrites organized in five ranks (division, class, clan, group, subgroup)."@en ;
     dct:identifier <https://kos.geospecimens.org/def/meteorite-classification> ;
@@ -1129,6 +1222,7 @@ mcref:weisberg2006 a dct:BibliographicResource ;
     dct:publisher <https://kos.geospecimens.org/def/meteorite-classification/agent/geospecimens> ;
     dct:source mcref:weisberg2006 ;
     dct:title "Meteorite Classification (Weisberg, McCoy & Krot 2006)"@en ;
+    reg:status <https://linked.data.gov.au/def/reg-statuses/experimental> ;
     uneskos:contains mc:acapulcoite,
         mc:acapulcoite-lodranite-clan,
         mc:achondrites,

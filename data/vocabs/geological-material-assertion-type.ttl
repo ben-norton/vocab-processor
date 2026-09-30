@@ -1,21 +1,13 @@
 # Geological Material Assertion Types — SKOS ConceptScheme
 # Generated from MaterialAssertions.xlsx
 # Source sheets used: Concept Scheme, Concepts, Namespaces
-# Agents: 2 mapped to this scheme in Agents.xlsx, 4 described below
-# Generated: 2026-09-11
-#
-# Data issues / transformation notes:
-#  1. vocabularyIRI is <https://kos.geospecimens.org/vocab/geological-material-assertion-types>, but concept IRIs live under 1 distinct parent IRI(s):
-#         - <https://kos.geospecimens.org/def/geological-material-assertion-type> (does NOT match scheme)
-#       Transcribed as-written; reconcile in source if this is unintended.
+# Agents: none mapped to this scheme in the Agents.xlsx 'map' sheet
+# Generated: 2026-09-30
 
 # Standard prefixes
 @prefix dcat:        <http://www.w3.org/ns/dcat#> .
 @prefix dcterms:     <http://purl.org/dc/terms/> .
-@prefix isoroles:    <http://def.isotc211.org/iso19115-1/2014/CitationAndResponsiblePartyInformation/code/CI_RoleCode/> .
-@prefix prov:        <http://www.w3.org/ns/prov#> .
 @prefix rdf:         <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs:        <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix reg:         <http://purl.org/linked-data/registry#> .
 @prefix schema:      <https://schema.org/> .
 @prefix skos:        <http://www.w3.org/2004/02/skos/core#> .
@@ -24,21 +16,16 @@
 
 # Workbook-specific prefixes (from the Namespaces sheet)
 
-# Agent prefixes (from Agents.xlsx)
-@prefix agrelon:  <https://d-nb.info/standards/elementset/agrelon#> .
-@prefix cmns-av:  <https://www.omg.org/spec/Commons/AnnotationVocabulary/> .
-@prefix org:      <http://www.w3.org/ns/org#> .
-
 # ============================================================================
 # ConceptScheme
 # ============================================================================
 
-<https://kos.geospecimens.org/vocab/geological-material-assertion-types>
+<https://kos.geospecimens.org/def/geological-material-assertion-type>
     a                        skos:ConceptScheme ;
     dcterms:title            "Geological Material Assertion Types"@en ;
     dcterms:description      """The Geological Material Assertion Types vocabulary provides a standardized set of assertion types for describing the observable, measurable, and structural qualities of geological materials, with particular emphasis on mineral specimens held in earth science collections. It currently contains 17 concepts covering specimen dimensions (verbatim size, measured width, height, and depth in millimeters, maximum axial dimension), crystallographic and morphological characteristics (aggregate form, crystal habit, crystal form, twinning law, cleavage, exsolution texture), optical and surface properties (color, luster, luminescence description), and compositional or associational features (associated minerals, inclusions, alteration description). Each concept is expressed as an rdf:Property with a definition, usage guidance, and examples. The vocabulary was developed by the TDWG Mineralogy Extension Task Group and is intended for use in conjunction with the Darwin Core Data Package (DwC-DP, https://dwc.tdwg.org/dp/), where its terms supply values for the assertionType field of the MaterialAssertion table. In Darwin Core Archives, the same terms may be used in MeasurementOrFact or as keys in dynamicProperties."""@en ;
-    dcterms:publisher        <https://kos.geospecimens.org/org/ben-norton> ;
-    dcterms:creator          <https://kos.geospecimens.org/org/ben-norton> ;
+    dcterms:publisher        "TDWG Mineralogy Extension Task Group"@en ;
+    dcterms:creator          "TDWG Mineralogy Extension Task Group"@en ;
     dcterms:contributor      "TDWG Mineralogy Extension Task Group"@en ;
     dcterms:provenance       "Compiled by the TDWG Mineralogy Extension Task Group for community use and to support the extension release by providing standardized categories for Constituent Part Names, especially those associated with Minerals"@en ;
     dcterms:created          "2026-09-11"^^xsd:date ;
@@ -75,16 +62,6 @@
                              <https://kos.geospecimens.org/def/geological-material-assertion-type/inclusions> ,
                              <https://kos.geospecimens.org/def/geological-material-assertion-type/luminescence-description> ,
                              <https://kos.geospecimens.org/def/geological-material-assertion-type/alteration-description> ;
-    prov:qualifiedAttribution [
-        a                prov:Attribution ;
-        prov:agent       <https://kos.geospecimens.org/org/ben-norton> ;
-        dcat:hadRole     isoroles:publisher , isoroles:author ;
-    ] ;
-    prov:qualifiedAttribution [
-        a                prov:Attribution ;
-        prov:agent       <https://kos.geospecimens.org/org/minext> ;
-        dcat:hadRole     isoroles:editor , isoroles:custodian ;
-    ] ;
 .
 
 # ============================================================================
@@ -95,9 +72,9 @@
     a                        skos:Concept ;
     skos:prefLabel           "Verbatim Size"@en ;
     skos:definition          """The verbatim size of a specimen as originally described in primary source material."""@en ;
-    skos:inScheme            <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "verbatimSize" ;
 .
 
@@ -106,9 +83,9 @@
     skos:prefLabel           "Measured Width in Millimeters"@en ;
     skos:definition          """Measured width of specimen reported numerically in millimeters."""@en ;
     vann:usageNote           "Height, width, and depth measurements should be measured along perpendicular axes from a single shared point of origin."@en ;
-    skos:inScheme            <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "measuredWidthInMillimeters" ;
 .
 
@@ -117,9 +94,9 @@
     skos:prefLabel           "Measured Height in Millimeters"@en ;
     skos:definition          """Measured height of specimen reported numerically in millimeters."""@en ;
     vann:usageNote           "Height, width, and depth measurements should be measured along perpendicular axes from a single shared point of origin."@en ;
-    skos:inScheme            <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "measuredHeightInMillimeters" ;
 .
 
@@ -128,9 +105,9 @@
     skos:prefLabel           "Measured Depth in Millimeters"@en ;
     skos:definition          """Measured depth of specimen reported numerically in millimeters."""@en ;
     vann:usageNote           "Height, width, and depth measurements should be measured along perpendicular axes from a single shared point of origin."@en ;
-    skos:inScheme            <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "measuredDepthInMillimeters" ;
 .
 
@@ -138,9 +115,9 @@
     a                        skos:Concept ;
     skos:prefLabel           "Maximum Axial Dimension"@en ;
     skos:definition          """Maximum axial dimension of largest crystal measured in millimeters."""@en ;
-    skos:inScheme            <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "maxCrystalDimensionInMillimeters" ;
 .
 
@@ -148,9 +125,9 @@
     a                        skos:Concept ;
     skos:prefLabel           "Associated Minerals"@en ;
     skos:definition          """List of secondary minerals associated with a mineral in a specimen."""@en ;
-    skos:inScheme            <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "associatedMinerals" ;
 .
 
@@ -159,9 +136,9 @@
     skos:prefLabel           "Aggregate Form"@en ;
     skos:definition          """Observable crystal shapes of an assemblage of minerals."""@en ;
     vann:usageNote           "Recommended best practice is to use a controlled vocabulary."@en ;
-    skos:inScheme            <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "aggregateForm" ;
 .
 
@@ -170,9 +147,9 @@
     skos:prefLabel           "Crystal Habit"@en ;
     skos:definition          """A general term for describing the outward appearance of a mineral."""@en ;
     vann:usageNote           "Recommended best practice is to use a controlled vocabulary. For a given type of crystal, the habit may vary from locality to locality depending on environment of growth."@en ;
-    skos:inScheme            <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "crystalHabit" ;
 .
 
@@ -181,9 +158,9 @@
     skos:prefLabel           "Crystal Form"@en ;
     skos:definition          """Geometric shape of a crystal."""@en ;
     vann:usageNote           "Recommended best practice is to use a controlled vocabulary."@en ;
-    skos:inScheme            <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "crystalForm" ;
 .
 
@@ -193,9 +170,9 @@
     skos:altLabel            "Twinning type"@en ,
                              "twinning description"@en ;
     skos:definition          """Short description of any physically discernible twinning."""@en ;
-    skos:inScheme            <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "twinningLaw" ;
 .
 
@@ -204,9 +181,9 @@
     skos:prefLabel           "Color"@en ;
     skos:definition          """The intrinsic color of a geological material under natural light."""@en ;
     vann:usageNote           "Here, color is caused by the absorption, or lack of absorption of different wavelengths of natural light by a particular geological material."@en ;
-    skos:inScheme            <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "color" ;
 .
 
@@ -214,9 +191,9 @@
     a                        skos:Concept ;
     skos:prefLabel           "Exsolution Texture"@en ;
     skos:definition          """A brief description of textures formed by exsolution."""@en ;
-    skos:inScheme            <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "exsolutionTexture" ;
 .
 
@@ -224,9 +201,9 @@
     a                        skos:Concept ;
     skos:prefLabel           "Cleavage"@en ;
     skos:definition          """Type of breakages along a plane of weakness, especially those parallel to crystal faces."""@en ;
-    skos:inScheme            <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "cleavage" ;
 .
 
@@ -235,9 +212,9 @@
     skos:prefLabel           "Luster"@en ;
     skos:definition          """The reflection of light from the surface of a mineral, described by its quality and intensity."""@en ;
     vann:usageNote           "Recommended best practice is to use a controlled vocabulary such as http://kos.geospecimens.org/def/luster."@en ;
-    skos:inScheme            <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "luster" ;
 .
 
@@ -246,9 +223,9 @@
     skos:prefLabel           "Inclusions"@en ;
     skos:definition          """Short description of any inclusions present within a mineral that includes the phase and physical characteristics."""@en ;
     vann:usageNote           "Inclusions are defined as small foreign bodies (solid, liquid, or gas) within the physical bounds of a material commonly trapped during formation."@en ;
-    skos:inScheme            <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "inclusions" ;
 .
 
@@ -257,9 +234,9 @@
     skos:prefLabel           "Luminescence Description"@en ;
     skos:definition          """The type and nature of light emitted from the mineral upon receiving energy from an external source."""@en ;
     vann:usageNote           "Includes all types of luminescence including fluorescence (all wavelengths) and phosphorescence. Recommended best practice is to use nomenclature in part based on the source of energy, or the trigger for the luminescence."@en ;
-    skos:inScheme            <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "luminescence" ;
 .
 
@@ -269,51 +246,8 @@
     skos:definition          """A description of any observed changes in the composition of a geological material brought about by physical or chemical processes related to changes in the physical or chemical environment."""@en ;
     dcterms:provenance       "http://linked.data.gov.au/def/geological-observation-type/alteration, http://www.opengis.net/gsml/4.1/GeoSciML-Extension"@en ;
     vann:usageNote           "Definition adopted from the concepts under term sources: http://linked.data.gov.au/def/geological-observation-type/alteration, http://www.opengis.net/gsml/4.1/GeoSciML-Extension"@en ;
-    skos:inScheme            <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:inScheme            <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
-    skos:topConceptOf        <https://kos.geospecimens.org/vocab/geological-material-assertion-types> ;
+    skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "alterationDescription" ;
-.
-
-# ============================================================================
-# Agents (from Agents.xlsx)
-# ============================================================================
-
-<https://kos.geospecimens.org/org/ben-norton>
-    a schema:Person ;
-    schema:name "Ben Norton" ;
-    schema:identifier <https://orcid.org/0000-0002-5819-9134> ;
-    schema:email "ben.norton@yale.edu" ;
-    schema:url "https://mbnorton.com"^^xsd:anyURI ;
-    schema:parentOrganization <https://kos.geospecimens.org/org/yale-university> ;
-    schema:memberOf <https://kos.geospecimens.org/org/minext> ;
-    agrelon:hasEmployer <https://kos.geospecimens.org/org/yale-university> ;
-    agrelon:isMemberOf <https://kos.geospecimens.org/org/minext> ;
-.
-
-<https://kos.geospecimens.org/org/minext>
-    a schema:Organization ;
-    schema:name "Mineralogy Extension Task Group" ;
-    schema:url "https://www.tdwg.org/community/esp/mineralogy/"^^xsd:anyURI ;
-    schema:homepage "https://www.tdwg.org/community/esp/mineralogy/"^^xsd:anyURI ;
-    cmns-av:acronym "MinExt" ;
-    schema:memberOf <https://kos.geospecimens.org/org/tdwg> ;
-    org:unitOf <https://kos.geospecimens.org/org/tdwg> ;
-.
-
-<https://kos.geospecimens.org/org/yale-university>
-    a schema:Organization ;
-    schema:name "Yale University" ;
-    schema:url "https://www.yale.edu"^^xsd:anyURI ;
-    schema:homepage "https://www.yale.edu"^^xsd:anyURI ;
-    rdfs:comment "Also identified by GBIF GRSciColl IRI: https://scientific-collections.gbif.org/institution/75f50140-830d-4630-a290-3d6e951a7c29"@en ;
-.
-
-<https://kos.geospecimens.org/org/tdwg>
-    a schema:Organization ;
-    schema:name "Biodiversity Information Standards" ;
-    schema:url "https://www.tdwg.org"^^xsd:anyURI ;
-    schema:homepage "https://www.tdwg.org"^^xsd:anyURI ;
-    cmns-av:acronym "TDWG" ;
-    rdfs:comment "Taxonomic Databases Working Group, now Biodiversity Information Standards"@en ;
 .

@@ -1,10 +1,11 @@
-# Quick Reference — Building TTL Vocabularies & Glossaries
+# Quick Reference — Building TTL Vocabularies, Glossaries & Classification Schemes
 
-Cheat-sheet for the `vocab-processor` pipeline. Two independent flows produce
+Cheat-sheet for the `vocab-processor` pipeline. Three independent flows produce
 SKOS Turtle:
 
 - **Vocabularies** — authored in Excel (`sources/xlsx/*.xlsx`) → `data/vocabs/*.ttl`
 - **Glossaries** — authored as a 4-file set (`sources/glossaries/<slug>/`) → `data/glossaries/<slug>/`
+- **Classification schemes** — authored in Excel (`sources/classification-systems/<system>/*.xlsx`) → CSVs → XKOS `data/vocabs/*.ttl`
 
 > Scripts live in **`src/`**. All scripts resolve paths from the project root
 > via `Path(__file__).resolve().parents[1]`, so they run from any working
@@ -67,7 +68,13 @@ Notes:
 - **`publish_to_vocab_publisher.py`** default target is
   `G:\repos\vocabularies\vocab-publisher\data`; pass `--target` on other machines.
   Files present only in the target (`manifest.ttl`, `content/`, `glossaries/`, …)
-  are never touched. Use `--dry-run` to preview.
+  are never touched. Use `--dry-run` to preview. Before overwriting, it backs the
+  target up to `temp/publisher-data-backup-<timestamp>/`, then runs `npm run index`
+  and `verify-static.js` in the publisher. If they pass, the backup is deleted; if
+  they fail, it is kept (exit 1). Other options:
+  - `--restore [NAME]` rolls back to a backup (the newest by default).
+  - `--no-verify` skips the checks and keeps the backup.
+  - `--clean-backups` deletes all backups.
 
 Helper: `python src/cleanup_ttl_prefixes.py [--dry-run]` — idempotent prefix
 scrub of `data/vocabs/*.ttl`.
@@ -134,16 +141,70 @@ Notes:
 
 ---
 
-## 3. Validation — the 8 checks (`validate-ttl.py`)
+## 3. Classification schemes (Excel → CSV → XKOS TTL)
+
+Hierarchical classifications with ranked levels (SKOS + XKOS, profiled by
+XKOS-AP-NO), e.g. the Weisberg, McCoy & Krot (2006) meteorite classification.
+Each system has its own folder, and its **workbook is the source of truth**:
+
+```
+sources/classification-systems/<system>/
+  <system-name>.xlsx      ← edit this (one workbook per folder)
+  *.csv                   ← built from the workbook; don't hand-edit
+  <scheme>.ttl            ← copy of the built TTL, kept next to its sources
+```
+
+### TL;DR (meteorites)
+
+```bash
+python src/build_classification_csvs.py meteorites   # meteorite-classification.xlsx → *.csv
+python src/build_xkos_ap_no.py                        # *.csv → data/vocabs/meteorite-classification.ttl
+python src/validate-ttl.py data/vocabs/meteorite-classification.ttl
+python src/publish_to_vocab_publisher.py              # data/ → vocab-publisher (backup + verify)
+```
+
+### Steps
+
+| # | Command | Input → Output |
+|---|---------|----------------|
+| 1 | Edit `sources/classification-systems/<system>/*.xlsx` | — |
+| 2 | `python src/build_classification_csvs.py <system>\|--all` | every sheet except `README` → `<sheet name>.csv`, plus the derived `<stem>_closure.csv` |
+| 3 | `python src/build_xkos_ap_no.py` | meteorite CSVs → `data/vocabs/meteorite-classification.ttl` (+ a copy next to the CSVs) |
+| 4 | `python src/validate-ttl.py data/vocabs/<scheme>.ttl` | the same 8 checks as vocabularies |
+| 5 | `python src/publish_to_vocab_publisher.py` | as for vocabularies |
+
+### Meteorite workbook sheets (`meteorite-classification.xlsx`)
+
+| Sheet → CSV | Holds | Read by `build_xkos_ap_no.py` |
+|---|---|:--:|
+| `meteorite_classification_scheme` | scheme metadata as `key,value,notes` rows: base IRI, namespaces and prefixes, titles, publisher, language, status, dates, rank scheme. A value can reference another key as `{key}` (e.g. `{base_iri}/level/`) | ✅ |
+| `meteorite_classification` | one row per concept: `id`, `parent_id`, `rank`, `code`, `name`, `description`, `source`, `notes`, … | ✅ |
+| `meteorite_sources` | bibliography (`cite_key`, `short_form`, `full_citation`, `identifier`) | ✅ |
+| `meteorite_data_dictionary` | column definitions | — |
+| `additional_classifications` | candidate subgroup rows not yet merged in | — |
+| *(derived)* `meteorite_closure.csv` | ancestor/descendant pairs, generated from `meteorite_classification` | — |
+
+Notes:
+
+- **Build checks:** `build_classification_csvs.py` checks every `id`/`parent_id` sheet against the parent chain before writing anything. Every `parent_id` must resolve, ids must be unique, and `depth` / `materialized_path` must match the chain. `path_labels` is authored.
+- **Concept IRIs** are `{base_iri}/<slug of name>`, so renaming a row changes its IRI.
+- **`rank`** must be `root` or one of the ranks, highest first: `division` (children of the root), `class`, `clan`, `group`, `subgroup`. Any other value stops the build.
+- **Ranks** are concepts in their own scheme at `{base_iri}/rank/{rank}`. They carry `skos:notation` 1–5 and are chained by `xkos:next` / `xkos:previous`. Level *n* (`xkos:depth` *n*) is `xkos:organizedBy` rank *n*.
+- **vocab-publisher** serves ranks at `/def/{scheme}/rank/{rank}`.
+- **Adding a system:** create a new folder with its workbook, then run step 2. `build_xkos_ap_no.py` is currently meteorite-specific, so a second system also needs its own builder or a generalised one.
+
+---
+
+## 4. Validation — the 8 checks (`validate-ttl.py`)
 
 Runs on `data/vocabs/*.ttl` by default, except `agents.ttl` and `*-mappings.ttl` (no ConceptScheme), or on any path(s) you pass. **Errors fail
 the run (exit 1); warnings don't.**
 
 1. **Turtle syntax** — parses under `rdflib`
-2. **ConceptScheme** — exactly one `skos:ConceptScheme`
+2. **ConceptScheme** — at least one `skos:ConceptScheme`. With several (e.g. a classification plus its rank scheme), the one with the most concepts is primary, and checks 3 and 6–8 run per scheme over its own concepts.
 3. **Scheme props** — `dcterms:title`, `dcterms:description`, `dcterms:created`, `dcterms:modified`, `dcterms:publisher`, `dcterms:creator`, `reg:status`
 4. **Concept props** — every `skos:Concept` has `skos:prefLabel`, `skos:definition`, `skos:inScheme`, `reg:status`
-5. **inScheme** — each concept's `skos:inScheme` points at the scheme
+5. **inScheme** — each concept's `skos:inScheme` points at a scheme declared in the file
 6. **Top concepts** — `hasTopConcept` / `topConceptOf` are bidirectionally consistent
 7. **IRI prefix** — concept IRIs share the scheme's base (http/https mismatch → warning)
 8. **Duplicate labels** — no two concepts share a `prefLabel` in the same language
@@ -156,7 +217,7 @@ python src/validate-ttl.py data/glossaries/kos-terms/kos-terms.ttl
 
 ---
 
-## 4. Downstream — vocab-publisher web app
+## 5. Downstream — vocab-publisher web app
 
 Run from `vocab-publisher/`:
 
@@ -178,6 +239,8 @@ index` manually when the dev server is already running and you've changed a `.tt
 | `data/vocabs/*.ttl` | `xlsx-to-ttl.py` | `sources/xlsx/*.xlsx` |
 | `data/glossaries/<slug>/glossary.json` | `build_glossary_json.py` | the 4-file set |
 | `data/glossaries/<slug>/<slug>.ttl` | `build_glossary_ttl.py` | the 4-file set |
+| `sources/classification-systems/<system>/*.csv` | `build_classification_csvs.py` | the system's `.xlsx` |
+| `data/vocabs/meteorite-classification.ttl` | `build_xkos_ap_no.py` | `meteorite-classification.xlsx` (then rebuild the CSVs) |
 | `vocab-publisher/public/data/*.json` | `npm run index` | the upstream `.ttl` |
 
 Hand-edits to any of these are overwritten on the next build.

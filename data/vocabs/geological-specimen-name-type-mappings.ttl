@@ -1,6 +1,6 @@
 # Geological Specimen Name Type — SKOS Mappings
-# Source: NameTypes.xlsx
-# Generated: 2026-09-11
+# Source: GeologicalSpecimenNameTypes.xlsx
+# Generated: 2026-09-30
 #
 # This file contains only SKOS match triples.
 # The main vocabulary file carries full concept metadata.
@@ -79,4 +79,5 @@
 <https://kos.geospecimens.org/def/geological-specimen-name-type/verbatim-name>
     a                   skos:Concept ;
     skos:prefLabel      "Verbatim Name"@en ;
+    skos:closeMatch     <http://rs.tdwg.org/dwc/terms/vernacularName> ;
     skos:broadMatch     <https://kos.geospecimens.org/def/geological-specimen-name-type/geological-material-name> .

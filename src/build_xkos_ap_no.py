@@ -3,7 +3,10 @@
 Build an XKOS-AP-NO conformant serialization of the Weisberg, McCoy & Krot
 (2006) meteorite classification.
 
-Inputs (sources/classification-systems/meteorites/):
+Inputs (sources/classification-systems/meteorites/), all built from the source
+workbook meteorite-classification.xlsx by
+`python src/build_classification_csvs.py meteorites` — edit the workbook, not
+the CSVs:
          meteorite_classification_scheme.csv (scheme-level metadata: IRIs,
                                         namespaces, prefixes, titles, publisher,
                                         language, date; key,value,notes rows)
@@ -22,8 +25,14 @@ Column -> RDF mapping (informed by the data dictionary):
                  (e.g. https://kos.geospecimens.org/def/meteorite-classification/<slug>).
                  dct:identifier carries the same slug literal.
   parent_id   -> skos:broader + xkos:specializes (inverses asserted)
-  rank        -> skos:member from the matching xkos:ClassificationLevel
-  code        -> skos:notation (plain literal)
+  rank        -> skos:member from the matching xkos:ClassificationLevel. One of
+                 root or the ranks in RANKS, highest first: division (children
+                 of the root), class, clan, group, subgroup. Each rank is a
+                 concept <rank_namespace><rank> (/def/meteorite-classification/
+                 rank/<rank>) in the rank scheme, ordered by skos:notation 1..5
+                 and chained by xkos:next / xkos:previous; level n (xkos:depth n)
+                 is xkos:organizedBy rank n.
+  code       -> skos:notation (plain literal)
   name        -> skos:prefLabel @en
   description -> skos:definition @en  (AP-NO requires a Literal, not a note instance)
   source      -> dct:source -> mcref:* (dct:BibliographicResource)
@@ -43,9 +52,10 @@ UP   = ROOT / "sources" / "classification-systems" / "meteorites"
 
 REQUIRED_META = [
     "scheme_iri", "concept_namespace", "concept_prefix", "level_namespace",
-    "level_prefix", "item_type_namespace", "item_type_prefix",
+    "level_prefix", "rank_namespace", "rank_prefix",
     "reference_namespace", "reference_prefix", "title", "description",
-    "source_reference", "creator_iri", "language_iri", "publisher_iri",
+    "source_reference", "creator_iri", "language_iri", "created", "status",
+    "publisher_iri",
     "publisher_name", "publisher_homepage", "rank_scheme_iri",
     "rank_scheme_title", "rank_scheme_description",
 ]
@@ -76,17 +86,19 @@ META = load_scheme_meta(UP / "meteorite_classification_scheme.csv")
 
 MC     = Namespace(META["concept_namespace"])
 MCLVL  = Namespace(META["level_namespace"])
-MCIT   = Namespace(META["item_type_namespace"])
+MCRANK = Namespace(META["rank_namespace"])
 MCREF  = Namespace(META["reference_namespace"])
 XKOS   = Namespace("http://rdf-vocabulary.ddialliance.org/xkos#")
 UNESKOS= Namespace("http://purl.org/umu/uneskos#")
+REG    = Namespace("http://purl.org/linked-data/registry#")
 EULANG = URIRef(META["language_iri"])
+STATUS = URIRef(META["status"])
 
 g = Graph()
 for p, n in [(META["concept_prefix"], MC), (META["level_prefix"], MCLVL),
-             (META["item_type_prefix"], MCIT), (META["reference_prefix"], MCREF),
+             (META["rank_prefix"], MCRANK), (META["reference_prefix"], MCREF),
              ("xkos", XKOS), ("uneskos", UNESKOS), ("skos", SKOS),
-             ("dct", DCTERMS), ("foaf", FOAF), ("xsd", XSD)]:
+             ("dct", DCTERMS), ("foaf", FOAF), ("reg", REG), ("xsd", XSD)]:
     g.bind(p, n)
 
 items   = list(csv.DictReader(open(UP / "meteorite_classification.csv", encoding="utf-8-sig")))
@@ -101,6 +113,7 @@ rank_scheme = URIRef(META["rank_scheme_iri"])
 agent       = URIRef(META["publisher_iri"])
 creator     = URIRef(META["creator_iri"])
 today       = Literal(META.get("modified") or date.today().isoformat(), datatype=XSD.date)
+created     = Literal(META["created"], datatype=XSD.date)
 
 def slugify(text):
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
@@ -113,7 +126,11 @@ if _dupes:
 
 def iri(row_id): return MC[slugify(by_id[str(row_id).strip()]["name"])]
 
+# Descending: division is the highest rank (the root's children), subgroup the lowest.
 RANKS = ["division", "class", "clan", "group", "subgroup"]
+_bad_ranks = sorted({r["rank"] for r in items} - set(RANKS) - {"root"})
+if _bad_ranks:
+    raise SystemExit("unknown rank values in meteorite_classification.csv: %s" % _bad_ranks)
 
 # ---------------------------------------------------------------- publisher
 g.add((agent, RDF.type, FOAF.Agent))
@@ -144,7 +161,9 @@ g.add((scheme, DCTERMS.description, Literal(META["description"], lang="en")))
 g.add((scheme, DCTERMS.publisher, agent))
 g.add((scheme, DCTERMS.creator, creator))
 g.add((scheme, DCTERMS.language, EULANG))
+g.add((scheme, DCTERMS.created, created))
 g.add((scheme, DCTERMS.modified, today))
+g.add((scheme, REG.status, STATUS))
 g.add((scheme, DCTERMS.source, MCREF[META["source_reference"]]))
 g.add((scheme, XKOS.numberOfLevels, Literal(str(len(RANKS)), datatype=XSD.positiveInteger)))
 
@@ -154,23 +173,31 @@ g.add((rank_scheme, DCTERMS.identifier, URIRef(str(rank_scheme))))
 g.add((rank_scheme, DCTERMS.title, Literal(META["rank_scheme_title"], lang="en")))
 g.add((rank_scheme, DCTERMS.description, Literal(META["rank_scheme_description"], lang="en")))
 g.add((rank_scheme, DCTERMS.publisher, agent))
+g.add((rank_scheme, DCTERMS.creator, creator))
 g.add((rank_scheme, DCTERMS.language, EULANG))
+g.add((rank_scheme, DCTERMS.created, created))
 g.add((rank_scheme, DCTERMS.modified, today))
+g.add((rank_scheme, REG.status, STATUS))
 g.add((rank_scheme, XKOS.numberOfLevels, Literal("1", datatype=XSD.positiveInteger)))
 
 RANK_DEFS = {
-    "division": "Highest rank below the root: chondrites, primitive achondrites and achondrites.",
+    "division": "Highest rank, directly below the root (Meteorites): chondrites, primitive achondrites and achondrites.",
     "class":    "Group of chondrite or achondrite groups sharing primary whole-rock chemical and O-isotopic characteristics.",
     "clan":     "Chondrite or achondrite groups with chemical, mineralogical and isotopic similarities suggesting a common, closely related precursor or formation region.",
     "group":    "Minimum of five unpaired meteorites of similar petrologic, chemical and isotopic characteristics; the basic classification unit.",
     "subgroup": "Subdivision of a group based on secondary chemical or petrographic distinctions.",
 }
-for r in RANKS:
-    c = MCIT[r]
+for n, r in enumerate(RANKS, start=1):
+    c = MCRANK[r]
     g.add((c, RDF.type, SKOS.Concept))
     g.add((c, SKOS.prefLabel, Literal(r, lang="en")))
     g.add((c, SKOS.definition, Literal(RANK_DEFS[r], lang="en")))
+    g.add((c, SKOS.notation, Literal(str(n))))   # rank order, 1 = highest
+    if n < len(RANKS):                           # next = the rank below
+        g.add((c, XKOS.next, MCRANK[RANKS[n]]))
+        g.add((MCRANK[RANKS[n]], XKOS.previous, c))
     g.add((c, SKOS.inScheme, rank_scheme))
+    g.add((c, REG.status, STATUS))
     g.add((c, SKOS.topConceptOf, rank_scheme))
     g.add((rank_scheme, SKOS.hasTopConcept, c))
     g.add((rank_scheme, UNESKOS.contains, c))
@@ -182,7 +209,7 @@ for depth, r in enumerate(RANKS, start=1):
     g.add((lvl, RDF.type, XKOS.ClassificationLevel))
     g.add((lvl, SKOS.prefLabel, Literal("%s level" % r.capitalize(), lang="en")))
     g.add((lvl, XKOS.depth, Literal(str(depth), datatype=XSD.positiveInteger)))
-    g.add((lvl, XKOS.organizedBy, MCIT[r]))
+    g.add((lvl, XKOS.organizedBy, MCRANK[r]))
 
 # ordered, explicitly typed rdf:List for xkos:levels
 head = BNode()
@@ -202,6 +229,7 @@ for row in items:
     g.add((c, SKOS.notation, Literal(row["code"])))
     g.add((c, DCTERMS.identifier, Literal(slugify(row["name"]))))
     g.add((c, SKOS.inScheme, scheme))
+    g.add((c, REG.status, STATUS))
     g.add((c, UNESKOS.memberOf, scheme))
     g.add((scheme, UNESKOS.contains, c))
     if row["description"].strip():

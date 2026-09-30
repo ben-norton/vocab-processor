@@ -1,6 +1,6 @@
 # Constituent Part Proportion — SKOS Mappings
 # Source: ConstituentPartProportions.xlsx
-# Generated: 2026-09-11
+# Generated: 2026-09-30
 #
 # This file contains only SKOS match triples.
 # The main vocabulary file carries full concept metadata.

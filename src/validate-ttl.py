@@ -2,10 +2,12 @@
 
 Checks performed for each .ttl file:
   1. Turtle syntax  — rdflib can parse the file without error
-  2. ConceptScheme  — exactly one skos:ConceptScheme is declared
+  2. ConceptScheme  — at least one skos:ConceptScheme is declared; with several
+                      (e.g. an XKOS classification plus its item-types scheme),
+                      checks 3 and 6–8 run per scheme over that scheme's members
   3. Scheme props   — required dcterms/skos metadata is present
   4. Concept props  — every skos:Concept has prefLabel + definition
-  5. skos:inScheme  — every Concept is linked to the ConceptScheme
+  5. skos:inScheme  — every Concept is linked to a ConceptScheme in the file
   6. Top concept    — hasTopConcept / topConceptOf are bidirectionally consistent
   7. IRI prefix     — concept IRIs share a common base with the scheme IRI
   8. Duplicate labels — no two concepts share the same prefLabel in the same language
@@ -33,6 +35,7 @@ from rdflib.namespace import DCTERMS, RDF, SKOS
 DCAT = Namespace("http://www.w3.org/ns/dcat#")
 SCHEMA = Namespace("https://schema.org/")
 REG = Namespace("http://purl.org/linked-data/registry#")
+XKOS = Namespace("http://rdf-vocabulary.ddialliance.org/xkos#")
 
 # ---------------------------------------------------------------------------
 # Required properties on the ConceptScheme
@@ -125,24 +128,35 @@ def check_syntax(path: Path, report: Report) -> Graph | None:
         return None
 
 
-def check_concept_scheme(g: Graph, report: Report) -> URIRef | None:
-    """Exactly one skos:ConceptScheme must exist; return its IRI."""
-    schemes = list(g.subjects(RDF.type, SKOS.ConceptScheme))
+def check_concept_schemes(g: Graph, report: Report) -> list[URIRef]:
+    """Return the file's skos:ConceptSchemes, primary scheme first.
+
+    A file may declare more than one scheme — e.g. an XKOS classification plus
+    the auxiliary "item types" scheme its levels reference via xkos:organizedBy.
+    As in vocab-publisher's build-vocabs.js, the primary scheme is the one with
+    the most member concepts (tie-break: the one carrying xkos:numberOfLevels).
+    """
+    schemes = [URIRef(s) for s in g.subjects(RDF.type, SKOS.ConceptScheme)]
     if not schemes:
         report.error("No skos:ConceptScheme found.")
-        return None
-    if len(schemes) > 1:
-        report.error(f"Multiple skos:ConceptScheme subjects: {schemes}")
-    return URIRef(schemes[0])
+        return []
+
+    def score(s: URIRef) -> tuple[int, bool]:
+        members = sum(1 for c in g.subjects(SKOS.inScheme, s)
+                      if (c, RDF.type, SKOS.Concept) in g)
+        return members, (s, XKOS.numberOfLevels, None) in g
+
+    return sorted(schemes, key=score, reverse=True)
 
 
 def check_scheme_properties(
-    g: Graph, scheme: URIRef, report: Report
+    g: Graph, scheme: URIRef, report: Report, label_scheme: bool = False
 ) -> None:
     """Required metadata must be present on the ConceptScheme."""
+    which = f" <{scheme}>" if label_scheme else ""
     for label, prop in REQUIRED_SCHEME_PROPS:
         if not any(True for _ in g.objects(scheme, prop)):
-            report.error(f"ConceptScheme missing {label}")
+            report.error(f"ConceptScheme{which} missing {label}")
 
 
 def check_concepts(
@@ -164,12 +178,12 @@ def check_concepts(
 
 
 def check_in_scheme(
-    g: Graph, scheme: URIRef, concepts: list[URIRef], report: Report
+    g: Graph, schemes: list[URIRef], concepts: list[URIRef], report: Report
 ) -> None:
-    """Every Concept's skos:inScheme must point to the declared scheme."""
+    """Every Concept's skos:inScheme must point to a scheme declared in the file."""
     for concept in concepts:
         in_schemes = set(g.objects(concept, SKOS.inScheme))
-        if scheme not in in_schemes:
+        if not in_schemes & set(schemes):
             others = ", ".join(f"<{s}>" for s in in_schemes) or "(none)"
             report.error(
                 f"<{concept}> skos:inScheme does not reference the scheme IRI. "
@@ -262,16 +276,25 @@ def validate_file(path: Path) -> Report:
     if g is None:
         return report  # cannot proceed without a valid graph
 
-    scheme = check_concept_scheme(g, report)
-    if scheme is None:
+    schemes = check_concept_schemes(g, report)
+    if not schemes:
         return report
 
-    check_scheme_properties(g, scheme, report)
-    concepts = check_concepts(g, scheme, report)
-    check_in_scheme(g, scheme, concepts, report)
-    check_top_concepts(g, scheme, concepts, report)
-    check_iri_consistency(g, scheme, concepts, report)
-    check_duplicate_labels(g, concepts, report)
+    concepts = check_concepts(g, schemes[0], report)
+    check_in_scheme(g, schemes, concepts, report)
+    for scheme in schemes:
+        # With several schemes, each is checked against its own members;
+        # concepts outside every scheme fall to the primary one.
+        members = [
+            c for c in concepts
+            if (c, SKOS.inScheme, scheme) in g
+            or (scheme == schemes[0]
+                and not set(g.objects(c, SKOS.inScheme)) & set(schemes))
+        ]
+        check_scheme_properties(g, scheme, report, label_scheme=len(schemes) > 1)
+        check_top_concepts(g, scheme, members, report)
+        check_iri_consistency(g, scheme, members, report)
+        check_duplicate_labels(g, members, report)
 
     return report
 

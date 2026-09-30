@@ -184,3 +184,6 @@ Desktop.ini
 RF18052026090224581736937.ico
 .idea/vcs.xml
 .idea/vcs.xml
+
+# Timestamped vocab-publisher data backups (publish_to_vocab_publisher.py)
+/temp/

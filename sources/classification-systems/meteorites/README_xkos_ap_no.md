@@ -5,7 +5,14 @@ SKOS + XKOS conforming to **XKOS-AP-NO v1.0**, the Norwegian application
 profile of XKOS (Digitaliseringsdirektoratet), validated with pySHACL against
 `xkos-ap-no-shacl-v1.ttl`.
 
-**File:** `meteorite_classification_xkos_ap_no.ttl` (Turtle, 1,122 triples)
+**File:** `meteorite-classification.ttl` (Turtle), also written to `data/vocabs/`.
+
+**Source:** `meteorite-classification.xlsx` in this folder is the source of truth. Build the CSVs from it, then the Turtle:
+
+```bash
+python src/build_classification_csvs.py meteorites   # workbook → *.csv (+ derived meteorite_closure.csv)
+python src/build_xkos_ap_no.py                       # *.csv → meteorite-classification.ttl
+```
 
 ## Validation results
 
@@ -20,9 +27,9 @@ The file also re-parses cleanly with rdflib.
 
 | Resource type | Count | Pattern |
 |---|---|---|
-| `skos:ConceptScheme` | 2 | `mc:wmk2006` (classification), `mc:itemTypes` (rank vocabulary) |
+| `skos:ConceptScheme` | 2 | `mc:wmk2006` (classification), `…/meteorite-classification/rank` (rank vocabulary) |
 | `skos:Concept` (items) | 70 | `mc:MC_0001` … `mc:MC_0070` |
-| `skos:Concept` (rank types) | 5 | `mcit:division` … `mcit:subgroup` |
+| `skos:Concept` (ranks) | 5 | `mcrank:division` … `mcrank:subgroup` = `/def/meteorite-classification/rank/{rank}`; descending (division highest, children of the root), `skos:notation` 1–5, chained by `xkos:next` / `xkos:previous` |
 | `xkos:ClassificationLevel` | 5 | `mclvl:division` … `mclvl:subgroup` (depths 1–5) |
 | `foaf:Agent` | 1 | `mc:agent/geospecimens` (publisher) |
 | `dct:BibliographicResource` | 5 | `mcref:weisberg2006` … |
@@ -57,7 +64,7 @@ relative to the earlier best-practices serialization (`README_xkos.md`):
    exactly one `xkos:numberOfLevels` (`xsd:positiveInteger`), exactly one
    `dct:identifier`, at least one `dct:title`, and exactly one
    `dct:publisher` resolving to a typed `foaf:Agent`. Consequently the rank
-   vocabulary `mc:itemTypes` — needed because `xkos:organizedBy` targets must
+   vocabulary `…/meteorite-classification/rank` — needed because `xkos:organizedBy` targets must
    be proper `skos:Concept`s with `skos:inScheme` — carries this full
    metadata set too (`xkos:numberOfLevels "1"`).
 

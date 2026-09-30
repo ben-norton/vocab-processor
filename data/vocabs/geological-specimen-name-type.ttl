@@ -1,9 +1,9 @@
 # Geological Specimen Name Type — SKOS ConceptScheme
-# Generated from NameTypes.xlsx
+# Generated from GeologicalSpecimenNameTypes.xlsx
 # Source sheets used: Concept Scheme, Concepts, Namespaces, Mappings
 # Agents sheet ignored — agents come from Agents.xlsx
 # Agents: 2 mapped to this scheme in Agents.xlsx, 4 described below
-# Generated: 2026-09-11
+# Generated: 2026-09-30
 
 # Standard prefixes
 @prefix dcat:        <http://www.w3.org/ns/dcat#> .
@@ -72,9 +72,10 @@
 <https://kos.geospecimens.org/def/geological-specimen-name-type/geological-material-name>
     a                        skos:Concept ;
     skos:prefLabel           "Geological Material Name"@en ;
-    skos:definition          """The lexical expression used by humans for identification purposes of geologic material"""@en ;
+    skos:definition          """A name used to identify or refer to a geological material or specimen."""@en ;
+    vann:usageNote           "Use only when no narrower name type applies or when the origin and status of the name are unknown; prefer the most specific applicable type."@en ;
     skos:inScheme            <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
-    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:topConceptOf        <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
     skos:notation            "geologicalMaterialName" ;
 .
@@ -84,12 +85,13 @@
     skos:prefLabel           "Authoritative Name"@en ;
     skos:altLabel            "Official Name"@en ,
                              "Formal Name"@en ;
-    skos:definition          """A name assigned by an authoritative body based on a defined set of unambiguous criteria and belonging to a formal nomenclature"""@en ;
+    skos:definition          """A name assigned under a formal nomenclature by a recognized authority according to defined criteria."""@en ;
     skos:broader             <https://kos.geospecimens.org/def/geological-specimen-name-type/geological-material-name> ;
     skos:historyNote         "Replaced previous term, formal name, on 2026-06-18"@en ;
     skos:changeNote          "Changed from formal name to authoritative name to covers approval by an organization (IMA) and membership in a classification system (Nickel-Strunz)"@en ;
+    vann:usageNote           "Apply to names traceable to a specific authority and nomenclature (e.g., IMA-CNMNC for minerals, the Meteoritical Society for meteorites, the IUGS Subcommission on the Systematics of Igneous Rocks for igneous rocks). Record the authority and, where possible, the version or date of the source consulted."@en ;
     skos:inScheme            <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
-    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "authoritativeName" ;
     skos:broadMatch          <https://kos.geospecimens.org/def/geological-specimen-name-type/geological-material-name> ;
 .
@@ -98,10 +100,11 @@
     a                        skos:Concept ;
     skos:prefLabel           "Classification"@en ;
     skos:altLabel            "Species"@en ;
-    skos:definition          """A name derived from an authoritative classification system at any rank"""@en ;
+    skos:definition          """An authoritative name that places a material in a category at a defined rank within a formal classification system."""@en ;
     skos:broader             <https://kos.geospecimens.org/def/geological-specimen-name-type/authoritative-name> ;
+    vann:usageNote           "Where the rank is known, prefer the narrower Group or Species type. Record the classification system (and edition) from which the name is taken."@en ;
     skos:inScheme            <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
-    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "classification" ;
     skos:broadMatch          <https://kos.geospecimens.org/def/geological-specimen-name-type/authoritative-name> ;
 .
@@ -109,11 +112,11 @@
 <https://kos.geospecimens.org/def/geological-specimen-name-type/structural-group>
     a                        skos:Concept ;
     skos:prefLabel           "Structural Group"@en ;
-    skos:definition          """A group name based on a shared crystal structure and composition of chemically similar elements"""@en ;
+    skos:definition          """A group name for minerals that share the same or essentially the same crystal structure and are composed of chemically similar elements."""@en ;
     skos:broader             <https://kos.geospecimens.org/def/geological-specimen-name-type/group> ;
-    vann:usageNote           "Recommended is the use of Fleischer's Glossary."@en ;
+    vann:usageNote           "Take group names from the current IMA-CNMNC list of mineral groups or from the latest edition of Fleischer's Glossary of Mineral Species, and record the source and edition used. Apply only where membership rests on shared structure and chemistry."@en ;
     skos:inScheme            <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
-    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "structuralGroup" ;
     skos:broadMatch          <https://kos.geospecimens.org/def/geological-specimen-name-type/group> ;
 .
@@ -122,10 +125,11 @@
     a                        skos:Concept ;
     skos:prefLabel           "Series"@en ;
     skos:altLabel            "Solid Solution Series"@en ;
-    skos:definition          """Name of the solid solution series to which a specimen belongs."""@en ;
+    skos:definition          """A name for a solid-solution series between two or more end-member mineral species."""@en ;
     skos:broader             <https://kos.geospecimens.org/def/geological-specimen-name-type/authoritative-name> ;
+    vann:usageNote           "Use when a specimen's composition is known to fall within a series but has not been resolved to a species. Where the species has been determined, record the species name (type Species) instead of, or in addition to, the series name."@en ;
     skos:inScheme            <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
-    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "series" ;
     skos:broadMatch          <https://kos.geospecimens.org/def/geological-specimen-name-type/authoritative-name> ;
 .
@@ -133,8 +137,9 @@
 <https://kos.geospecimens.org/def/geological-specimen-name-type/ima-approved-name>
     a                        skos:Concept ;
     skos:prefLabel           "IMA Approved Name"@en ;
-    skos:definition          """A mineral name that has received formal approval by the International Mineralogical Association (IMA)"""@en ;
+    skos:definition          """A mineral name recognized as valid by the IMA Commission on New Minerals, Nomenclature and Classification (CNMNC)."""@en ;
     skos:broader             <https://kos.geospecimens.org/def/geological-specimen-name-type/authoritative-name> ;
+    vann:usageNote           "Verify against the current IMA List of Minerals and record the list version or date consulted. If the CNMNC later discredits the name, re-type it as Obsolete."@en ;
     skos:inScheme            <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/superseded> ;
     skos:notation            "imaApprovedName" ;
@@ -143,12 +148,13 @@
 <https://kos.geospecimens.org/def/geological-specimen-name-type/group>
     a                        skos:Concept ;
     skos:prefLabel           "Group"@en ;
-    skos:definition          """The name of a mineralogical group a specimen belongs to. Groups are defined as part of authoritative classification systems as a mechanism to group a set of mineral species with essentially the same crystal structure and composed of chemically similar elements."""@en ;
+    skos:definition          """A name for a category above species rank in an authoritative classification that brings together related members."""@en ;
     skos:broader             <https://kos.geospecimens.org/def/geological-specimen-name-type/classification> ;
     dcterms:provenance       "Mills, S. J., Hatert, F., Nickel, E. H., & Ferraris, G. (2009). The standardisation of mineral group hierarchies: application to recent nomenclature proposals. European Journal of Mineralogy, 21(5), 1073-1080."@en ;
     skos:historyNote         "Term was moved was initially organized under authoritative name but later moved to classification"@en ;
+    vann:usageNote           "Where the group is defined by shared crystal structure and chemistry (as in IMA-CNMNC mineral nomenclature), prefer the narrower Structural Group. Record the classification system from which the group name is taken."@en ;
     skos:inScheme            <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
-    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "group" ;
     skos:broadMatch          <https://kos.geospecimens.org/def/geological-specimen-name-type/classification> ;
 .
@@ -156,10 +162,11 @@
 <https://kos.geospecimens.org/def/geological-specimen-name-type/historical>
     a                        skos:Concept ;
     skos:prefLabel           "Historical"@en ;
-    skos:definition          """An alias of a mineral name used within a historical context or derived from a historical source"""@en ;
+    skos:definition          """An alternate name for a geological material attested in historical sources or past usage."""@en ;
     skos:broader             <https://kos.geospecimens.org/def/geological-specimen-name-type/alternate-name> ;
+    vann:usageNote           "Use to preserve names found on original labels, ledgers, or in historical literature; record the source and, where known, the date or period. If the principal reason for recording the name is that an authority has discredited or withdrawn it, use Obsolete instead."@en ;
     skos:inScheme            <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
-    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "historical" ;
     skos:broadMatch          <https://kos.geospecimens.org/def/geological-specimen-name-type/alternate-name> ;
 .
@@ -167,11 +174,11 @@
 <https://kos.geospecimens.org/def/geological-specimen-name-type/synonym>
     a                        skos:Concept ;
     skos:prefLabel           "Synonym"@en ;
-    skos:definition          """An alias of a mineral species no longer recognized as the official classification"""@en ;
+    skos:definition          """An alternate name no longer recognized as authoritative that refers to the same material as a currently accepted name."""@en ;
     skos:broader             <https://kos.geospecimens.org/def/geological-specimen-name-type/alternate-name> ;
-    vann:usageNote           "It is recommended to use synonyms only as additional information to the officially accepted IMA name."@en ;
+    vann:usageNote           "Record synonyms only as supplementary information alongside the accepted name (e.g., the IMA-approved name); do not use a synonym as the primary identification. Where possible, link the synonym to the accepted name it corresponds to."@en ;
     skos:inScheme            <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
-    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "synonym" ;
     skos:broadMatch          <https://kos.geospecimens.org/def/geological-specimen-name-type/alternate-name> ;
 .
@@ -179,10 +186,11 @@
 <https://kos.geospecimens.org/def/geological-specimen-name-type/obsolete>
     a                        skos:Concept ;
     skos:prefLabel           "Obsolete"@en ;
-    skos:definition          """A name defined in prior standards or classification systems but has since been removed from those authoritative sources. Includes names designated by the International Mineralogical Association as discredited or obsolete."""@en ;
+    skos:definition          """A name that has been discredited or withdrawn from the authoritative nomenclature in which it was once recognized."""@en ;
     skos:broader             <https://kos.geospecimens.org/def/geological-specimen-name-type/alternate-name> ;
+    vann:usageNote           "Record the authority and, where known, the decision reference and date of discreditation or withdrawal. If the obsolete name corresponds to a currently valid material, also record that material's accepted name."@en ;
     skos:inScheme            <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
-    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "obsolete" ;
     skos:broadMatch          <https://kos.geospecimens.org/def/geological-specimen-name-type/alternate-name> ;
 .
@@ -190,11 +198,12 @@
 <https://kos.geospecimens.org/def/geological-specimen-name-type/variety>
     a                        skos:Concept ;
     skos:prefLabel           "Variety"@en ;
-    skos:definition          """A mineral that is a type of the mineral species, distinguished by color or other optical phenomenon or characteristic"""@en ;
+    skos:definition          """A name for a subset of a mineral species distinguished by color, habit, optical phenomenon, or trace-element content."""@en ;
     skos:broader             <https://kos.geospecimens.org/def/geological-specimen-name-type/alternate-name> ;
     dcterms:provenance       "Neuendorf, K. K. (2005). Glossary of geology. Springer Science & Business Media."@en ;
+    vann:usageNote           "Record the variety name together with the species to which it belongs (e.g., amethyst with quartz). Do not use a variety name in place of the species name for identification."@en ;
     skos:inScheme            <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
-    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "variety" ;
     skos:broadMatch          <https://kos.geospecimens.org/def/geological-specimen-name-type/alternate-name> ;
 .
@@ -202,11 +211,12 @@
 <https://kos.geospecimens.org/def/geological-specimen-name-type/alternate-name>
     a                        skos:Concept ;
     skos:prefLabel           "Alternate Name"@en ;
-    skos:definition          """A name by which a geologic material is frequently referred, without reference to any formal usage or structure nor sanctioned by an authoritative body"""@en ;
+    skos:definition          """A name for a geological material that is not currently sanctioned by an authoritative body."""@en ;
     skos:broader             <https://kos.geospecimens.org/def/geological-specimen-name-type/geological-material-name> ;
     dcterms:provenance       "Adopted from https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/hasCommonName"@en ;
+    vann:usageNote           "Use directly for common, trade, local, or colloquial names that fit no narrower alternate-name type. Record alongside, not instead of, an authoritative name where one is known."@en ;
     skos:inScheme            <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
-    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "alternateName" ;
     skos:broadMatch          <https://kos.geospecimens.org/def/geological-specimen-name-type/geological-material-name> ;
 .
@@ -214,10 +224,11 @@
 <https://kos.geospecimens.org/def/geological-specimen-name-type/unapproved>
     a                        skos:Concept ;
     skos:prefLabel           "Unapproved"@en ;
-    skos:definition          """The name of a mineralogical specimen that is pending approval as an offical name by the International Mineralogical Association (IMA)"""@en ;
+    skos:definition          """A mineral name that has not received International Mineralogical Association (IMA-CNMNC) approval, including names proposed and awaiting a decision."""@en ;
     skos:broader             <https://kos.geospecimens.org/def/geological-specimen-name-type/alternate-name> ;
+    vann:usageNote           "Where a proposal is pending, record the IMA proposal number (of the form IMA YYYY-NNN) if known, and re-type the name as IMA Approved Name once approval is published."@en ;
     skos:inScheme            <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
-    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "unapprovedName" ;
     skos:broadMatch          <https://kos.geospecimens.org/def/geological-specimen-name-type/alternate-name> ;
 .
@@ -228,11 +239,11 @@
     skos:altLabel            "Cataloged Name"@en ,
                              "Cataloged As"@en ,
                              "Specimen Name"@en ;
-    skos:definition          """The name of a collection object (compound specimen) for curatorial, cataloging, and/or presentation purposes."""@en ;
+    skos:definition          """A name given to a collection object as a whole for curatorial, cataloging, or display purposes."""@en ;
     skos:broader             <https://kos.geospecimens.org/def/geological-specimen-name-type/geological-material-name> ;
     skos:historyNote         "Replaced previous term, cataloged name on 2026-06-18"@en ;
     skos:changeNote          "Replaced the previous term, cataloged name, as better suited to represent the use case."@en ;
-    vann:usageNote           "Cataloged name is generally applied to a compound specimen where physical cataloging is based on the object rather than its constituent parts."@en ;
+    vann:usageNote           "Apply at the level of the whole object, particularly for compound specimens cataloged as a single object rather than by constituent parts. Record the names of individual constituent materials separately, using the appropriate name types."@en ;
     skos:inScheme            <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/superseded> ;
     skos:notation            "objectName" ;
@@ -241,10 +252,11 @@
 <https://kos.geospecimens.org/def/geological-specimen-name-type/formal-name>
     a                        skos:Concept ;
     skos:prefLabel           "Formal Name"@en ;
-    skos:definition          """A name assigned by an authoritative body based on a defined set of unambiguous criteria and belonging to a formal nomenclature"""@en ;
+    skos:definition          """A name constructed according to the rules of a formal nomenclature."""@en ;
     skos:broader             <https://kos.geospecimens.org/def/geological-specimen-name-type/geological-material-name> ;
     skos:historyNote         "Superseded on 2026-06-18"@en ;
     skos:changeNote          "Replaced by authoritative name"@en ;
+    vann:usageNote           "Use for rule-derived compound or qualified names that follow a formal scheme but are not themselves entries in an authority's register. For names individually assigned by an authority, use Authoritative Name or its narrower types."@en ;
     skos:inScheme            <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/superseded> ;
     skos:notation            "formalName" ;
@@ -253,35 +265,37 @@
 <https://kos.geospecimens.org/def/geological-specimen-name-type/cataloged-name>
     a                        skos:Concept ;
     skos:prefLabel           "Cataloged Name"@en ;
-    skos:definition          """Cataloged name is generally applied to a compound specimen where physical cataloging is based on the object rather than its constituent parts."""@en ;
+    skos:definition          """The name under which a compound specimen is recorded in a collection catalog."""@en ;
     skos:broader             <https://kos.geospecimens.org/def/geological-specimen-name-type/geological-material-name> ;
-    skos:historyNote         "Superseded on 2026-06-18"@en ;
-    skos:changeNote          "Replaced by object name"@en ;
+    skos:historyNote         "Superseded on 2026-06-18, then added back on 2026-09-30"@en ;
+    vann:usageNote           "Use when the catalog record names the object by its principal material (e.g., a specimen cataloged as 'Fluorite' that also carries quartz). Record the other constituent materials with their own name types."@en ;
     skos:inScheme            <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
-    reg:status               <https://linked.data.gov.au/def/reg-statuses/superseded> ;
-    skos:notation            "objectName" ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
+    skos:notation            "catalogedName" ;
 .
 
 <https://kos.geospecimens.org/def/geological-specimen-name-type/verbatim-name>
     a                        skos:Concept ;
     skos:prefLabel           "Verbatim Name"@en ;
-    skos:altLabel            "Specimen Name"@en ;
-    skos:definition          """The unstructured name of a geological material for general, storage, curatorial, and/or presentation purposes."""@en ;
+    skos:altLabel            "Vernacular Name"@en ;
+    skos:definition          """The name of a geological material as originally recorded, without interpretation or standardization."""@en ;
     skos:broader             <https://kos.geospecimens.org/def/geological-specimen-name-type/geological-material-name> ;
-    vann:usageNote           "For compound specimens, recommendation is to reserve this term for the specimen level and reserve alternate name for specimen parts. Specimen name is a common alternate label for verbatim names assigned at the compound specimen level."@en ;
+    vann:usageNote           "Transcribe the text exactly as found, including spelling errors, abbreviations, and punctuation, and pair it with an interpreted name of the appropriate type. For compound specimens, apply at the whole-specimen level and use Alternate Name (or a relevant narrower type) for names of specimen parts."@en ;
     skos:inScheme            <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
-    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "verbatimName" ;
+    skos:closeMatch          <http://rs.tdwg.org/dwc/terms/vernacularName> ;
     skos:broadMatch          <https://kos.geospecimens.org/def/geological-specimen-name-type/geological-material-name> ;
 .
 
 <https://kos.geospecimens.org/def/geological-specimen-name-type/species>
     a                        skos:Concept ;
     skos:prefLabel           "Species"@en ;
-    skos:definition          """A name derived from an authoritative classification system at the rank of species"""@en ;
+    skos:definition          """An authoritative name for a category at species rank in a formal classification."""@en ;
     skos:broader             <https://kos.geospecimens.org/def/geological-specimen-name-type/classification> ;
+    vann:usageNote           "Use for the name of the species to which a specimen has been identified. For minerals, check the name against the IMA List of Minerals."@en ;
     skos:inScheme            <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
-    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "species" ;
     skos:broadMatch          <https://kos.geospecimens.org/def/geological-specimen-name-type/classification> ;
 .
@@ -289,12 +303,12 @@
 <https://kos.geospecimens.org/def/geological-specimen-name-type/official-name>
     a                        skos:Concept ;
     skos:prefLabel           "Official Name"@en ;
-    skos:definition          """A name that has been formally approved and entered into a register of record by the designated authority holding jurisdiction over nomenclature in that entity's domain, following the authority's published criteria, and that remains subject to continuing review and possible revision by that authority."""@en ;
+    skos:definition          """A name formally approved and registered by the authority with jurisdiction over nomenclature in its domain."""@en ;
     skos:broader             <https://kos.geospecimens.org/def/geological-specimen-name-type/authoritative-name> ;
     skos:historyNote         "Replaced the official name instance, IMA Approved Name"@en ;
-    vann:usageNote           "Examples of authorities in the geological collections domain includes the IMA (mineral names) and the Meteoritical Society (meteorite names)"@en ;
+    vann:usageNote           "Record the authority and the register consulted, with the date consulted, since official status may change. Examples: the IMA List of Minerals for mineral names; the Meteoritical Bulletin Database for meteorite names."@en ;
     skos:inScheme            <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
-    reg:status               <https://linked.data.gov.au/def/reg-statuses/experimental> ;
+    reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:notation            "officialName" ;
     skos:broadMatch          <https://kos.geospecimens.org/def/geological-specimen-name-type/authoritative-name> ;
 .

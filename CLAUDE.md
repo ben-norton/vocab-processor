@@ -6,7 +6,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Vocabulary processor for the **GeoSpecimens Platform** and KOS Publishing System (https://kos.geospecimens.org). Authors maintain controlled vocabularies as Excel workbooks under `sources/xlsx/`; the scripts in `src/` transform those workbooks into SKOS Turtle files under `data/vocabs/`, validate them, and publish them to the downstream `vocab-publisher` web app.
 
-The parent directory `G:/repos/vocabularies/` contains several other unrelated vocabulary repos (GSWA-Vocabularies, GeoKOS, bgs-vocabularies, gsq-vocabularies, etc.). Only this project is in active development.
+The parent directory `G:/repos/vocabularies/` contains several other unrelated vocabulary repos (GSWA-Vocabularies, GeoKOS, bgs-vocabularies, gsq-vocabularies, etc.). Only this project and `vocab-publisher` are in active development.
+
+## Working across into vocab-publisher
+
+`G:\repos\vocabularies\vocab-publisher\` (a separate git repo) is an additional working directory for sessions started here. When a change in this project needs a matching change in the publisher, make it there in the same task rather than stopping at this repo. Typical cases: a new IRI pattern needs a URI resolver route; a new TTL property or structure needs parsing or display support; a vocabulary is added or renamed. Read `vocab-publisher/CLAUDE.md` before editing it. Its key constraints:
+
+- **Four resolver implementations must stay in step:** `public/def/resolver.php` + `public/.htaccess` (production), `scripts/vite-plugin-resolver.js` (dev), and `scripts/test-router.php` / `tests/api/test-server.php` (test routers).
+- **Serializers are mirrored:** the PHP serializers in `resolver.php` must match the JS ones in `src/utils/rdf-serializers.js`.
+- **`src/config/uris.json` is the hand-maintained registry** of scheme and concept URIs. `public/data/` is generated output; never edit it.
+
+Afterwards, sync the data (`sync_to_publisher.py --vocab <slug>`), run `npm run index` and then `node scripts/verify-static.js` in the publisher. Commit each repo separately.
 
 ## Environment
 
@@ -25,10 +35,20 @@ The end-to-end flow for adding/updating a vocabulary:
 3. `python src/build_agents_ttl.py` — regenerates `data/vocabs/agents.ttl` from `Agents.xlsx`: the central agent registry (not a vocabulary). vocab-publisher's `build-vocabs.js` loads it as the agent lookup and excludes it from vocab indexing, and `validate-ttl.py` skips it by default. Use `--init-map` to populate the workbook's `map` sheet with the default agent↔vocab role mappings before first generation.
 4. `python src/build_mappings_ttl.py` — emits `{slug}-mappings.ttl` files for each vocab whose workbook has a `Mappings`/`Mapping` sheet (SKOS match triples only).
 5. `python src/validate-ttl.py [path ...]` — runs all eight SKOS conformance checks on `data/vocabs/*.ttl`, excluding `agents.ttl` and `*-mappings.ttl` since neither declares a ConceptScheme. Pass paths explicitly to check other files. Exit code 1 on any failure.
-6. `python src/publish_to_vocab_publisher.py [--dry-run] [--target DIR]` — mirrors `data/` into the vocab-publisher web app. **Default target is the hardcoded Windows path** `G:\repos\vocabularies\vocab-publisher\data`; on other machines pass `--target`. Files present only in the target (manifest.ttl, content/, glossaries/, etc.) are never touched.
+6. `python src/publish_to_vocab_publisher.py [--dry-run] [--target DIR]` — mirrors `data/` into the vocab-publisher web app. **Default target is the hardcoded Windows path** `G:\repos\vocabularies\vocab-publisher\data`; on other machines pass `--target`. Files present only in the target (manifest.ttl, content/, glossaries/, etc.) are never touched. Before overwriting anything it snapshots the whole target to `temp/publisher-data-backup-YYYYMMDD-HHMMSS/` (gitignored). It then runs `npm run index` and `node scripts/verify-static.js` in the publisher: on success the backup is deleted; on failure it is kept, the exit code is 1, and `--restore [NAME]` rolls the target back (newest backup by default). `--no-verify` skips the checks and keeps the backup; `--clean-backups` deletes all backups.
    - `python src/sync_to_publisher.py` is the `.env`-driven alternative with scoping: `--only vocabs`, `--vocab hazard-type`, `--glossary gcdm`, `--dry-run`, `--force` (recopy identical files), `--delete` (prune target-only files within scope). Exits with an error if no publisher path is configured.
 
-Standalone helpers: `cleanup_ttl_prefixes.py` (idempotent prefix scrub of `data/vocabs/*.ttl`, supports `--dry-run`); `build_agents_template.py` (regenerates the heavily-styled `AgentsTemplate.xlsx` source-of-truth template); `fetch_roles.py` / `fetch_roles_cit2.py` (one-shot scrapers for ISO 19115-3 CI_RoleCode codelist HTML); `build_xkos_ap_no.py` (rdflib-based, separate from the xlsx pipeline: builds the XKOS-AP-NO meteorite classification from the CSVs in `sources/classification-systems/meteorites/`, profile shapes in `sources/schemas/xkos/`). Scheme-level metadata (base IRI, namespaces, prefixes, titles, publisher, language, `modified`) lives in `meteorite_classification_scheme.csv` (`key,value,notes`; a value can reference another key as `{key}`, e.g. `{base_iri}/level/`). The script writes identical output both next to the CSVs and to `data/vocabs/meteorite-classification.ttl`.
+Standalone helpers: `cleanup_ttl_prefixes.py` (idempotent prefix scrub of `data/vocabs/*.ttl`, supports `--dry-run`); `build_agents_template.py` (regenerates the heavily-styled `AgentsTemplate.xlsx` source-of-truth template); `fetch_roles.py` / `fetch_roles_cit2.py` (one-shot scrapers for ISO 19115-3 CI_RoleCode codelist HTML).
+
+## Classification scheme pipeline (xlsx → CSV → XKOS TTL)
+
+Classification systems live in `sources/classification-systems/<system>/`, each authored in the **single `.xlsx` workbook in that folder**; the CSVs beside it are build output.
+
+1. `python src/build_classification_csvs.py <system>|--all` writes every sheet (except `README`) to `<sheet name>.csv`. It also generates `<stem>_closure.csv` from the `<stem>_classification` sheet. Before writing anything, it checks `id`/`parent_id` sheets against the parent chain: parents must resolve and ids be unique, and `depth` / `materialized_path` must match. `path_labels` is authored, since it uses abbreviations, and is not checked.
+2. `python src/build_xkos_ap_no.py` builds the XKOS-AP-NO meteorite classification from the meteorite CSVs (rdflib-based; profile shapes in `sources/schemas/xkos/`). It writes identical output both next to the CSVs and to `data/vocabs/meteorite-classification.ttl`.
+   - Scheme-level metadata (base IRI, namespaces, prefixes, titles, publisher, language, status, dates, rank scheme) lives in the `meteorite_classification_scheme` sheet as `key,value,notes` rows; a value can reference another key as `{key}`, e.g. `{base_iri}/level/`.
+   - Ranks are concepts at `{base_iri}/rank/{rank}` in their own scheme, ordered by `skos:notation` and `xkos:next`/`xkos:previous`.
+3. Validate and publish as for vocabularies.
 
 ## Glossary pipeline (4-file source set → JSON + TTL)
 

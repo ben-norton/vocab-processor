@@ -1,0 +1,73 @@
+# Hazard Types — SSSOM Mappings
+# Source: HazardTypes.xlsx (SSSOM sheet)
+# Generated: 2026-10-02
+#
+# SSSOM mapping set, RDF serialisation:
+#   https://mapping-commons.github.io/sssom/spec-formats-rdf/
+# Plain SKOS match triples are in hazard-type-mappings.ttl.
+# NOTE: ignored non-SSSOM column(s): object_definition
+
+@prefix orcid:   <https://orcid.org/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix semapv:  <https://w3id.org/semapv/vocab/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom:   <https://w3id.org/sssom/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+    a                         sssom:MappingSet ;
+    sssom:mapping_set_id      "https://kos.geospecimens.org/def/hazard-type/mappings/sssom"^^xsd:anyURI ;
+    sssom:mapping_set_title   "Hazard Types SSSOM Mappings" ;
+    sssom:license             "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    sssom:subject_source      <https://kos.geospecimens.org/def/hazard-type> ;
+    sssom:mappings            [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/hazard-type/radioactive> ;
+        owl:annotatedProperty             skos:exactMatch ;
+        owl:annotatedTarget               <http://purl.obolibrary.org/obo/NCIT_C347> ;
+        sssom:subject_label               "radioactive" ;
+        sssom:object_label                "radioactive" ;
+        sssom:object_source               <http://purl.obolibrary.org/obo/ncit.owl> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/hazard-type/toxic> ;
+        owl:annotatedProperty             skos:exactMatch ;
+        owl:annotatedTarget               <http://purl.obolibrary.org/obo/XCO_0000239> ;
+        sssom:subject_label               "toxic" ;
+        sssom:object_label                "toxic" ;
+        sssom:object_source               <http://purl.obolibrary.org/obo/xco.owl> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/hazard-type/carcinogen> ;
+        owl:annotatedProperty             skos:exactMatch ;
+        owl:annotatedTarget               <http://purl.obolibrary.org/obo/CHEBI_50903> ;
+        sssom:subject_label               "carcinogen" ;
+        sssom:object_label                "carcinogenic agent" ;
+        sssom:object_source               <http://purl.obolibrary.org/obo/chebi.owl> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/hazard-type/asbestos-bearing> ;
+        owl:annotatedProperty             skos:exactMatch ;
+        owl:annotatedTarget               <https://linked.data.gov.au/def/sample-condition/asbestos-bearing> ;
+        sssom:subject_label               "asbestos-bearing" ;
+        sssom:object_label                "asbestos-bearing" ;
+        sssom:object_source               <https://linked.data.gov.au/def/sample-condition> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/hazard-type/flammable> ;
+        owl:annotatedProperty             skos:exactMatch ;
+        owl:annotatedTarget               <https://linked.data.gov.au/def/sample-condition/flammable> ;
+        sssom:subject_label               "flammable" ;
+        sssom:object_label                "flammable" ;
+        sssom:object_source               <https://linked.data.gov.au/def/sample-condition> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] .

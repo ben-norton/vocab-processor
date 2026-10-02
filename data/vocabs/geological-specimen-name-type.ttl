@@ -3,7 +3,7 @@
 # Source sheets used: Concept Scheme, Concepts, Namespaces, Mappings
 # Agents sheet ignored — agents come from Agents.xlsx
 # Agents: 2 mapped to this scheme in Agents.xlsx, 4 described below
-# Generated: 2026-09-30
+# Generated: 2026-10-02
 
 # Standard prefixes
 @prefix dcat:        <http://www.w3.org/ns/dcat#> .
@@ -32,19 +32,19 @@
     a                        skos:ConceptScheme ;
     skos:prefLabel           "Geological Specimen Name Type"@en ;
     dcterms:title            "Geological Specimen Name Type"@en ;
-    skos:definition          """A vocabulary of terms describing the types of names that may be applied to geological materials, including minerals and rocks, and their constituent parts. The vocabulary distinguishes between names that carry formal standing — those assigned or approved by an authoritative nomenclatural body such as the International Mineralogical Association (IMA) — and names used outside formal systems, including alternate, historical, and deprecated designations. Formally sanctioned name types include IMA Approved Name, Classification, Group Name, Structural Group, and Series. Names reflecting historical usage, discontinued classifications, or pending approval are represented by the Historical, Synonym, Obsolete, and Unapproved types. The Alternate Name type captures commonly used names that are not sanctioned by any authoritative body, while Material Name provides a general designation for use with non-geological materials."""@en ;
-    dcterms:description      """A vocabulary of terms describing the types of names that may be applied to geological materials, including minerals and rocks, and their constituent parts. The vocabulary distinguishes between names that carry formal standing — those assigned or approved by an authoritative nomenclatural body such as the International Mineralogical Association (IMA) — and names used outside formal systems, including alternate, historical, and deprecated designations. Formally sanctioned name types include IMA Approved Name, Classification, Group Name, Structural Group, and Series. Names reflecting historical usage, discontinued classifications, or pending approval are represented by the Historical, Synonym, Obsolete, and Unapproved types. The Alternate Name type captures commonly used names that are not sanctioned by any authoritative body, while Material Name provides a general designation for use with non-geological materials."""@en ;
+    skos:definition          """A vocabulary of terms describing the types of names that may be applied to geological materials, including minerals and rocks, and their specimen parts. The vocabulary distinguishes between names that carry formal standing — those assigned or approved by an authoritative nomenclatural body such as the International Mineralogical Association (IMA) — and names used outside formal systems, including alternate, historical, and deprecated designations. Formally sanctioned name types include IMA Approved Name, Classification, Group Name, Structural Group, and Series. Names reflecting historical usage, discontinued classifications, or pending approval are represented by the Historical, Synonym, Obsolete, and Unapproved types. The Alternate Name type captures commonly used names that are not sanctioned by any authoritative body, while Material Name provides a general designation for use with non-geological materials."""@en ;
+    dcterms:description      """A vocabulary of terms describing the types of names that may be applied to geological materials, including minerals and rocks, and their specimen parts. The vocabulary distinguishes between names that carry formal standing — those assigned or approved by an authoritative nomenclatural body such as the International Mineralogical Association (IMA) — and names used outside formal systems, including alternate, historical, and deprecated designations. Formally sanctioned name types include IMA Approved Name, Classification, Group Name, Structural Group, and Series. Names reflecting historical usage, discontinued classifications, or pending approval are represented by the Historical, Synonym, Obsolete, and Unapproved types. The Alternate Name type captures commonly used names that are not sanctioned by any authoritative body, while Material Name provides a general designation for use with non-geological materials."""@en ;
     dcterms:publisher        <https://kos.geospecimens.org/org/ben-norton> ;
     dcterms:creator          <https://kos.geospecimens.org/org/ben-norton> ;
     dcterms:contributor      "TDWG Mineralogy Extension Task Group"@en ;
-    dcterms:provenance       "Compiled by the TDWG Mineralogy Extension Task Group for community use and to support the extension release by providing standardized categories for Constituent Part Names, especially those associated with Minerals"@en ;
+    dcterms:provenance       "Compiled by the TDWG Mineralogy Extension Task Group for community use and to support the extension release by providing standardized categories for Specimen Part Names, especially those associated with Minerals"@en ;
     dcterms:created          "2026-04-17"^^xsd:date ;
     dcterms:modified         "2026-06-18"^^xsd:date ;
     dcat:version             "2026-06-18" ;
-    skos:scopeNote           "Values are valid within the scope of a geological material and intended to categorize names of Simple Specimens or Constituent Parts"@en ;
-    vann:usageNote           "Intended to be used to categorize names assigned to Constituent Parts of Compound Specimens in order to atomize multiple individual names assigned to a single Constituent Part"@en ;
+    skos:scopeNote           "Values are valid within the scope of a geological material and intended to categorize names of Simple Specimens or Specimen Parts"@en ;
+    vann:usageNote           "Intended to be used to categorize names assigned to Specimen Parts of Compound Specimens in order to atomize multiple individual names assigned to a single Specimen Part"@en ;
     dcat:keyword             "Compound Specimen"@en ,
-                             "Constituent Part"@en ,
+                             "Specimen Part"@en ,
                              "Names"@en ,
                              "Mineral Name Types"@en ,
                              "Geological Specimens"@en ;
@@ -243,7 +243,7 @@
     skos:broader             <https://kos.geospecimens.org/def/geological-specimen-name-type/geological-material-name> ;
     skos:historyNote         "Replaced previous term, cataloged name on 2026-06-18"@en ;
     skos:changeNote          "Replaced the previous term, cataloged name, as better suited to represent the use case."@en ;
-    vann:usageNote           "Apply at the level of the whole object, particularly for compound specimens cataloged as a single object rather than by constituent parts. Record the names of individual constituent materials separately, using the appropriate name types."@en ;
+    vann:usageNote           "Apply at the level of the whole object, particularly for compound specimens cataloged as a single object rather than by specimen parts. Record the names of individual constituent materials separately, using the appropriate name types."@en ;
     skos:inScheme            <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
     reg:status               <https://linked.data.gov.au/def/reg-statuses/superseded> ;
     skos:notation            "objectName" ;

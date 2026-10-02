@@ -1,0 +1,100 @@
+# Geological Specimen Material Category — SSSOM Mappings
+# Source: GeologicalSpecimenMaterialCategories.xlsx (SSSOM sheet)
+# Generated: 2026-10-02
+#
+# SSSOM mapping set, RDF serialisation:
+#   https://mapping-commons.github.io/sssom/spec-formats-rdf/
+# Plain SKOS match triples are in geological-specimen-material-category-mappings.ttl.
+# NOTE: ignored non-SSSOM column(s): object_definition
+
+@prefix orcid:   <https://orcid.org/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix semapv:  <https://w3id.org/semapv/vocab/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom:   <https://w3id.org/sssom/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+    a                         sssom:MappingSet ;
+    sssom:mapping_set_id      "https://kos.geospecimens.org/def/geological-specimen-material-category/mappings/sssom"^^xsd:anyURI ;
+    sssom:mapping_set_title   "Geological Specimen Material Category SSSOM Mappings" ;
+    sssom:license             "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    sssom:subject_source      <https://kos.geospecimens.org/def/geological-specimen-material-category> ;
+    sssom:mappings            [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/geological-specimen-material-category/rock> ;
+        owl:annotatedProperty             skos:closeMatch ;
+        owl:annotatedTarget               <http://vocabulary.odm2.org/medium/rock/> ;
+        sssom:subject_label               "Rock" ;
+        sssom:object_label                "rock" ;
+        sssom:object_source               <http://vocabulary.odm2.org/> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134 ;
+        sssom:comment                     "skos:closeMatch was selected over skos:exactMatch due to definitional differences. The definition in this vocabulary is more comprehensive and formal than the mapped term's, and using skos:exactMatch would require adopting the definition of the related term per TDWG standard practice."
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/geological-specimen-material-category/gemstone> ;
+        owl:annotatedProperty             skos:exactMatch ;
+        owl:annotatedTarget               <https://vocabulary.gswa.kurrawong.ai/v/vocab/defn:geological-sample-type/glgcl-smpl-typ:gemstone> ;
+        sssom:subject_label               "Gemstone" ;
+        sssom:object_label                "gemstone" ;
+        sssom:object_source               <https://linked.data.gov.au/def/geological-sample-type> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134 ;
+        sssom:comment                     "Term borrowed from object source"
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/geological-specimen-material-category/rock> ;
+        owl:annotatedProperty             skos:closeMatch ;
+        owl:annotatedTarget               <https://pid.geoscience.gov.au/def/voc/ga/materialtype/rock> ;
+        sssom:subject_label               "Rock" ;
+        sssom:object_label                "rock" ;
+        sssom:object_source               <https://pid.geoscience.gov.au/def/voc/ga/materialtype> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134 ;
+        sssom:comment                     "skos:closeMatch was selected over skos:exactMatch due to definitional differences. The definition in this vocabulary is more comprehensive and formal than the mapped term's, and using skos:exactMatch would require adopting the definition of the related term per TDWG standard practice."
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/geological-specimen-material-category/meteorite> ;
+        owl:annotatedProperty             skos:closeMatch ;
+        owl:annotatedTarget               <https://pid.geoscience.gov.au/def/voc/ga/materialtype/meteorite> ;
+        sssom:subject_label               "Meteorite" ;
+        sssom:object_label                "meteorite" ;
+        sssom:object_source               <https://pid.geoscience.gov.au/def/voc/ga/materialtype> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134 ;
+        sssom:comment                     "skos:closeMatch was selected over skos:exactMatch due to definitional differences. The definition in this vocabulary is more comprehensive and formal than the mapped term's, and using skos:exactMatch would require adopting the definition of the related term per TDWG standard practice."
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/geological-specimen-material-category/mineral> ;
+        owl:annotatedProperty             skos:closeMatch ;
+        owl:annotatedTarget               <https://pid.geoscience.gov.au/def/voc/ga/materialtype/mineral> ;
+        sssom:subject_label               "Mineral" ;
+        sssom:object_label                "mineral" ;
+        sssom:object_source               <https://pid.geoscience.gov.au/def/voc/ga/materialtype> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134 ;
+        sssom:comment                     "skos:closeMatch was selected over skos:exactMatch due to definitional differences. The definition in this vocabulary is more comprehensive and formal than the mapped term's, and using skos:exactMatch would require adopting the definition of the related term per TDWG standard practice."
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/geological-specimen-material-category/fossil> ;
+        owl:annotatedProperty             skos:closeMatch ;
+        owl:annotatedTarget               <https://pid.geoscience.gov.au/def/voc/ga/GeologySampleType/fossil> ;
+        sssom:subject_label               "Fossil" ;
+        sssom:object_label                "fossil" ;
+        sssom:object_source               <https://pid.geoscience.gov.au/def/voc/ga/materialtype> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134 ;
+        sssom:comment                     "skos:closeMatch was selected over skos:exactMatch due to definitional differences. The definition in this vocabulary is more comprehensive and formal than the mapped term's, and using skos:exactMatch would require adopting the definition of the related term per TDWG standard practice."
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/geological-specimen-material-category/synthetic-mineral> ;
+        owl:annotatedProperty             skos:broadMatch ;
+        owl:annotatedTarget               <https://w3id.org/gso/1.0/rockmaterial/Anthropogenic_Material> ;
+        sssom:subject_label               "Synthetic Mineral" ;
+        sssom:object_label                "anthropogenic material" ;
+        sssom:object_source               <https://w3id.org/gso/1.0/rockmaterial/ontology> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134 ;
+        sssom:comment                     "In the subject vocabulary, synthetic is a child of mineral and therefore more narrowly defined than in the object vocabulary"
+    ] .

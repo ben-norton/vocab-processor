@@ -16,7 +16,8 @@ Run from the project root:
     python utils/validate-ttl.py [path ...]
 
 If no paths are given, all *.ttl files in data/vocabs/ are validated, except
-the agent registry agents.ttl and the *-mappings.ttl files.
+the agent registry agents.ttl, the *-mappings.ttl files and the
+*_sssom_mappings.ttl files.
 """
 
 from __future__ import annotations
@@ -307,10 +308,12 @@ def main(argv: list[str]) -> int:
         paths = [Path(p) for p in argv]
     else:
         # Neither declares a ConceptScheme: agents.ttl is the central agent
-        # registry, and *-mappings.ttl files carry only SKOS match triples.
+        # registry, *-mappings.ttl files carry only SKOS match triples, and
+        # *_sssom_mappings.ttl files carry an SSSOM MappingSet.
         paths = sorted(
             p for p in default_dir.glob("*.ttl")
-            if p.name != "agents.ttl" and not p.name.endswith("-mappings.ttl")
+            if p.name != "agents.ttl"
+            and not p.name.endswith(("-mappings.ttl", "_sssom_mappings.ttl"))
         )
 
     if not paths:

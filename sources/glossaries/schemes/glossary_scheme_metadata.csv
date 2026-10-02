@@ -36,3 +36,4 @@ Section,Property_CURIE,Prefix,Property_Local,Full_URI,Obligation,Range_Note
 3.5 Distribution and Linking,rdfs:seeAlso,rdfs,seeAlso,http://www.w3.org/2000/01/rdf-schema#seeAlso,MAY,"Related resources, documentation, or related schemes"
 3.5 Distribution and Linking,owl:imports,owl,imports,http://www.w3.org/2002/07/owl#imports,MAY,IRI of external ontology/vocabulary imported
 3.5 Distribution and Linking,skos:related,skos,related,http://www.w3.org/2004/02/skos/core#related,MAY,IRI of another skos:ConceptScheme (use cautiously)
+3.1 Identity and Typing,bartoc:kos-type,bartoc,kos-type,http://bartoc.org/kos-type/,MAY,IRI of term belonging to the BARTOC Knowledge Organization System Resource type vocabulary

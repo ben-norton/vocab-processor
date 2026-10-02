@@ -42,6 +42,7 @@ pip install openpyxl rdflib
 python src/xlsx-to-ttl.py                 # all workbooks → data/vocabs/*.ttl
 python src/build_agents_ttl.py            # Agents.xlsx  → data/vocabs/agents.ttl
 python src/build_mappings_ttl.py          # *-mappings.ttl for workbooks w/ a Mappings sheet
+python src/build_sssom_ttl.py             # *_sssom_mappings.ttl for workbooks w/ an SSSOM sheet
 python src/validate-ttl.py                # 8-point SKOS check on data/vocabs/*.ttl
 python src/publish_to_vocab_publisher.py  # mirror data/ → vocab-publisher/data
 ```
@@ -53,6 +54,7 @@ python src/publish_to_vocab_publisher.py  # mirror data/ → vocab-publisher/dat
 | 1 | `python src/xlsx-to-ttl.py [VOCAB]` | `sources/xlsx/*.xlsx` → `data/vocabs/{slug}.ttl` |
 | 2 | `python src/build_agents_ttl.py [--init-map]` | `sources/xlsx/Agents.xlsx` → `data/vocabs/agents.ttl` |
 | 3 | `python src/build_mappings_ttl.py` | workbooks with a `Mappings` sheet → `data/vocabs/{slug}-mappings.ttl` |
+| 3b | `python src/build_sssom_ttl.py [VOCAB ...]` | workbooks with an `SSSOM` sheet → `data/vocabs/{slug}_sssom_mappings.ttl` (SSSOM RDF) |
 | 4 | `python src/validate-ttl.py [path ...]` | validates `data/vocabs/*.ttl` (exit 1 on any error) |
 | 5 | `python src/publish_to_vocab_publisher.py [--dry-run] [--target DIR]` | `data/` → `vocab-publisher/data` |
 

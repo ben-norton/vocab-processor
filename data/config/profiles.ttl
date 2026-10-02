@@ -23,7 +23,7 @@
     dcterms:title "GeoSpecimens Vocabularies" ;
     dcterms:description """Controlled vocabularies supporting the TDWG Mineralogy Extension and the broader GeoSpecimens data model. These vocabularies provide standardised terms for describing geological specimens, their constituent parts, material types, name types, and associated hazards, to promote consistency across collections, research, and data exchange.""" ;
     dcat:dataset <https://kos.resources.org/def/aggregate-form> ,
-                 <https://kos.resources.org/def/constituent-part-proportion> ,
+                 <https://kos.resources.org/def/specimen-part-proportion> ,
                  <https://kos.resources.org/def/geological-specimen-material-type> ,
                  <https://kos.resources.org/def/geological-specimen-name-type> ,
                  <https://kos.resources.org/def/hazard-type> .

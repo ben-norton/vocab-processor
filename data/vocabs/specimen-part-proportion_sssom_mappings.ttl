@@ -1,0 +1,113 @@
+# Specimen Part Proportion — SSSOM Mappings
+# Source: SpecimenPartProportions.xlsx (SSSOM sheet)
+# Generated: 2026-10-02
+#
+# SSSOM mapping set, RDF serialisation:
+#   https://mapping-commons.github.io/sssom/spec-formats-rdf/
+# Plain SKOS match triples are in specimen-part-proportion-mappings.ttl.
+# NOTE: ignored non-SSSOM column(s): object_definition
+
+@prefix orcid:   <https://orcid.org/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix semapv:  <https://w3id.org/semapv/vocab/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom:   <https://w3id.org/sssom/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+    a                         sssom:MappingSet ;
+    sssom:mapping_set_id      "https://kos.geospecimens.org/def/specimen-part-proportion/mappings/sssom"^^xsd:anyURI ;
+    sssom:mapping_set_title   "Specimen Part Proportion SSSOM Mappings" ;
+    sssom:license             "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    sssom:subject_source      <https://kos.geospecimens.org/def/specimen-part-proportion> ;
+    sssom:mappings            [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/specimen-part-proportion/all> ;
+        owl:annotatedProperty             skos:closeMatch ;
+        owl:annotatedTarget               <http://resource.geosciml.org/classifier/cgi/proportionterm/all> ;
+        sssom:subject_label               "All" ;
+        sssom:object_label                "all" ;
+        sssom:object_source               <http://resource.geosciml.org/classifierscheme/cgi/2016.01/proportionterm> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/specimen-part-proportion/major> ;
+        owl:annotatedProperty             skos:closeMatch ;
+        owl:annotatedTarget               <http://resource.geosciml.org/classifier/cgi/proportionterm/dominant> ;
+        sssom:subject_label               "Major" ;
+        sssom:object_label                "major" ;
+        sssom:object_source               <http://resource.geosciml.org/classifierscheme/cgi/2016.01/proportionterm> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/specimen-part-proportion/minor> ;
+        owl:annotatedProperty             skos:closeMatch ;
+        owl:annotatedTarget               <http://resource.geosciml.org/classifier/cgi/proportionterm/subordinate> ;
+        sssom:subject_label               "Minor" ;
+        sssom:object_label                "subordinate" ;
+        sssom:object_source               <http://resource.geosciml.org/classifierscheme/cgi/2016.01/proportionterm> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/specimen-part-proportion/rare> ;
+        owl:annotatedProperty             skos:closeMatch ;
+        owl:annotatedTarget               <http://resource.geosciml.org/classifier/cgi/proportionterm/rare> ;
+        sssom:subject_label               "Rare" ;
+        sssom:object_label                "rare" ;
+        sssom:object_source               <http://resource.geosciml.org/classifierscheme/cgi/2016.01/proportionterm> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/specimen-part-proportion/trace> ;
+        owl:annotatedProperty             skos:closeMatch ;
+        owl:annotatedTarget               <http://resource.geosciml.org/classifier/cgi/proportionterm/trace> ;
+        sssom:subject_label               "Trace" ;
+        sssom:object_label                "trace" ;
+        sssom:object_source               <http://resource.geosciml.org/classifierscheme/cgi/2016.01/proportionterm> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/specimen-part-proportion/present> ;
+        owl:annotatedProperty             skos:closeMatch ;
+        owl:annotatedTarget               <http://resource.geosciml.org/classifier/cgi/proportionterm/present> ;
+        sssom:subject_label               "Present" ;
+        sssom:object_label                "present" ;
+        sssom:object_source               <http://resource.geosciml.org/classifierscheme/cgi/2016.01/proportionterm> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/specimen-part-proportion/variable> ;
+        owl:annotatedProperty             skos:closeMatch ;
+        owl:annotatedTarget               <http://resource.geosciml.org/classifier/cgi/proportionterm/variable> ;
+        sssom:subject_label               "Variable" ;
+        sssom:object_label                "variable" ;
+        sssom:object_source               <http://resource.geosciml.org/classifierscheme/cgi/2016.01/proportionterm> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/specimen-part-proportion/major> ;
+        owl:annotatedProperty             skos:narrowMatch ;
+        owl:annotatedTarget               <http://resource.geosciml.org/classifier/cgi/proportionterm/dominant> ;
+        sssom:subject_label               "Major" ;
+        sssom:object_label                "major" ;
+        sssom:object_source               <http://resource.geosciml.org/classifierscheme/cgi/2016.01/proportionterm> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/specimen-part-proportion/minor> ;
+        owl:annotatedProperty             skos:narrowMatch ;
+        owl:annotatedTarget               <http://resource.geosciml.org/classifier/cgi/proportionterm/minor> ;
+        sssom:subject_label               "Minor" ;
+        sssom:object_label                "minor" ;
+        sssom:object_source               <http://resource.geosciml.org/classifierscheme/cgi/2016.01/proportionterm> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] .

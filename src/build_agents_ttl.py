@@ -66,7 +66,7 @@ PREFIXES: list[tuple[str, str]] = [
 # (agentURI, singleRole). One row is emitted per (agent, role, vocab) combo.
 VOCAB_URIS: list[str] = [
     "https://kos.resources.org/def/aggregate-form",
-    "https://kos.resources.org/def/constituent-part-proportion",
+    "https://kos.resources.org/def/specimen-part-proportion",
     "https://kos.resources.org/def/geological-specimen-material-type",
     "https://kos.resources.org/def/geological-specimen-name-type",
     "https://kos.resources.org/def/hazard-type",

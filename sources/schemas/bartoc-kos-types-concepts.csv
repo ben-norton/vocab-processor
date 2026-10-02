@@ -1,0 +1,19 @@
+level,notation,prefLabel,scopeNote
+0,lists,Lists,"Simple or extended lists of terms with a flat, usually non-hierarchical structure, organized alphabetically or by topic, and often including definitions."
+1,dictionary,Dictionary,An alphabetically ordered list of terms with meanings and usage. 
+1,list,List,A flat collection of terms without hierarchy or relationships. 
+1,glossary,Glossary,An alphabetically ordered list of specialized terms with short definitions. 
+1,synonym-ring,Synonym Ring,A collection of terms with the same or similar meaning under a preferred term. 
+0,directories-with-metadata,Directories with Metadata,"A directory of entities or resources with metadata, unique identifiers, alternative names, and additional attributes. "
+1,gazetteer,Gazetteer,A directory of geographic places with unique identifiers and metadata. 
+1,name-authority-list,Name Authority List,"A directory of entities (e.g. persons, places, organizations) with standardized names and unique identifiers. "
+0,hierarchies,Hierarchies,"A hierarchical or flat structure that organizes concepts into categories or classes, supporting search and navigation through flexible keywords or standardized taxonomies. "
+1,subject-heading-scheme,Subject Heading Scheme,A system combining subject headings into predefined term strings. 
+1,categorization-schema,Categorization Schema,A system grouping terms into categories based on shared characteristics. 
+1,classification-schema,Classification Schema,A system organizing terms into classes using notations (e.g. numbers or codes). 
+1,taxonomy,Taxonomy,A system organizing terms in hierarchical relationships. 
+0,semantic-systems,Semantic Systems,"A complex, highly structured network in which nodes represent concepts and edges define relationships, varying in their level of formalization and types of relationships. "
+1,thesaurus,Thesaurus,"A system of terms with hierarchical, associative, and synonymous relationships. "
+1,semantic-network,Semantic Network,A system connecting concepts as nodes through relationships. 
+1,ontology,Ontology,A model of concepts with properties and logically defined relationships. 
+1,knowledge-graph,Knowledge Graph,"A structured network of entities (e.g. persons, places, organizations) with properties and relationships. "

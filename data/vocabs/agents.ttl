@@ -69,20 +69,6 @@
     ] ;
 .
 
-<https://kos.geospecimens.org/def/constituent-part-proportion>
-    a skos:ConceptScheme ;
-    prov:qualifiedAssociation [
-        a prov:Association ;
-        prov:agent <https://kos.geospecimens.org/org/ben-norton> ;
-        prov:hadRole isoroles:publisher , isoroles:author ;
-    ] ;
-    prov:qualifiedAssociation [
-        a prov:Association ;
-        prov:agent <https://kos.geospecimens.org/org/minext> ;
-        prov:hadRole isoroles:editor , isoroles:custodian ;
-    ] ;
-.
-
 <https://kos.geospecimens.org/def/geological-material-assertion-type>
     a skos:ConceptScheme ;
     prov:qualifiedAssociation [
@@ -149,6 +135,20 @@
 .
 
 <https://kos.geospecimens.org/def/luster>
+    a skos:ConceptScheme ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent <https://kos.geospecimens.org/org/ben-norton> ;
+        prov:hadRole isoroles:publisher , isoroles:author ;
+    ] ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:agent <https://kos.geospecimens.org/org/minext> ;
+        prov:hadRole isoroles:editor , isoroles:custodian ;
+    ] ;
+.
+
+<https://kos.geospecimens.org/def/specimen-part-proportion>
     a skos:ConceptScheme ;
     prov:qualifiedAssociation [
         a prov:Association ;

@@ -1,0 +1,163 @@
+# Geological Specimen Name Type — SSSOM Mappings
+# Source: GeologicalSpecimenNameTypes.xlsx (SSSOM sheet)
+# Generated: 2026-10-02
+#
+# SSSOM mapping set, RDF serialisation:
+#   https://mapping-commons.github.io/sssom/spec-formats-rdf/
+# Plain SKOS match triples are in geological-specimen-name-type-mappings.ttl.
+# NOTE: ignored non-SSSOM column(s): object_definition
+
+@prefix orcid:   <https://orcid.org/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix semapv:  <https://w3id.org/semapv/vocab/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix sssom:   <https://w3id.org/sssom/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+    a                         sssom:MappingSet ;
+    sssom:mapping_set_id      "https://kos.geospecimens.org/def/geological-specimen-name-type/mappings/sssom"^^xsd:anyURI ;
+    sssom:mapping_set_title   "Geological Specimen Name Type SSSOM Mappings" ;
+    sssom:license             "https://creativecommons.org/licenses/by/4.0/"^^xsd:anyURI ;
+    sssom:subject_source      <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
+    sssom:mappings            [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/geological-specimen-name-type/authoritative-name> ;
+        owl:annotatedProperty             skos:broadMatch ;
+        owl:annotatedTarget               <https://kos.geospecimens.org/def/geological-specimen-name-type/geological-material-name> ;
+        sssom:subject_label               "Authoritative Name" ;
+        sssom:object_label                "Geological Material Name" ;
+        sssom:object_source               <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/geological-specimen-name-type/classification> ;
+        owl:annotatedProperty             skos:broadMatch ;
+        owl:annotatedTarget               <https://kos.geospecimens.org/def/geological-specimen-name-type/authoritative-name> ;
+        sssom:subject_label               "Classification" ;
+        sssom:object_label                "Authoritative Name" ;
+        sssom:object_source               <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/geological-specimen-name-type/structural-group> ;
+        owl:annotatedProperty             skos:broadMatch ;
+        owl:annotatedTarget               <https://kos.geospecimens.org/def/geological-specimen-name-type/group> ;
+        sssom:subject_label               "Structural Group" ;
+        sssom:object_label                "Group" ;
+        sssom:object_source               <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/geological-specimen-name-type/series> ;
+        owl:annotatedProperty             skos:broadMatch ;
+        owl:annotatedTarget               <https://kos.geospecimens.org/def/geological-specimen-name-type/authoritative-name> ;
+        sssom:subject_label               "Series" ;
+        sssom:object_label                "Authoritative Name" ;
+        sssom:object_source               <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/geological-specimen-name-type/official-name> ;
+        owl:annotatedProperty             skos:broadMatch ;
+        owl:annotatedTarget               <https://kos.geospecimens.org/def/geological-specimen-name-type/authoritative-name> ;
+        sssom:subject_label               "Official Name" ;
+        sssom:object_label                "Authoritative Name" ;
+        sssom:object_source               <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/geological-specimen-name-type/group> ;
+        owl:annotatedProperty             skos:broadMatch ;
+        owl:annotatedTarget               <https://kos.geospecimens.org/def/geological-specimen-name-type/classification> ;
+        sssom:subject_label               "Group" ;
+        sssom:object_label                "Classification" ;
+        sssom:object_source               <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/geological-specimen-name-type/historical> ;
+        owl:annotatedProperty             skos:broadMatch ;
+        owl:annotatedTarget               <https://kos.geospecimens.org/def/geological-specimen-name-type/alternate-name> ;
+        sssom:subject_label               "Historical" ;
+        sssom:object_label                "Alternate Name" ;
+        sssom:object_source               <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/geological-specimen-name-type/synonym> ;
+        owl:annotatedProperty             skos:broadMatch ;
+        owl:annotatedTarget               <https://kos.geospecimens.org/def/geological-specimen-name-type/alternate-name> ;
+        sssom:subject_label               "Synonym" ;
+        sssom:object_label                "Alternate Name" ;
+        sssom:object_source               <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/geological-specimen-name-type/obsolete> ;
+        owl:annotatedProperty             skos:broadMatch ;
+        owl:annotatedTarget               <https://kos.geospecimens.org/def/geological-specimen-name-type/alternate-name> ;
+        sssom:subject_label               "Obsolete" ;
+        sssom:object_label                "Alternate Name" ;
+        sssom:object_source               <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/geological-specimen-name-type/variety> ;
+        owl:annotatedProperty             skos:broadMatch ;
+        owl:annotatedTarget               <https://kos.geospecimens.org/def/geological-specimen-name-type/alternate-name> ;
+        sssom:subject_label               "Variety" ;
+        sssom:object_label                "Alternate Name" ;
+        sssom:object_source               <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/geological-specimen-name-type/alternate-name> ;
+        owl:annotatedProperty             skos:broadMatch ;
+        owl:annotatedTarget               <https://kos.geospecimens.org/def/geological-specimen-name-type/geological-material-name> ;
+        sssom:subject_label               "Alternate Name" ;
+        sssom:object_label                "Geological Material Name" ;
+        sssom:object_source               <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/geological-specimen-name-type/unapproved> ;
+        owl:annotatedProperty             skos:broadMatch ;
+        owl:annotatedTarget               <https://kos.geospecimens.org/def/geological-specimen-name-type/alternate-name> ;
+        sssom:subject_label               "Unapproved" ;
+        sssom:object_label                "Alternate Name" ;
+        sssom:object_source               <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/geological-specimen-name-type/verbatim-name> ;
+        owl:annotatedProperty             skos:broadMatch ;
+        owl:annotatedTarget               <https://kos.geospecimens.org/def/geological-specimen-name-type/geological-material-name> ;
+        sssom:subject_label               "Verbatim Name" ;
+        sssom:object_label                "Geological Material Name" ;
+        sssom:object_source               <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] , [
+        a                                 owl:Axiom ;
+        owl:annotatedSource               <https://kos.geospecimens.org/def/geological-specimen-name-type/species> ;
+        owl:annotatedProperty             skos:broadMatch ;
+        owl:annotatedTarget               <https://kos.geospecimens.org/def/geological-specimen-name-type/classification> ;
+        sssom:subject_label               "Species" ;
+        sssom:object_label                "Classification" ;
+        sssom:object_source               <https://kos.geospecimens.org/def/geological-specimen-name-type> ;
+        sssom:mapping_justification       semapv:ManualMappingCuration ;
+        sssom:author_id                   orcid:0000-0002-5819-9134
+    ] .

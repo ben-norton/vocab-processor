@@ -1,8 +1,8 @@
 # Geological Material Assertion Types — SKOS ConceptScheme
 # Generated from GeologicalMaterialAssertionTypes.xlsx
-# Source sheets used: Concept Scheme, Concepts, Namespaces
+# Source sheets used: Concept Scheme, Concepts, Namespaces, Mappings
 # Agents: 2 mapped to this scheme in Agents.xlsx, 4 described below
-# Generated: 2026-09-30
+# Generated: 2026-10-02
 
 # Standard prefixes
 @prefix dcat:        <http://www.w3.org/ns/dcat#> .
@@ -35,7 +35,7 @@
     dcterms:publisher        <https://kos.geospecimens.org/org/ben-norton> ;
     dcterms:creator          <https://kos.geospecimens.org/org/ben-norton> ;
     dcterms:contributor      "TDWG Mineralogy Extension Task Group"@en ;
-    dcterms:provenance       "Compiled by the TDWG Mineralogy Extension Task Group for community use and to support the extension release by providing standardized categories for Constituent Part Names, especially those associated with Minerals"@en ;
+    dcterms:provenance       "Compiled by the TDWG Mineralogy Extension Task Group for community use and to support the extension release by providing standardized categories for Specimen Part Names, especially those associated with Minerals"@en ;
     dcterms:created          "2026-09-11"^^xsd:date ;
     dcterms:modified         "2026-09-11"^^xsd:date ;
     dcat:version             "2026-09-11" ;
@@ -94,6 +94,15 @@
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "verbatimSize" ;
+    skos:relatedMatch        <https://schema.org/size> ;
+    skos:closeMatch          <http://vocab.getty.edu/aat/300435430> ;
+    skos:broadMatch          <http://purl.org/dc/terms/extent> ,
+                             <http://vocab.getty.edu/aat/300055642> ,
+                             <http://www.wikidata.org/entity/Q322481> ,
+                             <http://purl.obolibrary.org/obo/PATO_0000117> ,
+                             <http://data.loterre.fr/ark:/67375/26L-MKGPDF6W-5> ,
+                             <http://linked.data.gov.au/def/geological-observation-type/physical> ,
+                             <http://sweetontology.net/propSpaceDistance/Size> ;
 .
 
 <https://kos.geospecimens.org/def/geological-material-assertion-type/measured-width-in-millimeters>
@@ -105,6 +114,15 @@
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "measuredWidthInMillimeters" ;
+    skos:broadMatch          <http://qudt.org/vocab/quantitykind/Width> ,
+                             <http://vocab.getty.edu/aat/300055647> ,
+                             <http://www.wikidata.org/entity/P2049> ,
+                             <http://www.wikidata.org/entity/Q35059> ,
+                             <http://purl.obolibrary.org/obo/PATO_0000921> ,
+                             <https://schema.org/width> ,
+                             <http://www.ontology-of-units-of-measure.org/resource/om-2/Width> ,
+                             <http://data.loterre.fr/ark:/67375/26L-MKGPDF6W-5> ,
+                             <http://www.cidoc-crm.org/cidoc-crm/P43_has_dimension> ;
 .
 
 <https://kos.geospecimens.org/def/geological-material-assertion-type/measured-height-in-millimeters>
@@ -116,6 +134,16 @@
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "measuredHeightInMillimeters" ;
+    skos:broadMatch          <http://qudt.org/vocab/quantitykind/Height> ,
+                             <http://vocab.getty.edu/aat/300055644> ,
+                             <http://www.wikidata.org/entity/P2048> ,
+                             <http://www.wikidata.org/entity/Q208826> ,
+                             <http://purl.obolibrary.org/obo/PATO_0000119> ,
+                             <http://vocab.nerc.ac.uk/collection/S06/current/S0600264/> ,
+                             <https://schema.org/height> ,
+                             <http://www.ontology-of-units-of-measure.org/resource/om-2/Height> ,
+                             <http://data.loterre.fr/ark:/67375/26L-MKGPDF6W-5> ,
+                             <http://www.cidoc-crm.org/cidoc-crm/P43_has_dimension> ;
 .
 
 <https://kos.geospecimens.org/def/geological-material-assertion-type/measured-depth-in-millimeters>
@@ -127,6 +155,17 @@
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "measuredDepthInMillimeters" ;
+    skos:relatedMatch        <http://vocab.getty.edu/aat/300055646> ,
+                             <http://qudt.org/vocab/quantitykind/Depth> ,
+                             <http://vocab.nerc.ac.uk/collection/S06/current/S0600169/> ;
+    skos:broadMatch          <http://qudt.org/vocab/quantitykind/Thickness> ,
+                             <http://www.wikidata.org/entity/P5524> ,
+                             <http://purl.obolibrary.org/obo/PATO_0001595> ,
+                             <http://vocab.getty.edu/aat/300072633> ,
+                             <https://schema.org/depth> ,
+                             <http://www.ontology-of-units-of-measure.org/resource/om-2/Depth> ,
+                             <http://data.loterre.fr/ark:/67375/26L-MKGPDF6W-5> ,
+                             <http://www.cidoc-crm.org/cidoc-crm/P43_has_dimension> ;
 .
 
 <https://kos.geospecimens.org/def/geological-material-assertion-type/maximum-axial-dimension>
@@ -137,6 +176,14 @@
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "maxCrystalDimensionInMillimeters" ;
+    skos:relatedMatch        <http://data.loterre.fr/ark:/67375/26L-J17T6QB2-W> ,
+                             <http://vocab.nerc.ac.uk/collection/S06/current/S0600015/> ;
+    skos:broadMatch          <http://qudt.org/vocab/quantitykind/Length> ,
+                             <http://purl.obolibrary.org/obo/PATO_0000122> ,
+                             <http://www.wikidata.org/entity/P2043> ,
+                             <http://vocab.getty.edu/aat/300266036> ,
+                             <http://www.ontology-of-units-of-measure.org/resource/om-2/Length> ,
+                             <http://data.loterre.fr/ark:/67375/26L-MKGPDF6W-5> ;
 .
 
 <https://kos.geospecimens.org/def/geological-material-assertion-type/associated-minerals>
@@ -147,6 +194,13 @@
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "associatedMinerals" ;
+    skos:relatedMatch        <http://www.wikidata.org/entity/Q613970> ,
+                             <http://data.loterre.fr/ark:/67375/26L-BFLWHRX8-C> ,
+                             <http://data.bgs.ac.uk/id/GeoscienceThesaurus/Concept/4769> ,
+                             <http://vocab.getty.edu/aat/300011068> ,
+                             <http://www.wikidata.org/entity/Q7946> ;
+    skos:closeMatch          <http://data.bgs.ac.uk/id/GeoscienceThesaurus/Concept/3344> ,
+                             <http://data.loterre.fr/ark:/67375/26L-B9TR7FKR-C> ;
 .
 
 <https://kos.geospecimens.org/def/geological-material-assertion-type/aggregate-form>
@@ -158,6 +212,12 @@
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "aggregateForm" ;
+    skos:relatedMatch        <http://www.wikidata.org/entity/Q933412> ;
+    skos:broadMatch          <http://data.bgs.ac.uk/id/GeoscienceThesaurus/Concept/3377> ,
+                             <http://vocab.getty.edu/aat/300218792> ,
+                             <http://data.loterre.fr/ark:/67375/26L-S7PB88QF-7> ,
+                             <http://purl.obolibrary.org/obo/PATO_0000051> ,
+                             <http://vocab.nerc.ac.uk/collection/S06/current/S0600342/> ;
 .
 
 <https://kos.geospecimens.org/def/geological-material-assertion-type/crystal-habit>
@@ -169,6 +229,14 @@
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "crystalHabit" ;
+    skos:closeMatch          <http://www.wikidata.org/entity/P565> ,
+                             <http://www.wikidata.org/entity/Q505892> ,
+                             <http://data.bgs.ac.uk/id/GeoscienceThesaurus/Concept/2408> ,
+                             <http://data.loterre.fr/ark:/67375/26L-FPT8PVX2-5> ;
+    skos:broadMatch          <http://data.bgs.ac.uk/id/GeoscienceThesaurus/Concept/2304> ,
+                             <http://vocab.getty.edu/aat/300056273> ,
+                             <http://purl.obolibrary.org/obo/PATO_0000051> ,
+                             <http://vocab.nerc.ac.uk/collection/S06/current/S0600342/> ;
 .
 
 <https://kos.geospecimens.org/def/geological-material-assertion-type/crystal-form>
@@ -180,6 +248,13 @@
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "crystalForm" ;
+    skos:relatedMatch        <http://data.bgs.ac.uk/id/GeoscienceThesaurus/Concept/1192> ,
+                             <http://www.wikidata.org/entity/P556> ,
+                             <http://vocab.getty.edu/aat/300221157> ;
+    skos:closeMatch          <http://data.loterre.fr/ark:/67375/26L-DKTFFSRB-R> ;
+    skos:broadMatch          <http://vocab.getty.edu/aat/300263819> ,
+                             <http://purl.obolibrary.org/obo/PATO_0000052> ,
+                             <http://sweetontology.net/propSpace/Shape> ;
 .
 
 <https://kos.geospecimens.org/def/geological-material-assertion-type/twinning-law>
@@ -192,6 +267,10 @@
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "twinningLaw" ;
+    skos:relatedMatch        <http://www.wikidata.org/entity/Q109856> ;
+    skos:closeMatch          <http://www.wikidata.org/entity/P537> ,
+                             <http://data.bgs.ac.uk/id/GeoscienceThesaurus/Concept/5631> ,
+                             <http://data.loterre.fr/ark:/67375/26L-XQ8Z8H13-F> ;
 .
 
 <https://kos.geospecimens.org/def/geological-material-assertion-type/color>
@@ -203,6 +282,15 @@
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "color" ;
+    skos:relatedMatch        <http://www.wikidata.org/entity/P534> ;
+    skos:closeMatch          <http://data.bgs.ac.uk/id/GeoscienceThesaurus/Concept/955> ,
+                             <http://data.loterre.fr/ark:/67375/26L-FB7FG7K7-3> ;
+    skos:broadMatch          <http://vocab.getty.edu/aat/300056130> ,
+                             <http://purl.obolibrary.org/obo/PATO_0000014> ,
+                             <http://vocab.nerc.ac.uk/collection/S06/current/S0600341/> ,
+                             <http://www.wikidata.org/entity/P462> ,
+                             <http://www.wikidata.org/entity/Q1075> ,
+                             <https://schema.org/color> ;
 .
 
 <https://kos.geospecimens.org/def/geological-material-assertion-type/exsolution-texture>
@@ -213,6 +301,10 @@
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "exsolutionTexture" ;
+    skos:relatedMatch        <http://data.loterre.fr/ark:/67375/26L-ZFG9QXX7-3> ,
+                             <http://www.wikidata.org/entity/Q65168124> ;
+    skos:closeMatch          <http://data.bgs.ac.uk/id/GeoscienceThesaurus/Concept/1765> ;
+    skos:broadMatch          <http://data.bgs.ac.uk/id/GeoscienceThesaurus/Concept/3377> ;
 .
 
 <https://kos.geospecimens.org/def/geological-material-assertion-type/cleavage>
@@ -223,6 +315,12 @@
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "cleavage" ;
+    skos:relatedMatch        <http://data.bgs.ac.uk/id/GeoscienceThesaurus/Concept/851> ,
+                             <http://www.wikidata.org/entity/P538> ;
+    skos:closeMatch          <http://data.loterre.fr/ark:/67375/26L-JBS9F2WQ-J> ,
+                             <http://www.wikidata.org/entity/P693> ,
+                             <http://www.wikidata.org/entity/Q107400> ;
+    skos:broadMatch          <http://vocab.getty.edu/aat/300220007> ;
 .
 
 <https://kos.geospecimens.org/def/geological-material-assertion-type/luster>
@@ -234,6 +332,14 @@
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "luster" ;
+    skos:relatedMatch        <http://vocab.getty.edu/aat/300056162> ,
+                             <http://data.bgs.ac.uk/id/GeoscienceThesaurus/Concept/4431> ,
+                             <http://data.loterre.fr/ark:/67375/26L-SKZTCTQV-2> ,
+                             <http://purl.obolibrary.org/obo/PATO_0001297> ;
+    skos:closeMatch          <http://www.wikidata.org/entity/Q11998326> ;
+    skos:broadMatch          <http://data.bgs.ac.uk/id/GeoscienceThesaurus/Concept/3731> ,
+                             <http://vocab.getty.edu/aat/300056210> ,
+                             <http://purl.obolibrary.org/obo/PATO_0001300> ;
 .
 
 <https://kos.geospecimens.org/def/geological-material-assertion-type/inclusions>
@@ -245,6 +351,16 @@
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "inclusions" ;
+    skos:closeMatch          <http://vocab.getty.edu/aat/300380049> ,
+                             <http://www.wikidata.org/entity/Q728944> ,
+                             <http://data.bgs.ac.uk/id/GeoscienceThesaurus/Concept/3355> ,
+                             <http://data.bgs.ac.uk/id/GeoscienceThesaurus/Concept/2633> ;
+    skos:narrowMatch         <http://data.bgs.ac.uk/id/GeoscienceThesaurus/Concept/1923> ,
+                             <http://www.wikidata.org/entity/Q1822828> ,
+                             <http://data.loterre.fr/ark:/67375/26L-Z1F1LRJV-Q> ,
+                             <http://data.loterre.fr/ark:/67375/26L-WNHT675V-K> ;
+    skos:broadMatch          <http://data.loterre.fr/ark:/67375/26L-XNQHTNZ7-8> ,
+                             <http://www.wikidata.org/entity/Q141268323> ;
 .
 
 <https://kos.geospecimens.org/def/geological-material-assertion-type/luminescence-description>
@@ -256,6 +372,19 @@
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "luminescence" ;
+    skos:closeMatch          <http://vocab.getty.edu/aat/300056214> ,
+                             <http://www.wikidata.org/entity/Q184240> ,
+                             <http://data.bgs.ac.uk/id/GeoscienceThesaurus/Concept/3024> ,
+                             <http://data.loterre.fr/ark:/67375/26L-GBLN478T-6> ;
+    skos:narrowMatch         <http://vocab.getty.edu/aat/300056211> ,
+                             <http://vocab.getty.edu/aat/300056218> ,
+                             <http://www.wikidata.org/entity/Q191807> ,
+                             <http://www.wikidata.org/entity/Q192275> ,
+                             <http://data.bgs.ac.uk/id/GeoscienceThesaurus/Concept/1928> ,
+                             <http://data.bgs.ac.uk/id/GeoscienceThesaurus/Concept/5645> ,
+                             <http://data.loterre.fr/ark:/67375/26L-T13W736V-W> ,
+                             <http://purl.obolibrary.org/obo/PATO_0000018> ,
+                             <http://purl.obolibrary.org/obo/PATO_0001298> ;
 .
 
 <https://kos.geospecimens.org/def/geological-material-assertion-type/alteration-description>
@@ -268,6 +397,13 @@
     reg:status               <https://linked.data.gov.au/def/reg-statuses/submitted> ;
     skos:topConceptOf        <https://kos.geospecimens.org/def/geological-material-assertion-type> ;
     skos:notation            "alterationDescription" ;
+    skos:relatedMatch        <http://data.bgs.ac.uk/id/GeoscienceThesaurus/Concept/4584> ;
+    skos:closeMatch          <http://linked.data.gov.au/def/geological-observation-type/alteration> ,
+                             <http://data.bgs.ac.uk/id/GeoscienceThesaurus/Concept/3343> ,
+                             <http://www.wikidata.org/entity/Q2840511> ,
+                             <http://data.loterre.fr/ark:/67375/26L-NSKG94NS-6> ;
+    skos:narrowMatch         <http://vocab.getty.edu/aat/300054115> ,
+                             <http://www.wikidata.org/entity/Q179177> ;
 .
 
 # ============================================================================

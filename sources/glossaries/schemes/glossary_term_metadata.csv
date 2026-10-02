@@ -37,3 +37,4 @@ Section,Property_CURIE,Prefix,Property_Local,Full_URI,Obligation,Range_Note
 4.7 Mapping Relations,skos:relatedMatch,skos,relatedMatch,http://www.w3.org/2004/02/skos/core#relatedMatch,MAY,IRI of an associatively related concept in another scheme
 4.7 Mapping Relations,owl:sameAs,owl,sameAs,http://www.w3.org/2002/07/owl#sameAs,MAY,Strong identity claim; use only when IRIs are confirmed co-referential
 4.7 Mapping Relations,rdfs:seeAlso,rdfs,seeAlso,http://www.w3.org/2000/01/rdf-schema#seeAlso,MAY,Looser pointer to a related resource
+,,,,,,

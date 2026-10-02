@@ -2,7 +2,7 @@
 # Generated from KOSMetadataVocabulary.xlsx
 # Source sheets used: Concept Scheme, Concepts, Namespaces
 # Agents: 1 mapped to this scheme in Agents.xlsx, 4 described below
-# Generated: 2026-09-30
+# Generated: 2026-10-02
 
 # Standard prefixes
 @prefix dcat:        <http://www.w3.org/ns/dcat#> .

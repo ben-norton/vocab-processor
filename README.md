@@ -66,7 +66,7 @@ Publishing works in four steps:
 | Kind | Identifier | Title | Concepts |
 |---|---|---|--:|
 | Vocabulary | `aggregate-form` | Aggregate Form | 26 |
-| Vocabulary | `constituent-part-proportion` | Constituent Part Proportion | 8 |
+| Vocabulary | `specimen-part-proportion` | Specimen Part Proportion | 8 |
 | Vocabulary | `geological-material-assertion-type` | Geological Material Assertion Types | 17 |
 | Vocabulary | `geological-specimen-material-category` | Geological Specimen Material Category | 14 |
 | Vocabulary | `geological-specimen-name-type` | Geological Specimen Name Type | 19 |

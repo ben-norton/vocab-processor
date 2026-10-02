@@ -1,6 +1,6 @@
-# Constituent Part Proportion — SKOS Mappings
-# Source: ConstituentPartProportions.xlsx
-# Generated: 2026-09-30
+# Specimen Part Proportion — SKOS Mappings
+# Source: SpecimenPartProportions.xlsx
+# Generated: 2026-10-02
 #
 # This file contains only SKOS match triples.
 # The main vocabulary file carries full concept metadata.
@@ -11,39 +11,39 @@
 # Mappings
 # ============================================================================
 
-<https://kos.geospecimens.org/def/constituent-part-proportion/all>
+<https://kos.geospecimens.org/def/specimen-part-proportion/all>
     a                   skos:Concept ;
     skos:prefLabel      "All"@en ;
     skos:closeMatch     <http://resource.geosciml.org/classifier/cgi/proportionterm/all> .
 
-<https://kos.geospecimens.org/def/constituent-part-proportion/major>
+<https://kos.geospecimens.org/def/specimen-part-proportion/major>
     a                   skos:Concept ;
     skos:prefLabel      "Major"@en ;
     skos:closeMatch     <http://resource.geosciml.org/classifier/cgi/proportionterm/major> ;
     skos:narrowMatch    <http://resource.geosciml.org/classifier/cgi/proportionterm/dominant> .
 
-<https://kos.geospecimens.org/def/constituent-part-proportion/minor>
+<https://kos.geospecimens.org/def/specimen-part-proportion/minor>
     a                   skos:Concept ;
     skos:prefLabel      "Minor"@en ;
     skos:closeMatch     <http://resource.geosciml.org/classifier/cgi/proportionterm/subordinate> ;
     skos:narrowMatch    <http://resource.geosciml.org/classifier/cgi/proportionterm/minor> .
 
-<https://kos.geospecimens.org/def/constituent-part-proportion/present>
+<https://kos.geospecimens.org/def/specimen-part-proportion/present>
     a                   skos:Concept ;
     skos:prefLabel      "Present"@en ;
     skos:closeMatch     <http://resource.geosciml.org/classifier/cgi/proportionterm/present> .
 
-<https://kos.geospecimens.org/def/constituent-part-proportion/rare>
+<https://kos.geospecimens.org/def/specimen-part-proportion/rare>
     a                   skos:Concept ;
     skos:prefLabel      "Rare"@en ;
     skos:closeMatch     <http://resource.geosciml.org/classifier/cgi/proportionterm/rare> .
 
-<https://kos.geospecimens.org/def/constituent-part-proportion/trace>
+<https://kos.geospecimens.org/def/specimen-part-proportion/trace>
     a                   skos:Concept ;
     skos:prefLabel      "Trace"@en ;
     skos:closeMatch     <http://resource.geosciml.org/classifier/cgi/proportionterm/trace> .
 
-<https://kos.geospecimens.org/def/constituent-part-proportion/variable>
+<https://kos.geospecimens.org/def/specimen-part-proportion/variable>
     a                   skos:Concept ;
     skos:prefLabel      "Variable"@en ;
     skos:closeMatch     <http://resource.geosciml.org/classifier/cgi/proportionterm/variable> .

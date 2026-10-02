@@ -1,6 +1,6 @@
 # Aggregate Form — SKOS Mappings
 # Source: AggregateForm.xlsx
-# Generated: 2026-09-30
+# Generated: 2026-10-02
 #
 # This file contains only SKOS match triples.
 # The main vocabulary file carries full concept metadata.

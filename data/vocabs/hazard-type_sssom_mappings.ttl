@@ -1,6 +1,6 @@
 # Hazard Types — SSSOM Mappings
 # Source: HazardTypes.xlsx (SSSOM sheet)
-# Generated: 2026-10-02
+# Generated: 2026-10-07
 #
 # SSSOM mapping set, RDF serialisation:
 #   https://mapping-commons.github.io/sssom/spec-formats-rdf/

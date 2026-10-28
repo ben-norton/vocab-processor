@@ -1,6 +1,6 @@
 # Specimen Part Proportion — SKOS Mappings
 # Source: SpecimenPartProportions.xlsx
-# Generated: 2026-10-02
+# Generated: 2026-10-07
 #
 # This file contains only SKOS match triples.
 # The main vocabulary file carries full concept metadata.

@@ -1,3 +1,3 @@
 @echo off
-.\.venv-geospecimens-process-vocabularies\Scripts\activate
+.\.venv-vocab-processor\Scripts\activate
 CLS

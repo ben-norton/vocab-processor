@@ -3,7 +3,7 @@
 # Source sheets used: Concept Scheme, Concepts, Namespaces, Mappings
 # Agents sheet ignored — agents come from Agents.xlsx
 # Agents: 2 mapped to this scheme in Agents.xlsx, 4 described below
-# Generated: 2026-10-02
+# Generated: 2026-10-07
 
 # Standard prefixes
 @prefix dcat:        <http://www.w3.org/ns/dcat#> .
@@ -175,7 +175,7 @@
 <https://kos.geospecimens.org/def/geological-specimen-material-category/rock>
     a                        skos:Concept ;
     skos:prefLabel           "Rock"@en ;
-    skos:definition          """Consolidated aggregate of one or more EarthMaterials, or a body of undifferentiated mineral matter, or of solid organic material. Includes mineral aggregates such as granite, shale, marble; glassy matter such as obsidian; and organic material such a coal. Excludes unconsolidated materials."""@en ;
+    skos:definition          """Consolidated aggregate of one or more geological materials or a body of undifferentiated mineral matter, or of solid organic material. Includes mineral aggregates such as granite, shale, marble; glassy matter such as obsidian; and organic material such a coal. Excludes unconsolidated materials."""@en ;
     skos:broader             <https://kos.geospecimens.org/def/geological-specimen-material-category/geological-material> ;
     dcterms:provenance       "Geoscience Ontology, Rock TypesGeoscience Ontology, Rock Types (https://w3id.org/gso/1.0/rockmaterial/ontology)"@en ;
     skos:inScheme            <https://kos.geospecimens.org/def/geological-specimen-material-category> ;
